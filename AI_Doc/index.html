@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Battle AI Behavior — Pokémon Smeragis</title>
+
+  <style>
+    /* ===========================
+       PAGE-LEVEL DARK BACKGROUND
+       =========================== */
+    html, body{
+      height: 100%;
+      margin: 0;
+      background: #0b1020;
+      color: #e7edf6;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* A safe “content width” wrapper (optional) */
+    .page-wrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 18px;
+    }
+
+    /* ===========================
+       AI DOCUMENT STYLES
+       =========================== */
+    #ai-behavior{
+      --ai-text:#e7edf6;
+      --ai-muted:#a7b4c8;
+      --ai-line:rgba(255,255,255,.10);
+      --ai-bg:#0b1020;
+      --ai-card:rgba(15,23,48,.92);
+      --ai-soft:rgba(12,20,42,.80);
+      --ai-accent:#7bd8ff;
+      --ai-tip:#86efac;
+      --ai-radius:18px;
+
+      color: var(--ai-text);
+      background: transparent;
+    }
+
+    #ai-behavior .ai-surface{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)) , rgba(10,16,32,.55);
+      border: 1px solid var(--ai-line);
+      border-radius: 26px;
+      padding: 22px 20px;
+      box-shadow: 0 22px 70px rgba(0,0,0,.45);
+    }
+
+    #ai-behavior .ai-hero{
+      padding: 4px 0 14px;
+      border-bottom: 1px solid var(--ai-line);
+      margin-bottom: 14px;
+    }
+    #ai-behavior h1{
+      margin: 0 0 6px;
+      font-size: clamp(1.7rem, 2.4vw, 2.35rem);
+      letter-spacing: .2px;
+    }
+    #ai-behavior .ai-subtitle{ margin: 0 0 6px; color: var(--ai-muted); }
+    #ai-behavior .ai-meta{ margin: 0; color: var(--ai-muted); font-size: .95rem; }
+
+    #ai-behavior .ai-toc{
+      margin: 18px 0 24px;
+      padding: 14px;
+      border: 1px solid var(--ai-line);
+      border-radius: var(--ai-radius);
+      background: var(--ai-soft);
+      backdrop-filter: blur(6px);
+    }
+    #ai-behavior .ai-toc__title{ margin: 0 0 10px; font-size: 1.1rem; }
+    #ai-behavior .ai-toc__list{ margin: 0; padding-left: 18px; }
+    #ai-behavior a{ color: var(--ai-accent); text-decoration: none; }
+    #ai-behavior a:hover{ text-decoration: underline; }
+
+    #ai-behavior .ai-section{ margin: 22px 0; }
+    #ai-behavior .ai-section h2{
+      font-size: 1.35rem;
+      margin: 0 0 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--ai-line);
+    }
+    #ai-behavior p{ margin: 0 0 10px; }
+
+    #ai-behavior .ai-grid-2{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 860px){
+      #ai-behavior .ai-grid-2{ grid-template-columns: 1fr 1fr; }
+    }
+
+    #ai-behavior .ai-card{
+      background: var(--ai-card);
+      border: 1px solid var(--ai-line);
+      border-radius: var(--ai-radius);
+      padding: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    #ai-behavior .ai-card h3{ margin: 0 0 8px; font-size: 1.05rem; }
+    #ai-behavior .ai-card ul{ margin: 0; padding-left: 18px; }
+    #ai-behavior .ai-card li{ margin: 6px 0; }
+
+    #ai-behavior .ai-steps{ margin: 0; padding-left: 18px; }
+    #ai-behavior .ai-steps li{ margin: 10px 0; }
+    #ai-behavior .ai-steps__desc{ display: block; color: var(--ai-muted); margin-top: 4px; }
+
+    #ai-behavior .ai-callout{
+      margin: 12px 0;
+      padding: 12px 14px;
+      border-radius: var(--ai-radius);
+      border: 1px solid var(--ai-line);
+      background: var(--ai-soft);
+    }
+    #ai-behavior .ai-callout--info{ border-left: 4px solid var(--ai-accent); }
+    #ai-behavior .ai-callout--tip{ border-left: 4px solid var(--ai-tip); }
+    #ai-behavior .ai-callout p{ margin: 0; color: var(--ai-muted); }
+
+    #ai-behavior details{
+      margin: 10px 0;
+      border: 1px solid var(--ai-line);
+      border-radius: var(--ai-radius);
+      padding: 8px 12px;
+      background: rgba(12,20,42,.65);
+    }
+    #ai-behavior summary{
+      cursor: pointer;
+      color: var(--ai-accent);
+      font-weight: 700;
+    }
+    #ai-behavior details p,
+    #ai-behavior details ul{ margin: 10px 0 6px; color: var(--ai-muted); }
+    #ai-behavior details ul{ padding-left: 18px; }
+
+    #ai-behavior .ai-muted{ color: var(--ai-muted); }
+
+    #ai-behavior .ai-footer{
+      margin: 26px 0 6px;
+      padding-top: 14px;
+      border-top: 1px solid var(--ai-line);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrap">
+    <section id="ai-behavior" class="ai-doc">
+      <div class="ai-surface">
+        <header class="ai-hero">
+          <div class="ai-hero__text">
+            <h1>Battle AI Behavior</h1>
+            <p class="ai-meta">
+              Updated: <time datetime="2026-02-15">February 15, 2026</time>
+            </p>
+          </div>
+        </header>
+
+        <nav class="ai-toc" aria-label="AI document table of contents">
+          <h2 class="ai-toc__title">Contents</h2>
+            <ol class="ai-toc__list">
+              <li><a href="#ai-scope">Introduction</a></li>
+              <li><a href="#ai-profiles">AI profiles: Standard vs Boss</a></li>
+              <li><a href="#ai-turn-loop">Turn decision pipeline</a></li>
+              <li><a href="#ai-ko-priority">KO logic, priority, and speed control</a></li>
+              <li><a href="#ai-switching">Switching: when and why</a></li>
+              <li><a href="#ai-move-filtering">Move Selecting</a></li>
+              <li><a href="#ai-knowledge-memory">Battle knowledge</a></li>
+              <li><a href="#ai-double-battles">Double battles behavior</a></li>
+              <li><a href="#ai-limits">Notes</a></li>
+            </ol>
+        </nav>
+
+        <section id="ai-scope" class="ai-section">
+          <h2>Introduction</h2>
+          <p>
+            This page documents <strong>observable battle behavior</strong>: how the AI chooses moves and switches,
+            how it handles KO opportunities, and how it reacts to revealed information.
+          </p>
+          <!-- <div class="ai-callout ai-callout--info" role="note" aria-label="Testing note">
+            <p>
+              Conclusions are based on targeted scenarios designed to isolate single decisions whenever possible.
+              In real fights, multiple factors interact (RNG, mid-game information, team state).
+            </p>
+          </div> -->
+        </section>
+
+        <section id="ai-profiles" class="ai-section">
+          <h2>AI profiles: Standard vs Boss</h2>
+          <div class="ai-grid-2">
+            <article class="ai-card">
+              <h3>Standard Trainers</h3>
+              <ul>
+                <li>Core goal order: <strong>don't waste turns</strong> → <strong>take clean KOs</strong> → <strong>improve matchup</strong>.</li>
+                <li>Not always perfect information: some reads depend on what has been revealed during the battle.</li>
+                <li>Sensible switching and post-KO sends, with more room for surprise value.</li>
+              </ul>
+            </article>
+
+            <article class="ai-card">
+              <h3>Boss fights</h3>
+              <ul>
+                <li>Same tactical foundation as Standard Trainers.</li>
+                <li><strong>More accurate reads</strong> of your overall team situation → fewer blind lines.</li>
+                <li>More coherent switching vs coverage; fewer free turns; cleaner risk management.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="ai-turn-loop" class="ai-section">
+          <h2>Turn decision pipeline</h2>
+          <p>In practice, a turn follows this pipeline (simplified but faithful to observed behavior):</p>
+          <ol class="ai-steps">
+            <li><strong>Switch evaluation</strong><span class="ai-steps__desc">If the matchup is clearly unfavorable and a better entry exists, switching becomes a primary line.</span></li>
+            <li><strong>Move filtering</strong><span class="ai-steps__desc">Low-impact or “dead” moves are de-prioritized (no hit, no value, wrong context).</span></li>
+            <li><strong>KO search</strong><span class="ai-steps__desc">If a reliable KO line exists this turn (including via priority), the AI tends to take it.</span></li>
+            <li><strong>Context scoring</strong><span class="ai-steps__desc">If no KO is available, it weighs expected damage + situational utility (pivoting, denial, immediate setup).</span></li>
+          </ol>
+        </section>
+
+        <section id="ai-ko-priority" class="ai-section">
+          <h2>KO logic, priority, and speed control</h2>
+          <div class="ai-card">
+            <ul>
+              <li>If slower but holding a <strong>priority move that secures the KO</strong>, it tends to select it.</li>
+              <li>If already faster and <strong>multiple moves KO</strong>, it may choose between them.</li>
+              <li>If the player has a <strong>fast kill</strong> and the AI has a <strong>slow kill</strong>, it will go for it anyway,
+                  unless a better matchup is on bench.</li>
+              <li>If the target is already in KO range: it tends to <strong>close</strong> rather than take slow lines.</li>
+              <li>If its own HP is low: it avoids overly greedy lines that lose the piece without compensation.</li>
+              <li>If it's healthy: it's more willing to take control lines (positioning + pressure).</li>
+              <li>In a <strong>speed tie</strong>, priority is not strictly forced if multiple lines are considered equivalent.</li>
+            </ul>
+          </div>
+          <div class="ai-callout ai-callout--tip" role="note" aria-label="Competitive implication">
+            <p>Competitive takeaway: once you're in KO range, expect fewer “free utility turns” — the AI often closes immediately.</p>
+          </div>
+        </section>
+
+        <section id="ai-switching" class="ai-section">
+          <h2>Switching</h2>
+          <p>
+            The AI switches when the switch <strong>materially improves</strong> the next-turn outcome:
+            key immunities/resists, reduced KO risk, and better pressure on re-entry.
+          </p>
+
+          <div class="ai-grid-2">
+            <article class="ai-card">
+              <h3>Signals that increase switching</h3>
+              <ul>
+                <li>Imminent KO risk with a safer entry available.</li>
+                <li>A teammate provides a <strong>key immunity/resist</strong> versus the current threat.</li>
+                <li>Available moves apply <strong>too little pressure</strong> (low meaningful damage / low value).</li>
+                <li>After a KO, it often selects a sensible <strong>revenge/check</strong> instead of a random send.</li>
+              </ul>
+            </article>
+
+            <article class="ai-card">
+              <h3>Signals that reduce switching</h3>
+              <ul>
+                <li>No clearly better answer exists on the bench.</li>
+                <li>Staying enables a favorable trade or immediate KO.</li>
+                <li>Switching would expose a teammate to worse risk than staying in.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="ai-move-filtering" class="ai-section">
+          <h2>Move Selecting</h2>
+          <div class="ai-card">
+            <ul>
+              <li>De-prioritizes moves that don't connect or are invalidated by known immunities.</li>
+              <li>De-prioritizes setup/status when it doesn't change the turn outcome versus immediate pressure.</li>
+              <li>Ignores utility if a reliable KO is available right now.</li>
+            </ul>
+          </div>
+
+          <details>
+            <summary>Taunt</summary>
+            <ul>
+              <li>Favored versus status-leaning or setup-leaning targets.</li>
+              <li>If a clean KO is available, it typically chooses the KO line instead of Taunt.</li>
+              <li>Versus pure offense targets, Taunt is often de-prioritized.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Pivot moves (U-turn / Volt Switch / Flip Turn)</summary>
+            <ul>
+              <li>Hit-and-switch moves are treated as strategic tools. When pivoting creates value (momentum, positioning, form/condition enabling), the AI tends to favor it.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Knock Off</summary>
+            <ul>
+              <li>If the target still has a meaningful removable item, the AI tends to prefer <strong>Knock Off</strong>.</li>
+              <li>Once item pressure is no longer relevant, it reverts to the more efficient damage/utility choice.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Protect Effect</summary>
+            <ul>
+              <li>For sets that benefit from early activation via held items, the AI can use Protect as an immediate setup line to maximize pressure next turn.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Shed Tail</summary>
+            <h3>When it's used</h3>
+            <ul>
+              <li>When the pivot is relatively safe and a strong beneficiary exists on the bench.</li>
+              <li>When the resulting entry produces clear advantage (momentum / positioning).</li>
+            </ul>
+            <h3>When it's avoided</h3>
+            <ul>
+              <li>When HP is too low (line becomes too risky).</li>
+              <li>When no useful/meaningful follow-up switch exists.</li>
+            </ul>
+          </details>
+        </section>
+
+        <section id="ai-knowledge-memory" class="ai-section">
+          <h2>Battle knowledge</h2>
+            <ul>
+              <li>The AI may still attempt a risky line against an ability that hasn't been confirmed yet.</li>
+              <li>After witnessing an immunity/absorb interaction, it will have memory of it.</li>
+            </ul>
+          <h2>Illusion interaction</h2>
+          <div class="ai-card">
+            <ul>
+              <li>Initially, the AI can be misled by the apparent typing.</li>
+              <li>After incompatible signals, it corrects its read and remember the ability.</li>
+              <li>If the AI is using Illusion itself, move choice follows the Pokémon's real typing.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="ai-double-battles" class="ai-section">
+          <h2>Double battles behavior</h2>
+          <p>
+            In doubles, the AI reasons in a coordinated way: it evaluates both opponents and partner interactions,
+            then selects the target + move pair with the highest practical value for the turn.
+          </p>
+
+          <div class="ai-grid-2">
+            <article class="ai-card">
+              <h3>What it evaluates each turn</h3>
+              <ul>
+                <li>Scores each move against each valid target, then chooses the strongest target/move combination.</li>
+                <li>Reads partner intent (or last known ally move) to avoid wasting both actions on redundant lines.</li>
+                <li>Penalizes support moves if the partner cannot convert that support into pressure.</li>
+              </ul>
+            </article>
+
+            <article class="ai-card">
+              <h3>How field Pokémon influence each other</h3>
+              <ul>
+                <li>Avoids careless spread damage into ally unless the trade is clearly favorable.</li>
+                <li>Can intentionally interact with ally abilities/items (immunity absorbs, policy triggers, etc.) when profitable.</li>
+                <li>Reduces duplicated utility in the same turn (e.g. overlapping weather/status support).</li>
+              </ul>
+            </article>
+          </div>
+
+          <details>
+            <summary>Helping Hand</summary>
+            <ul>
+              <li>Used when the partner has an immediate damaging conversion, especially when the boost improves the turn outcome (for example from non-KO into KO).</li>
+              <li>De-prioritized if the partner has no damage move, is switching, or is already on a non-converting status line.</li>
+              <li>If Helping Hand does not improve the immediate board state, the AI may choose another useful action.</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Fake Out</summary>
+            <ul>
+              <li>Strongly tied to first turn in field: outside first turn, it is effectively discarded.</li>
+              <li>On first turn it is favored when flinch has real value or when it is still the best immediate damage line.</li>
+              <li>It is avoided into known anti-flinch / anti-secondary contexts (e.g. Covert Cloak, Inner Focus, Shield Dust, Substitute).</li>
+            </ul>
+          </details>
+        </section>
+
+
+        <section id="ai-limits" class="ai-section">
+          <h2>Notes</h2>
+          <div class="ai-card">
+            <ul>
+              <li>Results come from targeted scenarios: great for isolating decisions, not exhaustive for long multi-turn battles.</li>
+              <li>Not every advanced multi-turn interaction has been covered yet.</li>
+              <li>A small probabilistic component may occasionally produce different choices in seemingly identical states.</li>
+            </ul>
+          </div>
+        </section>
+
+        <footer class="ai-footer">
+          <p class="ai-muted">
+            Competitive tip: versus Bosses, rely less on surprise and more on robust lines that remain strong after reveal.
+          </p>
+        </footer>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
