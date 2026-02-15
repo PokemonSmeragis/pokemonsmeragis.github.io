@@ -21,6 +21,13 @@
   <style>
     .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:14px}
     .cta-note{color:rgba(255,255,255,0.70);font-size:13px;line-height:1.4}
+
+    /* FIX: ensure the dark background covers the full page height */
+    html, body{
+      min-height: 100%;
+      background: #0b0e14;
+    }
+    body{ margin: 0; }
   </style>
 </head>
 
@@ -88,7 +95,6 @@
           <a class="btn primary" href="https://andryz90.github.io/PokemonSmeragis/Documentation_Sites/porydex/site/index.html" target="_blank" rel="noopener noreferrer">
             Open Porydex
           </a>
-          <span class="url">/porydex/…</span>
         </div>
       </article>
 
@@ -113,7 +119,30 @@
           <a class="btn primary" href="https://andryz90.github.io/PokemonSmeragis/Documentation_Sites/Calculator/dist/index.html" target="_blank" rel="noopener noreferrer">
             Open Calculator
           </a>
-          <span class="url">/Calculator/…</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <div class="icon" aria-hidden="true">🧠</div>
+          <div>
+            <h2>Battle AI Doc</h2>
+            <p class="muted">How trainers and bosses make decisions in battle.</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <ul class="bullets">
+            <li>Turn decision pipeline</li>
+            <li>KO logic, priority, and switching behavior</li>
+            <li>Move selection notes (Taunt, Pivot, Knock Off, etc.)</li>
+          </ul>
+        </div>
+
+        <div class="card-foot">
+          <a class="btn primary" href="https://pokemonsmeragis.github.io/AI_Doc/index.html" target="_blank" rel="noopener noreferrer">
+            Open AI Doc
+          </a>
         </div>
       </article>
 
@@ -138,7 +167,6 @@
           <a class="btn primary" href="https://andryz90.github.io/PokemonSmeragis/Documentation_Sites/Trainer_Docs/site/trainer_sheet.html" target="_blank" rel="noopener noreferrer">
             Open Trainer Sheet
           </a>
-          <span class="url">/Trainer_Docs/…</span>
         </div>
       </article>
     </section>
