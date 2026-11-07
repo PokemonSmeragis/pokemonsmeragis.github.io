@@ -4983,7 +4983,7 @@ exports.BattlePokedex = {
         "weightkg": 33.9,
         "prevo": "Poliwhirl",
         "evoType": "trade",
-        "evoCondition": "while holding King's Rock or use King's Rock",
+        "evoCondition": "while holding King's Rock or use King's Rock or level-up while holding King's Rock",
         "evoItem": "King's Rock"
     },
     "abra": {
@@ -6176,8 +6176,9 @@ exports.BattlePokedex = {
             "Slowking-Galar"
         ],
         "prevo": "Slowpoke",
-        "evoType": "trade",
-        "evoCondition": "while holding King's Rock or use King's Rock",
+        "evoLevel": 0,
+        "evoType": "level",
+        "evoCondition": "while holding King's Rock or Evo Trade while holding King's Rock or use King's Rock",
         "evoItem": "King's Rock"
     },
     "slowbromega": {
@@ -7351,7 +7352,7 @@ exports.BattlePokedex = {
         ],
         "prevo": "Onix",
         "evoType": "trade",
-        "evoCondition": "while holding Metal Coat or use Metal Coat or level 34 while holding Metal Coat",
+        "evoCondition": "while holding Metal Coat or use Metal Coat or level-up while holding Metal Coat",
         "evoItem": "Metal Coat"
     },
     "steelixmega": {
@@ -8598,7 +8599,7 @@ exports.BattlePokedex = {
         "weightkg": 282.8,
         "prevo": "Rhydon",
         "evoType": "trade",
-        "evoCondition": "while holding Metal Coat or use Metal Coat or level 40 while holding Metal Coat",
+        "evoCondition": "while holding Metal Coat or use Metal Coat or level-up while holding Metal Coat",
         "evoItem": "Metal Coat"
     },
     "happiny": {
@@ -9018,7 +9019,7 @@ exports.BattlePokedex = {
         "weightkg": 152.0,
         "prevo": "Seadra",
         "evoType": "trade",
-        "evoCondition": "while holding Dragon Scale or use Dragon Scale",
+        "evoCondition": "while holding Dragon Scale or use Dragon Scale or level-up while holding Dragon Scale",
         "evoItem": "Dragon Scale"
     },
     "goldeen": {
@@ -9449,7 +9450,7 @@ exports.BattlePokedex = {
         ],
         "prevo": "Scyther",
         "evoType": "trade",
-        "evoCondition": "while holding Metal Coat or use Metal Coat or level 36 while holding Metal Coat",
+        "evoCondition": "while holding Metal Coat or use Metal Coat or level-up while holding Metal Coat",
         "evoItem": "Metal Coat"
     },
     "scizormega": {
@@ -10889,7 +10890,7 @@ exports.BattlePokedex = {
         "weightkg": 32.5,
         "prevo": "Porygon",
         "evoType": "trade",
-        "evoCondition": "while holding Upgrade or use Upgrade",
+        "evoCondition": "while holding Upgrade or use Upgrade or level-up while holding Upgrade",
         "evoItem": "Upgrade",
         "evos": [
             "Porygon-Z"
@@ -10929,7 +10930,7 @@ exports.BattlePokedex = {
         "weightkg": 34.0,
         "prevo": "Porygon2",
         "evoType": "trade",
-        "evoCondition": "while holding Dubious Disc or use Dubious Disc",
+        "evoCondition": "while holding Dubious Disc or use Dubious Disc or level-up while holding Dubious Disc",
         "evoItem": "Dubious Disc"
     },
     "omanyte": {
@@ -11976,6 +11977,14 @@ exports.BattlePokedex = {
         "name": "Meganium",
         "heightm": 1.8,
         "weightkg": 100.5,
+        "_formTableId": "sMeganiumFormSpeciesIdTable",
+        "formeOrder": [
+            "Meganium",
+            "Meganium-Mega"
+        ],
+        "otherFormes": [
+            "Meganium-Mega"
+        ],
         "prevo": "Bayleef",
         "evoLevel": 32,
         "evoType": "level",
@@ -12017,6 +12026,7 @@ exports.BattlePokedex = {
         "name": "Meganium-Mega",
         "heightm": 1.8,
         "weightkg": 100.5,
+        "_formTableId": "sMeganiumFormSpeciesIdTable",
         "baseSpecies": "Meganium",
         "forme": "Mega"
     },
@@ -12143,10 +12153,12 @@ exports.BattlePokedex = {
         "_formTableId": "sTyphlosionFormSpeciesIdTable",
         "formeOrder": [
             "Typhlosion",
-            "Typhlosion-Hisui"
+            "Typhlosion-Hisui",
+            "Typhlosion-Mega"
         ],
         "otherFormes": [
-            "Typhlosion-Hisui"
+            "Typhlosion-Hisui",
+            "Typhlosion-Mega"
         ],
         "prevo": "Quilava",
         "evoLevel": 35,
@@ -12197,6 +12209,44 @@ exports.BattlePokedex = {
         "evoType": "level",
         "evoCondition": "while holding Hisuian Amulet",
         "evoItem": "Hisuian Amulet"
+    },
+    "typhlosionmega": {
+        "num": 157,
+        "baseStats": {
+            "hp": 78,
+            "atk": 64,
+            "def": 78,
+            "spe": 110,
+            "spa": 119,
+            "spd": 85
+        },
+        "types": [
+            "Fire",
+            "Ground"
+        ],
+        "evYields": {
+            "spa": 3
+        },
+        "items": {},
+        "eggGroups": [
+            "Field"
+        ],
+        "catchRate": 45,
+        "expYield": 267,
+        "genderRatio": {
+            "M": 0.875,
+            "F": 0.125
+        },
+        "abilities": {
+            "0": "Drought"
+        },
+        "color": "Yellow",
+        "name": "Typhlosion-Mega",
+        "heightm": 1.7,
+        "weightkg": 79.5,
+        "_formTableId": "sTyphlosionFormSpeciesIdTable",
+        "baseSpecies": "Typhlosion",
+        "forme": "Mega"
     },
     "totodile": {
         "num": 158,
@@ -20313,7 +20363,7 @@ exports.BattlePokedex = {
             "F": 0.5
         },
         "abilities": {
-            "0": "Water Veil",
+            "0": "Thick Fat",
             "1": "Pressure",
             "H": "Drizzle"
         },
@@ -21577,7 +21627,7 @@ exports.BattlePokedex = {
         "prevo": "Feebas",
         "evoLevel": 0,
         "evoType": "level",
-        "evoCondition": "min beauty or Evo Trade while holding Prism Scale or use Prism Scale"
+        "evoCondition": "min beauty or level-up while holding Prism Scale or Evo Trade while holding Prism Scale or use Prism Scale"
     },
     "castform": {
         "num": 351,
@@ -22043,7 +22093,7 @@ exports.BattlePokedex = {
         "weightkg": 106.6,
         "prevo": "Dusclops",
         "evoType": "trade",
-        "evoCondition": "while holding Reaper Cloth or use Reaper Cloth",
+        "evoCondition": "while holding Reaper Cloth or use Reaper Cloth or level-up while holding Reaper Cloth",
         "evoItem": "Reaper Cloth"
     },
     "tropius": {
@@ -22629,7 +22679,7 @@ exports.BattlePokedex = {
         "weightkg": 27.0,
         "prevo": "Clamperl",
         "evoType": "trade",
-        "evoCondition": "while holding Deep Sea Tooth or use Deep Sea Tooth",
+        "evoCondition": "while holding Deep Sea Tooth or use Deep Sea Tooth or level-up while holding Deep Sea Tooth",
         "evoItem": "Deep Sea Tooth"
     },
     "gorebyss": {
@@ -22672,7 +22722,7 @@ exports.BattlePokedex = {
         "weightkg": 22.6,
         "prevo": "Clamperl",
         "evoType": "trade",
-        "evoCondition": "while holding Deep Sea Scale or use Deep Sea Scale",
+        "evoCondition": "while holding Deep Sea Scale or use Deep Sea Scale or level-up while holding Deep Sea Scale",
         "evoItem": "Deep Sea Scale"
     },
     "relicanth": {
@@ -36227,6 +36277,14 @@ exports.BattlePokedex = {
         "name": "Chesnaught",
         "heightm": 1.6,
         "weightkg": 90.0,
+        "_formTableId": "sChesnaughtFormSpeciesIdTable",
+        "formeOrder": [
+            "Chesnaught",
+            "Chesnaught-Mega"
+        ],
+        "otherFormes": [
+            "Chesnaught-Mega"
+        ],
         "prevo": "Quilladin",
         "evoLevel": 36,
         "evoType": "level",
@@ -36268,6 +36326,7 @@ exports.BattlePokedex = {
         "name": "Chesnaught-Mega",
         "heightm": 1.6,
         "weightkg": 90.0,
+        "_formTableId": "sChesnaughtFormSpeciesIdTable",
         "baseSpecies": "Chesnaught",
         "forme": "Mega"
     },
@@ -36389,6 +36448,14 @@ exports.BattlePokedex = {
         "name": "Delphox",
         "heightm": 1.5,
         "weightkg": 39.0,
+        "_formTableId": "sDelphoxFormSpeciesIdTable",
+        "formeOrder": [
+            "Delphox",
+            "Delphox-Mega"
+        ],
+        "otherFormes": [
+            "Delphox-Mega"
+        ],
         "prevo": "Braixen",
         "evoLevel": 36,
         "evoType": "level",
@@ -36430,6 +36497,7 @@ exports.BattlePokedex = {
         "name": "Delphox-Mega",
         "heightm": 1.5,
         "weightkg": 39.0,
+        "_formTableId": "sDelphoxFormSpeciesIdTable",
         "baseSpecies": "Delphox",
         "forme": "Mega"
     },
@@ -37879,7 +37947,7 @@ exports.BattlePokedex = {
         "weightkg": 15.5,
         "prevo": "Spritzee",
         "evoType": "trade",
-        "evoCondition": "while holding Sachet or use Sachet",
+        "evoCondition": "while holding Sachet or use Sachet or level-up while holding Sachet",
         "evoItem": "Sachet"
     },
     "swirlix": {
@@ -37956,7 +38024,7 @@ exports.BattlePokedex = {
         "weightkg": 5.0,
         "prevo": "Swirlix",
         "evoType": "trade",
-        "evoCondition": "while holding Whipped Dream or use Whipped Dream",
+        "evoCondition": "while holding Whipped Dream or use Whipped Dream or level-up while holding Whipped Dream",
         "evoItem": "Whipped Dream"
     },
     "inkay": {
@@ -40916,10 +40984,60 @@ exports.BattlePokedex = {
         "name": "Crabominable",
         "heightm": 1.7,
         "weightkg": 180.0,
+        "_formTableId": "sCrabominableFormSpeciesIdTable",
+        "formeOrder": [
+            "Crabominable",
+            "Crabominable-Mega"
+        ],
+        "otherFormes": [
+            "Crabominable-Mega"
+        ],
         "prevo": "Crabrawler",
         "evoLevel": 0,
         "evoType": "level",
         "evoCondition": "in map or use Ice Stone"
+    },
+    "crabominablemega": {
+        "num": 740,
+        "baseStats": {
+            "hp": 97,
+            "atk": 132,
+            "def": 77,
+            "spe": 43,
+            "spa": 62,
+            "spd": 67
+        },
+        "types": [
+            "Fighting",
+            "Ice"
+        ],
+        "evYields": {
+            "atk": 2
+        },
+        "items": {
+            "R": "Cheri Berry"
+        },
+        "eggGroups": [
+            "Water 3"
+        ],
+        "catchRate": 60,
+        "expYield": 167,
+        "genderRatio": {
+            "M": 0.5,
+            "F": 0.5
+        },
+        "abilities": {
+            "0": "Hyper Cutter",
+            "1": "Iron Fist",
+            "H": "Anger Point"
+        },
+        "color": "White",
+        "name": "Crabominable-Mega",
+        "heightm": 1.7,
+        "weightkg": 180.0,
+        "_formTableId": "sCrabominableFormSpeciesIdTable",
+        "baseSpecies": "Crabominable",
+        "forme": "Mega"
     },
     "oricorio": {
         "num": 741,
@@ -41317,6 +41435,8 @@ exports.BattlePokedex = {
         "baseSpecies": "Rockruff",
         "forme": "Own-Tempo",
         "evos": [
+            "Lycanroc",
+            "Lycanroc-Midnight",
             "Lycanroc-Dusk"
         ]
     },
@@ -41366,7 +41486,7 @@ exports.BattlePokedex = {
             "Lycanroc-Midnight",
             "Lycanroc-Dusk"
         ],
-        "prevo": "Rockruff",
+        "prevo": "Rockruff-Own-Tempo",
         "evoLevel": 24,
         "evoType": "level",
         "evoCondition": "during the day or level 24 in the morning"
@@ -41409,7 +41529,7 @@ exports.BattlePokedex = {
         "_formTableId": "sLycanrocFormSpeciesIdTable",
         "baseSpecies": "Lycanroc",
         "forme": "Midnight",
-        "prevo": "Rockruff",
+        "prevo": "Rockruff-Own-Tempo",
         "evoLevel": 24,
         "evoType": "level",
         "evoCondition": "at night"
@@ -42585,16 +42705,63 @@ exports.BattlePokedex = {
         },
         "abilities": {
             "0": "Emergency Exit",
-            "H": "Stamina"
+            "H": "Pressure"
         },
         "color": "Gray",
         "name": "Golisopod",
         "heightm": 2.0,
         "weightkg": 108.0,
+        "_formTableId": "sGolisopodFormSpeciesIdTable",
+        "formeOrder": [
+            "Golisopod",
+            "Golisopod-Mega"
+        ],
+        "otherFormes": [
+            "Golisopod-Mega"
+        ],
         "prevo": "Wimpod",
         "evoLevel": 30,
         "evoType": "level",
         "evoCondition": ""
+    },
+    "golisopodmega": {
+        "num": 768,
+        "baseStats": {
+            "hp": 85,
+            "atk": 125,
+            "def": 140,
+            "spe": 40,
+            "spa": 60,
+            "spd": 90
+        },
+        "types": [
+            "Bug",
+            "Steel"
+        ],
+        "evYields": {
+            "def": 2
+        },
+        "items": {},
+        "eggGroups": [
+            "Bug",
+            "Water 3"
+        ],
+        "catchRate": 45,
+        "expYield": 186,
+        "genderRatio": {
+            "M": 0.5,
+            "F": 0.5
+        },
+        "abilities": {
+            "0": "Stamina"
+        },
+        "color": "Gray",
+        "name": "Golisopod-Mega",
+        "heightm": 2.0,
+        "weightkg": 108.0,
+        "_formTableId": "sGolisopodFormSpeciesIdTable",
+        "baseSpecies": "Golisopod",
+        "forme": "Mega"
     },
     "sandygast": {
         "num": 769,
@@ -51657,9 +51824,9 @@ exports.BattlePokedex = {
             "F": 0.5
         },
         "abilities": {
-            "0": "Purifying Salt",
+            "0": "Clear Body",
             "1": "Sturdy",
-            "H": "Clear Body"
+            "H": "Purifying Salt"
         },
         "color": "Brown",
         "name": "Garganacl",

@@ -8338,5 +8338,68 @@ exports.BattleItems = {
         "desc": "",
         "shortDesc": "",
         "isNonstandard": null
+    },
+    "raichunitex": {
+        "name": "Raichunite X",
+        "num": 2788,
+        "desc": "",
+        "shortDesc": "",
+        "isNonstandard": null
+    },
+    "raichunitey": {
+        "name": "Raichunite Y",
+        "num": 2789,
+        "desc": "",
+        "shortDesc": "",
+        "isNonstandard": null
+    },
+    "chesnaughtite": {
+        "name": "Chesnaughtite",
+        "num": 2790,
+        "desc": "",
+        "shortDesc": "",
+        "isNonstandard": null
+    },
+    "delphoxite": {
+        "name": "Delphoxite",
+        "num": 2791,
+        "desc": "",
+        "shortDesc": "",
+        "isNonstandard": null
+    },
+    "meganiumite": {
+        "name": "Meganiumite",
+        "num": 2792,
+        "desc": "",
+        "shortDesc": "",
+        "isNonstandard": null
+    },
+    "golisopodite": {
+        "name": "Golisopodite",
+        "num": 2793,
+        "desc": "",
+        "shortDesc": "",
+        "isNonstandard": null
+    },
+    "crabominablite": {
+        "name": "Crabominablite",
+        "num": 2794,
+        "desc": "",
+        "shortDesc": "",
+        "isNonstandard": null
+    },
+    "typhlosionite": {
+        "name": "Typhlosionite",
+        "num": 2795,
+        "desc": "",
+        "shortDesc": "",
+        "isNonstandard": null
+    },
+    "gbplayer": {
+        "name": "GB Player",
+        "num": 2796,
+        "desc": "",
+        "shortDesc": "",
+        "isNonstandard": null
     }
 }

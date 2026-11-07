@@ -12766,5 +12766,247 @@ exports.BattleLocationdex = {
                 }
             ]
         }
+    },
+    "areazeroinside2morning": {
+        "name": "Area Zero - Inside - 2 - Morning",
+        "land": {
+            "baseRate": 10,
+            "encs": [
+                {
+                    "species": "greattusk",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "ironjugulis",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "slitherwing",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "brutebonnet",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "screamtail",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "ironthorns",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "irontreads",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "irontreads",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "ironbundle",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "ironbundle",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "fluttermane",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                },
+                {
+                    "species": "fluttermane",
+                    "minLvl": 70,
+                    "maxLvl": 70
+                }
+            ]
+        },
+        "surf": {},
+        "rock": {},
+        "fish": {}
+    },
+    "areazerooutsidemorning": {
+        "name": "Area Zero - Outside - Morning",
+        "land": {
+            "baseRate": 10,
+            "encs": [
+                {
+                    "species": "farigiraf",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "raichu",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "corviknight",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "masquerain",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "eevee",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "flamigo",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "dreepy",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "braviary",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "gible",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "bisharp",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "bellibolt",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "espathra",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                }
+            ]
+        },
+        "surf": {},
+        "rock": {},
+        "fish": {}
+    },
+    "areazerooutside2morning": {
+        "name": "Area Zero - Outside 2 - Morning",
+        "land": {
+            "baseRate": 10,
+            "encs": [
+                {
+                    "species": "farigiraf",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "raichu",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "corviknight",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "masquerain",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "eevee",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "flamigo",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "dreepy",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "braviary",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "gible",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "bisharp",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "bellibolt",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "espathra",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                }
+            ]
+        },
+        "surf": {
+            "baseRate": 4,
+            "encs": [
+                {
+                    "species": "basculegionf",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "basculegion",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "overqwil",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "palafin",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                },
+                {
+                    "species": "squirtle",
+                    "minLvl": 5,
+                    "maxLvl": 5
+                }
+            ]
+        },
+        "rock": {},
+        "fish": {}
     }
 }

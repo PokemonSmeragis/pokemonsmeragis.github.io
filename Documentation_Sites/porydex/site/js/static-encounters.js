@@ -115,6 +115,24 @@ Object.assign(window.BattleStaticEncounters, {
             "zoneid": "mauvillecity_gamecorner-egg-702"
         }
     ],
+    "crabominablemega": [
+        {
+            "name": "Ever Grande City (Overworld)",
+            "level": 20,
+            "rate": "Overworld",
+            "mode": "static",
+            "zoneid": "evergrandecity-overworld-10"
+        }
+    ],
+    "crabrawler": [
+        {
+            "name": "Abandoned Ship (Overworld)",
+            "level": 20,
+            "rate": "Overworld",
+            "mode": "static",
+            "zoneid": "abandonedship_room_b1f-overworld-1"
+        }
+    ],
     "cyndaquil": [
         {
             "name": "Littleroot Town (Gift)",
@@ -233,6 +251,15 @@ Object.assign(window.BattleStaticEncounters, {
             "rate": "Overworld",
             "mode": "static",
             "zoneid": "evergrandecity-overworld-2"
+        }
+    ],
+    "golisopodmega": [
+        {
+            "name": "Ever Grande City (Overworld)",
+            "level": 20,
+            "rate": "Overworld",
+            "mode": "static",
+            "zoneid": "evergrandecity-overworld-9"
         }
     ],
     "groudon": [
@@ -514,7 +541,7 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 40,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "islandcave-static-97"
+            "zoneid": "islandcave-static-102"
         }
     ],
     "regirock": [
@@ -632,6 +659,42 @@ Object.assign(window.BattleStaticEncounters, {
             "zoneid": "mauvillecity_gamecorner-egg-702"
         }
     ],
+    "tauros": [
+        {
+            "name": "Route 123 (Egg)",
+            "level": 5,
+            "rate": "Egg",
+            "mode": "static",
+            "zoneid": "route123_berrymastershouse-egg-20"
+        }
+    ],
+    "taurospaldeanaquabreed": [
+        {
+            "name": "Route 123 (Egg)",
+            "level": 5,
+            "rate": "Egg",
+            "mode": "static",
+            "zoneid": "route123_berrymastershouse-egg-20"
+        }
+    ],
+    "taurospaldeanblazebreed": [
+        {
+            "name": "Route 123 (Egg)",
+            "level": 5,
+            "rate": "Egg",
+            "mode": "static",
+            "zoneid": "route123_berrymastershouse-egg-20"
+        }
+    ],
+    "taurospaldeancombatbreed": [
+        {
+            "name": "Route 123 (Egg)",
+            "level": 5,
+            "rate": "Egg",
+            "mode": "static",
+            "zoneid": "route123_berrymastershouse-egg-20"
+        }
+    ],
     "togepi": [
         {
             "name": "Game Pkmn Daycare (Egg)",
@@ -682,6 +745,15 @@ Object.assign(window.BattleStaticEncounters, {
             "rate": "Overworld",
             "mode": "static",
             "zoneid": "slateport_sewer-overworld-1"
+        }
+    ],
+    "typhlosionmega": [
+        {
+            "name": "Ever Grande City (Overworld)",
+            "level": 20,
+            "rate": "Overworld",
+            "mode": "static",
+            "zoneid": "evergrandecity-overworld-7"
         }
     ],
     "tyrogue": [
