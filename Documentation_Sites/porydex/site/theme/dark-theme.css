@@ -1,0 +1,370 @@
+.pfx-topbar .header {
+	max-width: 760px;
+}
+
+.pfx-topbar .header .nav .pfx-theme-switch {
+	display: inline-flex;
+	margin-left: 2px;
+}
+
+.pfx-topbar .header .nav .pfx-theme-switch .button {
+	min-width: 58px;
+	padding-left: 9px;
+	padding-right: 9px;
+	border-radius: 0;
+}
+
+.pfx-topbar .header .nav .pfx-theme-switch .button + .button {
+	margin-left: -1px;
+}
+
+.pfx-topbar .header .nav .pfx-theme-switch .button:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.pfx-topbar .header .nav .pfx-theme-switch .button:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+html[data-theme="dark"] {
+	color-scheme: dark;
+	background: #0b1020;
+}
+
+html[data-theme="dark"] body {
+	background:
+		radial-gradient(circle at top, rgba(80, 115, 170, 0.25), transparent 30%),
+		linear-gradient(180deg, #11182a 0, #0b1020 220px, #0b1020 100%);
+	color: #e2e9f7;
+}
+
+html[data-theme="dark"] a {
+	color: #9dc2ff;
+}
+
+html[data-theme="dark"] a:hover {
+	color: #d6e4ff;
+}
+
+html[data-theme="dark"] .textbox {
+	border-color: #3e526f;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.02);
+	background: #162133;
+	color: #edf3ff;
+}
+
+html[data-theme="dark"] .textbox:hover {
+	border-color: #6788b4;
+	background: #1b2940;
+}
+
+html[data-theme="dark"] .textbox:focus {
+	border-color: #7ba8e6;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(123, 168, 230, 0.28), 0 0 14px rgba(73, 126, 202, 0.45);
+	background: #1c2a42;
+}
+
+html[data-theme="dark"] .button {
+	color: #eef4ff;
+	text-shadow: none;
+	border-color: #607da7;
+	background: linear-gradient(180deg, #4c6388 0, #344761 100%);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+html[data-theme="dark"] .button:hover {
+	color: #ffffff;
+	border-color: #81a5d6;
+	background: linear-gradient(180deg, #5c7aa7 0, #3d5577 100%);
+}
+
+html[data-theme="dark"] .button:active {
+	background: linear-gradient(180deg, #31435d 0, #54709a 100%);
+}
+
+html[data-theme="dark"] .button.cur,
+html[data-theme="dark"] .button.cur:hover,
+html[data-theme="dark"] .button:disabled,
+html[data-theme="dark"] .button:disabled:hover {
+	color: #b7c4d9;
+	border-color: #536a8e;
+	background: #1a2537;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="dark"] .greenbutton {
+	border-color: #4d8a67;
+	background: linear-gradient(180deg, #3f7e58 0, #2a5a3e 100%);
+}
+
+html[data-theme="dark"] .greenbutton:hover {
+	border-color: #71b28a;
+	background: linear-gradient(180deg, #4c986a 0, #2f6948 100%);
+}
+
+html[data-theme="dark"] .greenbutton:active {
+	background: linear-gradient(180deg, #27563b 0, #478763 100%);
+}
+
+html[data-theme="dark"] .pfx-topbar {
+	background: linear-gradient(180deg, #223149 0, #121b2b 100%);
+	border-bottom-color: #556f93;
+	text-shadow: none;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+}
+
+html[data-theme="dark"] .nav .button img {
+	filter: brightness(1.08) drop-shadow(0 3px 10px rgba(0, 0, 0, 0.45));
+}
+
+html[data-theme="dark"] .pfx-panel {
+	border-left-color: #40557a;
+	background: #0f1727;
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+html[data-theme="dark"] .pfx-go-left,
+html[data-theme="dark"] .pfx-go-right {
+	background: #111a29;
+	border-left-color: #40557a;
+	background-image: none;
+}
+
+html[data-theme="dark"] .pfx-go-left::before,
+html[data-theme="dark"] .pfx-go-right::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: FontAwesome;
+	font-size: 18px;
+	color: #9cb6dd;
+}
+
+html[data-theme="dark"] .pfx-go-left::before {
+	content: "\f053";
+}
+
+html[data-theme="dark"] .pfx-go-right::before {
+	content: "\f054";
+}
+
+html[data-theme="dark"] .pfx-go-left:hover,
+html[data-theme="dark"] .pfx-go-right:hover {
+	background-color: #18243a;
+}
+
+html[data-theme="dark"] .pfx-go-left:active,
+html[data-theme="dark"] .pfx-go-right:active {
+	background: #22324b;
+}
+
+html[data-theme="dark"] .pfx-loading {
+	border-color: #4e668b;
+	color: #d7e4ff;
+	background: #19263a none;
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.05), inset -1px -1px 0 rgba(0, 0, 0, 0.25), 2px 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme="dark"] .pfx-backbutton {
+	background: #182438 none;
+	border-color: #516b92;
+	color: #dce8ff;
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.08), 1px 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+html[data-theme="dark"] .pfx-backbutton:hover {
+	background: #22324b none;
+	border-color: #7ea2d4;
+	color: #ffffff;
+}
+
+html[data-theme="dark"] .pfx-backbutton:active {
+	background: #101827;
+	color: #d7e3fb;
+	border-color: #5f7da8;
+	box-shadow: inset -1px -1px 0 rgba(255, 255, 255, 0.04), 1px 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+html[data-theme="dark"] .pfx-popup-bg {
+	background: #04070d none;
+	opacity: 0.62;
+}
+
+html[data-theme="dark"] .pfx-popup {
+	background: #182438;
+	border-color: #526c91;
+	box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.05), inset -1px -1px 0 rgba(0, 0, 0, 0.25), 2px 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] .pokedex h1 a,
+html[data-theme="dark"] .dexentry h1 a,
+html[data-theme="dark"] .dexentry h2,
+html[data-theme="dark"] .dexentry p,
+html[data-theme="dark"] .dexentry dd,
+html[data-theme="dark"] .dexentry dl,
+html[data-theme="dark"] .utilichart,
+html[data-theme="dark"] .utilichart a,
+html[data-theme="dark"] .pfx-body,
+html[data-theme="dark"] h2.pfx-body {
+	color: #e2e9f7;
+}
+
+html[data-theme="dark"] .dexentry h1 code,
+html[data-theme="dark"] .dexentry dt,
+html[data-theme="dark"] .dexentry .minor,
+html[data-theme="dark"] .movetag,
+html[data-theme="dark"] .movetag small,
+html[data-theme="dark"] table.stats .ministat,
+html[data-theme="dark"] table.stats th.ministat,
+html[data-theme="dark"] table.stats .bst,
+html[data-theme="dark"] table.stats th,
+html[data-theme="dark"] .col em,
+html[data-theme="dark"] .porydex-encounter-zone-tag {
+	color: #9fb0cc;
+}
+
+html[data-theme="dark"] .dexentry .tier {
+	border-color: #5a6f8d;
+	background: #1c2a40;
+	color: #d5e1f6;
+}
+
+html[data-theme="dark"] .dexentry .fa-mars {
+	color: #8db6ff;
+}
+
+html[data-theme="dark"] .dexentry .fa-venus {
+	color: #f2a3bf;
+}
+
+html[data-theme="dark"] .utilichart a.active,
+html[data-theme="dark"] .utilichart a.active:hover,
+html[data-theme="dark"] .utilichart.nokbd a:hover {
+	border-color: #556b8f;
+	background: #1a2537;
+}
+
+html[data-theme="dark"] .utilichart a.sel,
+html[data-theme="dark"] .utilichart a.sel:hover,
+html[data-theme="dark"] .utilichart a.cur,
+html[data-theme="dark"] .utilichart a.cur:hover {
+	border-color: #7ea2d4;
+	background: #22324b;
+}
+
+html[data-theme="dark"] .utilichart .notfound em {
+	color: #9fb0cc;
+}
+
+html[data-theme="dark"] .utilichart .pokemonnamecol,
+html[data-theme="dark"] .utilichart .shortpokemonnamecol,
+html[data-theme="dark"] .utilichart .movenamecol,
+html[data-theme="dark"] .utilichart .shortmovenamecol,
+html[data-theme="dark"] .utilichart .namecol {
+	color: #edf3ff;
+}
+
+html[data-theme="dark"] .utilichart .pokemonnamecol small,
+html[data-theme="dark"] .utilichart .shortpokemonnamecol small,
+html[data-theme="dark"] .utilichart .movenamecol small,
+html[data-theme="dark"] .utilichart .shortmovenamecol small,
+html[data-theme="dark"] .utilichart .namecol small {
+	color: #c7d5ec;
+}
+
+html[data-theme="dark"] .utilichart .abilitycol,
+html[data-theme="dark"] .utilichart .twoabilitycol,
+html[data-theme="dark"] .utilichart .abilitydesccol,
+html[data-theme="dark"] .utilichart .itemdesccol,
+html[data-theme="dark"] .utilichart .movedesccol,
+html[data-theme="dark"] .utilichart .tagcol,
+html[data-theme="dark"] .utilichart .filtercol,
+html[data-theme="dark"] .utilichart .illegalcol {
+	color: #b9c8de;
+}
+
+html[data-theme="dark"] .utilichart .labelcol,
+html[data-theme="dark"] .utilichart .widelabelcol,
+html[data-theme="dark"] .utilichart .pplabelcol,
+html[data-theme="dark"] .utilichart .statcol,
+html[data-theme="dark"] .utilichart .bstcol {
+	color: #d5e1f6;
+}
+
+html[data-theme="dark"] .utilichart .labelcol em,
+html[data-theme="dark"] .utilichart .widelabelcol em,
+html[data-theme="dark"] .utilichart .pplabelcol em,
+html[data-theme="dark"] .utilichart .statcol em,
+html[data-theme="dark"] .utilichart .bstcol em {
+	color: #9fb0cc;
+}
+
+html[data-theme="dark"] a.subtle {
+	color: #f4f8ff;
+}
+
+html[data-theme="dark"] a.subtle:hover {
+	color: #a9c9ff;
+}
+
+html[data-theme="dark"] .warning {
+	border-color: #d28a38;
+	background: #3b2610;
+	color: #f6e2c5;
+}
+
+html[data-theme="dark"] .tabbar:after {
+	background: #111a29;
+	border-color: #506a90;
+}
+
+html[data-theme="dark"] .tabbar .button.cur,
+html[data-theme="dark"] .tabbar .button.cur:hover {
+	color: #d9e5fb;
+	background: #111a29;
+	border-color: #506a90;
+}
+
+html[data-theme="dark"] .pfx-encounters .enc-left,
+html[data-theme="dark"] .pfx-encounters .enc-right,
+html[data-theme="dark"] .pfx-encounters .enc-location-list,
+html[data-theme="dark"] .pfx-encounters .enc-details {
+	border-color: #40557a;
+	background: #131d2d;
+}
+
+html[data-theme="dark"] .pfx-encounters .enc-list-title,
+html[data-theme="dark"] .pfx-encounters .enc-locations-header {
+	border-color: #40557a;
+	background: #1d2c43;
+	color: #e4ebf9;
+}
+
+html[data-theme="dark"] .pfx-encounters .enc-table th,
+html[data-theme="dark"] .pfx-encounters .enc-table td {
+	border-top-color: #2c3a53;
+}
+
+html[data-theme="dark"] .pfx-encounters .enc-list-ul a:hover,
+html[data-theme="dark"] .pfx-encounters .enc-loc-summary:hover,
+html[data-theme="dark"] .pfx-encounters .enc-loc-subitem a:hover,
+html[data-theme="dark"] .pfx-encounters .enc-location-list .enc-location-link.cur,
+html[data-theme="dark"] .utilichart .porydex-encounter-zone-row-static {
+	background: #1d2c43;
+}
+
+html[data-theme="dark"] .pfx-encounters .enc-mon-link,
+html[data-theme="dark"] .pfx-encounters .enc-list-ul a,
+html[data-theme="dark"] .pfx-encounters .enc-loc-summary,
+html[data-theme="dark"] .pfx-encounters .enc-loc-subitem a,
+html[data-theme="dark"] .pfx-encounters .enc-content,
+html[data-theme="dark"] .pfx-encounters .enc-header {
+	color: #e2e9f7;
+}
+
+html[data-theme="dark"] .footer {
+	color: #7f91af;
+}

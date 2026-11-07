@@ -1,0 +1,52 @@
+# regex => candidates (local filename / showdown:<name> / full URL). Separate candidates with | or ,
+# ESEMPIO:
+# ^Developer\s+Andry$ => Andry_front_pic.png
+# ^\s*Parasol\s*Lady\b => parasol_custom.png | showdown:parasollady
+# ^\s*(?:Team\s+)?Magma\s+(?:Leader|Boss)\s+Maxie\b => showdown:maxie | maxie.png
+
+# --- Sviluppatori personalizzati ---
+^Developer\s+Andry$     => Andry_front_pic.png
+^Developer\s+Splitface$ => Splitface_front.png
+
+# --- Casi specifici richiesti ---
+^\s*Parasol\s*Lady\b => parasol_custom.png | showdown:parasollady
+^\s*(?:Team\s+)?Magma\s+(?:Leader|Boss)\s+Maxie\b => showdown:maxie | maxie-gen3.png
+^\s*Sr\s*(?:\.|and)?\s*&?\s*Jr.*ANNA.*MEG => srandjr.png | showdown:srandjr
+
+# --- Team Grunt / Admin / Leader ---
+^\s*(?:Team\s+)?Aqua\s+Grunt\b => showdown:aquagrunt
+^\s*(?:Team\s+)?Magma\s+Grunt\b => showdown:magmagrunt
+^\s*(?:Team\s+)?Magma\s+Admin\s+Tabitha\b => showdown:tabitha
+^\s*Leader\s+Johto\s+BUGSY\b => showdown:bugsy
+
+# --- Cooltrainer / Ace Trainer ---
+^\s*Cool\s*Trainer\s*M\b|^\s*Cooltrainer\s*M\b|^\s*Ace\s*Trainer\s*M\b => showdown:cooltrainerm | showdown:acetrainer-m | showdown:acetrainer
+^\s*Cool\s*Trainer\s*F\b|^\s*Cooltrainer\s*F\b|^\s*Ace\s*Trainer\s*F\b => showdown:cooltrainerf | showdown:acetrainer-f | showdown:acetrainer
+^\s*Cool\s*Trainer\b|^\s*Cooltrainer\b|^\s*Ace\s*Trainer\b => showdown:cooltrainerm | showdown:cooltrainerf | showdown:acetrainer
+
+# --- Triathlete / Cyclist ---
+^\s*Triathlete\s+.*\bM\b => showdown:triathleterunnerm-gen3.png | showdown:triathlete | showdown:cyclist | showdown:biker
+^\s*Triathlete\s+.*\bF\b => showdown:triathleterunnerf-gen3.png | showdown:triathlete | showdown:cyclist | showdown:biker
+^\s*Triathlete\b => showdown:triathlete | showdown:triathlete-gen3 | showdown:triathlete-m | showdown:triathlete-f | showdown:cyclist | showdown:biker
+
+# --- Altre classi comuni ---
+^\s*Kindler\b => showdown:kindler
+^\s*Bug\s*Maniac\b => showdown:bugmaniac | bugmaniac-gen3.png
+^\s*Pok[eé]mon\s*Breeder\b|^\s*Pkmn\s*Breeder\b => showdown:pkmnbreeder
+^\s*Twins?\b => showdown:twins
+^\s*Fisher(?:man)?\b => showdown:fisherman
+^\s*Sailor\b => showdown:sailor
+^\s*Hiker\b => showdown:hiker
+^\s*Black\s*Belt\b => showdown:blackbelt
+^\s*Battle\s*Girl\b => showdown:battlegirl
+^\s*Guitarist\b => showdown:guitarist
+^\s*Bug\s*Catcher\b => showdown:bugcatcher
+^\s*Lady\b$ => showdown:lady
+^\s*Rich\s*Boy\b => showdown:richboy
+^\s*Tuber\b.*\bF\b => showdown:tuberf | showdown:tuber
+^\s*Tuber\b => showdown:tuber
+^\s*Swimmer\s*M\b => showdown:triathleteswimmerm-gen3.png
+^\s*Swimmer\s*F\b => showdown:triathleteswimmerf-gen3.png
+
+# --- Fallback generico per qualunque "Developer <Nome>" (se vuoi)
+# ^Developer\b.* => default_dev.png

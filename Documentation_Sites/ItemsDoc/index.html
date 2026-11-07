@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obtainable Items</title>
+  <style>
+    :root {
+      --paper: #d4ccbe;
+      --paper-alt: #bfb39f;
+      --card: #e9dfcf;
+      --ink: #1b252c;
+      --muted: #3f4c56;
+      --line: #9e8e77;
+      --accent: #0f5a62;
+      --choice-bg: #ecd8a8;
+      --choice-ink: #6d3d00;
+      --shadow: 0 8px 24px rgba(20, 23, 27, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+      line-height: 1.5;
+      background:
+        radial-gradient(circle at 12% 14%, rgba(15, 90, 98, 0.22), transparent 34%),
+        radial-gradient(circle at 88% 0%, rgba(151, 92, 25, 0.18), transparent 30%),
+        linear-gradient(160deg, var(--paper), var(--paper-alt));
+    }
+
+    .wrap {
+      width: min(900px, 92vw);
+      margin: 24px auto 48px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f5560, #1a4860);
+      color: #f5f9fa;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      letter-spacing: 0.2px;
+    }
+
+    .hero p {
+      margin: 8px 0 0;
+      color: rgba(244, 250, 252, 0.92);
+      max-width: 68ch;
+    }
+
+    .chips {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      font-size: 0.82rem;
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.14);
+      color: #f3fbfb;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .meta {
+      margin: 16px 0 10px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      background: var(--card);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 5px 18px rgba(24, 29, 32, 0.07);
+      color: var(--muted);
+    }
+
+    .meta strong { color: var(--ink); }
+
+    .timeline {
+      margin-top: 18px;
+      border-left: 2px solid #8e7e67;
+      padding-left: 18px;
+    }
+
+    .split {
+      position: relative;
+      margin-bottom: 14px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: 0 5px 16px rgba(24, 29, 32, 0.06);
+    }
+
+    .split::before {
+      content: "";
+      position: absolute;
+      left: -26px;
+      top: 16px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid #e4dac8;
+    }
+
+    .split h2 {
+      margin: 0 0 8px;
+      font-size: 1.04rem;
+      letter-spacing: 0.1px;
+    }
+
+    .split ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .split li + li { margin-top: 5px; }
+
+    .tag {
+      display: inline-block;
+      margin-left: 6px;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      border: 1px solid #d2b071;
+      background: var(--choice-bg);
+      color: var(--choice-ink);
+      vertical-align: 1px;
+    }
+
+    .item,
+    .chip-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      white-space: nowrap;
+    }
+
+    .item {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .item-icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      vertical-align: middle;
+    }
+
+    .totals {
+      margin-top: 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 5px 16px rgba(24, 29, 32, 0.06);
+      padding: 14px;
+    }
+
+    .totals h2 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .totals ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .wrap { margin-top: 16px; }
+
+      .hero,
+      .split,
+      .meta,
+      .totals { border-radius: 10px; }
+
+      .timeline { padding-left: 14px; }
+      .split::before { left: -22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>Obtainable Items</h1>
+      <p>User-friendly vertical tracking page for item balancing, scoped up to the Norman split.</p>
+      <div class="chips">
+        <span class="chip chip-item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>
+        <span class="chip chip-item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>
+      </div>
+    </header>
+
+    <section class="meta" aria-label="Scope">
+      <strong>Scope:</strong> Boss-split progression up to Norman. Entries tagged as choice are mutually exclusive within that encounter.
+    </section>
+
+    <section class="timeline" aria-label="Boss splits">
+      <article class="split">
+        <h2>Roxanne Badge</h2>
+        <ul>
+          <li>Petalburg City: choose between <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span> and <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>. <span class="tag">Choice</span></li>
+          <li>Route 104: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>.</li>
+          <li>Rustboro: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>.</li>
+        </ul>
+      </article>
+
+      <article class="split">
+        <h2>Brawly Badge</h2>
+        <ul>
+          <li>Rustboro Rival reward: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span> or <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>, based on the first choice. <span class="tag">Choice</span></li>
+          <li>Route 106 hidden pickup: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>.</li>
+          <li>Route 106 hidden pickup: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>.</li>
+          <li>Granite Cave: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>.</li>
+          <li>Route 109 hidden pickup: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>.</li>
+        </ul>
+      </article>
+
+      <article class="split">
+        <h2>Wattson Badge</h2>
+        <ul>
+          <li>Trick House reward: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>.</li>
+          <li>Route 103: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>.</li>
+          <li>Route 110: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>.</li>
+          <li>Route 118: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>.</li>
+          <li>Route 117: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>.</li>
+          <li>Route 116: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>.</li>
+          <li>Route 111: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>.</li>
+          <li>Dune Cave: choose between <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span> and <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Ability_Patch_SV_Sprite.png" alt="" aria-hidden="true" />Ability Patch</span>. <span class="tag">Choice</span></li>
+        </ul>
+      </article>
+
+      <article class="split">
+        <h2>Mt. Chimney Split</h2>
+        <ul>
+          <li>Route 112: choose between <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span> and <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Ability_Patch_SV_Sprite.png" alt="" aria-hidden="true" />Ability Patch</span>. <span class="tag">Choice</span></li>
+          <li>Route 114: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>.</li>
+        </ul>
+      </article>
+
+      <article class="split">
+        <h2>Flannery Badge</h2>
+        <ul>
+          <li>Meteor Falls 1F: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>.</li>
+          <li>Route 115: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>.</li>
+          <li>Route 115: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>.</li>
+          <li>Mt. Chimney: choose between <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span> and <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span>. <span class="tag">Choice</span></li>
+          <li>Jagged Pass: <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>.</li>
+        </ul>
+      </article>
+
+      <article class="split">
+        <h2>Route 111 Desert</h2>
+        <ul>
+          <li><span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>.</li>
+        </ul>
+      </article>
+
+      <article class="split">
+        <h2>Norman Split</h2>
+        <ul>
+          <li>Cycling Road: choose between <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Heart_Scale_BDSP_Sprite.png" alt="" aria-hidden="true" />Heart Scale</span> and <span class="item"><img class="item-icon" src="https://archives.bulbagarden.net/wiki/Special:FilePath/Bag_Rare_Candy_SV_Sprite.png" alt="" aria-hidden="true" />Rare Candy</span>. <span class="tag">Choice</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="totals" aria-label="Declared totals">
+      <h2>Declared Totals</h2>
+      <ul>
+        <li><strong>Heart Scales up to Norman:</strong> 14 (10 guaranteed, excluding choice outcomes)</li>
+        <li><strong>Rare Candies up to Norman:</strong> 13 (10 guaranteed, excluding choice outcomes)</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

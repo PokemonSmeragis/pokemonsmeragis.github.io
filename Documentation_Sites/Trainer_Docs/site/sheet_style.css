@@ -1,0 +1,158 @@
+/* ===== Reset base ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; font-family: sans-serif; background: #fff; color: #111; }
+
+/* ===== Topbar / Tabs (come avevamo, ma con più respiro) ===== */
+.topbar {
+
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 12px;
+  padding: 0 14px;
+  background-color: #14191f;
+  border-bottom: 1px solid #0c0f13;
+
+  height: 48px;
+  line-height: 48px;
+}
+.topbar .brand { color: #ffcb5a; font-weight: 700; }
+.topbar .toplink { color: #ffcb5a; text-decoration: none; }
+.topbar .toplink:hover { color: #fff; }
+
+.splitbar { margin-top: 0; 
+  position: sticky; top: 48px; z-index: 49;
+  padding: 8px 14px;
+  background-color: #14191f;
+  border-bottom: 1px solid #0c0f13;
+  overflow-x: auto; white-space: nowrap;
+}
+.splitbar button {
+  display: inline-block;
+  margin-right: .5rem; padding: .4rem .8rem;
+  border-radius: 999px; border: 1px solid #2a2f36;
+  background: #1b2027; color: #ffcb5a; cursor: pointer;
+}
+.splitbar button.active {
+  background: #2a3039; color: #fff; border-color: #3c4654;
+}
+
+/* ===== Contenitore ===== */
+main#sheet { max-width: 1200px; margin: 22px auto 40px; padding: 0 18px; }
+
+/* Ogni pannello può scrollare in orizzontale se le colonne sono tante */
+.split-panel { display: none; overflow-x: auto; padding-bottom: 8px; }
+.split-panel.active { display: block; }
+.split-title { margin: 10px 0 10px; font-size: 1.06rem; color: #333; }
+.split-group {
+  margin: 12px 0 16px;
+  border: 1px solid #d8dee8;
+  border-radius: 12px;
+  background: #f8fafc;
+  overflow: hidden;
+}
+.split-group summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 700;
+  color: #1f2937;
+  background: #eef2f7;
+  border-bottom: 1px solid #d8dee8;
+  list-style: none;
+}
+.split-group summary::-webkit-details-marker { display: none; }
+.split-group summary::after {
+  content: "+";
+  float: right;
+  color: #475569;
+}
+.split-group[open] summary::after { content: "-"; }
+.split-group-body { padding: 8px 12px 2px; }
+
+/* ===== Tabelle ===== */
+.content-table {
+  width: 100%;
+  margin: 18px 0 26px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;                /* niente “fixed”: evitiamo stringimenti */
+  box-shadow: 0 0 50px rgba(0,0,0,.2);
+  background: #fff;
+  border: 1px solid #000;
+}
+
+/* Caption: più alto, con wrap e spazio per le foto */
+.caption-content {
+  background-color: #1b2027;
+  color: #ffcb5a;
+  padding: 10px 16px;
+  text-align: center;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 12px;
+  flex-wrap: wrap;                    /* permette di andare a capo */
+  min-height: 64px;                   /* evita che le immagini escano */
+}
+
+.caption-content a {
+  color: #ffcb5a !important;
+  text-decoration: underline dotted;
+}
+.caption-content a:hover, .caption-content a:focus {
+  color: #ffffff !important;
+}
+
+/* Trainer pics: dimensione massima e niente overflow */
+.caption-content .trainer-pic {
+  flex: 0 0 auto;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  image-rendering: auto;
+  max-width: 100%;
+}
+.caption-content .trainer-pic.hidden { display: none; }
+
+/* Celle: più spazio e allineamento coerente */
+.content-table th,
+.content-table td {
+  border: 1px solid #000;
+  min-width: 130px;
+  padding: 6px 12px;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+/* Zebra */
+.content-table tbody tr { background: #ffffff; }
+.content-table tbody tr:nth-of-type(even) { background: #dddddd; }
+.content-table tbody tr:last-of-type { border-bottom: 3px solid #03396c; }
+
+/* Sprite dei Pokémon compatti e centrati */
+.content-table img {
+  height: 120px;
+  image-rendering: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Divisore 3|3 nelle doppie, spesso uguale su tutte le righe */
+.content-table td.cut-right,
+.content-table th.cut-right {
+  border-right: 4px solid #0c0f13 !important;
+}
+
+/* ===== Responsività: su schermi stretti riduciamo un filo le immagini ===== */
+@media (max-width: 780px) {
+  .caption-content { padding: 8px 12px; gap: 8px 10px; }
+  .caption-content .trainer-pic { width: 52px; height: 52px; }
+  .content-table img { height: 64px; }
+  .content-table th, .content-table td { min-width: 110px; padding: 5px 10px; }
+}
+@media (max-width: 520px) {
+  .caption-content .trainer-pic { width: 46px; height: 46px; }
+  .content-table img { height: 58px; }
+  .content-table th, .content-table td { min-width: 100px; padding: 4px 8px; }
+}

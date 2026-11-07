@@ -1,0 +1,147 @@
+/* Encounters: allow wider layout than the default 640px body */
+.pfx-body.pfx-encounters{
+  max-width: 1100px;
+}
+
+/* Left list: remove bullets + make it look like a panel */
+.pfx-encounters .enc-left{
+  border: 1px solid #ccd;
+  background: #fff;
+  min-width: 0;
+}
+.pfx-encounters .enc-list-title{
+  font-weight: bold;
+  padding: 6px 10px;
+  background: #dfe7f7;
+  border-bottom: 1px solid #ccd;
+}
+.pfx-encounters .enc-list{
+  max-height: 70vh;
+  overflow: auto;
+}
+.pfx-encounters .enc-list-ul{
+  list-style: none;
+  margin: 0;
+  padding: 6px 8px;
+}
+.pfx-encounters .enc-list-ul a{
+  display: block;
+  padding: 2px 6px;
+  text-decoration: none;
+}
+.pfx-encounters .enc-list-ul a:hover{
+  background: #f0f0f0;
+}
+
+/* Right panel */
+.pfx-encounters .enc-right{
+  border: 1px solid #ccd;
+  background: #fff;
+  min-width: 0;
+}
+.pfx-encounters .enc-header{
+  padding: 6px 10px 0;
+}
+.pfx-encounters .enc-content{
+  padding: 0 10px 10px;
+}
+
+/* Table spacing */
+.pfx-encounters .enc-table{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.pfx-encounters .enc-table th,
+.pfx-encounters .enc-table td{
+  border-top: 1px solid #eee;
+  padding: 6px 8px;
+  vertical-align: middle;
+}
+.pfx-encounters .enc-rate-col,
+.pfx-encounters .enc-lvl-col{
+  width: 90px;
+  text-align: right;
+}
+.pfx-encounters .enc-mon .picon{
+  margin-right: 8px;
+}
+
+.pfx-encounters .enc-section-title{
+  margin: 12px 0 6px;
+}
+
+/* Collapsible groups in location list */
+.pfx-encounters .enc-loc-details {
+  margin: 0;
+}
+
+.pfx-encounters .enc-loc-summary {
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.pfx-encounters .enc-loc-summary:hover {
+  background: #f0f0f0;
+}
+
+.pfx-encounters .enc-loc-sublist {
+  list-style: none;
+  margin: 4px 0 6px 10px;
+  padding: 0;
+}
+
+.pfx-encounters .enc-loc-subitem a {
+  display: block;
+  padding: 2px 6px;
+}
+
+.pfx-encounters .enc-loc-subitem a:hover {
+  background: #f7f7f7;
+}
+
+.porydex-encounter-zone-row,
+.porydex-encounter-zone-row-static {
+  display: grid !important;
+  grid-template-columns: 8.5em minmax(0, 1fr);
+  align-items: center;
+  column-gap: 14px;
+  white-space: normal;
+}
+
+.utilichart a.porydex-encounter-zone-row {
+  display: grid !important;
+  overflow: visible;
+}
+
+.porydex-encounter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.utilichart .porydex-encounter-zone-row-static {
+  margin: 0 5px 1px 5px;
+  padding: 1px 1px 1px 5px;
+  border-radius: 4px;
+}
+
+.porydex-encounter-zone-tag {
+  display: block;
+  font-weight: 600;
+  color: #666;
+}
+
+.porydex-encounter-zone-tag-rate {
+  width: 4.5em;
+}
+
+.porydex-encounter-zone-tag-static {
+  width: 8.5em;
+}
+
+.porydex-encounter-zone-name {
+  display: block;
+  min-width: 0;
+}
