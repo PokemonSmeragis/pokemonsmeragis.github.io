@@ -3,407 +3,834 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Battle AI Behavior — Pokémon Smeragis</title>
+  <title>Battle AI Manual — Pokémon Smeragis</title>
+  <meta name="description" content="How enemy trainers think: move scores, switching, Boss vs Standard trainers, double battles." />
 
   <style>
-    /* ===========================
-       PAGE-LEVEL DARK BACKGROUND
-       =========================== */
     html, body{
-      height: 100%;
+      min-height: 100%;
       margin: 0;
       background: #0b1020;
       color: #e7edf6;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height: 1.6;
     }
+    .page-wrap{ max-width: 1120px; margin: 0 auto; padding: 28px 16px; }
 
-    /* A safe “content width” wrapper (optional) */
-    .page-wrap{
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 28px 18px;
-    }
-
-    /* ===========================
-       AI DOCUMENT STYLES
-       =========================== */
     #ai-behavior{
       --ai-text:#e7edf6;
       --ai-muted:#a7b4c8;
       --ai-line:rgba(255,255,255,.10);
-      --ai-bg:#0b1020;
       --ai-card:rgba(15,23,48,.92);
       --ai-soft:rgba(12,20,42,.80);
       --ai-accent:#7bd8ff;
       --ai-tip:#86efac;
+      --ai-warn:#fbbf24;
+      --ai-plus:#86efac;
+      --ai-minus:#fca5a5;
       --ai-radius:18px;
-
       color: var(--ai-text);
-      background: transparent;
     }
-
     #ai-behavior .ai-surface{
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)) , rgba(10,16,32,.55);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)), rgba(10,16,32,.55);
       border: 1px solid var(--ai-line);
       border-radius: 26px;
       padding: 22px 20px;
       box-shadow: 0 22px 70px rgba(0,0,0,.45);
     }
+    @media (max-width: 600px){ #ai-behavior .ai-surface{ padding: 16px 12px; border-radius: 18px; } }
 
-    #ai-behavior .ai-hero{
-      padding: 4px 0 14px;
-      border-bottom: 1px solid var(--ai-line);
-      margin-bottom: 14px;
-    }
-    #ai-behavior h1{
-      margin: 0 0 6px;
-      font-size: clamp(1.7rem, 2.4vw, 2.35rem);
-      letter-spacing: .2px;
-    }
+    #ai-behavior .ai-hero{ padding: 4px 0 14px; border-bottom: 1px solid var(--ai-line); margin-bottom: 14px; }
+    #ai-behavior h1{ margin: 0 0 6px; font-size: clamp(1.7rem, 2.4vw, 2.35rem); letter-spacing: .2px; }
     #ai-behavior .ai-subtitle{ margin: 0 0 6px; color: var(--ai-muted); }
     #ai-behavior .ai-meta{ margin: 0; color: var(--ai-muted); font-size: .95rem; }
 
     #ai-behavior .ai-toc{
-      margin: 18px 0 24px;
-      padding: 14px;
-      border: 1px solid var(--ai-line);
-      border-radius: var(--ai-radius);
-      background: var(--ai-soft);
-      backdrop-filter: blur(6px);
+      margin: 18px 0 24px; padding: 14px;
+      border: 1px solid var(--ai-line); border-radius: var(--ai-radius); background: var(--ai-soft);
     }
-    #ai-behavior .ai-toc__title{ margin: 0 0 10px; font-size: 1.1rem; }
-    #ai-behavior .ai-toc__list{ margin: 0; padding-left: 18px; }
+    #ai-behavior .ai-toc__title{ margin: 0 0 10px; font-size: 1.1rem; border: 0; padding: 0; }
+    #ai-behavior .ai-toc__list{ margin: 0; padding-left: 22px; columns: 2; column-gap: 28px; }
+    @media (max-width: 700px){ #ai-behavior .ai-toc__list{ columns: 1; } }
+    #ai-behavior .ai-toc__list li{ break-inside: avoid; margin: 3px 0; }
     #ai-behavior a{ color: var(--ai-accent); text-decoration: none; }
     #ai-behavior a:hover{ text-decoration: underline; }
 
-    #ai-behavior .ai-section{ margin: 22px 0; }
-    #ai-behavior .ai-section h2{
-      font-size: 1.35rem;
-      margin: 0 0 10px;
-      padding-top: 10px;
-      border-top: 1px solid var(--ai-line);
+    #ai-behavior .ai-section{ margin: 26px 0; scroll-margin-top: 12px; }
+    #ai-behavior .ai-section > h2{
+      font-size: 1.4rem; margin: 0 0 10px; padding-top: 14px; border-top: 1px solid var(--ai-line);
     }
+    #ai-behavior h3{ font-size: 1.08rem; margin: 18px 0 8px; }
+    #ai-behavior h4{ font-size: 1rem; margin: 14px 0 6px; color: var(--ai-accent); }
     #ai-behavior p{ margin: 0 0 10px; }
+    #ai-behavior ul, #ai-behavior ol{ margin: 0 0 10px; padding-left: 20px; }
+    #ai-behavior li{ margin: 4px 0; }
+    #ai-behavior .ai-muted{ color: var(--ai-muted); }
+    #ai-behavior strong{ color: #fff; }
 
-    #ai-behavior .ai-grid-2{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-    @media (min-width: 860px){
-      #ai-behavior .ai-grid-2{ grid-template-columns: 1fr 1fr; }
-    }
+    #ai-behavior .ai-grid-2{ display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 860px){ #ai-behavior .ai-grid-2{ grid-template-columns: 1fr 1fr; } }
 
     #ai-behavior .ai-card{
-      background: var(--ai-card);
-      border: 1px solid var(--ai-line);
-      border-radius: var(--ai-radius);
-      padding: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      background: var(--ai-card); border: 1px solid var(--ai-line); border-radius: var(--ai-radius);
+      padding: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.25); margin: 0 0 12px;
     }
-    #ai-behavior .ai-card h3{ margin: 0 0 8px; font-size: 1.05rem; }
-    #ai-behavior .ai-card ul{ margin: 0; padding-left: 18px; }
-    #ai-behavior .ai-card li{ margin: 6px 0; }
+    #ai-behavior .ai-card h3{ margin: 0 0 8px; }
+    #ai-behavior .ai-card ul{ margin: 0; }
 
-    #ai-behavior .ai-steps{ margin: 0; padding-left: 18px; }
+    #ai-behavior .ai-steps{ margin: 0; padding-left: 22px; }
     #ai-behavior .ai-steps li{ margin: 10px 0; }
-    #ai-behavior .ai-steps__desc{ display: block; color: var(--ai-muted); margin-top: 4px; }
+    #ai-behavior .ai-steps__desc{ display: block; color: var(--ai-muted); margin-top: 2px; }
 
     #ai-behavior .ai-callout{
-      margin: 12px 0;
-      padding: 12px 14px;
-      border-radius: var(--ai-radius);
-      border: 1px solid var(--ai-line);
-      background: var(--ai-soft);
+      margin: 12px 0; padding: 12px 14px; border-radius: var(--ai-radius);
+      border: 1px solid var(--ai-line); background: var(--ai-soft);
     }
     #ai-behavior .ai-callout--info{ border-left: 4px solid var(--ai-accent); }
     #ai-behavior .ai-callout--tip{ border-left: 4px solid var(--ai-tip); }
+    #ai-behavior .ai-callout--warn{ border-left: 4px solid var(--ai-warn); }
     #ai-behavior .ai-callout p{ margin: 0; color: var(--ai-muted); }
+    #ai-behavior .ai-callout p + p{ margin-top: 6px; }
 
     #ai-behavior details{
-      margin: 10px 0;
-      border: 1px solid var(--ai-line);
-      border-radius: var(--ai-radius);
-      padding: 8px 12px;
-      background: rgba(12,20,42,.65);
+      margin: 10px 0; border: 1px solid var(--ai-line); border-radius: var(--ai-radius);
+      padding: 8px 12px; background: rgba(12,20,42,.65);
     }
-    #ai-behavior summary{
-      cursor: pointer;
-      color: var(--ai-accent);
-      font-weight: 700;
-    }
-    #ai-behavior details p,
-    #ai-behavior details ul{ margin: 10px 0 6px; color: var(--ai-muted); }
-    #ai-behavior details ul{ padding-left: 18px; }
+    #ai-behavior details[open]{ padding-bottom: 12px; }
+    #ai-behavior summary{ cursor: pointer; color: var(--ai-accent); font-weight: 700; }
+    #ai-behavior details > *:not(summary){ margin-top: 10px; }
 
-    #ai-behavior .ai-muted{ color: var(--ai-muted); }
+    /* Tables */
+    #ai-behavior .ai-table-wrap{ overflow-x: auto; margin: 8px 0 14px; border: 1px solid var(--ai-line); border-radius: 14px; }
+    #ai-behavior table{ width: 100%; border-collapse: collapse; font-size: .94rem; min-width: 520px; }
+    #ai-behavior th, #ai-behavior td{ text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--ai-line); }
+    #ai-behavior th{ background: rgba(123,216,255,.08); color: #fff; font-weight: 700; white-space: nowrap; }
+    #ai-behavior tr:last-child td{ border-bottom: 0; }
+    #ai-behavior td:first-child{ font-weight: 600; }
+    #ai-behavior td.num, #ai-behavior th.num{ white-space: nowrap; text-align: center; }
 
-    #ai-behavior .ai-footer{
-      margin: 26px 0 6px;
-      padding-top: 14px;
-      border-top: 1px solid var(--ai-line);
+    #ai-behavior .p{ color: var(--ai-plus); font-weight: 700; white-space: nowrap; }
+    #ai-behavior .m{ color: var(--ai-minus); font-weight: 700; white-space: nowrap; }
+    #ai-behavior .tag{
+      display: inline-block; font-size: .78rem; font-weight: 700; padding: 1px 8px; border-radius: 999px;
+      border: 1px solid var(--ai-line); background: rgba(255,255,255,.06); margin-right: 4px; white-space: nowrap;
     }
+    #ai-behavior .tag--boss{ color: #fbbf24; border-color: rgba(251,191,36,.4); }
+    #ai-behavior .tag--std{ color: #7bd8ff; border-color: rgba(123,216,255,.4); }
+    #ai-behavior .tag--custom{ color: #c4b5fd; border-color: rgba(196,181,253,.4); }
+
+    #ai-behavior .ai-footer{ margin: 26px 0 6px; padding-top: 14px; border-top: 1px solid var(--ai-line); }
   </style>
 </head>
 
 <body>
   <div class="page-wrap">
-    <section id="ai-behavior" class="ai-doc">
+    <section id="ai-behavior">
       <div class="ai-surface">
         <header class="ai-hero">
-          <div class="ai-hero__text">
-            <h1>Battle AI Behavior</h1>
-            <p class="ai-meta">
-              Updated: <time datetime="2026-02-15">February 15, 2026</time>
-            </p>
-          </div>
+          <h1>Battle AI Manual</h1>
+          <p class="ai-subtitle">How enemy trainers think: what they know, how they score every move, and when they switch.</p>
+          <p class="ai-meta">Updated: <time datetime="2026-11-10">November 10, 2026</time></p>
         </header>
 
-        <nav class="ai-toc" aria-label="AI document table of contents">
+        <nav class="ai-toc" aria-label="Table of contents">
           <h2 class="ai-toc__title">Contents</h2>
-            <ol class="ai-toc__list">
-              <li><a href="#ai-scope">Introduction</a></li>
-              <li><a href="#ai-profiles">AI profiles: Standard vs Boss</a></li>
-              <li><a href="#ai-turn-loop">Turn decision pipeline</a></li>
-              <li><a href="#ai-ko-priority">KO logic, priority, and speed control</a></li>
-              <li><a href="#ai-switching">Switching: when and why</a></li>
-              <li><a href="#ai-move-filtering">Move Selecting</a></li>
-              <li><a href="#ai-knowledge-memory">Battle knowledge</a></li>
-              <li><a href="#ai-double-battles">Double battles behavior</a></li>
-              <li><a href="#ai-limits">Notes</a></li>
-            </ol>
+          <ol class="ai-toc__list">
+            <li><a href="#basics">How the AI picks a move</a></li>
+            <li><a href="#profiles">Standard trainers vs Bosses</a></li>
+            <li><a href="#turn">The AI's thinking</a></li>
+            <li><a href="#scale">Generic score scale</a></li>
+            <li><a href="#filter">Step 1: Bad move filter</a></li>
+            <li><a href="#ko">Step 2: KO logic, speed and priority</a></li>
+            <li><a href="#damage">Step 3a: Choosing between attacks</a></li>
+            <li><a href="#effects">Step 3b: Move effect scores</a></li>
+            <li><a href="#hp">Step 4: HP awareness</a></li>
+            <li><a href="#example">Worked example</a></li>
+            <li><a href="#switching">When the AI switches out</a></li>
+            <li><a href="#sendin">Which Pokémon it sends in</a></li>
+            <li><a href="#doubles">Double battles</a></li>
+            <li><a href="#other">Other behaviour</a></li>
+          </ol>
         </nav>
 
-        <section id="ai-scope" class="ai-section">
-          <h2>Introduction</h2>
+        <!-- ============ BASICS ============ -->
+        <section id="basics" class="ai-section">
+          <h2>1. How the AI picks a move</h2>
           <p>
-            This page documents <strong>observable battle behavior</strong>: how the AI chooses moves and switches,
-            how it handles KO opportunities, and how it reacts to revealed information.
+            Every turn, each enemy Pokémon gives a <strong>score</strong> to each of its moves. Every move starts at
+            <strong>100 points</strong>. The AI then goes through a fixed series of checks that add or remove points.
+            <strong>The move with the highest final score is used.</strong> If two or more moves tie, one of them is picked at random.
           </p>
-          <!-- <div class="ai-callout ai-callout--info" role="note" aria-label="Testing note">
-            <p>
-              Conclusions are based on targeted scenarios designed to isolate single decisions whenever possible.
-              In real fights, multiple factors interact (RNG, mid-game information, team state).
-            </p>
-          </div> -->
-        </section>
-
-        <section id="ai-profiles" class="ai-section">
-          <h2>AI profiles: Standard vs Boss</h2>
-          <div class="ai-grid-2">
-            <article class="ai-card">
-              <h3>Standard Trainers</h3>
-              <ul>
-                <li>Core goal order: <strong>don't waste turns</strong> → <strong>take clean KOs</strong> → <strong>improve matchup</strong>.</li>
-                <li>Not always perfect information: some reads depend on what has been revealed during the battle.</li>
-                <li>Sensible switching and post-KO sends, with more room for surprise value.</li>
-              </ul>
-            </article>
-
-            <article class="ai-card">
-              <h3>Boss fights</h3>
-              <ul>
-                <li>Same tactical foundation as Standard Trainers.</li>
-                <li><strong>More accurate reads</strong> of your overall team situation → fewer blind lines.</li>
-                <li>More coherent switching vs coverage; fewer free turns; cleaner risk management.</li>
-              </ul>
-            </article>
+          <ul>
+            <li>Bonuses are small, usually between <span class="p">+1</span> and <span class="p">+6</span>. A few points decide the move.</li>
+            <li>Penalties are large (<span class="m">−10</span>, <span class="m">−20</span>, <span class="m">−30</span>). They push a pointless move far below any sensible option.</li>
+            <li>A move's score never goes below 0. Moves with no PP or that can't be selected (Disable, Taunt, Choice lock, etc.) are ignored.</li>
+            <li>Before it scores its moves, the AI decides whether to <a href="#switching">switch out</a>. A switch always replaces the attack.</li>
+          </ul>
+          <div class="ai-callout ai-callout--info" role="note">
+            <p>In this manual, the <strong>target</strong> is the player's Pokémon the AI is facing.</p>
+            <p>The AI uses the <strong>middle damage roll</strong> (not the highest or lowest) when checking KO.
+              A KO is called <strong>guaranteed</strong> only when even the lowest roll is enough.</p>
           </div>
         </section>
 
-        <section id="ai-turn-loop" class="ai-section">
-          <h2>Turn decision pipeline</h2>
-          <p>In practice, a turn follows this pipeline (simplified but faithful to observed behavior):</p>
+        <!-- ============ PROFILES ============ -->
+        <section id="profiles" class="ai-section">
+          <h2>2. Standard trainers vs Bosses</h2>
+          <p>
+            All trainers use <strong>the same thinking core</strong> and the same set of behaviours.
+            The difference between a normal trainer and a Boss is <strong>information</strong>.
+          </p>
+          <div class="ai-grid-2">
+            <article class="ai-card">
+              <h3><span class="tag tag--std">Standard</span> Route trainers and Grunts</h3>
+              <ul>
+                <li>Always sees species, level, types, stats, current HP, stat stages and status of the target.</li>
+                <li>Knows <strong>only the moves already used</strong> in this battle.</li>
+                <li>Knows the target's <strong>ability only after it has been revealed</strong>. Until then it guesses one of the species' possible abilities, and the guess can change every turn.</li>
+                <li>Knows the <strong>held item only after it has been revealed</strong> (activated, knocked off, Frisked, etc.).</li>
+                <li>Before any attack is seen, it guesses whether the target is a physical or special attacker from base stats.</li>
+              </ul>
+            </article>
+            <article class="ai-card">
+              <h3><span class="tag tag--boss">Boss</span> Level Cap Trainers: Gym Leaders, Rivals, etc.</h3>
+              <ul>
+                <li><strong>Knows everything from the start of the battle</strong>: moves, ability and held item of <strong>every Pokémon in the player's party</strong>, including those still in the back.</li>
+                <li>All Gym Leaders and the Champion are Bosses, along with rival battles and the story battles that unlock a new level cap (e.g. the grunts in Petalburg Woods and Rusturf Tunnel, Maxie in the Desert). A few special trainers are Bosses too.</li>
+                <li>A Boss reasons with real data from turn 1. Its choices don't get "better" as the battle reveals information, because there is nothing left to reveal.</li>
+              </ul>
+            </article>
+          </div>
+
+          <h3>Shared by every trainer</h3>
+          <ul>
+            <li><strong>Memory:</strong> whatever a Standard trainer learns about a Pokémon is remembered for the whole battle, even after it switches out and back in.</li>
+            <li><strong>Last move read:</strong> the AI looks at the target's last used move to judge Protect, Taunt, Encore, Counter, Sucker Punch and turn order. Nobody predicts the next move or a switch.</li>
+            <li><strong>Own team:</strong> the AI always knows its own moves, abilities and items perfectly.</li>
+            <li><strong>Illusion:</strong> a disguised Pokémon fools every trainer, Bosses included. The AI sees through it once Illusion breaks or is revealed, or once the disguised Pokémon uses a move the fake species can't learn. When the AI itself has Illusion, it plays according to its real typing.</li>
+          </ul>
+        </section>
+
+        <!-- ============ TURN ============ -->
+        <section id="turn" class="ai-section">
+          <h2>3. The AI's thinking</h2>
+          <p>Every turn, each AI Pokémon goes through these steps:</p>
           <ol class="ai-steps">
-            <li><strong>Switch evaluation</strong><span class="ai-steps__desc">If the matchup is clearly unfavorable and a better entry exists, switching becomes a primary line.</span></li>
-            <li><strong>Move filtering</strong><span class="ai-steps__desc">Low-impact or “dead” moves are de-prioritized (no hit, no value, wrong context).</span></li>
-            <li><strong>KO search</strong><span class="ai-steps__desc">If a reliable KO line exists this turn (including via priority), the AI tends to take it.</span></li>
-            <li><strong>Context scoring</strong><span class="ai-steps__desc">If no KO is available, it weighs expected damage + situational utility (pivoting, denial, immediate setup).</span></li>
+            <li><strong>Read the board</strong>
+              <span class="ai-steps__desc">Calculates the damage of each of its moves against the target and of the target's known moves against it, works out who moves first (priority included) and how many hits each side needs to KO.</span></li>
+            <li><strong>Check switching</strong>
+              <span class="ai-steps__desc">Finds the best party member to bring in right now (see <a href="#sendin">Which Pokémon it sends in</a>), then goes through the <a href="#switching">switch rules</a> in order. The first rule that fires decides the switch. Many rules only fire if a good switch-in exists.</span></li>
+            <li><strong>Score every move</strong>, in this order:
+              <span class="ai-steps__desc">
+                ① <a href="#filter">Bad move filter</a> (penalties for moves that fail or are pointless) →
+                ② <a href="#ko">KO bonus</a> →
+                ③ <a href="#damage">best attack bonus</a> + <a href="#effects">effect bonuses</a> →
+                ④ <a href="#hp">HP awareness</a> →
+                ⑤ <a href="#doubles">partner logic</a> (double battles only).
+              </span></li>
+            <li><strong>Final switch check</strong>
+              <span class="ai-steps__desc">If every move scored <strong>90 or less</strong>, the AI switches out (when it can). If a pivot move (U-turn, Volt Switch…) or Revival Blessing scored <strong>above 100</strong>, it cancels a planned switch and uses that move instead.</span></li>
+            <li><strong>Act</strong>
+              <span class="ai-steps__desc">Uses the highest-scoring move (random among ties), or switches.</span></li>
           </ol>
         </section>
 
-        <section id="ai-ko-priority" class="ai-section">
-          <h2>KO logic, priority, and speed control</h2>
-          <div class="ai-card">
-            <ul>
-              <li>If slower but holding a <strong>priority move that secures the KO</strong>, it tends to select it.</li>
-              <li>If already faster and <strong>multiple moves KO</strong>, it may choose between them.</li>
-              <li>If the player has a <strong>fast kill</strong> and the AI has a <strong>slow kill</strong>, it will go for it anyway,
-                  unless a better matchup is on bench.</li>
-              <li>If the target is already in KO range: it tends to <strong>close</strong> rather than take slow lines.</li>
-              <li>If its own HP is low: it avoids overly greedy lines that lose the piece without compensation.</li>
-              <li>If it's healthy: it's more willing to take control lines (positioning + pressure).</li>
-              <li>In a <strong>speed tie</strong>, priority is not strictly forced if multiple lines are considered equivalent.</li>
-            </ul>
-          </div>
-          <div class="ai-callout ai-callout--tip" role="note" aria-label="Competitive implication">
-            <p>Competitive takeaway: once you're in KO range, expect fewer “free utility turns” — the AI often closes immediately.</p>
+        <!-- ============ SCALE ============ -->
+        <section id="scale" class="ai-section">
+          <h2>4. Generic score scale</h2>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Value</th><th>Name used in this manual</th><th>Typical use</th></tr></thead>
+              <tbody>
+                <tr><td class="num">100</td><td>Base score</td><td>Every usable move starts here</td></tr>
+                <tr><td class="num"><span class="p">+1</span></td><td>Weak</td><td>Small preference, best attack bonus, guaranteed KO bonus</td></tr>
+                <tr><td class="num"><span class="p">+2</span></td><td>Decent</td><td>Useful effect (Knock Off with an item to remove, a status that fits…)</td></tr>
+                <tr><td class="num"><span class="p">+3</span></td><td>Good</td><td>Strong effect (big setup when safe, timely recovery, terrain…)</td></tr>
+                <tr><td class="num"><span class="p">+4</span></td><td>Best</td><td>Ideal situation (screens, hazards on the first turn, Encore on a setup move…)</td></tr>
+                <tr><td class="num"><span class="p">+6</span> / <span class="p">+4</span></td><td>KO bonus</td><td>Move KOs and the AI moves first / moves second</td></tr>
+                <tr><td class="num"><span class="m">−1…−9</span></td><td>Soft penalty</td><td>"Not now" (Protect spam, healing at high HP…)</td></tr>
+                <tr><td class="num"><span class="m">−10</span></td><td>Hard penalty</td><td>Move would fail or is useless here</td></tr>
+                <tr><td class="num"><span class="m">−20 / −30</span></td><td>Block</td><td>Immunity, ability blocks it, Choice-locked setup, primal weather</td></tr>
+                <tr><td class="num">≤ 90</td><td>"Bad" threshold</td><td>If all moves are this low, the AI switches out</td></tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
-        <section id="ai-switching" class="ai-section">
-          <h2>Switching</h2>
+        <!-- ============ FILTER ============ -->
+        <section id="filter" class="ai-section">
+          <h2>5. Step 1: Bad move filter</h2>
           <p>
-            The AI switches when the switch <strong>materially improves</strong> the next-turn outcome:
-            key immunities/resists, reduced KO risk, and better pressure on re-entry.
+            The first pass removes points from moves that would fail, do nothing or backfire. The AI only applies these penalties
+            when it <strong>knows</strong> the reason. A Standard trainer will still attack into an unrevealed Volt Absorb.
           </p>
+
+          <h3>Type and ability checks</h3>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Situation</th><th class="num">Score</th></tr></thead>
+              <tbody>
+                <tr><td>Target is immune to the move (type immunity)</td><td class="num"><span class="m">−20</span></td></tr>
+                <tr><td>Move is 1/4 effective or worse (fixed-damage moves like Seismic Toss, Super Fang, Counter, Endeavor are exempt)</td><td class="num"><span class="m">−10</span></td></tr>
+                <tr><td>Target's ability blocks or absorbs it (Levitate, Flash Fire, Volt Absorb, Water Absorb, Sap Sipper, Soundproof, Bulletproof, Good as Gold, Dazzling, etc.)</td><td class="num"><span class="m">−20</span></td></tr>
+                <tr><td>Wonder Guard and the move isn't super effective</td><td class="num"><span class="m">−20</span></td></tr>
+                <tr><td>Magic Bounce and the move can be bounced</td><td class="num"><span class="m">−20</span></td></tr>
+                <tr><td>Contrary and the move lowers the target's stats</td><td class="num"><span class="m">−20</span></td></tr>
+                <tr><td>Justified (Dark move) or Rattled (Dark/Ghost/Bug move)</td><td class="num"><span class="m">−10</span></td></tr>
+                <tr><td>Status move into Comatose, Leaf Guard in sun, Flower Veil (Grass), Sweet Veil (sleep), Aroma Veil, Shields Down</td><td class="num"><span class="m">−10</span></td></tr>
+                <tr><td>Magic Guard target: Leech Seed, poison, burn, frostbite moves</td><td class="num"><span class="m">−5</span></td></tr>
+                <tr><td>Prankster status move into a Dark type</td><td class="num"><span class="m">−10</span></td></tr>
+                <tr><td>Powder move into Grass type / Overcoat / Safety Goggles</td><td class="num"><span class="m">−10</span></td></tr>
+                <tr><td>Purifying Water <span class="tag tag--custom">Smeragis</span> into a Water type (it would heal it): counted as dealing no damage</td><td class="num"><span class="m">−20</span></td></tr>
+                <tr><td>Mold Breaker-type abilities (and moves that ignore abilities) skip all the target's ability checks</td><td class="num">n/a</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Field checks</h3>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Situation</th><th class="num">Score</th></tr></thead>
+              <tbody>
+                <tr><td>Sleep move into a grounded Pokémon on Electric Terrain</td><td class="num"><span class="m">−20</span></td></tr>
+                <tr><td>Status or confusion move into a grounded Pokémon on Misty Terrain</td><td class="num"><span class="m">−20</span></td></tr>
+                <tr><td>Priority move while the AI is grounded on Psychic Terrain</td><td class="num"><span class="m">−20</span></td></tr>
+                <tr><td>Weather move under primal weather, Water move in Desolate Land, Fire move in Primordial Sea</td><td class="num"><span class="m">−30</span></td></tr>
+                <tr><td>Attacking a target in Fly/Dig/Dive/etc. while the AI moves first</td><td class="num"><span class="m">−10</span></td></tr>
+                <tr><td>Two-turn charging move (Solar Beam, Skull Bash…) while the target can KO the AI</td><td class="num"><span class="m">−10</span></td></tr>
+                <tr><td>Non-sleep status move while the target's best known attack is Focus Punch (50% of the time)</td><td class="num"><span class="m">−20</span></td></tr>
+                <tr><td>Target frozen/frostbitten: non-super-effective Fire moves (if the AI has other attacks), to avoid thawing it</td><td class="num"><span class="m">−1</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Move-specific checks</h3>
+          <details>
+            <summary>Status conditions</summary>
+            <div class="ai-table-wrap">
+              <table>
+                <thead><tr><th>Move type</th><th>Penalty</th></tr></thead>
+                <tbody>
+                  <tr><td>Poison / Toxic</td><td><span class="m">−10</span> if the target can't be poisoned (already statused, Steel/Poison type, Immunity, Safeguard…), <span class="m">−5</span> more if poison helps it (Poison Heal, Toxic Boost, Guts, Marvel Scale, Quick Feet, Magic Guard, Facade)</td></tr>
+                  <tr><td>Paralysis</td><td><span class="m">−10</span> if it can't work, <span class="m">−5</span> if paralysis helps the target (Guts, Marvel Scale, Quick Feet, Magic Guard, Facade)</td></tr>
+                  <tr><td>Burn</td><td><span class="m">−10</span> if it can't work, <span class="m">−5</span> if burn helps the target or barely hurts it (Guts, Marvel Scale, Quick Feet, Magic Guard, Facade, Heatproof, Flare Boost)</td></tr>
+                  <tr><td>Frostbite / Freeze</td><td><span class="m">−15</span> if it can't work, <span class="m">−5</span> if pointless. Applies to Hoarfrost too</td></tr>
+                  <tr><td>Sleep</td><td><span class="m">−10</span> if it can't work; <span class="m">−20</span> in doubles if the partner is already putting someone to sleep</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details>
+            <summary>Stat boosts, healing, Protect, Substitute</summary>
+            <div class="ai-table-wrap">
+              <table>
+                <thead><tr><th>Move</th><th>Penalty</th></tr></thead>
+                <tbody>
+                  <tr><td>Attack / Sp. Atk boosters</td><td><span class="m">−10</span> if the stat is maxed or the AI has no attack of that category</td></tr>
+                  <tr><td>Defense / Sp. Def / Speed / other boosters</td><td><span class="m">−10</span> if the stat can't rise any further</td></tr>
+                  <tr><td>Belly Drum / Fillet Away</td><td><span class="m">−10</span> at 60% HP or less, with Contrary, or into Unaware</td></tr>
+                  <tr><td>Recover, Roost, Soft-Boiled, Slack Off…</td><td><span class="m">−10</span> at full HP, <span class="m">−9</span> at 90% HP or more</td></tr>
+                  <tr><td>Morning Sun / Synthesis / Moonlight</td><td><span class="m">−3</span> in rain, sand, hail, snow or fog; otherwise like Recover</td></tr>
+                  <tr><td>Swallow</td><td><span class="m">−10</span> with no Stockpile or at full HP, <span class="m">−5</span> at 80% HP or more</td></tr>
+                  <tr><td>Protect, Detect, King's Shield, etc.</td><td><span class="m">−10</span> if the target is asleep/frozen/can't act, if the AI would faint to end-of-turn damage anyway, or on the 3rd use in a row. On the 2nd use in a row: 50% chance of <span class="m">−6</span> (<span class="m">−10</span> in doubles)</td></tr>
+                  <tr><td>Quick Guard, Wide Guard, Crafty Shield</td><td><span class="m">−10</span> in single battles</td></tr>
+                  <tr><td>Mat Block</td><td><span class="m">−10</span> after the first turn</td></tr>
+                  <tr><td>Substitute</td><td><span class="m">−8</span> if already behind a Substitute, into Infiltrator, or if the target has a sound/bypassing move; <span class="m">−10</span> at 25% HP or less</td></tr>
+                  <tr><td>Shed Tail</td><td><span class="m">−10</span> at 50% HP or less or with no teammates left; <span class="m">−8</span> for the same reasons as Substitute</td></tr>
+                  <tr><td>Stockpile</td><td><span class="m">−10</span> at 3 stacks</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details>
+            <summary>Field, support and utility moves</summary>
+            <div class="ai-table-wrap">
+              <table>
+                <thead><tr><th>Move</th><th>Penalty</th></tr></thead>
+                <tbody>
+                  <tr><td>Reflect / Light Screen / Aurora Veil / Tailwind / Safeguard / Lucky Chant</td><td><span class="m">−10</span> if already active (or the partner is setting it this turn). Tailwind also <span class="m">−10</span> under Trick Room</td></tr>
+                  <tr><td>Hazards (Spikes, Stealth Rock, Toxic Spikes, Sticky Web)</td><td><span class="m">−10</span> if the layer is already maxed</td></tr>
+                  <tr><td>Taunt, Torment, Encore, Disable, Heal Block, etc.</td><td><span class="m">−10</span> if already active on the target or the partner is doing the same</td></tr>
+                  <tr><td>Fake Out / First Impression</td><td><span class="m">−10</span> after the user's first turn on the field</td></tr>
+                  <tr><td>Sucker Punch</td><td><span class="m">−10</span> if the target's last move was a status move or the target would move first</td></tr>
+                  <tr><td>Upper Hand</td><td><span class="m">−10</span> unless the target's last move was an attacking priority move and the AI would move first</td></tr>
+                  <tr><td>Focus Punch</td><td><span class="m">−10</span> if the target can attack and the AI isn't behind a Substitute (unless the target is asleep, confused or infatuated)</td></tr>
+                  <tr><td>Counter / Mirror Coat</td><td><span class="m">−10</span> if the target's last move wasn't a damaging move it can reflect</td></tr>
+                  <tr><td>Roar / Whirlwind / Dragon Tail-type</td><td><span class="m">−10</span> if the target has nothing to switch to, or Suction Cups</td></tr>
+                  <tr><td>Knock Off / Trick / Corrosive Gas</td><td><span class="m">−10</span> into Sticky Hold</td></tr>
+                  <tr><td>Helping Hand / Follow Me</td><td><span class="m">−10</span> in singles, with no partner, or if the partner is switching or using a status move</td></tr>
+                  <tr><td>Explosion / Self-Destruct / Misty Explosion</td><td><span class="m">−2</span> always (trainers don't like self-KOs), <span class="m">−10</span> if it is the AI's last Pokémon while the player still has others, or into Damp</td></tr>
+                  <tr><td>Memento</td><td><span class="m">−10</span> if it is the AI's last Pokémon or the target's attacks are already at −6</td></tr>
+                  <tr><td>Teleport</td><td><span class="m">−10</span></td></tr>
+                  <tr><td>Chilly Reception</td><td><span class="m">−10</span> with no teammates, <span class="m">−8</span> if snow is already up</td></tr>
+                  <tr><td>Future Sight / Doom Desire</td><td><span class="m">−12</span> if one is already pending, otherwise <span class="p">+3</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details>
+            <summary>Choice items</summary>
+            <ul>
+              <li>Holding a Choice item: any move that targets itself (Swords Dance, Calm Mind…) gets <span class="m">−30</span>. Destiny Bond, Wish, Healing Wish, and Aurora Veil in snow are the exceptions.</li>
+              <li>Status moves get <span class="m">−30</span> if the AI is on its last Pokémon, has no good switch-in, or is trapped. It won't lock itself into a status move it can't escape from.</li>
+            </ul>
+          </details>
+        </section>
+
+        <!-- ============ KO ============ -->
+        <section id="ko" class="ai-section">
+          <h2>6. Step 2: KO logic, speed and priority</h2>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Situation (damaging moves only)</th><th class="num">Score</th></tr></thead>
+              <tbody>
+                <tr><td>The move KOs the target and the AI moves first ("fast kill")</td><td class="num"><span class="p">+6</span></td></tr>
+                <tr><td>The move KOs the target but the target moves first ("slow kill")</td><td class="num"><span class="p">+4</span></td></tr>
+                <tr><td>…and the KO is guaranteed even on the lowest damage roll</td><td class="num"><span class="p">+1</span> extra</td></tr>
+                <tr><td>The target can KO the AI, the AI doesn't outspeed, and this move has priority ("last chance")</td><td class="num"><span class="p">+2</span></td></tr>
+                <tr><td>Explosion-type moves never get the KO bonus</td><td class="num">n/a</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>How "who moves first" is decided</h3>
+          <ul>
+            <li><strong>Priority first:</strong> the AI compares the priority of the move it is scoring with the priority of the target's <em>last used move</em>. After a priority move, the AI expects it again.</li>
+            <li><strong>Speed:</strong> real Speed including stat stages, paralysis, Choice Scarf, Tailwind, weather abilities, etc.
+              Trick Room reverses the order.
+              Lagging Tail and Stall always move last.</li>
+            <li><strong>Speed ties count as the AI moving first.</strong></li>
+          </ul>
+          <h3>What a KO check takes into account</h3>
+          <ul>
+            <li>Focus Sash, Sturdy and Disguise at full HP: a single hit is not counted as a KO (multi-hit moves still are). A Standard trainer only accounts for a Focus Sash once it has been revealed.</li>
+            <li>Multi-hit moves, Parental Bond, Skill Link and similar effects are counted with their real number of hits. Combo Punch <span class="tag tag--custom">Smeragis</span> is counted as one hit per arm of the user.</li>
+            <li>Critical hits are <strong>not</strong> counted.</li>
+          </ul>
+          <div class="ai-callout ai-callout--tip" role="note">
+            <p>Once the target is in KO range, expect the AI to go for the kill. A fast KO adds <span class="p">+6</span> to <span class="p">+9</span> points once the other bonuses are counted, more than almost any utility move can earn.
+              The main exceptions are moves the AI scores very highly, such as screens or hazards on its first turn (<span class="p">+4</span>), but those almost never beat a clean KO.</p>
+          </div>
+        </section>
+
+        <!-- ============ DAMAGE ============ -->
+        <section id="damage" class="ai-section">
+          <h2>7. Step 3a: Choosing between attacks</h2>
+          <p>All trainers <strong>prefer their highest-damage move</strong>.</p>
+          <ul>
+            <li><strong>The single strongest attack</strong> (highest expected damage against the target) gets <span class="p">+1</span>.</li>
+            <li>Every <strong>other</strong> attack can also get <span class="p">+1</span>, but only if it needs <strong>no more hits to KO</strong> than any other attack and isn't worse on the tie-breakers below. When two attacks would both 2HKO, the more accurate one can tie with the strongest one.</li>
+            <li>Tie-breakers between attacks that need the same number of hits: ① no charging turn (Solar Beam, Meteor Beam…) ② higher accuracy ③ better side effect, and no contact into Rocky Helmet / Rough Skin / Iron Barbs.</li>
+            <li>An attack that deals <strong>no damage at all</strong> to the target (an immunity the AI knows about, Wonder Guard, etc.) gets <span class="m">−20</span> and nothing else is checked.</li>
+          </ul>
+        </section>
+
+        <!-- ============ EFFECTS ============ -->
+        <section id="effects" class="ai-section">
+          <h2>8. Step 3b: Move effect scores</h2>
+          <p>
+            After the damage check, every move (status or damaging) gets bonuses for its <strong>effect</strong>. Secondary effects of damaging moves count only when they are
+            <strong>guaranteed</strong> to happen (e.g. Close Combat's stat drop, Icy Wind's Speed drop, Knock Off). A 10% burn chance is ignored.
+          </p>
+
+          <h3>Status conditions</h3>
+          <div class="ai-callout ai-callout--info" role="note">
+            <p>All status bonuses below are <strong>skipped entirely if the AI can already KO the target</strong> with any move, or if the target holds a berry that cures that status (or a Lum Berry).</p>
+          </div>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Status</th><th>Bonus</th></tr></thead>
+              <tbody>
+                <tr><td>Poison / Toxic</td><td>Only if the target is above 20% HP. <span class="p">+1</span> base, <span class="p">+2</span> instead if the AI has Venoshock/Hex-type moves, Venom Drench or Merciless. <span class="p">+2</span> extra if the target has no attacking moves.</td></tr>
+                <tr><td>Burn</td><td><span class="p">+2</span> if the target's best attack against the AI is physical, <span class="p">+1</span> if the target is a physical attacker whose best hit is special. <span class="p">+1</span> extra if the AI (or partner) has Hex-type moves.</td></tr>
+                <tr><td>Frostbite</td><td>Same as Burn, but for special attackers. Hoarfrost is scored the same way.</td></tr>
+                <tr><td>Paralysis</td><td><span class="p">+3</span> if paralysis makes the AI faster than the target, if the AI has a flinching move, if the target is confused/infatuated, or with Hex-type moves. Otherwise <span class="p">+2</span>.</td></tr>
+                <tr><td>Sleep / Yawn</td><td><span class="p">+2</span>. <span class="p">+1</span> if the AI has Dream Eater/Nightmare (and the target lacks Sleep Talk/Snore). <span class="p">+1</span> with Hex-type moves.</td></tr>
+                <tr><td>Confusion (Confuse Ray, Swagger, Flatter…)</td><td><span class="p">+3</span> if the target is paralyzed or infatuated (or Serene Grace + flinch move), otherwise <span class="p">+2</span>. Swagger/Flatter: <span class="p">+2</span> with Foul Play / Psych Up, <span class="p">+3</span> into Contrary.</td></tr>
+                <tr><td>Attract</td><td><span class="p">+3</span> if the target is already statused/confused/trapped, otherwise <span class="p">+2</span>.</td></tr>
+                <tr><td>Psycho Shift</td><td>Scored as the status the AI currently has.</td></tr>
+                <tr><td>Thawing moves while frozen/frostbitten (Flame Wheel, Scald…)</td><td><span class="p">+10</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Setup (stat boosts on itself)</h3>
+          <p>
+            A boost only earns points if setting up is <strong>safe</strong>: the AI moves first and the target needs <strong>2+ hits</strong> to KO it,
+            or it moves second and the target needs <strong>3+ hits</strong>, or no attack of the target is known yet.
+          </p>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Stat raised</th><th>+1 stage</th><th>+2 stages or more</th><th>Condition</th></tr></thead>
+              <tbody>
+                <tr><td>Attack</td><td><span class="p">+2</span></td><td><span class="p">+3</span></td><td>Has a physical attack and setup is safe</td></tr>
+                <tr><td>Sp. Atk</td><td><span class="p">+2</span></td><td><span class="p">+3</span></td><td>Has a special attack and setup is safe</td></tr>
+                <tr><td>Speed</td><td><span class="p">+2</span></td><td><span class="p">+3</span></td><td>AI is slower and the target needs 3+ hits (or its attacks are unknown)</td></tr>
+                <tr><td>Defense</td><td><span class="p">+1</span></td><td><span class="p">+2</span></td><td>Target has physical attacks (or no special ones)</td></tr>
+                <tr><td>Sp. Def</td><td><span class="p">+1</span></td><td><span class="p">+2</span></td><td>Target has special attacks (or no physical ones)</td></tr>
+                <tr><td>Accuracy</td><td colspan="2"><span class="p">+2</span></td><td>Only if its accuracy is at −3 or lower</td></tr>
+                <tr><td>Evasion</td><td colspan="2"><span class="p">+3</span> / <span class="p">+2</span></td><td><span class="p">+3</span> if the target needs 4+ hits to KO it, otherwise <span class="p">+2</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Multi-stat moves add up their parts: Dragon Dance, Shift Gear = Speed + Attack. Quiver Dance = Speed + Sp. Atk + Sp. Def. Shell Smash = Speed + Atk + Sp. Atk (+1 with White Herb). Bulk Up, Calm Mind, Coil, Cosmic Power, Curse (non-Ghost), Growth, Work Up, Hone Claws, Victory Dance, Stockpile follow the same rule. Belly Drum is <span class="p">+4</span> when the target can't KO the user and it has physical attacks. Damaging moves with a guaranteed self-boost (Flame Charge, Power-Up Punch…) also use this table.</p>
+          <p><strong>A boost is worth 0 points when:</strong></p>
+          <ul>
+            <li><em>because of the target:</em> it has Unaware or Opportunist, it has Encore among its known moves, or it has already used Haze / Clear Smog this battle (or knows one of them while the AI is already at +1);</li>
+            <li><em>because of the AI itself:</em> the stat is already at +4 or higher, it is under 70% HP with no target attack known, it would faint to weather or other end-of-turn damage anyway, or it has Contrary.</li>
+          </ul>
+
+          <h3>Stat drops on the target</h3>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Move</th><th>Score</th></tr></thead>
+              <tbody>
+                <tr><td>Speed drops (String Shot, Scary Face…)</td><td><span class="m">−3</span> if the AI is already faster, otherwise <span class="p">+2</span> about 73% of the time</td></tr>
+                <tr><td>Attack / Sp. Atk drops (Growl, Charm, Eerie Impulse…)</td><td>Mostly penalties: <span class="m">−2</span> if pointless (wrong category, Clear Body, Hyper Cutter…), <span class="m">−1</span> if already lowered or the AI is at 90% HP or less, <span class="m">−2</span> if the target is under 70% HP</td></tr>
+                <tr><td>Defense / Sp. Def drops (Leer, Fake Tears…)</td><td><span class="m">−2</span> if pointless, <span class="m">−2</span> (50%) when the AI is under 70% HP or the target is already at −3, <span class="m">−2</span> if the target is at 70% HP or less</td></tr>
+                <tr><td>Accuracy / Evasion drops</td><td>Usually small penalties. Accuracy drops get <span class="p">+1/+2</span> if the target is poisoned, seeded, cursed or rooted (stall play)</td></tr>
+                <tr><td>Tickle</td><td><span class="p">+2</span> if it helps</td></tr>
+                <tr><td>Guaranteed drop on a damaging move (Icy Wind, Snarl, Breaking Swipe…)</td><td><span class="p">+2</span> (not into Contrary; Speed drops only if useful)</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Recovery and defence</h3>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Move</th><th>Score</th></tr></thead>
+              <tbody>
+                <tr><td>Recover, Roost, Soft-Boiled, Slack Off, Morning Sun, Synthesis, Moonlight</td><td><span class="p">+3</span> if the AI <strong>moves first</strong> and either: the target could KO it now but not after it heals, or the target can't KO it at all and it's under 60% HP (2 times out of 3)</td></tr>
+                <tr><td>Shore Up</td><td><span class="p">+2</span> under the same rule</td></tr>
+                <tr><td>Rest</td><td><span class="p">+3</span> only if it can wake up quickly or act while asleep (Chesto/Lum Berry, Sleep Talk, Snore, Shed Skin, Early Bird, Hydration in rain) and healing is needed</td></tr>
+                <tr><td>Swallow</td><td><span class="p">+2</span> if healing is needed</td></tr>
+                <tr><td>Wish, Heal Bell, Aromatherapy</td><td><span class="p">+2</span> when useful</td></tr>
+                <tr><td>Jungle Healing</td><td><span class="p">+3</span> if it or its partner needs HP or has a status</td></tr>
+                <tr><td>Protect / Detect / Spiky Shield / Baneful Bunker…</td><td>
+                  First use: <span class="p">+2</span> if the target's last move was an attack, otherwise <span class="p">+1</span> (about 39% of the time).<br>
+                  Each use in a row: <span class="m">−1</span> (max <span class="m">−3</span>, doubled in doubles).<br>
+                  <span class="m">−1</span> if the AI is poisoned, burned, seeded, cursed, drowsy…<br>
+                  <span class="p">+2</span> if the <em>target</em> is badly poisoned, cursed, seeded, drowsy, infatuated or under Perish Song (stall for damage).<br>
+                  King's Shield on Aegislash-Blade: <span class="p">+3</span>.</td></tr>
+                <tr><td>Endure</td><td><span class="p">+3</span> if the target can KO it and it holds a pinch berry (Salac, Liechi…) or has Flail / Reversal / Endeavor</td></tr>
+                <tr><td>Substitute</td><td><span class="p">+3</span> if the target's best known hit deals under 25% of its HP; <span class="p">+3</span> if the target is asleep, <span class="p">+2</span> if burned/poisoned/frostbitten; <span class="p">+3</span> if the target has sleep/Toxic/paralysis/burn/confusion/Leech Seed moves; <span class="p">+3</span> under Perish Song; <span class="p">+1</span> above 70% HP</td></tr>
+                <tr><td>Reflect / Light Screen</td><td><span class="p">+4</span> if the target has attacks of that category and no Brick Break / Psychic Fangs / Raging Bull. <span class="p">+2</span> extra with Light Clay</td></tr>
+                <tr><td>Aurora Veil</td><td><span class="p">+4</span> (<span class="p">+2</span> with Light Clay), only in hail/snow and with no screen already up</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Pivoting</h3>
+          <p>U-turn, Volt Switch, Flip Turn, Parting Shot, Chilly Reception (singles):</p>
+          <ul>
+            <li><strong><span class="p">+4</span> (should pivot)</strong> when: the AI moves first and can't KO the target, but the target can KO it; or it wants to break a Focus Sash / Sturdy / Multiscale at full HP; or it already wanted to switch out; or it moves second, can't KO the target and would be 2HKO'd.</li>
+            <li><strong><span class="m">−10</span> (don't pivot)</strong> when its switch-in would be KO'd by entry hazards.</li>
+            <li><strong>0</strong> in all other cases (the move is then judged only as an attack).</li>
+            <li>With no teammates left, pivot moves are treated as normal attacks. Palafin (Zero form) always wants to pivot.</li>
+            <li><strong>Shed Tail</strong> <span class="tag tag--custom">Smeragis</span>: <span class="p">+4</span> when pivoting makes sense <em>and</em> either the target's best known hit deals less than half its HP, or it is faster and in KO range (emergency pass). It also gets the Substitute bonuses above.</li>
+            <li>Baton Pass: <span class="p">+4</span> if the AI wants to switch and has boosts, a Substitute, Aqua Ring, Ingrain or Magnet Rise to pass.</li>
+          </ul>
+
+          <h3>Hazards, weather, terrain and field</h3>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Move</th><th>Score</th></tr></thead>
+              <tbody>
+                <tr><td>Stealth Rock, Spikes, Toxic Spikes, Sticky Web (and Stone Axe / Ceaseless Edge)</td><td><span class="p">+4</span> on the user's first turn in, <span class="p">+2</span> later. Nothing if the player has no Pokémon left to switch in, the target has Magic Bounce, or a known hazard remover (Rapid Spin, Defog, Tidy Up, Mortal Spin, Magic Coat, Windsom of Change <span class="tag tag--custom">Smeragis</span>…). Stone Axe and Ceaseless Edge get this bonus every time, even when the hazard is pointless</td></tr>
+                <tr><td>Rapid Spin / Mortal Spin</td><td><span class="p">+3</span> if hazards are on its side (with teammates left) or it is seeded/trapped</td></tr>
+                <tr><td>Defog</td><td><span class="p">+3</span> if hazards are on its side or the player's side has screens/Safeguard/Mist up</td></tr>
+                <tr><td>Tidy Up</td><td><span class="p">+3</span> to clear its hazards, <span class="p">+3</span> to break the target's Substitute, <span class="p">+2</span> to clear Leech Seed, plus Speed/Attack setup score</td></tr>
+                <tr><td>Rain / Sun / Sand / Hail / Snow</td><td><span class="p">+2</span> if the weather helps the AI (Swift Swim, Chlorophyll, Sand Rush, matching moves…). <span class="p">+1</span> with the matching rock. <span class="p">+1</span> if it hurts the target's known moves (Fire moves in rain, Water moves in sun, Solar Beam, Morning Sun…). Hail/Snow <span class="p">+3</span> extra if Aurora Veil is ready</td></tr>
+                <tr><td>Electric / Grassy / Misty / Psychic Terrain</td><td><span class="p">+3</span>, <span class="p">+3</span> with Terrain Extender. Electric/Misty: <span class="p">+4</span> if the AI is drowsy from Yawn. <span class="tag tag--custom">Smeragis</span> <span class="p">+3</span> if the user has the matching Pelt ability</td></tr>
+                <tr><td>Trick Room</td><td><span class="p">+3</span> if the AI's side is slower on average (or to end Trick Room when it's faster)</td></tr>
+                <tr><td>Tailwind</td><td><span class="p">+3</span> if the AI's side is slower on average</td></tr>
+                <tr><td>Gravity</td><td><span class="p">+2</span> if it has low-accuracy moves (plus sleep score with Hypnosis-type moves)</td></tr>
+                <tr><td>Magic Room / Wonder Room</td><td><span class="p">+1</span> to <span class="p">+3</span> depending on items / defences</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Disruption and utility</h3>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Move</th><th>Score</th></tr></thead>
+              <tbody>
+                <tr><td>Knock Off</td><td><span class="p">+2</span> if the target holds a removable item (not Lagging Tail / Sticky Barb). Standard trainers only "see" an item once it is revealed</td></tr>
+                <tr><td>Corrosive Gas</td><td><span class="p">+2</span> under the same rule</td></tr>
+                <tr><td>Thief / Covet</td><td><span class="p">+2</span> to steal Choice items or items that help the AI; <span class="p">+1</span> for other items</td></tr>
+                <tr><td>Bug Bite / Pluck, Incinerate</td><td><span class="p">+2</span> if the target holds a berry (or a Gem, for Incinerate)</td></tr>
+                <tr><td>Trick / Switcheroo</td><td><span class="p">+2</span> to pass a Choice Scarf, a Choice Band/Specs to the wrong attacker, Toxic/Flame Orb, Black Sludge, Iron Ball, Lagging Tail, Sticky Barb, Eject Button…</td></tr>
+                <tr><td>Taunt</td><td><span class="p">+3</span> if the target's last move was a status move, <span class="p">+2</span> if it has any status move</td></tr>
+                <tr><td>Encore</td><td><span class="p">+4</span> if the target's last move was a setup/status move worth locking (or a poison/paralysis move)</td></tr>
+                <tr><td>Disable</td><td><span class="p">+3</span> if the AI moves first and the target's last move could KO it</td></tr>
+                <tr><td>Destiny Bond</td><td><span class="p">+3</span> if the AI moves first and the target can KO it</td></tr>
+                <tr><td>Fake Out (singles)</td><td><span class="p">+3</span> on its first turn if the flinch works (not into Covert Cloak, Inner Focus, Shield Dust, Substitute; not with Choice Band / Gorilla Tactics); otherwise <span class="p">+4</span> if it's its strongest move on turn one</td></tr>
+                <tr><td>Flinching moves (Iron Head, Air Slash…)</td><td><span class="p">+2</span> if the AI moves first and the target could KO it, or the target is paralyzed/confused/infatuated, or the AI has Serene Grace. 0 if the target moves first or is flinch-immune</td></tr>
+                <tr><td>Haze, Roar, Whirlwind, Clear Smog</td><td><span class="p">+1</span> per boosted stage on the target (max <span class="p">+4</span>)</td></tr>
+                <tr><td>Brick Break, Psychic Fangs, Raging Bull</td><td><span class="p">+2</span> per screen on the player's side</td></tr>
+                <tr><td>Leech Seed</td><td><span class="p">+3</span>, <span class="p">+2</span> more if the target has no attacks, is trapped, or the AI holds Big Root. Nothing into Grass types, Liquid Ooze, Magic Guard or a known Rapid Spin</td></tr>
+                <tr><td>Mean Look, Block, Spider Web</td><td><span class="p">+3</span> if the target would faint to end-of-turn damage</td></tr>
+                <tr><td>Wrap-type moves / Fairy Lock</td><td><span class="p">+4</span> under the same rule</td></tr>
+                <tr><td>Perish Song</td><td><span class="p">+3</span> if the target can't escape</td></tr>
+                <tr><td>Counter / Mirror Coat</td><td><span class="p">+3</span> if the target's last move was physical / special and the AI can survive that hit</td></tr>
+                <tr><td>Focus Energy / Laser Focus</td><td><span class="p">+3</span> with Super Luck, Sniper, Scope Lens or high-crit moves</td></tr>
+                <tr><td>Fell Stinger</td><td><span class="p">+4</span> if it KOs</td></tr>
+                <tr><td>Salt Cure</td><td><span class="p">+2</span> into Water or Steel types</td></tr>
+                <tr><td>Throat Chop</td><td><span class="p">+3</span> (faster) / <span class="p">+2</span> (slower) if the target's best move is a sound move</td></tr>
+                <tr><td>Skill Swap, Role Play, Worry Seed, Gastro Acid, Simple Beam, Entrainment</td><td><span class="p">+1</span> / <span class="p">+2</span> to remove or steal a strong ability</td></tr>
+                <tr><td>Drain moves / Strength Sap / Aqua Ring with Big Root</td><td><span class="p">+2</span></td></tr>
+                <tr><td>Ingrain</td><td><span class="p">+1</span>, <span class="p">+3</span> more with Big Root</td></tr>
+                <tr><td>Revival Blessing</td><td><span class="p">+2</span> if it has a fainted teammate, <span class="p">+1</span> if the current matchup is bad, <span class="p">+1</span> if it has a good switch-in</td></tr>
+                <tr><td>Held Blunder Policy</td><td><span class="p">+3</span> to moves with 75% accuracy or less, <span class="m">−2</span> to all others</td></tr>
+                <tr><td>Multi-hit contact moves into Rocky Helmet</td><td><span class="m">−2</span></td></tr>
+                <tr><td>Natural Cure user, burned/frostbitten with only the matching attack category</td><td><span class="m">−20</span> to all moves (pushes it to switch and heal)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ai-muted">Moves not listed get no effect bonus and are judged on damage and the other steps only.</p>
+        </section>
+
+        <!-- ============ HP ============ -->
+        <section id="hp" class="ai-section">
+          <h2>9. Step 4: HP awareness</h2>
+          <p>The last scoring pass looks at both Pokémon's HP and adjusts the score.</p>
+          <div class="ai-grid-2">
+            <article class="ai-card">
+              <h3>AI's own HP</h3>
+              <ul>
+                <li><strong>Above 70%:</strong> <span class="m">−2</span> to healing moves, Rest, Explosion, Destiny Bond, Flail/Reversal, Endure, Memento, Grudge. No need yet.</li>
+                <li><strong>30–70%:</strong> <span class="m">−2</span> to stat-changing status moves, screens, Safeguard, Mist, Focus Energy, Belly Drum, Fillet Away, Explosion.</li>
+                <li><strong>Below 30%:</strong> <span class="m">−2</span> to stat-changing moves, screens, weather moves, Belly Drum, Psych Up, Mirror Coat, Tickle and similar long-term plays.</li>
+              </ul>
+            </article>
+            <article class="ai-card">
+              <h3>Target's HP</h3>
+              <ul>
+                <li><strong>The move KOs the target:</strong> <span class="p">+2</span>.</li>
+                <li><strong>Above 70%:</strong> no change.</li>
+                <li><strong>30–70%:</strong> <span class="m">−2</span> to setup moves, stat drops, Pain Split, Perish Song, Safeguard, Tickle and poison moves.</li>
+                <li><strong>Below 30%:</strong> <span class="m">−2</span> to <strong>every</strong> status move. The AI just wants to finish it.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- ============ EXAMPLE ============ -->
+        <section id="example" class="ai-section">
+          <h2>10. Worked example</h2>
+          <p>
+            An enemy Garchomp at full HP faces a target at full HP. Garchomp is faster. On a middle roll, Earthquake and Stone Edge both KO the target, but neither is guaranteed.
+            The target needs two hits to KO Garchomp and attacked last turn.
+          </p>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Move</th><th>Filter</th><th>KO</th><th>Best attack</th><th>Effect</th><th>HP aware</th><th class="num">Total</th></tr></thead>
+              <tbody>
+                <tr><td>Earthquake</td><td>0</td><td><span class="p">+6</span></td><td><span class="p">+1</span> (strongest)</td><td>0</td><td><span class="p">+2</span> (KOs)</td><td class="num"><strong>109</strong></td></tr>
+                <tr><td>Stone Edge</td><td>0</td><td><span class="p">+6</span></td><td>0 (same hits, less accurate)</td><td>0</td><td><span class="p">+2</span> (KOs)</td><td class="num">108</td></tr>
+                <tr><td>Swords Dance</td><td>0</td><td>n/a</td><td>n/a</td><td><span class="p">+3</span> (+2 Atk, safe to set up)</td><td>0</td><td class="num">103</td></tr>
+                <tr><td>Protect</td><td>0</td><td>n/a</td><td>n/a</td><td><span class="p">+2</span> (first use, target attacked)</td><td>0</td><td class="num">102</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Result:</strong> Earthquake. If the target were faster and could OHKO Garchomp, both attacks would drop to a slow kill (<span class="p">+4</span>).
+            Swords Dance would lose its bonus because setting up is no longer safe. Earthquake would still win, 107 to 106.
+            Against an unrevealed Levitate, a <span class="tag tag--std">Standard</span> trainer would still pick Earthquake. A <span class="tag tag--boss">Boss</span> would give it <span class="m">−20</span> and use Stone Edge.</p>
+        </section>
+
+        <!-- ============ SWITCHING ============ -->
+        <section id="switching" class="ai-section">
+          <h2>11. When the AI switches out</h2>
+          <p>
+            Standard trainers and Bosses use the same switching rules. The AI checks the rules below <strong>in this order</strong> and switches on the first one that fires.
+            The % is the chance it actually switches when the rule applies.
+          </p>
+
+          <h3>It never switches if…</h3>
+          <ul>
+            <li>it is trapped (Mean Look, Shadow Tag, Arena Trap, Magnet Pull, binding moves, Ingrain…);</li>
+            <li>it has no other Pokémon able to come in;</li>
+            <li>the outgoing Pokémon would later be KO'd by entry hazards on re-entry and no teammate can clear them (this blocks most rules below).</li>
+          </ul>
+
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>#</th><th>Rule</th><th class="num">Chance</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td><strong>Wonder Guard:</strong> the target has Wonder Guard and the AI has no super-effective move. It switches to a Pokémon that has one.</td><td class="num">100%</td></tr>
+                <tr><td>2</td><td><strong>Trapper available:</strong> its best switch-in has a trapping ability (Shadow Tag, Arena Trap, Magnet Pull) that works on the target and wins the 1v1.</td><td class="num">100%</td></tr>
+                <tr><td>3</td><td><strong>Absorber available:</strong> a teammate can absorb the target's last used move: Flash Fire (Fire), Water Absorb / Dry Skin / Storm Drain (Water), Volt Absorb / Motor Drive / Lightning Rod (Electric), Sap Sipper (Grass), Earth Eater / Levitate (Ground), Soundproof (sound), Bulletproof (ball/bomb), Wind Rider (wind).<br>
+                  <span class="ai-muted">It stays in instead if: it has a super-effective move on the target (66% of the time), it can KO the target, it has +3 or more total boosts, the target has Mold Breaker, or it just came in this turn.</span></td><td class="num">100%</td></tr>
+                <tr><td>4</td><td><strong>Free turn:</strong> the target is charging or semi-invulnerable (Fly, Dig, Dive, Solar Beam, Skull Bash…).</td><td class="num">100%</td></tr>
+                <tr><td>5</td><td><strong>Truant</strong> is on its loafing turn, it is at 50%+ HP, and the target is Protecting or semi-invulnerable.</td><td class="num">100%</td></tr>
+                <tr><td>6</td><td><strong>No move affects the target</strong> (all immune, blocked or absorbed).</td><td class="num">100%</td></tr>
+                <tr><td>7</td><td><strong>Bad status</strong> (only if it can't KO the target this turn and has a good switch-in):<br>
+                  Perish Song about to end: 100% · Yawn (above 1/3 HP, no way to stop sleep): 100% · Infatuation: 100% ·
+                  Toxic for 2+ turns (above 1/3 HP): 50% · Curse: 50% · Nightmare: 33% · Leech Seed: 25%.<br>
+                  <span class="ai-muted">With any stat boost the poison/curse/nightmare/seed chances drop to 20% / 20% / 15% / 10%.</span></td><td class="num">see rule</td></tr>
+                <tr><td>8</td><td><strong>Natural Cure:</strong> asleep, frozen or badly poisoned: 66% (10% if boosted). Any other status at 50%+ HP: 25% (10% if boosted).<br>
+                  <strong>Regenerator:</strong> at 2/3 HP or less and no status: 50% (20% if boosted).</td><td class="num">see rule</td></tr>
+                <tr><td>9</td><td><strong>Bad odds:</strong> it can't win the 1v1 (the target KOs it in fewer hits, or in the same number while faster) and has a good switch-in, and either:<br>
+                  • the target OHKOs it and outspeeds (or OHKOs it while it can't even deal 50% back), while it has 50%+ HP (25%+ with Regenerator), <strong>or</strong><br>
+                  • the target's types hit it super effectively, it has no super-effective move, it has 50%+ HP, and it has no important status move (hazards, screens, Toxic, sleep, paralysis, burn, Hoarfrost <span class="tag tag--custom">Smeragis</span>, Leech Seed, Trick, Trick Room, Fake Out…).</td><td class="num">50%</td></tr>
+                <tr><td>10</td><td><strong>Encore:</strong> locked into a status move: 100%. Locked into an attack that isn't super effective: 50%. Stays if the locked move is super effective.</td><td class="num">see rule</td></tr>
+                <tr><td>11</td><td><strong>Bad Choice lock:</strong> locked into a status move or a move that doesn't affect the target.</td><td class="num">100%</td></tr>
+                <tr><td>12</td><td><strong>Attacking stat lowered</strong> (its main attacking stat): −2 → 50% · −3 or worse → 100%.</td><td class="num">see rule</td></tr>
+                <tr><td>13</td><td><strong>All moves are bad:</strong> after scoring, every move is at 90 or less.</td><td class="num">100%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ai-callout ai-callout--info" role="note">
+            <p>A planned switch is cancelled if a pivot move or Revival Blessing scores above 100. The AI then uses that move to get out (or revive) instead.</p>
+          </div>
+        </section>
+
+        <!-- ============ SEND-IN ============ -->
+        <section id="sendin" class="ai-section">
+          <h2>12. Which Pokémon it sends in</h2>
+          <p>
+            In single battles every trainer chooses its next Pokémon by simulating a <strong>1v1</strong> against the target.
+            It counts how many hits each side needs, who moves first, and the damage it would take from <strong>all</strong> the target's moves.
+          </p>
+          <h3>"Can it win the 1v1?"</h3>
+          <ul>
+            <li><strong>After a KO</strong> (a free switch): the candidate must survive more hits than it needs to KO the target, or the same number while moving first.</li>
+            <li><strong>Mid-battle switch</strong> (it takes a hit coming in): it needs one hit more of margin, or the same margin while moving first.</li>
+            <li>If the target can't damage it at all, it wins. If it can't damage the target, it loses.</li>
+          </ul>
 
           <div class="ai-grid-2">
             <article class="ai-card">
-              <h3>Signals that increase switching</h3>
-              <ul>
-                <li>Imminent KO risk with a safer entry available.</li>
-                <li>A teammate provides a <strong>key immunity/resist</strong> versus the current threat.</li>
-                <li>Available moves apply <strong>too little pressure</strong> (low meaningful damage / low value).</li>
-                <li>After a KO, it often selects a sensible <strong>revenge/check</strong> instead of a random send.</li>
-              </ul>
+              <h3>After one of its Pokémon faints</h3>
+              <ol>
+                <li>A <strong>trapper</strong> that wins the 1v1</li>
+                <li>A <strong>faster OHKO</strong> (revenge killer)</li>
+                <li>A <strong>slower OHKO</strong> that still wins the 1v1</li>
+                <li>A faster <strong>2HKO</strong>, then a slower 2HKO</li>
+                <li>Best <strong>resistance to the target's types + a super-effective move</strong></li>
+                <li>Best <strong>resistance</strong> to the target's types</li>
+                <li>A <strong>Baton Pass</strong> user that survives long enough</li>
+                <li>Any Pokémon that wins the 1v1</li>
+                <li>The one dealing the <strong>most damage</strong> (if it isn't OHKO'd)</li>
+                <li>None of the above: the <strong>last available Pokémon in party order</strong></li>
+              </ol>
+              <p class="ai-muted">Steps 3 to 9 also require the candidate to win the 1v1.</p>
             </article>
-
             <article class="ai-card">
-              <h3>Signals that reduce switching</h3>
-              <ul>
-                <li>No clearly better answer exists on the bench.</li>
-                <li>Staying enables a favorable trade or immediate KO.</li>
-                <li>Switching would expose a teammate to worse risk than staying in.</li>
-              </ul>
+              <h3>When it switches out voluntarily</h3>
+              <ol>
+                <li>A <strong>trapper</strong> that wins the 1v1</li>
+                <li>Best <strong>resistance + super-effective move</strong></li>
+                <li>Best <strong>resistance</strong></li>
+                <li>The <strong>bulkiest</strong> option (survives 4+ of the target's hits)</li>
+                <li>A <strong>Baton Pass</strong> user</li>
+                <li>Any Pokémon that wins the 1v1</li>
+              </ol>
+              <p class="ai-muted">If no candidate qualifies, most switch rules (bad odds, status, Encore…) don't fire at all. The AI stays in and fights.</p>
             </article>
           </div>
+          <p>A Pokémon with Truant is never sent in while it would be stuck loafing against the target.</p>
         </section>
 
-        <section id="ai-move-filtering" class="ai-section">
-          <h2>Move Selecting</h2>
-          <div class="ai-card">
-            <ul>
-              <li>De-prioritizes moves that don't connect or are invalidated by known immunities.</li>
-              <li>De-prioritizes setup/status when it doesn't change the turn outcome versus immediate pressure.</li>
-              <li>Ignores utility if a reliable KO is available right now.</li>
-            </ul>
+        <!-- ============ DOUBLES ============ -->
+        <section id="doubles" class="ai-section">
+          <h2>13. Double battles</h2>
+          <h3>Choosing move and target</h3>
+          <ul>
+            <li>Each AI Pokémon scores <strong>every move against every possible target</strong> (both opposing Pokémon and its own partner) and uses the highest move/target pair.</li>
+            <li>A move aimed at its own partner is only considered if it scores <strong>100 or more</strong> (e.g. Heal Pulse, or an Electric move into a Volt Absorb partner).</li>
+            <li>The second AI Pokémon <strong>knows what its partner has chosen</strong> this turn and plans around it.</li>
+          </ul>
+          <h3>Partner coordination</h3>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>Situation</th><th>Score</th></tr></thead>
+              <tbody>
+                <tr><td>Partner already set weather this turn → another weather move</td><td><span class="m">−10</span></td></tr>
+                <tr><td>Partner already used the same screen / Tailwind / Taunt / Encore / status on the same target</td><td><span class="m">−10</span> to <span class="m">−20</span></td></tr>
+                <tr><td>Partner is using Helping Hand → status moves</td><td><span class="m">−7</span></td></tr>
+                <tr><td>Helping Hand when the partner has no attacks</td><td><span class="m">−20</span></td></tr>
+                <tr><td>Weather that the partner benefits from</td><td><span class="p">+1</span> (sun/rain/sand), <span class="p">+2</span> (hail/snow)</td></tr>
+                <tr><td>Hitting the partner with a move its ability absorbs or that triggers its Weakness Policy, when that helps</td><td><span class="p">+1</span> to <span class="p">+3</span></td></tr>
+                <tr><td>Magnet Rise when the partner has Earthquake</td><td><span class="p">+2</span></td></tr>
+                <tr><td>Dragon Cheer on a partner that benefits</td><td><span class="p">+3</span></td></tr>
+                <tr><td>Follow Me / Rage Powder when the partner used an attack last turn</td><td><span class="p">+3</span></td></tr>
+                <tr><td>Royal Guard <span class="tag tag--custom">Smeragis</span> while the partner is alive</td><td><span class="p">+2</span>, <span class="p">+3</span> more if either opposing Pokémon could KO either AI Pokémon</td></tr>
+                <tr><td>Hyper Voice with Pixilate or Throat Spray and both opposing Pokémon alive</td><td><span class="p">+3</span></td></tr>
+              </tbody>
+            </table>
           </div>
-
-          <details>
-            <summary>Taunt</summary>
-            <ul>
-              <li>Favored versus status-leaning or setup-leaning targets.</li>
-              <li>If a clean KO is available, it typically chooses the KO line instead of Taunt.</li>
-              <li>Versus pure offense targets, Taunt is often de-prioritized.</li>
-            </ul>
-          </details>
-
-          <details>
-            <summary>Pivot moves (U-turn / Volt Switch / Flip Turn)</summary>
-            <ul>
-              <li>Hit-and-switch moves are treated as strategic tools. When pivoting creates value (momentum, positioning, form/condition enabling), the AI tends to favor it.</li>
-            </ul>
-          </details>
-
-          <details>
-            <summary>Knock Off</summary>
-            <ul>
-              <li>If the target still has a meaningful removable item, the AI tends to prefer <strong>Knock Off</strong>.</li>
-              <li>Once item pressure is no longer relevant, it reverts to the more efficient damage/utility choice.</li>
-            </ul>
-          </details>
-
-          <details>
-            <summary>Protect Effect</summary>
-            <ul>
-              <li>For sets that benefit from early activation via held items, the AI can use Protect as an immediate setup line to maximize pressure next turn.</li>
-            </ul>
-          </details>
-
-          <details>
-            <summary>Shed Tail</summary>
-            <h3>When it's used</h3>
-            <ul>
-              <li>When the pivot is relatively safe and a strong beneficiary exists on the bench.</li>
-              <li>When the resulting entry produces clear advantage (momentum / positioning).</li>
-            </ul>
-            <h3>When it's avoided</h3>
-            <ul>
-              <li>When HP is too low (line becomes too risky).</li>
-              <li>When no useful/meaningful follow-up switch exists.</li>
-            </ul>
-          </details>
+          <h3>Spread moves (Earthquake, Surf, Discharge…)</h3>
+          <ul>
+            <li>If the move would <strong>KO its own partner</strong>: <span class="p">+10</span> if it also KOs both opposing Pokémon. Small bonus if the partner is doomed anyway (and more with Moxie, Receiver or Last Respects). <span class="m">−2</span> if it only KOs one opponent. Otherwise <span class="m">−10</span>.</li>
+            <li>If the partner survives, the friendly fire is accepted. The AI may still prefer a single-target attack when the partner would take heavy damage.</li>
+            <li>Deliberately hitting the partner to trigger its Weakness Policy only happens if the partner can take at least 4 such hits.</li>
+          </ul>
+          <h3>Protect, Fake Out and support in doubles</h3>
+          <ul>
+            <li>Protect is penalised harder when repeated: a second use in a row has a 50% chance of <span class="m">−10</span>, and every use in a row costs <span class="m">−2</span> more.</li>
+            <li>Fake Out only works on the user's first turn on the field and is avoided into Covert Cloak, Inner Focus, Shield Dust or a Substitute.</li>
+            <li>Helping Hand is used when the partner is attacking. Never when the partner is switching or using a status move.</li>
+            <li>Pivot moves get no "should pivot" bonus in doubles. They are judged as attacks.</li>
+          </ul>
+          <h3>Switching in doubles</h3>
+          <ul>
+            <li>The "bad odds" and "free turn" rules (#4 and #9) are <strong>not</strong> used in doubles. The others still apply.</li>
+            <li>Send-ins use a simpler method: first a Baton Pass user, then the Pokémon whose typing best resists the opposing Pokémon and has a super-effective move, then the one dealing the most damage. If nothing fits, the last Pokémon in the party.</li>
+          </ul>
         </section>
 
-        <section id="ai-knowledge-memory" class="ai-section">
-          <h2>Battle knowledge</h2>
-            <ul>
-              <li>The AI may still attempt a risky line against an ability that hasn't been confirmed yet.</li>
-              <li>After witnessing an immunity/absorb interaction, it will have memory of it.</li>
-            </ul>
-          <h2>Illusion interaction</h2>
-          <div class="ai-card">
-            <ul>
-              <li>Initially, the AI can be misled by the apparent typing.</li>
-              <li>After incompatible signals, it corrects its read and remember the ability.</li>
-              <li>If the AI is using Illusion itself, move choice follows the Pokémon's real typing.</li>
-            </ul>
-          </div>
+        <!-- ============ OTHER ============ -->
+        <section id="other" class="ai-section">
+          <h2>14. Other behaviour</h2>
+          <ul>
+            <li><strong>Mega Evolution / Terastallization:</strong> enemy Pokémon set up for it Mega Evolve or Terastallize the first time they can act.</li>
+            <li><strong>Bag items:</strong> enemy trainers don't use bag items during battle.</li>
+            <li><strong>Self-KO moves:</strong> trainers never actively look for Explosion / Self-Destruct / Final Gambit / Memento plays.</li>
+            <li><strong>Wild Pokémon:</strong> normal wild Pokémon choose moves at random. Some scripted wild encounters use the trainer AI described here.</li>
+            <li><strong>In-game partners:</strong> an AI partner fighting alongside the player uses the same logic.</li>
+          </ul>
+          <h3>Random aspects</h3>
+          <ul>
+            <li>Ties between equal scores are broken at random.</li>
+            <li>First Protect when the target didn't just attack: <span class="p">+1</span> about 39% of the time. Second Protect in a row: 50% chance of <span class="m">−6</span>.</li>
+            <li>Speed-lowering status moves: <span class="p">+2</span> about 73% of the time.</li>
+            <li>Healing when not in danger: encouraged 2 times out of 3.</li>
+            <li>Standard trainers re-guess an unrevealed ability every turn.</li>
+            <li>Most switch rules have a % chance (see the <a href="#switching">switch table</a>).</li>
+          </ul>
         </section>
 
-        <section id="ai-double-battles" class="ai-section">
-          <h2>Double battles behavior</h2>
-          <p>
-            In doubles, the AI reasons in a coordinated way: it evaluates both opponents and partner interactions,
-            then selects the target + move pair with the highest practical value for the turn.
-          </p>
-
+        <!-- ============ TIPS ============ -->
+        <!-- <section id="tips" class="ai-section">
+          <h2>15. Player tips</h2>
           <div class="ai-grid-2">
             <article class="ai-card">
-              <h3>What it evaluates each turn</h3>
+              <h3>Against everyone</h3>
               <ul>
-                <li>Scores each move against each valid target, then chooses the strongest target/move combination.</li>
-                <li>Reads partner intent (or last known ally move) to avoid wasting both actions on redundant lines.</li>
-                <li>Penalizes support moves if the partner cannot convert that support into pressure.</li>
+                <li>Once in KO range, the AI will almost always go for the KO. Plan switches around that.</li>
+                <li>Setting up only happens when it is safe. Threatening a 2HKO while outspeeding stops the boosting.</li>
+                <li>The AI expects the last move to be repeated: useful to bait Protect, Sucker Punch, Counter or Taunt.</li>
+                <li>Lowering its attacking stat by 2 or more often forces a switch. Toxic and Leech Seed push it to switch too.</li>
+                <li>After a KO it sends in a <strong>revenge killer</strong> if it has one. The Trainer Sheet shows the team.</li>
+                <li>Charging moves and Fly/Dig give the AI a free switch. It will take it.</li>
               </ul>
             </article>
-
             <article class="ai-card">
-              <h3>How field Pokémon influence each other</h3>
+              <h3>Standard vs Boss</h3>
               <ul>
-                <li>Avoids careless spread damage into ally unless the trade is clearly favorable.</li>
-                <li>Can intentionally interact with ally abilities/items (immunity absorbs, policy triggers, etc.) when profitable.</li>
-                <li>Reduces duplicated utility in the same turn (e.g. overlapping weather/status support).</li>
+                <li><span class="tag tag--std">Standard</span> Hidden coverage moves aren't feared until they are seen.</li>
+                <li><span class="tag tag--std">Standard</span> Unrevealed absorbing abilities can bait free attacks (Volt Absorb, Flash Fire, Levitate…).</li>
+                <li><span class="tag tag--std">Standard</span> An unrevealed Focus Sash isn't counted, so the AI may go for a "KO" that fails.</li>
+                <li><span class="tag tag--boss">Boss</span> Full knowledge from turn 1: only lines that still work once everything is revealed are reliable.</li>
+                <li><span class="tag tag--boss">Boss</span> A Boss never attacks into immunities, which makes its choice easier to predict.</li>
               </ul>
             </article>
           </div>
-
-          <details>
-            <summary>Helping Hand</summary>
-            <ul>
-              <li>Used when the partner has an immediate damaging conversion, especially when the boost improves the turn outcome (for example from non-KO into KO).</li>
-              <li>De-prioritized if the partner has no damage move, is switching, or is already on a non-converting status line.</li>
-              <li>If Helping Hand does not improve the immediate board state, the AI may choose another useful action.</li>
-            </ul>
-          </details>
-
-          <details>
-            <summary>Fake Out</summary>
-            <ul>
-              <li>Strongly tied to first turn in field: outside first turn, it is effectively discarded.</li>
-              <li>On first turn it is favored when flinch has real value or when it is still the best immediate damage line.</li>
-              <li>It is avoided into known anti-flinch / anti-secondary contexts (e.g. Covert Cloak, Inner Focus, Shield Dust, Substitute).</li>
-            </ul>
-          </details>
-        </section>
-
-
-        <section id="ai-limits" class="ai-section">
-          <h2>Notes</h2>
-          <div class="ai-card">
-            <ul>
-              <li>Results come from targeted scenarios: great for isolating decisions, not exhaustive for long multi-turn battles.</li>
-              <li>Not every advanced multi-turn interaction has been covered yet.</li>
-              <li>A small probabilistic component may occasionally produce different choices in seemingly identical states.</li>
-            </ul>
-          </div>
-        </section>
+        </section> -->
 
         <footer class="ai-footer">
           <p class="ai-muted">
-            Competitive tip: versus Bosses, rely less on surprise and more on robust lines that remain strong after reveal.
+            Found a behaviour that doesn't match this manual? Contact <strong>andryz90</strong> on Discord.
           </p>
         </footer>
       </div>
