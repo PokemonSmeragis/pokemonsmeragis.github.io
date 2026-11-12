@@ -13651,6 +13651,52 @@ var SETDEX_SV = {
         "Blizzard",
         "Flip Turn"
       ]
+    },
+    "Area Zero IRON BUNDLE & IRON VALIANT": {
+      "index": 338,
+      "slot": 0,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Quark Drive",
+      "nature": null,
+      "moves": [
+        "Freeze-Dry",
+        "Hydro Pump",
+        "Sheer Cold",
+        "Substitute"
+      ]
+    },
+    "Area Zero PARADOX FUTURE": {
+      "index": 341,
+      "slot": 3,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Quark Drive",
+      "nature": null,
+      "moves": [
+        "Freeze-Dry",
+        "Hydro Pump",
+        "Sheer Cold",
+        "Substitute"
+      ]
     }
   },
   "Hydrapple": {
@@ -28627,6 +28673,419 @@ var SETDEX_SV = {
         "Royal Guard",
         "Dual Wingbeat",
         "Solar Blade"
+      ]
+    }
+  },
+  "Great Tusk": {
+    "Area Zero GREAT TUSK": {
+      "index": 336,
+      "slot": 0,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": null,
+      "moves": [
+        "Close Combat",
+        "Headlong Rush",
+        "Ice Spinner",
+        "Body Press"
+      ]
+    },
+    "Area Zero GREAT TUSK & FLUTTER MANE": {
+      "index": 339,
+      "slot": 0,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": null,
+      "moves": [
+        "Headlong Rush",
+        "Close Combat",
+        "Ice Spinner",
+        "Body Press"
+      ]
+    },
+    "Area Zero PARADOX PAST": {
+      "index": 340,
+      "slot": 0,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": null,
+      "moves": [
+        "Headlong Rush",
+        "Close Combat",
+        "Ice Spinner",
+        "Body Press"
+      ]
+    }
+  },
+  "Brute Bonnet": {
+    "Area Zero BRUTE BONNET & SLITHER WING": {
+      "index": 337,
+      "slot": 0,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": null,
+      "moves": [
+        "Spore",
+        "Sucker Punch",
+        "Seed Bomb",
+        "Close Combat"
+      ]
+    },
+    "Area Zero PARADOX PAST": {
+      "index": 340,
+      "slot": 5,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": null,
+      "moves": [
+        "Spore",
+        "Sucker Punch",
+        "Seed Bomb",
+        "Close Combat"
+      ]
+    }
+  },
+  "Slither Wing": {
+    "Area Zero BRUTE BONNET & SLITHER WING": {
+      "index": 337,
+      "slot": 1,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": null,
+      "moves": [
+        "First Impression",
+        "Close Combat",
+        "Leech Life",
+        "Wild Charge"
+      ]
+    },
+    "Area Zero PARADOX PAST": {
+      "index": 340,
+      "slot": 4,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": null,
+      "moves": [
+        "First Impression",
+        "Close Combat",
+        "Leech Life",
+        "Wild Charge"
+      ]
+    }
+  },
+  "Iron Valiant": {
+    "Area Zero IRON BUNDLE & IRON VALIANT": {
+      "index": 338,
+      "slot": 1,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Quark Drive",
+      "nature": null,
+      "moves": [
+        "Spirit Break",
+        "Drain Punch",
+        "Protect",
+        "Knock Off"
+      ]
+    },
+    "Area Zero PARADOX FUTURE": {
+      "index": 341,
+      "slot": 2,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Quark Drive",
+      "nature": null,
+      "moves": [
+        "Spirit Break",
+        "Drain Punch",
+        "Protect",
+        "Knock Off"
+      ]
+    }
+  },
+  "Flutter Mane": {
+    "Area Zero GREAT TUSK & FLUTTER MANE": {
+      "index": 339,
+      "slot": 1,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": null,
+      "moves": [
+        "Moonblast",
+        "Shadow Ball",
+        "Psyshock",
+        "Mystical Fire"
+      ]
+    },
+    "Area Zero PARADOX PAST": {
+      "index": 340,
+      "slot": 2,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": null,
+      "moves": [
+        "Moonblast",
+        "Shadow Ball",
+        "Psyshock",
+        "Mystical Fire"
+      ]
+    }
+  },
+  "Koraidon": {
+    "Area Zero PARADOX PAST": {
+      "index": 340,
+      "slot": 1,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Orichalcum Pulse",
+      "nature": null,
+      "moves": [
+        "Collision Course",
+        "Flare Blitz",
+        "Dragon Claw",
+        "Crunch"
+      ]
+    }
+  },
+  "Roaring Moon": {
+    "Area Zero PARADOX PAST": {
+      "index": 340,
+      "slot": 3,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Protosynthesis",
+      "nature": null,
+      "moves": [
+        "Dragon Dance",
+        "Crunch",
+        "Acrobatics",
+        "Earthquake"
+      ]
+    }
+  },
+  "Iron Treads": {
+    "Area Zero PARADOX FUTURE": {
+      "index": 341,
+      "slot": 0,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Quark Drive",
+      "nature": null,
+      "moves": [
+        "High Horsepower",
+        "Iron Head",
+        "Body Press",
+        "Knock Off"
+      ]
+    }
+  },
+  "Miraidon": {
+    "Area Zero PARADOX FUTURE": {
+      "index": 341,
+      "slot": 1,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Hadron Engine",
+      "nature": null,
+      "moves": [
+        "Electro Drift",
+        "Draco Meteor",
+        "Volt Switch",
+        "Dazzling Gleam"
+      ]
+    }
+  },
+  "Iron Jugulis": {
+    "Area Zero PARADOX FUTURE": {
+      "index": 341,
+      "slot": 4,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Quark Drive",
+      "nature": null,
+      "moves": [
+        "Dark Pulse",
+        "Air Slash",
+        "Flamethrower",
+        "Earth Power"
+      ]
+    }
+  },
+  "Iron Thorns": {
+    "Area Zero PARADOX FUTURE": {
+      "index": 341,
+      "slot": 5,
+      "level": "70",
+      "ivs": {
+        "hp": 31,
+        "at": 31,
+        "df": 31,
+        "sa": 31,
+        "sd": 31,
+        "sp": 31
+      },
+      "ivsSpecified": false,
+      "item": "Booster Energy",
+      "ability": "Quark Drive",
+      "nature": null,
+      "moves": [
+        "Wild Charge",
+        "Stone Edge",
+        "Earthquake",
+        "Iron Head"
       ]
     }
   }
