@@ -2347,10 +2347,66 @@ var SHOWDOWN_SPRITE_ALIASES = {
 	"tauros-paldea-blaze": "taurospaldeablaze"
 };
 
+// Nomi dei set (stile Showdown) -> chiave del pokedex del calc, che usa i nomi
+// generati dalle costanti SPECIES_* della ROM (forme base esplicite).
 var POKEDEX_FORM_ALIASES = {
 	"Morpeko": "Morpeko-Full-Belly",
-	"Toxtricity": "Toxtricity-Amped"
+	"Toxtricity": "Toxtricity-Amped",
+	"Basculegion": "Basculegion-Male",
+	"Basculegion-F": "Basculegion-Female",
+	"Basculin": "Basculin-Red-Striped",
+	"Castform": "Castform-Normal",
+	"Cherrim": "Cherrim-Overcast",
+	"Darmanitan": "Darmanitan-Standard-Mode",
+	"Dudunsparce": "Dudunsparce-Two-Segment",
+	"Eiscue": "Eiscue-Ice",
+	"Florges": "Florges-Red",
+	"Furfrou": "Furfrou-Natural",
+	"Furfrou-Diamond-Trim": "Furfrou-Diamond",
+	"Gastrodon": "Gastrodon-West-Sea",
+	"Gastrodon-East": "Gastrodon-East-Sea",
+	"Shellos": "Shellos-West-Sea",
+	"Shellos-East": "Shellos-East-Sea",
+	"Indeedee": "Indeedee-M",
+	"Indeedee-F": "Indeedee-F",
+	"Lycanroc": "Lycanroc-Midday",
+	"Meloetta": "Meloetta-Aria",
+	"Meowstic": "Meowstic-Male",
+	"Meowstic-F": "Meowstic-Female",
+	"Mimikyu": "Mimikyu-Disguised",
+	"Oricorio": "Oricorio-Baile",
+	"Palafin": "Palafin-Zero",
+	"Poltchageist": "Poltchageist-Counterfeit",
+	"Squawkabilly": "Squawkabilly-Green",
+	"Wishiwashi": "Wishiwashi-Solo"
 };
+
+// Indice id normalizzato -> chiave del pokedex, per i nomi che differiscono solo
+// per spazi/punteggiatura (es. "Iron Bundle" -> "Iron-Bundle", "Sirfetch'd" -> "Sirfetchd").
+var pokedexIdIndex = null;
+var pokedexIdIndexSource = null;
+
+function toPokedexId(name) {
+	var s = String(name || "");
+	if (s.normalize) {
+		s = s.normalize("NFKD");
+	}
+	return s.toLowerCase().replace(/[^a-z0-9]+/g, "");
+}
+
+function lookupPokedexById(speciesName) {
+	if (pokedexIdIndexSource !== pokedex) {
+		pokedexIdIndex = {};
+		for (var key in pokedex) {
+			var id = toPokedexId(key);
+			if (!(id in pokedexIdIndex)) {
+				pokedexIdIndex[id] = key;
+			}
+		}
+		pokedexIdIndexSource = pokedex;
+	}
+	return pokedexIdIndex[toPokedexId(speciesName)];
+}
 
 function resolvePokedexSpeciesName(speciesName) {
 	if (!speciesName || !pokedex) {
@@ -2360,7 +2416,10 @@ function resolvePokedexSpeciesName(speciesName) {
 		return speciesName;
 	}
 	var aliased = POKEDEX_FORM_ALIASES[speciesName];
-	return aliased && pokedex[aliased] ? aliased : speciesName;
+	if (aliased && pokedex[aliased]) {
+		return aliased;
+	}
+	return lookupPokedexById(speciesName) || speciesName;
 }
 
 function getSpriteBaseSpecies(speciesName) {

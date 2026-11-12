@@ -744,6 +744,7 @@ var DPP_PATCH = {
     'Manaphy': { types: ['Water'], bs: { hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100 }, weightkg: 1.4 },
     'Mesprit': { types: ['Psychic'], bs: { hp: 80, at: 105, df: 105, sa: 105, sd: 105, sp: 80 }, weightkg: 0.3 },
     'Monferno': { types: ['Fire', 'Fighting'], bs: { hp: 64, at: 78, df: 52, sa: 78, sd: 52, sp: 81 }, weightkg: 22.0 },
+    'Mothim': { types: ['Bug', 'Flying'], bs: { hp: 70, at: 94, df: 50, sa: 94, sd: 70, sp: 105 }, weightkg: 23.3 },
     'Pachirisu': { types: ['Electric'], bs: { hp: 60, at: 45, df: 70, sa: 45, sd: 90, sp: 95 }, weightkg: 3.9 },
     'Palkia': { types: ['Water', 'Dragon'], bs: { hp: 90, at: 120, df: 100, sa: 150, sd: 120, sp: 100 }, weightkg: 336.0 },
     'Palkia-Origin': { types: ['Water', 'Dragon'], bs: { hp: 90, at: 100, df: 100, sa: 150, sd: 120, sp: 120 }, weightkg: 660.0 },

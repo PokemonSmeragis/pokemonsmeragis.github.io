@@ -18556,7 +18556,7 @@ var SETDEX_SV = {
       ]
     }
   },
-  "Spheal :3 (Spheal)": {
+  "Spheal": {
     "Developer Splitface": {
       "index": 120,
       "slot": 4,
