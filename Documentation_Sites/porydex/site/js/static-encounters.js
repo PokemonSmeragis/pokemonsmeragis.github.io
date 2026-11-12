@@ -66,10 +66,10 @@ Object.assign(window.BattleStaticEncounters, {
     "castform": [
         {
             "name": "Route 119 (Gift)",
-            "level": 25,
+            "level": 30,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "route119_weatherinstitute_2f-gift-85"
+            "zoneid": "route119_weatherinstitute_2f-gift-92"
         }
     ],
     "charcadet": [

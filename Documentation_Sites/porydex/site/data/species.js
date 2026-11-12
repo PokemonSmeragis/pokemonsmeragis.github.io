@@ -11319,9 +11319,9 @@ exports.BattlePokedex = {
         "baseStats": {
             "hp": 90,
             "atk": 85,
-            "def": 100,
+            "def": 95,
             "spe": 85,
-            "spa": 95,
+            "spa": 100,
             "spd": 125
         },
         "types": [
@@ -11339,8 +11339,8 @@ exports.BattlePokedex = {
         "expYield": 290,
         "gender": "N",
         "abilities": {
-            "0": "Pressure",
-            "H": "Snow Cloak"
+            "0": "Snow Cloak",
+            "H": "Snow Warning"
         },
         "color": "Blue",
         "name": "Articuno",
@@ -11415,8 +11415,8 @@ exports.BattlePokedex = {
         "expYield": 290,
         "gender": "N",
         "abilities": {
-            "0": "Pressure",
-            "H": "Static"
+            "0": "Static",
+            "H": "Drizzle"
         },
         "color": "Yellow",
         "name": "Zapdos",
@@ -11491,8 +11491,8 @@ exports.BattlePokedex = {
         "expYield": 290,
         "gender": "N",
         "abilities": {
-            "0": "Pressure",
-            "H": "Flame Body"
+            "0": "Flame Body",
+            "H": "Drought"
         },
         "color": "Yellow",
         "name": "Moltres",
@@ -20322,8 +20322,8 @@ exports.BattlePokedex = {
             "F": 0.5
         },
         "abilities": {
-            "0": "Water Veil",
-            "1": "Pressure",
+            "0": "Thick Fat",
+            "1": "Rain Dish",
             "H": "Oblivious"
         },
         "color": "Blue",
@@ -20364,8 +20364,8 @@ exports.BattlePokedex = {
         },
         "abilities": {
             "0": "Thick Fat",
-            "1": "Pressure",
-            "H": "Drizzle"
+            "1": "Rain Dish",
+            "H": "Water Bubble"
         },
         "color": "Blue",
         "name": "Wailord",
@@ -21763,10 +21763,10 @@ exports.BattlePokedex = {
         "num": 351,
         "baseStats": {
             "hp": 110,
-            "atk": 110,
+            "atk": 85,
             "def": 110,
             "spe": 85,
-            "spa": 85,
+            "spa": 110,
             "spd": 85
         },
         "types": [

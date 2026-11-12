@@ -81849,6 +81849,9 @@ exports.BattleLearnsets = {
             "wish": [
                 "L22"
             ],
+            "reflect": [
+                "L22"
+            ],
             "encore": [
                 "L26",
                 "T"
