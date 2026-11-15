@@ -833,6 +833,10 @@ function calculateBPModsSMSSSV(gen, attacker, defender, move, field, desc, baseP
         bpMods.push(4915);
         desc.attackerAbility = attacker.ability;
     }
+    if (attacker.hasAbility('Life Drainer') && move.drain && !move.named('Dream Eater')) {
+        bpMods.push(5120);
+        desc.attackerAbility = attacker.ability;
+    }
     if (attacker.hasItem('Punching Glove') && move.flags.punch) {
         bpMods.push(4506);
         desc.attackerItem = attacker.item;

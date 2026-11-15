@@ -10609,7 +10609,7 @@ exports.BattlePokedex = {
             "F": 0.125
         },
         "abilities": {
-            "0": "-------",
+            "0": "Ignite",
             "1": "Fur Coat",
             "H": "Toxic Boost"
         },
@@ -42850,7 +42850,7 @@ exports.BattlePokedex = {
     "pyukumuku": {
         "num": 771,
         "baseStats": {
-            "hp": 55,
+            "hp": 70,
             "atk": 60,
             "def": 130,
             "spe": 5,

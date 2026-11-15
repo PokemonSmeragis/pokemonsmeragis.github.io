@@ -1146,6 +1146,24 @@ function resolveLinkedTrainerSet(speciesName, trainerName) {
 	}
 
 	var speciesKeys = Object.keys(setdex);
+	// Etichetta esatta (link generati dallo sheet): basta trovare l'allenatore,
+	// la specie conta solo per preferire il Pokemon giusto se presente.
+	var exactMatch = "";
+	for (var exactIndex = 0; exactIndex < speciesKeys.length; exactIndex++) {
+		var exactSpecies = speciesKeys[exactIndex];
+		if (setdex[exactSpecies] && setdex[exactSpecies][trainerName]) {
+			if (linkedSpeciesMatches(speciesName, exactSpecies)) {
+				return exactSpecies + " (" + trainerName + ")";
+			}
+			if (!exactMatch) {
+				exactMatch = exactSpecies + " (" + trainerName + ")";
+			}
+		}
+	}
+	if (exactMatch) {
+		return exactMatch;
+	}
+
 	for (var i = 0; i < speciesKeys.length; i++) {
 		var speciesKey = speciesKeys[i];
 		if (!linkedSpeciesMatches(speciesName, speciesKey)) {
@@ -2939,7 +2957,12 @@ $(document).ready(function () {
 			selectTrainer(parseInt(lastP4, 10), "p4");
 		}
 	}
-	applyCalculatorDeepLinkParams(params);
+	// Rimandato dopo TUTTI gli handler di ready: moveset_import.js chiama
+	// loadDefaultLists()/selectFirstMon() nel suo ready, che reinizializza i
+	// selettori e cancellerebbe l'allenatore scelto dal link dello sheet.
+	setTimeout(function () {
+		applyCalculatorDeepLinkParams(params);
+	}, 0);
 });
 
 /* Click-to-copy function */

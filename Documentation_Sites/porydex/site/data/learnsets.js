@@ -34,7 +34,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L18",
-                "M"
+                "T"
             ],
             "takedown": [
                 "L21",
@@ -179,7 +179,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L20",
-                "M"
+                "T"
             ],
             "takedown": [
                 "L25",
@@ -331,7 +331,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L20",
-                "M"
+                "T"
             ],
             "takedown": [
                 "L25",
@@ -518,7 +518,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L20",
-                "M"
+                "T"
             ],
             "takedown": [
                 "L25",
@@ -705,7 +705,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L20",
-                "M"
+                "T"
             ],
             "takedown": [
                 "L25",
@@ -5389,9 +5389,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgewave": [
                 "M"
             ],
@@ -5438,6 +5435,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -5584,9 +5584,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgewave": [
                 "M"
             ],
@@ -5645,6 +5642,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shedtail": [
@@ -14513,9 +14513,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -14547,6 +14544,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -14634,9 +14634,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -14671,6 +14668,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -14768,9 +14768,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -14811,6 +14808,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -14924,9 +14924,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -14979,6 +14976,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -15072,9 +15072,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -15121,6 +15118,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -15222,9 +15222,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -15277,6 +15274,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -16330,9 +16330,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -16400,6 +16397,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandtomb": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -16527,9 +16527,6 @@ exports.BattleLearnsets = {
             "roar": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -16594,6 +16591,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -16711,9 +16711,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -16778,6 +16775,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -16911,9 +16911,6 @@ exports.BattleLearnsets = {
             "roar": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -16978,6 +16975,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -17107,9 +17107,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -17180,6 +17177,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -17320,9 +17320,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -17399,6 +17396,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -17516,9 +17516,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -17586,6 +17583,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandtomb": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -18158,9 +18158,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "stoneedge": [
                 "M"
             ],
@@ -18219,6 +18216,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -18377,9 +18377,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "stoneedge": [
                 "M"
             ],
@@ -18441,6 +18438,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -18617,9 +18617,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -18690,6 +18687,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -21299,9 +21299,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -21348,6 +21345,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -21453,9 +21453,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -21502,6 +21499,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -21627,9 +21627,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -21679,6 +21676,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -30062,7 +30062,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L34",
-                "M"
+                "T"
             ],
             "discharge": [
                 "L34"
@@ -30207,7 +30207,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L34",
-                "M"
+                "T"
             ],
             "discharge": [
                 "L34"
@@ -30388,9 +30388,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "skillswap": [
                 "M"
             ],
@@ -30428,6 +30425,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "psybeam": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "storedpower": [
@@ -30470,7 +30470,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L1",
-                "M"
+                "T"
             ],
             "worryseed": [
                 "L1"
@@ -30671,7 +30671,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L1",
-                "M"
+                "T"
             ],
             "worryseed": [
                 "L1"
@@ -34115,9 +34115,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -34152,6 +34149,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -41970,9 +41970,6 @@ exports.BattleLearnsets = {
             "roar": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -42016,6 +42013,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -44019,9 +44019,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -44065,6 +44062,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -44258,9 +44258,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -44316,6 +44313,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "slackoff": [
@@ -44515,9 +44515,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -44573,6 +44570,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "slackoff": [
@@ -47445,9 +47445,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "trailblaze": [
                 "M"
             ],
@@ -47488,6 +47485,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -47597,9 +47597,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "trailblaze": [
                 "M"
             ],
@@ -47643,6 +47640,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -47776,9 +47776,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "trailblaze": [
                 "M"
             ],
@@ -47837,6 +47834,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -47973,9 +47973,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "trailblaze": [
                 "M"
             ],
@@ -48034,6 +48031,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -50000,9 +50000,6 @@ exports.BattleLearnsets = {
             "playrough": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -50046,6 +50043,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "reversal": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -50192,9 +50192,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -50250,6 +50247,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "reversal": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -53978,9 +53978,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -54027,6 +54024,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skyattack": [
@@ -54152,9 +54152,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -54207,6 +54204,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skyattack": [
@@ -54339,9 +54339,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -54394,6 +54391,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -54495,9 +54495,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -54556,6 +54553,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -54690,9 +54690,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -54757,6 +54754,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -54857,7 +54857,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L39",
-                "M"
+                "T"
             ],
             "bulletseed": [
                 "M"
@@ -55020,9 +55020,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -55060,6 +55057,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "takedown": [
@@ -57494,9 +57494,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -57531,6 +57528,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandtomb": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stealthrock": [
@@ -57685,9 +57685,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -57743,6 +57740,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandtomb": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smartstrike": [
@@ -61505,9 +61505,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "taunt": [
                 "M"
             ],
@@ -61545,6 +61542,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -61694,9 +61694,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "stoneedge": [
                 "M"
             ],
@@ -61743,6 +61740,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -61904,9 +61904,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "stoneedge": [
                 "M"
             ],
@@ -61971,6 +61968,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -62127,9 +62127,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "snarl": [
                 "M"
             ],
@@ -62182,6 +62179,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -63647,9 +63647,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "surf": [
                 "M"
             ],
@@ -63690,6 +63687,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "screech": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -63832,9 +63832,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "tailwind": [
                 "M"
             ],
@@ -63905,6 +63902,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "reversal": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "snowscape": [
@@ -64972,9 +64972,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "stoneedge": [
                 "M"
             ],
@@ -65018,6 +65015,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandtomb": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smackdown": [
@@ -65146,9 +65146,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "stoneedge": [
                 "M"
             ],
@@ -65213,6 +65210,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandtomb": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smackdown": [
@@ -67798,9 +67798,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -67850,6 +67847,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -67983,9 +67983,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -68035,6 +68032,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -68198,9 +68198,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -68274,6 +68271,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaleshot": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -68446,9 +68446,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -68522,6 +68519,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaleshot": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -70563,9 +70563,6 @@ exports.BattleLearnsets = {
             "irontail": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -70606,6 +70603,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -70757,9 +70757,6 @@ exports.BattleLearnsets = {
             "irontail": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -70806,6 +70803,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -71001,9 +71001,6 @@ exports.BattleLearnsets = {
             "irontail": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -71071,6 +71068,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "screech": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -71220,9 +71220,6 @@ exports.BattleLearnsets = {
             "irontail": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -71311,6 +71308,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "screech": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -71825,9 +71825,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -71856,6 +71853,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -71981,9 +71981,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -72033,6 +72030,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -72186,9 +72186,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -72247,6 +72244,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -72362,9 +72362,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -72411,6 +72408,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "spite": [
@@ -72527,9 +72527,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -72600,6 +72597,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -72756,9 +72756,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -72865,6 +72862,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -73411,9 +73411,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "surf": [
                 "M"
             ],
@@ -73451,6 +73448,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "snowscape": [
@@ -75421,7 +75421,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L36",
-                "M"
+                "T"
             ],
             "spore": [
                 "L40"
@@ -75566,7 +75566,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L44",
-                "M"
+                "T"
             ],
             "combopunch": [
                 "L47"
@@ -75808,9 +75808,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -75857,6 +75854,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -75998,9 +75998,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -76083,6 +76080,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -76246,9 +76246,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -76343,6 +76340,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -82059,9 +82059,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -82096,6 +82093,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "spikes": [
@@ -82214,9 +82214,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -82251,6 +82248,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "spikes": [
@@ -82384,9 +82384,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -82424,6 +82421,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "spikes": [
@@ -82537,9 +82537,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -82574,6 +82571,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -82712,9 +82712,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -82764,6 +82761,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -84693,9 +84693,6 @@ exports.BattleLearnsets = {
             "reflect": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -84778,6 +84775,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "snowscape": [
@@ -85646,9 +85646,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -85710,6 +85707,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -85858,9 +85858,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -85940,6 +85937,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -86675,9 +86675,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -86736,6 +86733,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "reversal": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -86883,9 +86883,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgewave": [
                 "M"
             ],
@@ -86956,6 +86953,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -88611,9 +88611,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -88636,6 +88633,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stealthrock": [
@@ -88760,9 +88760,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -88800,6 +88797,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stealthrock": [
@@ -91443,9 +91443,6 @@ exports.BattleLearnsets = {
             "roar": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "tailwind": [
                 "M"
             ],
@@ -91501,6 +91498,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -99007,9 +99007,6 @@ exports.BattleLearnsets = {
             "roar": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -99047,6 +99044,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandtomb": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smackdown": [
@@ -99156,9 +99156,6 @@ exports.BattleLearnsets = {
             "roar": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -99196,6 +99193,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandtomb": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smackdown": [
@@ -99327,9 +99327,6 @@ exports.BattleLearnsets = {
             "scorchingsands": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -99400,6 +99397,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smackdown": [
@@ -102879,9 +102879,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -102925,6 +102922,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "safeguard": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "signalbeam": [
@@ -103764,9 +103764,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "thief": [
                 "M"
             ],
@@ -103819,6 +103816,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -104260,9 +104260,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "attract": [
                 "T"
             ],
@@ -104282,6 +104279,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "safeguard": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "weatherball": [
@@ -104388,9 +104388,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "attract": [
                 "T"
             ],
@@ -104413,6 +104410,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "safeguard": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -104522,9 +104522,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "attract": [
                 "T"
             ],
@@ -104547,6 +104544,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "safeguard": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -110201,9 +110201,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -110244,6 +110241,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "snowscape": [
@@ -110377,9 +110377,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -110444,6 +110441,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "snowscape": [
@@ -110580,9 +110580,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -110647,6 +110644,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "snowscape": [
@@ -114538,9 +114538,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -114578,6 +114575,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -114682,9 +114682,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -114719,6 +114716,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -121691,9 +121691,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -121728,6 +121725,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -121824,9 +121824,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -121861,6 +121858,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -121967,9 +121967,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -122028,6 +122025,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -123432,9 +123432,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -123490,6 +123487,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -123628,9 +123628,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -123692,6 +123689,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "signalbeam": [
@@ -124238,9 +124238,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -124290,6 +124287,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "screech": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -124411,9 +124411,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -124469,6 +124466,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "screech": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -124534,7 +124534,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L22",
-                "M"
+                "T"
             ],
             "torment": [
                 "L25",
@@ -124706,7 +124706,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L22",
-                "M"
+                "T"
             ],
             "torment": [
                 "L25",
@@ -129110,9 +129110,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -129144,6 +129141,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -129227,9 +129227,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -129258,6 +129255,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -129379,9 +129379,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -129431,6 +129428,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -129952,9 +129952,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "taunt": [
                 "M"
             ],
@@ -129974,6 +129971,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "endure": [
@@ -130091,9 +130091,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -130125,6 +130122,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "trickroom": [
@@ -130219,9 +130219,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -130235,6 +130232,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "endure": [
@@ -130346,9 +130346,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -130371,6 +130368,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -130511,9 +130511,6 @@ exports.BattleLearnsets = {
             "rocksmash": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -130563,6 +130560,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "takedown": [
@@ -133243,9 +133243,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "throatchop": [
                 "M"
             ],
@@ -133292,6 +133289,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "screech": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "spikes": [
@@ -135723,9 +135723,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgewave": [
                 "M"
             ],
@@ -135757,6 +135754,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "selfdestruct": [
@@ -135879,9 +135879,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgewave": [
                 "M"
             ],
@@ -135937,6 +135934,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "screech": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "selfdestruct": [
@@ -136062,9 +136062,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgewave": [
                 "M"
             ],
@@ -136120,6 +136117,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "screech": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "selfdestruct": [
@@ -136978,9 +136978,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "thief": [
                 "M"
             ],
@@ -137012,6 +137009,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -137142,9 +137142,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "thief": [
                 "M"
             ],
@@ -137185,6 +137182,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -138887,9 +138887,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -138924,6 +138921,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -139021,9 +139021,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -139058,6 +139055,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -139155,9 +139155,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -139192,6 +139189,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -139289,9 +139289,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -139326,6 +139323,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -139438,9 +139438,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -139487,6 +139484,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smartstrike": [
@@ -139608,9 +139608,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -139657,6 +139654,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smartstrike": [
@@ -139778,9 +139778,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -139827,6 +139824,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smartstrike": [
@@ -139948,9 +139948,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -139997,6 +139994,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smartstrike": [
@@ -140524,9 +140524,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "venoshock": [
                 "M"
             ],
@@ -140549,6 +140546,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -140640,9 +140640,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "venoshock": [
                 "M"
             ],
@@ -140674,6 +140671,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -141525,9 +141525,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -141553,6 +141550,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "round": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "spikes": [
@@ -141669,9 +141669,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -141715,6 +141712,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -149041,9 +149041,6 @@ exports.BattleLearnsets = {
             "rocksmash": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -149090,6 +149087,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smartstrike": [
@@ -152982,7 +152982,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L32",
-                "M"
+                "T"
             ],
             "mudshot": [
                 "L35",
@@ -153152,7 +153152,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L20",
-                "M"
+                "T"
             ],
             "pinmissile": [
                 "L24"
@@ -153367,7 +153367,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L35",
-                "M"
+                "T"
             ],
             "mudshot": [
                 "L41",
@@ -153639,7 +153639,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L35",
-                "M"
+                "T"
             ],
             "mudshot": [
                 "L41",
@@ -156725,9 +156725,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "trailblaze": [
                 "M"
             ],
@@ -156747,6 +156744,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "storedpower": [
@@ -156863,9 +156863,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "skillswap": [
                 "M"
             ],
@@ -156888,6 +156885,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "storedpower": [
@@ -157016,9 +157016,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "skillswap": [
                 "M"
             ],
@@ -157047,6 +157044,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "storedpower": [
@@ -157111,7 +157111,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L30",
-                "M"
+                "T"
             ],
             "bulkup": [
                 "L34",
@@ -157269,7 +157269,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L30",
-                "M"
+                "T"
             ],
             "bulkup": [
                 "L34",
@@ -162039,9 +162039,6 @@ exports.BattleLearnsets = {
             "lightscreen": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "thief": [
                 "M"
             ],
@@ -162082,6 +162079,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -163266,9 +163266,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -163315,6 +163312,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -163459,9 +163459,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -163529,6 +163526,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -163602,7 +163602,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L32",
-                "M"
+                "T"
             ],
             "shadowball": [
                 "L36",
@@ -163755,7 +163755,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L32",
-                "M"
+                "T"
             ],
             "shadowball": [
                 "L36",
@@ -163908,7 +163908,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L32",
-                "M"
+                "T"
             ],
             "shadowball": [
                 "L36",
@@ -164061,7 +164061,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L32",
-                "M"
+                "T"
             ],
             "shadowball": [
                 "L36",
@@ -164220,7 +164220,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L32",
-                "M"
+                "T"
             ],
             "shadowball": [
                 "L36",
@@ -164401,7 +164401,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L32",
-                "M"
+                "T"
             ],
             "shadowball": [
                 "L36",
@@ -164582,7 +164582,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L32",
-                "M"
+                "T"
             ],
             "shadowball": [
                 "L36",
@@ -164763,7 +164763,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L32",
-                "M"
+                "T"
             ],
             "shadowball": [
                 "L36",
@@ -167777,9 +167777,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -167835,6 +167832,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -167931,9 +167931,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -167995,6 +167992,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -168116,9 +168116,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -168207,6 +168204,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -168347,9 +168347,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -168435,6 +168432,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -169800,9 +169800,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "tailwind": [
                 "M"
             ],
@@ -169858,6 +169855,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smackdown": [
@@ -169960,9 +169960,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "taunt": [
                 "M"
             ],
@@ -170003,6 +170000,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -170114,9 +170114,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "taunt": [
                 "M"
             ],
@@ -170172,6 +170169,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -170295,9 +170295,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "taunt": [
                 "M"
             ],
@@ -170353,6 +170350,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -174764,9 +174764,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "trailblaze": [
                 "M"
             ],
@@ -174795,6 +174792,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -174905,9 +174905,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "trailblaze": [
                 "M"
             ],
@@ -174948,6 +174945,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -175058,9 +175058,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "trailblaze": [
                 "M"
             ],
@@ -175101,6 +175098,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -175193,9 +175193,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -175221,6 +175218,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "safeguard": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -175316,9 +175316,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "sludgebomb": [
                 "M"
             ],
@@ -175353,6 +175350,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "safeguard": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -176189,9 +176189,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -176220,6 +176217,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -176315,9 +176315,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -176355,6 +176352,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -176471,9 +176471,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -176526,6 +176523,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -176651,9 +176651,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -176694,6 +176691,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "storedpower": [
@@ -177014,9 +177014,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -177066,6 +177063,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smackdown": [
@@ -182575,9 +182575,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "thief": [
                 "M"
             ],
@@ -182627,6 +182624,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "reversal": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -185769,9 +185769,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "snarl": [
                 "M"
             ],
@@ -185830,6 +185827,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "safeguard": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smartstrike": [
@@ -186999,7 +186999,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L47",
-                "M"
+                "T"
             ],
             "bulldoze": [
                 "M"
@@ -190036,9 +190036,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -190085,6 +190082,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -190176,9 +190176,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -190228,6 +190225,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -190362,9 +190362,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "snarl": [
                 "M"
             ],
@@ -190435,6 +190432,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -190572,9 +190572,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "snarl": [
                 "M"
             ],
@@ -190645,6 +190642,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -192003,9 +192003,6 @@ exports.BattleLearnsets = {
             "facade": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "thief": [
                 "M"
             ],
@@ -192034,6 +192031,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "takedown": [
@@ -192125,9 +192125,6 @@ exports.BattleLearnsets = {
             "hyperbeam": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "thief": [
                 "M"
             ],
@@ -192177,6 +192174,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -193687,9 +193687,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -193715,6 +193712,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -195407,9 +195407,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -195456,6 +195453,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -195562,9 +195562,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -195611,6 +195608,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -195729,9 +195729,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -195784,6 +195781,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -195902,9 +195902,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -195957,6 +195954,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -196062,9 +196062,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -196090,6 +196087,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "pounce": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -196207,9 +196207,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -196259,6 +196256,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -202155,9 +202155,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "snarl": [
                 "M"
             ],
@@ -202234,6 +202231,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "spite": [
@@ -202342,9 +202342,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "snarl": [
                 "M"
             ],
@@ -202421,6 +202418,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "spite": [
@@ -206483,9 +206483,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "snarl": [
                 "M"
             ],
@@ -206565,6 +206562,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -206701,9 +206701,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "snarl": [
                 "M"
             ],
@@ -206783,6 +206780,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -207448,9 +207448,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "skillswap": [
                 "M"
             ],
@@ -207497,6 +207494,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -207701,9 +207701,6 @@ exports.BattleLearnsets = {
             "roar": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "skillswap": [
                 "M"
             ],
@@ -207771,6 +207768,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "smartstrike": [
@@ -207974,9 +207974,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "skillswap": [
                 "M"
             ],
@@ -208041,6 +208038,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -208433,7 +208433,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L17",
-                "M"
+                "T"
             ],
             "uturn": [
                 "L21",
@@ -208565,7 +208565,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L20",
-                "M"
+                "T"
             ],
             "uturn": [
                 "L24",
@@ -208723,7 +208723,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L20",
-                "M"
+                "T"
             ],
             "uturn": [
                 "L24",
@@ -208974,9 +208974,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "temperflare": [
                 "M"
             ],
@@ -209014,6 +209011,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -209116,9 +209116,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "temperflare": [
                 "M"
             ],
@@ -209156,6 +209153,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -209292,9 +209292,6 @@ exports.BattleLearnsets = {
             "scorchingsands": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -209350,6 +209347,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "protect": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -209909,9 +209909,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "thief": [
                 "M"
             ],
@@ -209937,6 +209934,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -210043,9 +210043,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "thief": [
                 "M"
             ],
@@ -210083,6 +210080,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -210192,9 +210192,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "thief": [
                 "M"
             ],
@@ -210232,6 +210229,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -211236,9 +211236,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "strength": [
                 "M"
             ],
@@ -211309,6 +211306,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "sunnyday": [
@@ -211424,9 +211424,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "taunt": [
                 "M"
             ],
@@ -211458,6 +211455,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -211576,9 +211576,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "taunt": [
                 "M"
             ],
@@ -211616,6 +211613,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -211734,9 +211734,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "taunt": [
                 "M"
             ],
@@ -211774,6 +211771,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "raindance": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "shadowclaw": [
@@ -212128,7 +212128,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L27",
-                "M"
+                "T"
             ],
             "energyball": [
                 "L30",
@@ -212232,7 +212232,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L29",
-                "M"
+                "T"
             ],
             "energyball": [
                 "L34",
@@ -212342,7 +212342,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L29",
-                "M"
+                "T"
             ],
             "energyball": [
                 "L34",
@@ -215124,9 +215124,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -215164,6 +215161,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "spikes": [
@@ -215251,9 +215251,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -215294,6 +215291,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "skittersmack": [
@@ -215356,7 +215356,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L32",
-                "M"
+                "T"
             ],
             "spore": [
                 "L36"
@@ -215522,7 +215522,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L34",
-                "M"
+                "T"
             ],
             "spore": [
                 "L40"
@@ -215859,7 +215859,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L44",
-                "M"
+                "T"
             ],
             "solarbeam": [
                 "L48",
@@ -215982,7 +215982,7 @@ exports.BattleLearnsets = {
             ],
             "seedbomb": [
                 "L44",
-                "M"
+                "T"
             ],
             "solarbeam": [
                 "L48",
@@ -216448,9 +216448,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "skillswap": [
                 "M"
             ],
@@ -216485,6 +216482,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "storedpower": [
@@ -216603,9 +216603,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "shadowball": [
                 "M"
             ],
@@ -216670,6 +216667,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sandstorm": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "storedpower": [
@@ -220637,9 +220637,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "taunt": [
                 "M"
             ],
@@ -220689,6 +220686,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "stompingtantrum": [
@@ -223043,9 +223043,6 @@ exports.BattleLearnsets = {
             "rest": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "snarl": [
                 "M"
             ],
@@ -223089,6 +223086,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -225941,9 +225941,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -226008,6 +226005,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -226130,9 +226130,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -226197,6 +226194,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -226319,9 +226319,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -226386,6 +226383,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -226508,9 +226508,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -226575,6 +226572,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -226697,9 +226697,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -226764,6 +226761,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -226886,9 +226886,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -226953,6 +226950,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -227075,9 +227075,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -227142,6 +227139,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [
@@ -227264,9 +227264,6 @@ exports.BattleLearnsets = {
             "rocktomb": [
                 "M"
             ],
-            "seedbomb": [
-                "M"
-            ],
             "solarbeam": [
                 "M"
             ],
@@ -227331,6 +227328,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "scaryface": [
+                "T"
+            ],
+            "seedbomb": [
                 "T"
             ],
             "solarblade": [

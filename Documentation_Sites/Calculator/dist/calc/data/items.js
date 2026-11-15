@@ -519,6 +519,7 @@ SS.push('Utility Umbrella', 'Vile Vial');
 SS.push.apply(SS, __spreadArray(__spreadArray([], __read(GSC_ONLY), false), ['Old Amber'], false));
 var SV = SS.concat([
     'Adamant Crystal',
+    'Nugget',
     'Auspicious Armor',
     'Ability Shield',
     'Booster Energy',

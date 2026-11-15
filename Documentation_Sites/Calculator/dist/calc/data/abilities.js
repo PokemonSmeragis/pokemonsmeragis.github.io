@@ -372,7 +372,7 @@ var SV = SS.concat([
     'Wind Glider',
     'Spirit Body',
     'Mind Power',
-    'Lifedrainer',
+    'Life Drainer',
     'Psychic Pelt',
     'Electric Pelt',
     'Misty Pelt',

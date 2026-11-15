@@ -1,31 +1,443 @@
-Aqua Grunt @ 	Rival MAY #1 | Rival MAY #2 | Rival MAY #3 | Rival BRENDAN #1 | Rival BRENDAN #2 | Rival BRENDAN #3  |Youngster CALVIN | Bug Catcher RICK | Youngster ALLEN | Lass TIANA | Youngster BILLY | Fisherman DARIAN | Lady CINDY #2 | Bug Catcher LYLE | Team Aqua GRUNT
+# =============================================================================
+#  Pokemon Smeragis - split della Trainer Sheet (site/trainer_sheet.html)
+#  Contenuto: tutti e soli i fight affrontabili nella demo (fino alla Route 120).
+# =============================================================================
+#
+#  [Nome split]               inizia uno split (un bottone nella barra in alto)
+#  == Nome sezione ==         gruppo richiudibile dentro lo split (facoltativo)
+#  TRAINER_X                  un trainer, per ID ("=== TRAINER_X ===" in trainers.party
+#                             o special_battles.party)
+#  PARTNER_X                  un partner ("=== PARTNER_X ===" in battle_partners.party)
+#  TRAINER_X (nota)           nota mostrata accanto al nome del trainer
+#  TRAINER_A && TRAINER_B     due trainer nella stessa tabella (doppia / multi)
+#  ... [Back-to-Back]         come sopra, ma etichettata come Back-to-Back
+#
+#  Righe vuote e righe che iniziano con # vengono ignorate; l'indentazione e' libera.
+#  Un ID inesistente produce un "[warn] trainer id non trovato" durante il build.
+#  (Sono ancora accettati il vecchio formato su una riga "Split @ Sez :: a | b"
+#   e i nomi tipo "Team Aqua GRUNT #3", ma gli ID non dipendono dall'ordine.)
+# =============================================================================
 
-Roxanne @ 	Bug Catcher James | Rich Boy Winston | Lass Haley | Twins GINA & MIA [Double Battle] #2 | Youngster Josh | Youngster Tommy && Hiker Marc | Leader ROXANNE
 
-GruntMulti @  Bug Catcher Jose | Youngster Joey | School Kid Karen | Hiker Clark | Hiker Devan && Youngster Johnson | Team Aqua Grunt #2 | Partner Rival Wally
+[Aqua Grunt]
+    TRAINER_MAY_ROUTE_103_MUDKIP
+    TRAINER_MAY_ROUTE_103_TREECKO
+    TRAINER_MAY_ROUTE_103_TORCHIC
+    TRAINER_BRENDAN_ROUTE_103_MUDKIP
+    TRAINER_BRENDAN_ROUTE_103_TREECKO
+    TRAINER_BRENDAN_ROUTE_103_TORCHIC
+    TRAINER_CALVIN_1
+    TRAINER_RICK
+    TRAINER_ALLEN
+    TRAINER_TIANA
+    TRAINER_BILLY
+    TRAINER_DARIAN
+    TRAINER_CINDY_1
+    TRAINER_LYLE
+    TRAINER_GRUNT_PETALBURG_WOODS
 
-Brawly @ 	Rival MAY #4 | Rival MAY #5 | Rival MAY #6 | Rival BRENDAN #4 | Rival BRENDAN #5 | Rival BRENDAN #6 | Fisherman Ned | Fisherman Elliot | Developer Splitface| Tuber m Chandler && Tuber f Lola #1 | Swimmer f Alice | Sailor Huey | Tuber m Ricky #1 && Sailor Edmond| Team Aqua GRUNT #3 | Team Aqua GRUNT #4| Battle Girl LAURA | Battle Girl Lilith && Sailor Brenden | Black Belt Cristian | Black Belt Takao | Battle Girl Jocelyn | Leader BRAWLY
 
-Rival 110 @ PokeFan Isabel #1 && Pokefan Kaleb | Youngster Timmy | Rival MAY #7 | Rival MAY #8 | Rival MAY #9 | Rival BRENDAN #7 | Rival BRENDAN #8 | Rival BRENDAN #9 
+[Roxanne]
+    TRAINER_JAMES_1
+    TRAINER_WINSTON_1
+    TRAINER_HALEY_1
+    TRAINER_GINA_AND_MIA_1
+    TRAINER_JOSH
+    TRAINER_TOMMY && TRAINER_MARC
+    TRAINER_ROXANNE_1
 
-Wattson @   Mauville Gym :: Psychic EDWARD && Triathlete ALYSSA | Battle Girl VIVIAN && Guitarist KIRK | Youngster BEN | Bug Maniac ANGELO && Guitarist SHAWN | Leader WATTSON
 
-Wally Mauville @ Sr And Jr ANNA & MEG #1 | Triathlete DYLAN #1 | Pokemon Breeder M ISAAC #1 | Triathlete MELINA && Triathlete MARIA #1 | Bug Maniac DEREK | Pokemon Breeder F LYDIA #1 | Battle Girl AISHA && Psychic BRANDI | Rival WALLY
+[GruntMulti]
+    TRAINER_JOSE
+    TRAINER_JOEY
+    TRAINER_KAREN_1
+    TRAINER_CLARK
+    TRAINER_DEVAN && TRAINER_JOHNSON
+    TRAINER_GRUNT_RUSTURF_TUNNEL
+    PARTNER_WALLY
 
-Meteor Falls @ Camper LARRY && Picnicker CAROL | Kindler BRYANT && Aroma Lady SHAYLA | Black Belt DAISUKE && Cooltrainer WILTON #1 | Cooltrainer BROOKE #1 | Youngster JAYLEN && Parasol Lady MADELINE [Back-to-Back] | Twins TORI & TIA | Picnicker SOPHIE && Bird Keeper COBY | Fisherman CLAUDE | Picnicker NANCY | Camper SHANE | Pokemaniac STEVE #1 | Kindler BERNIE #1 | Hiker LUCAS && Picnicker ANGELINA | Team Magma GRUNT #28
 
-Flannery @ Hiker Eric | Picnicker Autumn && Triathlete Julio | Picnicker Diana #4 | Kindler Jace && Hiker Eli |  Kindler Cole && Cooltrainer Gerald | Kindler Axle | Kindler Keegan | Battle Girl Danielle | Leader Flannery #1
+[Brawly]
+    TRAINER_MAY_RUSTBORO_MUDKIP
+    TRAINER_MAY_RUSTBORO_TREECKO
+    TRAINER_MAY_RUSTBORO_TORCHIC
+    TRAINER_BRENDAN_RUSTBORO_TREECKO
+    TRAINER_BRENDAN_RUSTBORO_MUDKIP
+    TRAINER_BRENDAN_RUSTBORO_TORCHIC
+    TRAINER_NED
+    TRAINER_ELLIOT_1
+    TRAINER_SPLITFACE_1
+    TRAINER_CHANDLER && TRAINER_LOLA_1
+    TRAINER_ALICE
+    TRAINER_HUEY
+    TRAINER_RICKY_1 && TRAINER_EDMOND
+    TRAINER_GRUNT_MUSEUM_1
+    TRAINER_GRUNT_MUSEUM_2
+    TRAINER_LAURA
+    TRAINER_LILITH && TRAINER_BRENDEN
+    TRAINER_CRISTIAN
+    TRAINER_TAKAO
+    TRAINER_JOCELYN
+    TRAINER_BRAWLY_1
 
-Magma Desert @ Team Magma Grunt #29 && Team Magma Grunt #30 | Partner Rival Wally #2 |Team Magma Grunt #34 | Team Magma Grunt #39 |Team Magma Grunt #31 | Team Magma Grunt #32 | Team Magma Grunt #33 | Team Magma Grunt #35 | Team Magma Grunt #36 | Team Magma Grunt #37 | Team Magma Grunt #38 | Magma Admin Tabitha #3 | Magma Leader Maxie #3
 
-Norman @ Route 111 - Desert (optional) :: Camper DREW | Camper BEAU | Picnicker HEIDI | Picnicker BECKY | Ruin Maniac DUSTY | Picnicker CELIA | Ruin Maniac BRYAN | Camper BRANDEN || Cycling Road (Route 110) :: Triathlete ABIGAIL #3 | Triathlete ANTHONY (optional) | Triathlete JACOB (optional) | Triathlete BENJAMIN (optional) | Triathlete JASMINE (optional) || Petalburg Gym - Trap Route :: Cooltrainer RANDALL (Trap Room) | Cooltrainer GEORGE (Recovery Room) | Cooltrainer JODY (Strength Room) || Petalburg Gym - Accuracy Route :: Cooltrainer MARY (Accuracy Room) | Cooltrainer ALEXIA (Defense Room) | Cooltrainer BERKE (One-Hit KO Room) || Petalburg Gym - Final Rooms :: Cooltrainer PARKER (Metronome Room) | Leader NORMAN (Gym Leader's Room)
+[Rival 110]
+    TRAINER_ISABEL_1 && TRAINER_KALEB
+    TRAINER_TIMMY
+    TRAINER_MAY_ROUTE_110_MUDKIP
+    TRAINER_MAY_ROUTE_110_TREECKO
+    TRAINER_MAY_ROUTE_110_TORCHIC
+    TRAINER_BRENDAN_ROUTE_110_MUDKIP
+    TRAINER_BRENDAN_ROUTE_110_TREECKO
+    TRAINER_BRENDAN_ROUTE_110_TORCHIC
 
-Surf Routes @ Route 105 :: Swimmer M LUIS | Swimmer M DOMINIK | Swimmer F BEVERLY | Swimmer F IMANI || Route 106 :: Swimmer M DOUGLAS | Swimmer F KYLA || Route 107 :: Swimmer M DARRIN | Swimmer M TONY | Swimmer F DENISE | Swimmer F BETH | Sis And Bro LISA & RAY | Triathlete M CAMRON || Route 108 :: Swimmer M JEROME | Cooltrainer F CAROLINA | Sailor CORY || Route 109 :: Swimmer M DAVID | Tuber F AUSTINA | Tuber F GWEN | Fisherman CARTER | Young Couple MEL & PAUL | Bird Keeper ELIJAH
 
-Abandoned Ship @ Team Aqua Event - Corridors 1F :: Team Aqua GRUNT #28 || Team Aqua Event - Rooms 2 - 1F :: Team Aqua GRUNT #30 | Team Aqua GRUNT #31 || Team Aqua Event - Corridors B1F :: Team Aqua GRUNT #29 || Team Aqua Event - Rooms 2 - B1F :: Team Aqua GRUNT #27 || After Captain's Office - Corridors 1F :: Tuber M CHARLIE || After Captain's Office - Rooms 1F :: Youngster DEMETRIUS | Beauty THALIA || After Captain's Office - Rooms 2 - 1F :: Young Couple KIRA & DAN | Tuber F JANI | Ruin Maniac GARRISON || After Captain's Office - Corridors B1F :: Sailor DUNCAN
+[Wattson]
 
-Area Zero @ Area Zero - Inside :: Area Zero GREAT TUSK || Area Zero - Inside 2 :: Area Zero BRUTE BONNET & SLITHER WING && Partner Pkmn Trainer 1 ANDRY | Area Zero IRON BUNDLE & IRON VALIANT && Partner Developer SPLITFACE | Area Zero GREAT TUSK & FLUTTER MANE || Final Boss - Past :: Area Zero PARADOX PAST | Partner Rival MAY (starter Treecko) | Partner Rival MAY #2 (starter Torchic) | Partner Rival MAY #3 (starter Mudkip) | Partner Rival BRENDAN (starter Treecko) | Partner Rival BRENDAN #2 (starter Torchic) | Partner Rival BRENDAN #3 (starter Mudkip) || Final Boss - Future :: Area Zero PARADOX FUTURE && Partner Rival WALLY #3
+== Route 110 ==
+    TRAINER_JACLYN
 
-Winona @ Route 118 :: Youngster DEANDRE | Aroma Lady ROSE | Fisherman WADE | Guitarist DALTON | Fisherman BARNY || Route 119 :: Bug Catcher GREG | Bug Catcher KENT | Bug Catcher DOUG | Pkmn Ranger CATHERINE | Pkmn Ranger JACKSON | Parasol Lady RACHEL | Bird Keeper PHIL | Bug Catcher DAYTON | Ninja Boy TAKASHI || Weather Institute :: Team Aqua GRUNT #9 | Team Aqua GRUNT #6 | Team Aqua GRUNT #5 | Team Aqua GRUNT #7 | Team Aqua GRUNT #8 | Aqua Admin SHELLY || Route 119 - Rival :: Rival MAY #14 (starter Treecko) && Rival WALLY #7 | Rival MAY #15 (starter Torchic) && Rival WALLY #7 | Rival MAY #13 (starter Mudkip) && Rival WALLY #7 | Rival BRENDAN #14 (starter Treecko) && Rival WALLY #7 | Rival BRENDAN #15 (starter Torchic) && Rival WALLY #7 | Rival BRENDAN #13 (starter Mudkip) && Rival WALLY #7 || Route 119 - North :: Ninja Boy YASU | Guitarist FABIAN || Route 120 :: Parasol Lady CLARISSA | Bird Keeper ROBERT | Bird Keeper COLIN | Ninja Boy RILEY | Battle Girl CALLIE | Parasol Lady ANGELICA | Cooltrainer M LEONEL | Cooltrainer F JENNIFER | Pkmn Ranger JENNA | Pkmn Ranger LORENZO | Ruin Maniac CHIP | Ninja Boy KEIGO | Bug Maniac JEFFREY || Fortree Gym :: Bird Keeper HUMBERTO | Picnicker ASHLEY | Bird Keeper JARED | Bird Keeper DARIUS | Camper FLINT | Bird Keeper EDWARDO | Leader WINONA
+== Mauville Gym ==
+    TRAINER_EDWARD && TRAINER_ALYSSA
+    TRAINER_VIVIAN && TRAINER_KIRK
+    TRAINER_BEN
+    TRAINER_ANGELO && TRAINER_SHAWN
+    TRAINER_WATTSON_1
 
-Optional @ Petalburg Woods - Bugsy (Before Badge 3) :: Leader Johto BUGSY #2 || Petalburg Woods - Bugsy (After Badge 3) :: Leader Johto BUGSY #1 || Route 103 :: Aroma Lady DAISY | Twins AMY & LIV | Fisherman ANDREW | Pokefan MIGUEL | Guitarist MARCOS | Black Belt RHETT  || Route 110 :: Collector EDWIN && Guitarist JOSEPH || Route 111 - Winstrate House :: Pokefan M VICTOR | Pokefan F VICTORIA | Winstrate VIVI | Expert F VICKY || Route 113 :: Ninja Boy LUNG && Camper LAWRENCE | Pokemaniac WYATT || Route 114 :: Fisherman KAI && Picnicker CHARLOTTE || Route 115 :: Expert TIMOTHY #1 | Black Belt KOICHI | Black Belt NOB | Battle Girl CYNDY #1 | Collector HECTOR | Triathlete KYRA | Ninja Boy JAIDEN | Psychic ALIX | Battle Girl HELENE | Psychic MARLENE || Route 116 (Before Badge 2) :: School Kid JERRY #1 | Lass JANICE #1 | Lady SARAH #1 | Rich Boy DAWSON #1 || Route 116 (After Badge 2) :: School Kid JERRY #6 | Lass JANICE #2 | Lady SARAH #2 | Rich Boy DAWSON #2 || Jagged Pass :: Team Magma GUARDIAN GRUNT || Trick House - Puzzle 1 :: Lass SALLY | Youngster EDDIE | Lass ROBIN || Trick House - Puzzle 2 :: School Kid TED | School Kid PAUL | School Kid GEORGIA || Trick House - Puzzle 3 :: Camper JUSTIN | Picnicker MARTHA | Hiker ALAN || Trick House - Puzzle 4 :: Battle Girl CORA | Black Belt YUJI | Battle Girl PAULA || Trick House - Puzzle 6 :: Pkmn Ranger SOPHIA | Bird Keeper BENNY | Pkmn Ranger SEBASTIAN || Trick House - Puzzle 7 :: Psychic JOSHUA | Hex Maniac PATRICIA | Psychic ALEXIS | Psychic MARIELA | Psychic ALVARO | Gentleman EVERETT || Trick House - Puzzle 8 :: Cooltrainer VINCENT | Cooltrainer KEIRA | Cooltrainer LEROY || Route 105 :: Ruin Maniac FOSTER | Bird Keeper JOSUE | Ruin Maniac ANDRES || Route 118 :: Bird Keeper PERRY || Route 119 :: Ninja Boy HIDEO | Developer ANDRY && Developer SPLITFACE || Route 123 :: Cooltrainer F JAZMYN && Bug Catcher DAVIS
+
+[Wally Mauville]
+    TRAINER_ANNA_AND_MEG_1
+    TRAINER_DYLAN_1
+    TRAINER_ISAAC_1
+    TRAINER_MELINA && TRAINER_MARIA_1
+    TRAINER_DEREK
+    TRAINER_LYDIA_1
+    TRAINER_AISHA && TRAINER_BRANDI
+    TRAINER_WALLY_MAUVILLE
+
+
+[Meteor Falls]
+    TRAINER_LARRY && TRAINER_CAROL
+    TRAINER_BRYANT && TRAINER_SHAYLA
+    TRAINER_DAISUKE && TRAINER_WILTON_1
+    TRAINER_BROOKE_1
+    TRAINER_HAYDEN
+    TRAINER_JAYLEN && TRAINER_MADELINE_1 [Back-to-Back]
+    TRAINER_TORI_AND_TIA
+    TRAINER_SOPHIE && TRAINER_COBY
+    TRAINER_CLAUDE
+    TRAINER_NANCY
+    TRAINER_SHANE
+    TRAINER_STEVE_1
+    TRAINER_BERNIE_1
+    TRAINER_LUCAS_1 && TRAINER_ANGELINA
+    TRAINER_MAGMA_GRUNT_ROUTE114
+
+
+[Flannery]
+    TRAINER_ERIC
+    TRAINER_AUTUMN && TRAINER_JULIO
+    TRAINER_DIANA_1
+    TRAINER_JACE && TRAINER_ELI
+    TRAINER_COLE && TRAINER_GERALD
+    TRAINER_AXLE
+    TRAINER_KEEGAN
+    TRAINER_DANIELLE
+    TRAINER_FLANNERY_1
+
+
+[Magma Desert]
+    TRAINER_GRUNT_DESERT_MULTI1 && TRAINER_GRUNT_DESERT_MULTI2
+    PARTNER_WALLY_DESERT
+    TRAINER_MAGMA_GRUNT_DESERT_SPINNER1
+    TRAINER_MAGMA_GRUNT_DESERT_SPINNER3
+    TRAINER_GRUNT_DESERT1
+    TRAINER_GRUNT_DESERT2
+    TRAINER_GRUNT_DESERT3
+    TRAINER_GRUNT_DESERT4
+    TRAINER_MAGMA_GRUNT_DESERT_SPINNER2
+    TRAINER_GRUNT_DESERT5
+    TRAINER_GRUNT_DESERT6
+    TRAINER_TABITHA_DESERT
+    TRAINER_MAXIE_DESERT
+
+
+[Norman]
+
+== Route 111 - Desert (optional) ==
+    TRAINER_DREW
+    TRAINER_BEAU
+    TRAINER_HEIDI
+    TRAINER_BECKY
+    TRAINER_DUSTY_1
+    TRAINER_CELIA
+    TRAINER_BRYAN
+    TRAINER_BRANDEN
+
+== Cycling Road (Route 110) ==
+    TRAINER_ABIGAIL_1
+    TRAINER_ANTHONY (optional)
+    TRAINER_JACOB (optional)
+    TRAINER_BENJAMIN_1 (optional)
+    TRAINER_JASMINE (optional)
+
+== Petalburg Gym - Trap Route ==
+    TRAINER_RANDALL (Trap Room)
+    TRAINER_GEORGE (Recovery Room)
+    TRAINER_JODY (Strength Room)
+
+== Petalburg Gym - Accuracy Route ==
+    TRAINER_MARY (Accuracy Room)
+    TRAINER_ALEXIA (Defense Room)
+    TRAINER_BERKE (One-Hit KO Room)
+
+== Petalburg Gym - Final Rooms ==
+    TRAINER_PARKER (Metronome Room)
+    TRAINER_NORMAN_1 (Gym Leader's Room)
+
+
+[Surf Routes]
+
+== Route 105 ==
+    TRAINER_LUIS
+    TRAINER_DOMINIK
+
+== Route 106 ==
+    TRAINER_DOUGLAS
+    TRAINER_KYLA
+
+== Route 107 ==
+    TRAINER_DARRIN
+    TRAINER_TONY_1
+    TRAINER_DENISE
+    TRAINER_BETH
+    TRAINER_LISA_AND_RAY
+    TRAINER_CAMRON
+
+== Route 108 ==
+    TRAINER_JEROME
+    TRAINER_CAROLINA
+    TRAINER_CORY_1
+
+== Route 109 ==
+    TRAINER_DAVID
+    TRAINER_AUSTINA
+    TRAINER_GWEN
+    TRAINER_CARTER
+    TRAINER_MEL_AND_PAUL
+    TRAINER_ELIJAH
+
+
+[Abandoned Ship]
+
+== Team Aqua Event - Corridors 1F ==
+    TRAINER_GRUNT_ABANDONED_SHIP_1
+
+== Team Aqua Event - Rooms 2 - 1F ==
+    TRAINER_GRUNT_ABANDONED_SHIP_3
+    TRAINER_GRUNT_ABANDONED_SHIP_4
+
+== Team Aqua Event - Corridors B1F ==
+    TRAINER_GRUNT_ABANDONED_SHIP_2
+
+== Team Aqua Event - Rooms 2 - B1F ==
+    TRAINER_GRUNT_ABANDONED_SHIP_5
+
+== After Captain's Office - Corridors 1F ==
+    TRAINER_CHARLIE
+
+== After Captain's Office - Rooms 1F ==
+    TRAINER_DEMETRIUS
+    TRAINER_THALIA_1
+
+== After Captain's Office - Rooms 2 - 1F ==
+    TRAINER_KIRA_AND_DAN_1
+    TRAINER_JANI
+    TRAINER_GARRISON
+
+== After Captain's Office - Corridors B1F ==
+    TRAINER_DUNCAN
+
+
+[Area Zero]
+
+== Area Zero - Inside ==
+    TRAINER_AREA_ZERO_GREAT_TUSK
+
+== Area Zero - Inside 2 ==
+    TRAINER_AREA_ZERO_ANDRY_PARADOX && PARTNER_ANDRY
+    TRAINER_AREA_ZERO_SPLITFACE_PARADOX && PARTNER_SPLITFACE
+    TRAINER_AREA_ZERO_PLAYER_PARADOX
+
+== Final Boss - Past ==
+    TRAINER_AREA_ZERO_BOSS_PAST
+    PARTNER_MAY_AREA_ZERO_TREECKO (starter Treecko)
+    PARTNER_MAY_AREA_ZERO_TORCHIC (starter Torchic)
+    PARTNER_MAY_AREA_ZERO_MUDKIP (starter Mudkip)
+    PARTNER_BRENDAN_AREA_ZERO_TREECKO (starter Treecko)
+    PARTNER_BRENDAN_AREA_ZERO_TORCHIC (starter Torchic)
+    PARTNER_BRENDAN_AREA_ZERO_MUDKIP (starter Mudkip)
+
+== Final Boss - Future ==
+    TRAINER_AREA_ZERO_BOSS_FUTURE && PARTNER_WALLY_AREA_ZERO
+
+
+[Winona]
+
+== Route 118 ==
+    TRAINER_DEANDRE
+    TRAINER_ROSE_1
+    TRAINER_WADE
+    TRAINER_DALTON_1
+
+== Route 119 ==
+    TRAINER_CATHERINE_1
+    TRAINER_JACKSON_1
+    TRAINER_RACHEL
+    TRAINER_PHIL
+    TRAINER_DAYTON
+    TRAINER_TAKASHI
+
+== Weather Institute ==
+    TRAINER_GRUNT_WEATHER_INST_1
+    TRAINER_GRUNT_WEATHER_INST_4
+    TRAINER_GRUNT_WEATHER_INST_5
+    TRAINER_GRUNT_WEATHER_INST_2
+    TRAINER_GRUNT_WEATHER_INST_3
+    TRAINER_SHELLY_WEATHER_INSTITUTE
+
+== Route 119 - Rival ==
+    TRAINER_MAY_ROUTE_119_TREECKO (starter Treecko) && TRAINER_WALLY_ROUTE_119
+    TRAINER_MAY_ROUTE_119_TORCHIC (starter Torchic) && TRAINER_WALLY_ROUTE_119
+    TRAINER_MAY_ROUTE_119_MUDKIP (starter Mudkip) && TRAINER_WALLY_ROUTE_119
+    TRAINER_BRENDAN_ROUTE_119_TREECKO (starter Treecko) && TRAINER_WALLY_ROUTE_119
+    TRAINER_BRENDAN_ROUTE_119_TORCHIC (starter Torchic) && TRAINER_WALLY_ROUTE_119
+    TRAINER_BRENDAN_ROUTE_119_MUDKIP (starter Mudkip) && TRAINER_WALLY_ROUTE_119
+
+== Route 120 ==
+    TRAINER_COLIN
+    TRAINER_RILEY
+    TRAINER_CALLIE
+    TRAINER_ANGELICA
+    TRAINER_LEONEL
+    TRAINER_JENNIFER
+    TRAINER_JENNA
+    TRAINER_LORENZO
+    TRAINER_CHIP
+    TRAINER_KEIGO
+    TRAINER_JEFFREY_1
+
+== Fortree Gym ==
+    TRAINER_HUMBERTO
+    TRAINER_ASHLEY
+    TRAINER_JARED
+    TRAINER_FLINT
+    TRAINER_EDWARDO
+    TRAINER_WINONA_1
+
+
+[Optional]
+
+== Petalburg Woods - Bugsy (Before Badge 3) ==
+    TRAINER_BUGSY_2
+
+== Petalburg Woods - Bugsy (After Badge 3) ==
+    TRAINER_BUGSY
+
+== Route 103 ==
+    TRAINER_DAISY
+    TRAINER_AMY_AND_LIV_1
+    TRAINER_ANDREW
+    TRAINER_MIGUEL_1
+    TRAINER_MARCOS
+    TRAINER_RHETT
+
+== Route 110 ==
+    TRAINER_EDWIN_1 && TRAINER_JOSEPH
+
+== Route 111 - Winstrate House ==
+    TRAINER_VICTOR
+    TRAINER_VICTORIA
+    TRAINER_VIVI
+    TRAINER_VICKY
+
+== Gabby & Ty (a rotazione: Route 111, 118, 120) ==
+    TRAINER_GABBY_AND_TY_1 (1° incontro, Route 111)
+    TRAINER_GABBY_AND_TY_2 (2° incontro, Route 118)
+    TRAINER_GABBY_AND_TY_3 (3° incontro, Route 120)
+    TRAINER_GABBY_AND_TY_4 (4° incontro, Route 111)
+    TRAINER_GABBY_AND_TY_5 (5° incontro, Route 118)
+    TRAINER_GABBY_AND_TY_6 (dal 6° incontro in poi)
+
+== Route 113 ==
+    TRAINER_LUNG && TRAINER_LAWRENCE
+    TRAINER_WYATT
+
+== Route 114 ==
+    TRAINER_KAI && TRAINER_CHARLOTTE
+
+== Route 115 ==
+    TRAINER_TIMOTHY_1
+    TRAINER_KOICHI
+    TRAINER_NOB_1
+    TRAINER_CYNDY_1
+    TRAINER_HECTOR
+    TRAINER_KYRA
+    TRAINER_JAIDEN
+    TRAINER_ALIX
+    TRAINER_HELENE
+    TRAINER_MARLENE
+
+== Route 116 ==
+    TRAINER_JERRY_1
+    TRAINER_JANICE
+    TRAINER_SARAH
+    TRAINER_DAWSON
+
+== Jagged Pass ==
+    TRAINER_GRUNT_JAGGED_PASS
+
+== Trick House - Puzzle 1 ==
+    TRAINER_SALLY
+    TRAINER_EDDIE
+    TRAINER_ROBIN
+
+== Trick House - Puzzle 2 ==
+    TRAINER_TED
+    TRAINER_PAUL
+    TRAINER_GEORGIA
+
+== Trick House - Puzzle 3 ==
+    TRAINER_JUSTIN
+    TRAINER_MARTHA
+    TRAINER_ALAN
+
+== Trick House - Puzzle 4 ==
+    TRAINER_CORA
+    TRAINER_YUJI
+    TRAINER_PAULA
+
+== Route 105 ==
+    TRAINER_FOSTER
+    TRAINER_JOSUE
+    TRAINER_ANDRES_1
+
+== Route 109 - Seashore House ==
+    TRAINER_DWAYNE
+    TRAINER_JOHANNA
+    TRAINER_SIMON
+
+== Route 118 ==
+    TRAINER_PERRY
+
+== Route 119 ==
+    TRAINER_HIDEO
+    TRAINER_ANDRY_ROUTE119 && TRAINER_SPLITFACE_ROUTE119
+    TRAINER_GREG && TRAINER_KENT
+    TRAINER_DOUG
+
+== Route 120 - Falkner's Secret Base ==
+    TRAINER_FALKNER_SECRET_BASE
+
+== Route 123 ==
+    TRAINER_JAZMYN && TRAINER_DAVIS
