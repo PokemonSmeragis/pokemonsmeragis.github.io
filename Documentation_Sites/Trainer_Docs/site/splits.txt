@@ -1,6 +1,6 @@
 # =============================================================================
 #  Pokemon Smeragis - split della Trainer Sheet (site/trainer_sheet.html)
-#  Contenuto: tutti e soli i fight affrontabili nella demo (fino alla Route 120).
+#  Contenuto: tutti e soli i fight affrontabili nel gioco (fino alla Route 120).
 # =============================================================================
 #
 #  [Nome split]               inizia uno split (un bottone nella barra in alto)

@@ -130,7 +130,7 @@
         <header class="ai-hero">
           <h1>Battle AI Manual</h1>
           <p class="ai-subtitle">How enemy trainers think: what they know, how they score every move, and when they switch.</p>
-          <p class="ai-meta">Updated: <time datetime="2026-11-10">November 10, 2026</time></p>
+          <p class="ai-meta">Updated: <time datetime="2026-11-15">November 15, 2026</time></p>
         </header>
 
         <nav class="ai-toc" aria-label="Table of contents">
@@ -207,6 +207,11 @@
             <li><strong>Memory:</strong> whatever a Standard trainer learns about a Pokémon is remembered for the whole battle, even after it switches out and back in.</li>
             <li><strong>Last move read:</strong> the AI looks at the target's last used move to judge Protect, Taunt, Encore, Counter, Sucker Punch and turn order. Nobody predicts the next move or a switch.</li>
             <li><strong>Own team:</strong> the AI always knows its own moves, abilities and items perfectly.</li>
+            <li><strong>Tailwind rules</strong> <span class="tag tag--custom">Smeragis</span>: the AI knows the custom wind mechanics and uses them in every calculation.
+              Under its side's Tailwind, wind moves never miss (they count as 100% accurate) and Razor Wind fires without a charge turn.
+              <strong>Wind Glider</strong> sets Tailwind for 4 turns when it comes in (or refreshes it) and boosts wind moves by 30% while Tailwind is up.
+              Wind Power stays charged for the whole Tailwind, and Wind Rider gets its +1 Attack only once per Tailwind.
+              See <a href="#tailwind">Tailwind</a> for how the AI scores the move.</li>
             <li><strong>Illusion:</strong> a disguised Pokémon fools every trainer, Bosses included. The AI sees through it once Illusion breaks or is revealed, or once the disguised Pokémon uses a move the fake species can't learn. When the AI itself has Illusion, it plays according to its real typing.</li>
           </ul>
         </section>
@@ -405,6 +410,7 @@
             <li>Focus Sash, Sturdy and Disguise at full HP: a single hit is not counted as a KO (multi-hit moves still are). A Standard trainer only accounts for a Focus Sash once it has been revealed.</li>
             <li>Multi-hit moves, Parental Bond, Skill Link and similar effects are counted with their real number of hits. Combo Punch <span class="tag tag--custom">Smeragis</span> is counted as one hit per arm of the user.</li>
             <li>Critical hits are <strong>not</strong> counted.</li>
+            <li><span class="tag tag--custom">Smeragis</span> Under Tailwind, wind moves are treated as 100% accurate and Razor Wind as a one-turn move, so they are not held back by the accuracy and charging-turn tie-breakers.</li>
           </ul>
           <div class="ai-callout ai-callout--tip" role="note">
             <p>Once the target is in KO range, expect the AI to go for the kill. A fast KO adds <span class="p">+6</span> to <span class="p">+9</span> points once the other bonuses are counted, more than almost any utility move can earn.
@@ -526,6 +532,7 @@
             <li><strong><span class="m">−10</span> (don't pivot)</strong> when its switch-in would be KO'd by entry hazards.</li>
             <li><strong>0</strong> in all other cases (the move is then judged only as an attack).</li>
             <li>With no teammates left, pivot moves are treated as normal attacks. Palafin (Zero form) always wants to pivot.</li>
+            <li><strong>Wind Glider</strong> <span class="tag tag--custom">Smeragis</span>: <span class="p">+4</span> (should pivot) when its side's Tailwind ends this turn or is already gone, it has no stat boosts and it can't KO the target. It gets out so it can set Tailwind again on the next switch-in.</li>
             <li><strong>Shed Tail</strong> <span class="tag tag--custom">Smeragis</span>: <span class="p">+4</span> when pivoting makes sense <em>and</em> either the target's best known hit deals less than half its HP, or it is faster and in KO range (emergency pass). It also gets the Substitute bonuses above.</li>
             <li>Baton Pass: <span class="p">+4</span> if the AI wants to switch and has boosts, a Substitute, Aqua Ring, Ingrain or Magnet Rise to pass.</li>
           </ul>
@@ -542,7 +549,13 @@
                 <tr><td>Rain / Sun / Sand / Hail / Snow</td><td><span class="p">+2</span> if the weather helps the AI (Swift Swim, Chlorophyll, Sand Rush, matching moves…). <span class="p">+1</span> with the matching rock. <span class="p">+1</span> if it hurts the target's known moves (Fire moves in rain, Water moves in sun, Solar Beam, Morning Sun…). Hail/Snow <span class="p">+3</span> extra if Aurora Veil is ready</td></tr>
                 <tr><td>Electric / Grassy / Misty / Psychic Terrain</td><td><span class="p">+3</span>, <span class="p">+3</span> with Terrain Extender. Electric/Misty: <span class="p">+4</span> if the AI is drowsy from Yawn. <span class="tag tag--custom">Smeragis</span> <span class="p">+3</span> if the user has the matching Pelt ability</td></tr>
                 <tr><td>Trick Room</td><td><span class="p">+3</span> if the AI's side is slower on average (or to end Trick Room when it's faster)</td></tr>
-                <tr><td>Tailwind</td><td><span class="p">+3</span> if the AI's side is slower on average</td></tr>
+                <tr id="tailwind"><td>Tailwind <span class="tag tag--custom">Smeragis</span></td><td>
+                  Nothing if Tailwind is already up on its side, Trick Room is active, or the user would be KO'd before it moves. Otherwise the bonuses add up:<br>
+                  • <span class="p">+3</span> if doubled Speed lets one of its Pokémon on the field outspeed a foe that is faster now (the user counts only if it survives the turn), <span class="p">+1</span> more if it works for both in doubles;<br>
+                  • <span class="p">+1</span> if a teammate in the back would outspeed a foe thanks to Tailwind (<span class="p">+3</span> instead if the user is about to be KO'd: its replacement gets most of the turns);<br>
+                  • synergy on the field, best per Pokémon, max <span class="p">+4</span> in total: <span class="p">+3</span> for Wind Rider with a physical attack, Wind Power with an Electric attack, or Wind Glider with a wind move; <span class="p">+2</span> for a wind move under 100% accuracy or Razor Wind. <span class="p">+1</span> if a teammate in the back has one of these;<br>
+                  • <span class="p">+2</span> if the user only survives this turn thanks to Focus Sash / Sturdy (better spent on the team), <span class="p">+2</span> with Prankster (the wind blows before anyone moves).<br>
+                  Capped at <span class="p">+6</span>, so a move that KOs the target still wins.</td></tr>
                 <tr><td>Gravity</td><td><span class="p">+2</span> if it has low-accuracy moves (plus sleep score with Hypnosis-type moves)</td></tr>
                 <tr><td>Magic Room / Wonder Room</td><td><span class="p">+1</span> to <span class="p">+3</span> depending on items / defences</td></tr>
               </tbody>
@@ -668,7 +681,8 @@
                   Toxic for 2+ turns (above 1/3 HP): 50% · Curse: 50% · Nightmare: 33% · Leech Seed: 25%.<br>
                   <span class="ai-muted">With any stat boost the poison/curse/nightmare/seed chances drop to 20% / 20% / 15% / 10%.</span></td><td class="num">see rule</td></tr>
                 <tr><td>8</td><td><strong>Natural Cure:</strong> asleep, frozen or badly poisoned: 66% (10% if boosted). Any other status at 50%+ HP: 25% (10% if boosted).<br>
-                  <strong>Regenerator:</strong> at 2/3 HP or less and no status: 50% (20% if boosted).</td><td class="num">see rule</td></tr>
+                  <strong>Regenerator:</strong> at 2/3 HP or less and no status: 50% (20% if boosted).<br>
+                  <strong>Wind Glider</strong> <span class="tag tag--custom">Smeragis</span> (singles): its side's Tailwind ends this turn or is already gone, no stat boosts, 50%+ HP and it can't KO the target: 50%. With a pivot move it uses that instead of switching.</td><td class="num">see rule</td></tr>
                 <tr><td>9</td><td><strong>Bad odds:</strong> it can't win the 1v1 (the target KOs it in fewer hits, or in the same number while faster) and has a good switch-in, and either:<br>
                   • the target OHKOs it and outspeeds (or OHKOs it while it can't even deal 50% back), while it has 50%+ HP (25%+ with Regenerator), <strong>or</strong><br>
                   • the target's types hit it super effectively, it has no super-effective move, it has 50%+ HP, and it has no important status move (hazards, screens, Toxic, sleep, paralysis, burn, Hoarfrost <span class="tag tag--custom">Smeragis</span>, Leech Seed, Trick, Trick Room, Fake Out…).</td><td class="num">50%</td></tr>
@@ -696,6 +710,7 @@
             <li><strong>After a KO</strong> (a free switch): the candidate must survive more hits than it needs to KO the target, or the same number while moving first.</li>
             <li><strong>Mid-battle switch</strong> (it takes a hit coming in): it needs one hit more of margin, or the same margin while moving first.</li>
             <li>If the target can't damage it at all, it wins. If it can't damage the target, it loses.</li>
+            <li><span class="tag tag--custom">Smeragis</span> A <strong>Wind Glider</strong> candidate is simulated with the Tailwind it would set on entry (doubled Speed, wind moves ×1.3), unless Tailwind is already up.</li>
           </ul>
 
           <div class="ai-grid-2">
