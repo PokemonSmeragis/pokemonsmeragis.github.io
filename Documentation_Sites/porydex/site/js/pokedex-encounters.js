@@ -161,6 +161,183 @@ function stripTrailingZeroIfSingle(cleanName, baseCounts) {
 }
 
 
+// -----------------------------
+// Static / gift / egg / starter / overworld encounters (from js/static-encounters.js)
+// -----------------------------
+// Entries carry { location, area, kind, level, note }. They are attached to the location list
+// entry with the same display name (sub-area first, then region section). Places that have no
+// wild-encounter table (e.g. Mauville City) get a synthetic BattleLocationdex entry.
+var PORYDEX_STATIC_KIND_ORDER = ['Starter', 'Gift', 'Egg', 'Overworld', 'Static', 'Event'];
+var PORYDEX_STATIC_KIND_LABEL = {
+    Starter: 'Starter Pokémon',
+    Gift: 'Gift Pokémon',
+    Egg: 'Gift Eggs',
+    Overworld: 'Overworld Pokémon',
+    Static: 'Static Encounters',
+    Event: 'Event Encounters'
+};
+var PorydexStaticByPlace = null; // placeId -> [entry]
+
+// Normalized id used to compare location names ("Rustboro City 0" == "Rustboro City",
+// "Seaspray - Cave - B1F0" == "Seaspray Cave B1F"). Only strips a trailing 0 after a non-digit,
+// so "Route 110" is untouched.
+function porydexPlaceId(name) {
+    return toID(cleanLocationName(name)).replace(/(\D)0$/, '$1');
+}
+function porydexLooseId(name) {
+    return porydexPlaceId(name).replace(/s/g, '');
+}
+function porydexPlaceBase(name) {
+    var n = String(name || '').replace(DASH_RE, '-').replace(/\s+/g, ' ').trim();
+    var parts = n.split(/\s*-\s*/);
+    if (parts.length > 1 && parts[0]) return parts[0].trim();
+    var m = n.match(/^(.+?)\s+\d+$/);
+    if (m && m[1] && !/^Route$/i.test(m[1])) return m[1].trim();
+    return n;
+}
+
+function porydexLocationBaseCounts() {
+    var baseCounts = Object.create(null);
+    if (typeof BattleLocationdex === 'undefined') return baseCounts;
+    for (var k in BattleLocationdex) {
+        if (!BattleLocationdex.hasOwnProperty(k) || k === 'rates') continue;
+        var clean = cleanLocationName((BattleLocationdex[k] || {}).name || k);
+        if (/unused/i.test(clean)) continue;
+        var m = String(clean).match(/^(.*)\s(\d+)$/);
+        if (m && m[1]) baseCounts[m[1].trim()] = (baseCounts[m[1].trim()] || 0) + 1;
+    }
+    return baseCounts;
+}
+
+function porydexLocationDisplayName(key, baseCounts) {
+    var loc = (typeof BattleLocationdex !== 'undefined' && BattleLocationdex[key]) || {};
+    return stripTrailingZeroIfSingle(cleanLocationName(loc.name || key), baseCounts || porydexLocationBaseCounts());
+}
+
+function ensurePorydexStaticLocations() {
+    if (PorydexStaticByPlace) return PorydexStaticByPlace;
+    PorydexStaticByPlace = Object.create(null);
+    var raw = window.BattleStaticEncounters || window.PorydexStaticEncounters;
+    if (!raw || typeof BattleLocationdex === 'undefined') return PorydexStaticByPlace;
+
+    // Existing (wild) location display names
+    var baseCounts = porydexLocationBaseCounts();
+    var exact = Object.create(null);
+    var loose = Object.create(null);
+    var bases = Object.create(null);
+    for (var k in BattleLocationdex) {
+        if (!BattleLocationdex.hasOwnProperty(k) || k === 'rates') continue;
+        var disp = porydexLocationDisplayName(k, baseCounts);
+        if (/unused/i.test(disp)) continue;
+        var pid = porydexPlaceId(disp);
+        if (!pid) continue;
+        exact[pid] = true;
+        var lid = porydexLooseId(disp);
+        if (!(lid in loose)) loose[lid] = pid;
+        bases[porydexPlaceId(porydexPlaceBase(disp))] = true;
+    }
+
+    function resolvePlace(location, area) {
+        var aid = area ? porydexPlaceId(area) : '';
+        var lid = porydexPlaceId(location);
+        if (aid && exact[aid]) return aid;
+        if (aid && loose[porydexLooseId(area)]) return loose[porydexLooseId(area)];
+        if (lid && exact[lid]) return lid;
+        if (lid && loose[porydexLooseId(location)]) return loose[porydexLooseId(location)];
+
+        // No wild table here: add a synthetic location. If the region already has sub-areas in
+        // the list (e.g. "Sky Pillar - 1F"), use the specific sub-area so it nests in that group.
+        var name = (area && bases[lid]) ? area : location;
+        var pid = porydexPlaceId(name);
+        if (!pid) return '';
+        if (!exact[pid]) {
+            var key = 'porydexstatic' + pid;
+            BattleLocationdex[key] = { name: name, staticOnly: true };
+            if (!(toID(name) in BattleLocationIdMap)) BattleLocationIdMap[toID(name)] = key;
+            exact[pid] = true;
+            loose[porydexLooseId(name)] = pid;
+        }
+        return pid;
+    }
+
+    function add(speciesId, e) {
+        if (!e || typeof e !== 'object' || !e.location) return; // not tied to a real map
+        var place = resolvePlace(e.location, e.area || '');
+        if (!place) return;
+        var list = PorydexStaticByPlace[place] || (PorydexStaticByPlace[place] = []);
+        list.push({
+            species: toID(speciesId || e.species || ''),
+            kind: e.kind || e.rate || 'Static',
+            level: Number(e.level) || 0,
+            location: e.location,
+            area: e.area || '',
+            note: e.note || ''
+        });
+    }
+
+    if (Array.isArray(raw)) {
+        for (var i = 0; i < raw.length; i++) add(raw[i] && (raw[i].species || raw[i].speciesId), raw[i]);
+    } else {
+        for (var sid in raw) {
+            if (!raw.hasOwnProperty(sid)) continue;
+            var val = raw[sid];
+            var arr = Array.isArray(val) ? val : (val && Array.isArray(val.encounters) ? val.encounters : [val]);
+            for (var j = 0; j < arr.length; j++) add(sid, arr[j]);
+        }
+    }
+    return PorydexStaticByPlace;
+}
+
+// Sub-area shown next to a static entry, relative to the page title
+// ("Rustboro City - Pokemon School" on "Rustboro City" -> "Pokemon School").
+function porydexStaticWhere(entry, title) {
+    var area = String(entry.area || '');
+    if (!area) return '';
+    var tid = porydexPlaceId(title);
+    if (porydexPlaceId(area) === tid || porydexLooseId(area) === porydexLooseId(title)) return '';
+    var parts = area.split(/\s+-\s+/);
+    for (var i = parts.length - 1; i >= 1; i--) {
+        var head = porydexPlaceId(parts.slice(0, i).join(' - '));
+        if (head === tid || head === porydexPlaceId(entry.location)) return parts.slice(i).join(' - ');
+    }
+    return area;
+}
+
+function buildStaticEncounterRows(locationKey) {
+    var byPlace = ensurePorydexStaticLocations();
+    var title = porydexLocationDisplayName(locationKey);
+    var entries = byPlace[porydexPlaceId(title)];
+    if (!entries || !entries.length) return [];
+
+    var byKind = Object.create(null);
+    var seen = Object.create(null);
+    for (var i = 0; i < entries.length; i++) {
+        var e = entries[i];
+        var where = porydexStaticWhere(e, title);
+        var dk = [e.kind, e.species, e.level, where, e.note].join('|');
+        if (seen[dk]) continue;
+        seen[dk] = true;
+        (byKind[e.kind] || (byKind[e.kind] = [])).push({ kind: 'static', species: e.species, level: e.level, where: where, note: e.note });
+    }
+
+    var kinds = PORYDEX_STATIC_KIND_ORDER.slice();
+    for (var kk in byKind) if (kinds.indexOf(kk) < 0) kinds.push(kk);
+
+    var rows = [];
+    for (var ki = 0; ki < kinds.length; ki++) {
+        var list = byKind[kinds[ki]];
+        if (!list) continue;
+        list.sort(function (a, b) {
+            if (a.where !== b.where) return a.where < b.where ? -1 : 1;
+            if (a.note !== b.note) return a.note < b.note ? -1 : 1;
+            return a.species < b.species ? -1 : (a.species > b.species ? 1 : 0);
+        });
+        rows.push({ kind: 'section', label: PORYDEX_STATIC_KIND_LABEL[kinds[ki]] || kinds[ki], isStatic: true });
+        rows = rows.concat(list);
+    }
+    return rows;
+}
+
 // Internal links must work on file:// (no pushState). Hash links are safe everywhere.
 function dexLink(path) {
     if (!path) return '#';
@@ -169,6 +346,7 @@ function dexLink(path) {
 }
 
 function getLocationKeyFromIdOrName(locationIdOrName) {
+    ensurePorydexStaticLocations();
     var id = toID(locationIdOrName || '');
     if (!id) return null;
     if (typeof BattleLocationdex !== 'undefined' && BattleLocationdex[id]) return id; // already a key
@@ -443,7 +621,7 @@ function buildEncounterRows(locationKey) {
                 pushMon(ent.hasRate ? formatRate(ent.rate) : '', ent.min, ent.max, ent.species);
             }
         }
-        return rows;
+        return rows.concat(buildStaticEncounterRows(locationKey));
     }
 
     // 2) RHH 1.12 style
@@ -454,7 +632,8 @@ function buildEncounterRows(locationKey) {
     // Fishing: ONLY Old Rod in your hack (loc.fish / legacy loc.fishing)
     addFromArray('Old Rod', loc.fish || loc.fishing);
 
-    return rows;
+    // Gifts, eggs, starters, static / overworld encounters
+    return rows.concat(buildStaticEncounterRows(locationKey));
 }
 
 
@@ -464,10 +643,19 @@ function renderEncounterTable(rows) {
 
     var buf = '';
     var inTable = false;
+    var staticTable = false;
 
     function openTable() {
         if (inTable) return;
         inTable = true;
+        if (staticTable) {
+            buf += '<table class="enc-table enc-static-table"><thead><tr>';
+            buf += '<th class="enc-mon-col">Pokémon</th>';
+            buf += '<th class="enc-lvl-col">Level</th>';
+            buf += '<th class="enc-where-col">Where</th>';
+            buf += '</tr></thead><tbody>';
+            return;
+        }
         buf += '<table class="enc-table"><thead><tr>';
         buf += '<th class="enc-mon-col">Pokémon</th>';
         buf += '<th class="enc-rate-col">Rate</th>';
@@ -485,8 +673,28 @@ function renderEncounterTable(rows) {
 
         if (row.kind === 'section') {
             closeTable();
+            staticTable = !!row.isStatic;
             buf += '<h3 class="enc-section-title">' + escape(row.label) + '</h3>';
             openTable();
+            continue;
+        }
+
+        if (row.kind === 'static') {
+            openTable();
+            var ssid = toID(row.species || '');
+            if (!ssid) continue;
+            var ssp = (Dex && Dex.species && Dex.species.get) ? Dex.species.get(ssid) : null;
+            var sname = (ssp && ssp.exists !== false && ssp.name) ? ssp.name : ssid;
+            var sicon = pokemonIconHTML(ssid);
+            buf += '<tr>';
+            buf += '<td class="enc-mon"><a href="' + escape(dexLink('pokemon/' + ssid)) + '" data-target="push" class="enc-mon-link">';
+            if (sicon) buf += sicon + ' ';
+            buf += '<span class="enc-mon-name">' + escape(sname) + '</span></a></td>';
+            buf += '<td class="enc-lvl-col">' + (row.level ? 'Lv. ' + escape(row.level) : '') + '</td>';
+            buf += '<td class="enc-where-col">' + escape(row.where || '');
+            if (row.note) buf += (row.where ? ' ' : '') + '<small class="enc-static-note">(' + escape(row.note) + ')</small>';
+            buf += '</td>';
+            buf += '</tr>';
             continue;
         }
 
@@ -593,6 +801,8 @@ var PokedexEncountersMainPanel = Panels.Panel.extend({
 
 
    buildLocationList: function () {
+    // Adds synthetic entries for places that only have gifts/static encounters (e.g. Mauville City).
+    ensurePorydexStaticLocations();
     var tmp = [];
     var baseCounts = Object.create(null);
 

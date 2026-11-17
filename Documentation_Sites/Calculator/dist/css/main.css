@@ -205,6 +205,19 @@ html, body {
     border-radius: 6px;
 }
 
+.partner-section .partner-select {
+    display: block;
+    margin: 4px auto 6px;
+    max-width: 100%;
+}
+
+.partner-pok-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 40px;
+}
+
 .doubles-extra-slot {
     margin-top: 10px;
 }
@@ -458,6 +471,16 @@ th {
 }
 .move-result-group .btn {
     margin-right: 1em;
+}
+.move-result-group .btn-xxxwide {
+    margin-right: 0.4em;
+}
+.move-result-group .result-crit-btn {
+    font-size: 0.8em;
+    width: 3em;
+    padding: 2px 3px;
+    margin-right: 0.8em;
+    vertical-align: middle;
 }
 .main-result-group {
     margin: 2em 0 1em;

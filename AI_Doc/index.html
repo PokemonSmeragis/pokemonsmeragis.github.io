@@ -364,7 +364,7 @@
                   <tr><td>Roar / Whirlwind / Dragon Tail-type</td><td><span class="m">−10</span> if the target has nothing to switch to, or Suction Cups</td></tr>
                   <tr><td>Knock Off / Trick / Corrosive Gas</td><td><span class="m">−10</span> into Sticky Hold</td></tr>
                   <tr><td>Helping Hand / Follow Me</td><td><span class="m">−10</span> in singles, with no partner, or if the partner is switching or using a status move</td></tr>
-                  <tr><td>Explosion / Self-Destruct / Misty Explosion</td><td><span class="m">−2</span> always (trainers don't like self-KOs), <span class="m">−10</span> if it is the AI's last Pokémon while the player still has others, or into Damp</td></tr>
+                  <tr><td>Explosion / Self-Destruct / Misty Explosion</td><td><span class="m">−10</span> into a Ghost type (no effect), into Damp, or if it is the AI's last Pokémon while the player still has others. Otherwise the HP-based roll in <a href="#explosion">Step 4</a> decides</td></tr>
                   <tr><td>Memento</td><td><span class="m">−10</span> if it is the AI's last Pokémon or the target's attacks are already at −6</td></tr>
                   <tr><td>Teleport</td><td><span class="m">−10</span></td></tr>
                   <tr><td>Chilly Reception</td><td><span class="m">−10</span> with no teammates, <span class="m">−8</span> if snow is already up</td></tr>
@@ -393,7 +393,7 @@
                 <tr><td>The move KOs the target but the target moves first ("slow kill")</td><td class="num"><span class="p">+4</span></td></tr>
                 <tr><td>…and the KO is guaranteed even on the lowest damage roll</td><td class="num"><span class="p">+1</span> extra</td></tr>
                 <tr><td>The target can KO the AI, the AI doesn't outspeed, and this move has priority ("last chance")</td><td class="num"><span class="p">+2</span></td></tr>
-                <tr><td>Explosion-type moves never get the KO bonus</td><td class="num">n/a</td></tr>
+                <tr><td>Explosion-type moves never get the KO bonus (see <a href="#explosion">Explosion</a>)</td><td class="num">n/a</td></tr>
               </tbody>
             </table>
           </div>
@@ -610,8 +610,8 @@
             <article class="ai-card">
               <h3>AI's own HP</h3>
               <ul>
-                <li><strong>Above 70%:</strong> <span class="m">−2</span> to healing moves, Rest, Explosion, Destiny Bond, Flail/Reversal, Endure, Memento, Grudge. No need yet.</li>
-                <li><strong>30–70%:</strong> <span class="m">−2</span> to stat-changing status moves, screens, Safeguard, Mist, Focus Energy, Belly Drum, Fillet Away, Explosion.</li>
+                <li><strong>Above 70%:</strong> <span class="m">−2</span> to healing moves, Rest, Destiny Bond, Flail/Reversal, Endure, Memento, Grudge. No need yet.</li>
+                <li><strong>30–70%:</strong> <span class="m">−2</span> to stat-changing status moves, screens, Safeguard, Mist, Focus Energy, Belly Drum, Fillet Away.</li>
                 <li><strong>Below 30%:</strong> <span class="m">−2</span> to stat-changing moves, screens, weather moves, Belly Drum, Psych Up, Mirror Coat, Tickle and similar long-term plays.</li>
               </ul>
             </article>
@@ -625,6 +625,34 @@
               </ul>
             </article>
           </div>
+
+          <h3 id="explosion">Explosion / Self-Destruct / Misty Explosion <span class="tag tag--custom">Smeragis</span></h3>
+          <p>
+            These moves halve the target's Defense when calculating damage, like in Gen 1–4, and the AI's damage estimates include this.
+            Every trainer may use them. The lower the user's HP, the more likely it is to explode, but it is never certain: each turn the AI rolls a chance.
+          </p>
+          <div class="ai-table-wrap">
+            <table>
+              <thead><tr><th>AI's own HP</th><th class="num">Chance to explode</th></tr></thead>
+              <tbody>
+                <tr><td>100%</td><td class="num">10%</td></tr>
+                <tr><td>80%</td><td class="num">~26%</td></tr>
+                <tr><td>50%</td><td class="num">~50%</td></tr>
+                <tr><td>25%</td><td class="num">~70%</td></tr>
+                <tr><td>1%</td><td class="num">90%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li>The chance grows in a straight line between 10% at full HP and 90% at 1% HP.</li>
+            <li><strong>+25%</strong> if the AI moves first but the target would KO it this turn: it takes the target down with it.</li>
+            <li><strong>Halved</strong> if the target resists the move.</li>
+            <li>The chance never goes above <strong>90%</strong>, even with the bonus.</li>
+            <li><strong>No roll</strong> if another of its moves already KOs the target before the target can move: it won't faint for nothing.</li>
+            <li>Roll succeeds: <span class="p">+7</span>, enough to beat its normal attacks. Roll fails: <span class="m">−10</span>, so it only explodes if nothing else is usable.</li>
+            <li>The <a href="#filter">bad move filter</a> still applies first: no Explosion into a Ghost type or Damp, and not with its last Pokémon while the player has others left.</li>
+            <li>In double battles it won't explode if that would KO its partner, unless it also KOs both opponents.</li>
+          </ul>
         </section>
 
         <!-- ============ EXAMPLE ============ -->
@@ -800,7 +828,7 @@
           <ul>
             <li><strong>Mega Evolution / Terastallization:</strong> enemy Pokémon set up for it Mega Evolve or Terastallize the first time they can act.</li>
             <li><strong>Bag items:</strong> enemy trainers don't use bag items during battle.</li>
-            <li><strong>Self-KO moves:</strong> trainers never actively look for Explosion / Self-Destruct / Final Gambit / Memento plays.</li>
+            <li><strong>Self-KO moves:</strong> trainers never actively look for Final Gambit / Memento plays. Explosion, Self-Destruct and Misty Explosion follow their own <a href="#explosion">HP-based chance</a>.</li>
             <li><strong>Wild Pokémon:</strong> normal wild Pokémon choose moves at random. Some scripted wild encounters use the trainer AI described here.</li>
             <li><strong>In-game partners:</strong> an AI partner fighting alongside the player uses the same logic.</li>
           </ul>
@@ -810,6 +838,7 @@
             <li>First Protect when the target didn't just attack: <span class="p">+1</span> about 39% of the time. Second Protect in a row: 50% chance of <span class="m">−6</span>.</li>
             <li>Speed-lowering status moves: <span class="p">+2</span> about 73% of the time.</li>
             <li>Healing when not in danger: encouraged 2 times out of 3.</li>
+            <li><span class="tag tag--custom">Smeragis</span> Explosion / Self-Destruct / Misty Explosion: 10% to 90% depending on the AI's HP (see <a href="#explosion">Explosion</a>).</li>
             <li>Standard trainers re-guess an unrevealed ability every turn.</li>
             <li>Most switch rules have a % chance (see the <a href="#switching">switch table</a>).</li>
           </ul>

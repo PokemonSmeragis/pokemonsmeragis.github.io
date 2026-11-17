@@ -140,6 +140,18 @@ function createAllyListClone(slotId) {
 	var $fieldset = $clone.find("fieldset.poke-info").first();
 	$fieldset.attr("id", "trainer-mons-" + slotId);
 	$fieldset.find("legend").first().text("Team/Box (" + getSlotDisplayName(slotId) + ")");
+	if (slotId === "p3") {
+		$fieldset.find("legend").first().after(
+			'<div class="partner-section" data-target-slot="p3">' +
+				'<legend align="center">Partner</legend>' +
+				'<select class="partner-select" data-target-slot="p3" aria-label="Battle partner">' +
+					'<option value="">No partner</option>' +
+				'</select>' +
+				'<div class="partner-pok-list" data-target-slot="p3"></div>' +
+			'</div>' +
+			'<hr>'
+		);
+	}
 	var trashId = "#trash-box" + suffix;
 	var showCcId = "#show-cc" + suffix;
 	var $trashSection = $clone.find(trashId).closest("div");
@@ -933,6 +945,8 @@ var CURRENT_TRAINER_POKS_BY_SLOT = {
 	p4: []
 };
 var TRAINER_OPTION_PREFIX = "__trainer__:";
+var PARTNER_LABEL_PREFIX = "Partner ";
+var PARTNER_TEAMS = null;
 
 function normalizeEnemySlot(slotId) {
 	return (slotId === "p4" && document.getElementById("p4")) ? "p4" : "p2";
@@ -1263,8 +1277,12 @@ $(".set-selector").change(function () {
 		topPokemonIcon(fullSetName, $("#" + slotId + "mon")[0]);
 		setTrainerPoksForSlot(slotId, get_trainer_poks(fullSetName));
 		renderTrainerTeamStrip(slotId, fullSetName);
+		syncPartnerForOpposingSet(fullSetName);
 	} else {
 		topPokemonIcon(fullSetName, $("#" + slotId + "mon")[0]);
+		if (slotId === "p3") {
+			setTimeout(updatePartnerStripActive, 0);
+		}
 	}
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
@@ -1904,6 +1922,7 @@ var RANDDEX = [
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 
 TR_NAMES = get_trainer_names()
+populatePartnerSelect();
 
 $(".gen").change(function () {
 	/*eslint-disable */
@@ -2550,6 +2569,136 @@ function get_trainer_poks(trainer_name) {
 	}
 	return matches.sort(sortmons)
 }
+
+// ---------------------------------------------------------------------------
+// Partner delle lotte in multi: la squadra del partner va nello slot P3.
+// I set "Partner ..." arrivano da battle_partners.party; i set degli avversari
+// in multi hanno il campo "partners" con le etichette dei loro partner.
+// ---------------------------------------------------------------------------
+
+function getPartnerTeams() {
+	if (PARTNER_TEAMS) {
+		return PARTNER_TEAMS;
+	}
+	var byLabel = Object.create(null);
+	var order = [];
+	for (var i = 0; i < TR_NAMES.length; i++) {
+		var setId = extractSetIdFromTrainerEntry(TR_NAMES[i]);
+		var label = extractTrainerNameFromSet(setId);
+		if (!startsWith(label, PARTNER_LABEL_PREFIX)) {
+			continue;
+		}
+		if (!byLabel[label]) {
+			byLabel[label] = { label: label, trainerIndex: parseTrainerSortKey(TR_NAMES[i]).trainerIndex, entries: [] };
+			order.push(byLabel[label]);
+		}
+		byLabel[label].entries.push(TR_NAMES[i]);
+	}
+	order.sort(function (a, b) {
+		return a.trainerIndex - b.trainerIndex;
+	});
+	for (var j = 0; j < order.length; j++) {
+		order[j].entries.sort(sortmons);
+	}
+	PARTNER_TEAMS = { byLabel: byLabel, order: order };
+	return PARTNER_TEAMS;
+}
+
+function populatePartnerSelect() {
+	var $select = $(".partner-select");
+	if (!$select.length || $select.data("populated")) {
+		return;
+	}
+	var teams = getPartnerTeams().order;
+	var options = ['<option value="">No partner</option>'];
+	for (var i = 0; i < teams.length; i++) {
+		var label = teams[i].label;
+		var text = label.slice(PARTNER_LABEL_PREFIX.length);
+		options.push('<option value="' + $("<div>").text(label).html().replace(/"/g, "&quot;") + '">' + $("<div>").text(text).html() + '</option>');
+	}
+	$select.html(options.join("")).data("populated", true);
+}
+
+function getPartnerSetIds(label) {
+	var team = getPartnerTeams().byLabel[label];
+	if (!team) {
+		return [];
+	}
+	return team.entries.map(extractSetIdFromTrainerEntry);
+}
+
+function updatePartnerStripActive() {
+	var currentSet = String($("#p3 .set-selector").val() || "");
+	$(".partner-pok").each(function () {
+		$(this).toggleClass("trainer-pok-active", $(this).attr("data-id") === currentSet);
+	});
+}
+
+function renderPartnerStrip(label) {
+	var $strip = $(".partner-pok-list");
+	if (!$strip.length) {
+		return;
+	}
+	var setIds = getPartnerSetIds(label);
+	var nodes = [];
+	for (var i = 0; i < setIds.length; i++) {
+		var speciesName = setIds[i].split(" (")[0];
+		var safeId = $("<div>").text(setIds[i]).html().replace(/"/g, "&quot;");
+		nodes.push('<img class="trainer-pok partner-pok" data-id="' + safeId + '" data-species="' + $("<div>").text(speciesName).html().replace(/"/g, "&quot;") + '" data-target-slot="p3" title="' + safeId + '">');
+	}
+	$strip.html(nodes.join(""));
+	$strip.find("img").each(function () {
+		setPokemonSprite(this, this.dataset.species);
+	});
+	updatePartnerStripActive();
+}
+
+function selectPartner(label, loadLead) {
+	populatePartnerSelect();
+	label = getPartnerTeams().byLabel[label] ? label : "";
+	$(".partner-select").val(label);
+	renderPartnerStrip(label);
+	if (!label || !loadLead || !document.getElementById("p3")) {
+		return;
+	}
+	var setIds = getPartnerSetIds(label);
+	var currentSet = String($("#p3 .set-selector").val() || "");
+	if (setIds.length && setIds.indexOf(currentSet) === -1) {
+		setSlotSet("p3", setIds[0]);
+	}
+}
+
+function getSetPartners(fullSetName) {
+	var text = String(fullSetName || "");
+	var speciesName = text.substring(0, text.indexOf(" ("));
+	var label = extractTrainerNameFromSet(text);
+	var sets = (typeof SETDEX_SV !== "undefined" && SETDEX_SV[speciesName]) || null;
+	var partners = sets && sets[label] && sets[label].partners;
+	return Array.isArray(partners) ? partners : [];
+}
+
+// Avversario con partner: carica la squadra del partner e il suo primo Pokemon in P3
+// (a meno che P3 sia gia' un Pokemon di uno dei partner possibili).
+function syncPartnerForOpposingSet(fullSetName) {
+	var partners = getSetPartners(fullSetName);
+	if (!partners.length) {
+		return;
+	}
+	var currentSet = String($("#p3 .set-selector").val() || "");
+	var currentLabel = extractTrainerNameFromSet(currentSet);
+	var keepCurrent = partners.indexOf(currentLabel) !== -1;
+	setTimeout(function () {
+		selectPartner(keepCurrent ? currentLabel : partners[0], !keepCurrent);
+	}, 0);
+}
+
+$(document).on("change", ".partner-select", function () {
+	selectPartner($(this).val(), true);
+});
+
+$(document).on("click", ".partner-pok", function () {
+	setSlotSet("p3", $(this).attr("data-id"));
+});
 
 function topPokemonIcon(fullname, node) {
 	var mon = { name: fullname.split(" (")[0] };

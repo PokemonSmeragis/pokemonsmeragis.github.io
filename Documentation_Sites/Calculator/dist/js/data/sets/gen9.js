@@ -6285,6 +6285,9 @@ var SETDEX_SV = {
         "Earth Power",
         "Curse",
         "Take Down"
+      ],
+      "partners": [
+        "Partner Rival STEVEN"
       ]
     },
     "Kindler AXLE": {
@@ -6331,6 +6334,9 @@ var SETDEX_SV = {
         "Curse",
         "Take Down",
         "Yawn"
+      ],
+      "partners": [
+        "Partner Rival STEVEN"
       ]
     },
     "Team Magma GRUNT (Desert Spinner3)": {
@@ -16981,6 +16987,9 @@ var SETDEX_SV = {
         "Hydro Pump",
         "Sheer Cold",
         "Substitute"
+      ],
+      "partners": [
+        "Partner Developer SPLITFACE"
       ]
     },
     "Area Zero PARADOX FUTURE": {
@@ -17004,6 +17013,9 @@ var SETDEX_SV = {
         "Hydro Pump",
         "Sheer Cold",
         "Substitute"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Area Zero)"
       ]
     }
   },
@@ -17124,6 +17136,9 @@ var SETDEX_SV = {
         "Snarl",
         "Confusion",
         "Air Cutter"
+      ],
+      "partners": [
+        "Partner Rival WALLY"
       ]
     }
   },
@@ -23509,6 +23524,9 @@ var SETDEX_SV = {
         "Counter",
         "Crunch",
         "Howl"
+      ],
+      "partners": [
+        "Partner Rival WALLY"
       ]
     }
   },
@@ -23533,6 +23551,9 @@ var SETDEX_SV = {
         "Dive",
         "Pluck",
         "Air Slash"
+      ],
+      "partners": [
+        "Partner Rival WALLY"
       ]
     },
     "Swimmer F BEVERLY": {
@@ -23627,6 +23648,9 @@ var SETDEX_SV = {
         "Fire Fang",
         "Poison Fang",
         "Thunder Fang"
+      ],
+      "partners": [
+        "Partner Rival WALLY"
       ]
     },
     "Team Magma GRUNT (Magma Hideout 6)": {
@@ -23903,6 +23927,9 @@ var SETDEX_SV = {
         "Assurance",
         "Jaw Lock",
         "Taunt"
+      ],
+      "partners": [
+        "Partner Rival STEVEN"
       ]
     },
     "Aqua Leader ARCHIE": {
@@ -23949,6 +23976,9 @@ var SETDEX_SV = {
         "Assurance",
         "Jaw Lock",
         "Taunt"
+      ],
+      "partners": [
+        "Partner Rival STEVEN"
       ]
     },
     "Team Magma GRUNT (Desert Spinner3)": {
@@ -28344,6 +28374,9 @@ var SETDEX_SV = {
         "Quick Guard",
         "Air Cutter",
         "Bite"
+      ],
+      "partners": [
+        "Partner Rival STEVEN"
       ]
     }
   },
@@ -32591,6 +32624,9 @@ var SETDEX_SV = {
         "Air Cutter",
         "Bite",
         "Haze"
+      ],
+      "partners": [
+        "Partner Rival STEVEN"
       ]
     },
     "Team Magma GRUNT (Desert Spinner3)": {
@@ -32708,6 +32744,9 @@ var SETDEX_SV = {
         "High Horsepower",
         "Knock Off",
         "Dual Wingbeat"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Desert)"
       ]
     }
   },
@@ -34395,6 +34434,9 @@ var SETDEX_SV = {
         "Burning Jealousy",
         "Earth Power",
         "Sisma"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Desert)"
       ]
     }
   },
@@ -34420,6 +34462,9 @@ var SETDEX_SV = {
         "Rock Slide",
         "Thunder Punch",
         "Poison Drill"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Desert)"
       ]
     }
   },
@@ -34445,6 +34490,9 @@ var SETDEX_SV = {
         "Double-Edge",
         "Heavy Slam",
         "Curse"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Desert)"
       ]
     }
   },
@@ -34470,6 +34518,9 @@ var SETDEX_SV = {
         "Thunderbolt",
         "Ice Beam",
         "Tectonic Power"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Desert)"
       ]
     },
     "Team Aqua GRUNT (Abandoned Ship 2)": {
@@ -34518,6 +34569,9 @@ var SETDEX_SV = {
         "Earth Power",
         "Ice Beam",
         "Recover"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Desert)"
       ]
     },
     "Fisherman BARNY": {
@@ -39067,6 +39121,14 @@ var SETDEX_SV = {
         "Close Combat",
         "Ice Spinner",
         "Body Press"
+      ],
+      "partners": [
+        "Partner Rival MAY (Area Zero Treecko)",
+        "Partner Rival MAY (Area Zero Torchic)",
+        "Partner Rival MAY (Area Zero Mudkip)",
+        "Partner Rival BRENDAN (Area Zero Treecko)",
+        "Partner Rival BRENDAN (Area Zero Torchic)",
+        "Partner Rival BRENDAN (Area Zero Mudkip)"
       ]
     }
   },
@@ -39092,6 +39154,9 @@ var SETDEX_SV = {
         "Sucker Punch",
         "Seed Bomb",
         "Close Combat"
+      ],
+      "partners": [
+        "Partner Pkmn Trainer 1 ANDRY"
       ]
     },
     "Area Zero PARADOX PAST": {
@@ -39115,6 +39180,14 @@ var SETDEX_SV = {
         "Sucker Punch",
         "Seed Bomb",
         "Close Combat"
+      ],
+      "partners": [
+        "Partner Rival MAY (Area Zero Treecko)",
+        "Partner Rival MAY (Area Zero Torchic)",
+        "Partner Rival MAY (Area Zero Mudkip)",
+        "Partner Rival BRENDAN (Area Zero Treecko)",
+        "Partner Rival BRENDAN (Area Zero Torchic)",
+        "Partner Rival BRENDAN (Area Zero Mudkip)"
       ]
     }
   },
@@ -39140,6 +39213,9 @@ var SETDEX_SV = {
         "Close Combat",
         "Leech Life",
         "Wild Charge"
+      ],
+      "partners": [
+        "Partner Pkmn Trainer 1 ANDRY"
       ]
     },
     "Area Zero PARADOX PAST": {
@@ -39163,6 +39239,14 @@ var SETDEX_SV = {
         "Close Combat",
         "Leech Life",
         "Wild Charge"
+      ],
+      "partners": [
+        "Partner Rival MAY (Area Zero Treecko)",
+        "Partner Rival MAY (Area Zero Torchic)",
+        "Partner Rival MAY (Area Zero Mudkip)",
+        "Partner Rival BRENDAN (Area Zero Treecko)",
+        "Partner Rival BRENDAN (Area Zero Torchic)",
+        "Partner Rival BRENDAN (Area Zero Mudkip)"
       ]
     }
   },
@@ -39188,6 +39272,9 @@ var SETDEX_SV = {
         "Drain Punch",
         "Protect",
         "Knock Off"
+      ],
+      "partners": [
+        "Partner Developer SPLITFACE"
       ]
     },
     "Area Zero PARADOX FUTURE": {
@@ -39211,6 +39298,9 @@ var SETDEX_SV = {
         "Drain Punch",
         "Protect",
         "Knock Off"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Area Zero)"
       ]
     }
   },
@@ -39259,6 +39349,14 @@ var SETDEX_SV = {
         "Shadow Ball",
         "Psyshock",
         "Mystical Fire"
+      ],
+      "partners": [
+        "Partner Rival MAY (Area Zero Treecko)",
+        "Partner Rival MAY (Area Zero Torchic)",
+        "Partner Rival MAY (Area Zero Mudkip)",
+        "Partner Rival BRENDAN (Area Zero Treecko)",
+        "Partner Rival BRENDAN (Area Zero Torchic)",
+        "Partner Rival BRENDAN (Area Zero Mudkip)"
       ]
     }
   },
@@ -39284,6 +39382,14 @@ var SETDEX_SV = {
         "Flare Blitz",
         "Dragon Claw",
         "Crunch"
+      ],
+      "partners": [
+        "Partner Rival MAY (Area Zero Treecko)",
+        "Partner Rival MAY (Area Zero Torchic)",
+        "Partner Rival MAY (Area Zero Mudkip)",
+        "Partner Rival BRENDAN (Area Zero Treecko)",
+        "Partner Rival BRENDAN (Area Zero Torchic)",
+        "Partner Rival BRENDAN (Area Zero Mudkip)"
       ]
     }
   },
@@ -39309,6 +39415,14 @@ var SETDEX_SV = {
         "Crunch",
         "Acrobatics",
         "Earthquake"
+      ],
+      "partners": [
+        "Partner Rival MAY (Area Zero Treecko)",
+        "Partner Rival MAY (Area Zero Torchic)",
+        "Partner Rival MAY (Area Zero Mudkip)",
+        "Partner Rival BRENDAN (Area Zero Treecko)",
+        "Partner Rival BRENDAN (Area Zero Torchic)",
+        "Partner Rival BRENDAN (Area Zero Mudkip)"
       ]
     }
   },
@@ -39334,6 +39448,9 @@ var SETDEX_SV = {
         "Iron Head",
         "Body Press",
         "Knock Off"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Area Zero)"
       ]
     }
   },
@@ -39359,6 +39476,9 @@ var SETDEX_SV = {
         "Draco Meteor",
         "Volt Switch",
         "Dazzling Gleam"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Area Zero)"
       ]
     }
   },
@@ -39384,6 +39504,9 @@ var SETDEX_SV = {
         "Air Slash",
         "Flamethrower",
         "Earth Power"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Area Zero)"
       ]
     }
   },
@@ -39409,6 +39532,9 @@ var SETDEX_SV = {
         "Stone Edge",
         "Earthquake",
         "Iron Head"
+      ],
+      "partners": [
+        "Partner Rival WALLY (Area Zero)"
       ]
     }
   }

@@ -118,8 +118,34 @@ function performCalculations() {
 	bestResult.change();
 	$("#resultHeaderL").text(slotLabel(pair.attackerId) + " (" + p1.name + ") Moves (select one to show detailed results)");
 	$("#resultHeaderR").text(slotLabel(pair.defenderId) + " (" + p2.name + ") Moves (select one to show detailed results)");
+	syncResultCritButtons();
 }
 window.performCalculations = performCalculations;
+
+// Pulsanti Crit accanto alle mosse dei risultati: specchiano il Crit della mossa
+// corrispondente del Pokemon attivo (attaccante a sinistra, difensore a destra).
+function getMoveCritCheckbox(side, moveIndex) {
+	var pair = getCurrentCalcPair();
+	var slotId = side === "R" ? pair.defenderId : pair.attackerId;
+	return $("#" + slotId + " .move" + moveIndex + " .move-crit");
+}
+
+function syncResultCritButtons() {
+	$(".result-crit").each(function () {
+		var $source = getMoveCritCheckbox($(this).attr("data-side"), $(this).attr("data-move"));
+		$(this).prop("checked", $source.prop("checked") === true);
+	});
+}
+
+$(".result-crit").change(function () {
+	var $source = getMoveCritCheckbox($(this).attr("data-side"), $(this).attr("data-move"));
+	if (!$source.length) {
+		return;
+	}
+	$source.prop("checked", $(this).prop("checked")).change();
+});
+
+$(document).on("change", ".move-crit", syncResultCritButtons);
 
 
 function calculationsColors(p1info, p2) {

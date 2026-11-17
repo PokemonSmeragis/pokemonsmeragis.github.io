@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Pok&eacute;mon Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
-    <link type="text/css" rel="stylesheet" href="./css/main.css?1aa7460f" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?bc0459d8" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="./css/dark-theme.css?69847d0a" id="dark-theme-styles">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -77,21 +77,29 @@
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL1" checked="checked" aria-describedby="resultDamageL1" />
                 <label class="btn btn-xxxwide btn-top" for="resultMoveL1">Loading...</label>
+                <input class="result-crit visually-hidden" type="checkbox" id="resultCritL1" data-side="L" data-move="1" aria-describedby="criticalHitInstruction" />
+                <label class="btn result-crit-btn" for="resultCritL1" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageL1">??? - ???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL2" aria-describedby="resultDamageL2" />
                 <label class="btn btn-xxxwide btn-mid" for="resultMoveL2">Loading...</label>
+                <input class="result-crit visually-hidden" type="checkbox" id="resultCritL2" data-side="L" data-move="2" aria-describedby="criticalHitInstruction" />
+                <label class="btn result-crit-btn" for="resultCritL2" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageL2">??? - ???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL3" aria-describedby="resultDamageL3" />
                 <label class="btn btn-xxxwide btn-mid" for="resultMoveL3">Loading...</label>
+                <input class="result-crit visually-hidden" type="checkbox" id="resultCritL3" data-side="L" data-move="3" aria-describedby="criticalHitInstruction" />
+                <label class="btn result-crit-btn" for="resultCritL3" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageL3">??? - ???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL4" aria-describedby="resultDamageL4" />
                 <label class="btn btn-xxxwide btn-bottom" for="resultMoveL4">Loading...</label>
+                <input class="result-crit visually-hidden" type="checkbox" id="resultCritL4" data-side="L" data-move="4" aria-describedby="criticalHitInstruction" />
+                <label class="btn result-crit-btn" for="resultCritL4" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageL4">??? - ???%</span>
             </div>
         </div>
@@ -101,21 +109,29 @@
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR1" aria-describedby="resultDamageR1" />
                 <label class="btn btn-xxxwide btn-top" for="resultMoveR1">Loading...</label>
+                <input class="result-crit visually-hidden" type="checkbox" id="resultCritR1" data-side="R" data-move="1" aria-describedby="criticalHitInstruction" />
+                <label class="btn result-crit-btn" for="resultCritR1" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageR1">??? - ???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR2" aria-describedby="resultDamageR2" />
                 <label class="btn btn-xxxwide btn-mid" for="resultMoveR2">Loading...</label>
+                <input class="result-crit visually-hidden" type="checkbox" id="resultCritR2" data-side="R" data-move="2" aria-describedby="criticalHitInstruction" />
+                <label class="btn result-crit-btn" for="resultCritR2" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageR2">??? - ???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR3" aria-describedby="resultDamageR3" />
                 <label class="btn btn-xxxwide btn-mid" for="resultMoveR3">Loading...</label>
+                <input class="result-crit visually-hidden" type="checkbox" id="resultCritR3" data-side="R" data-move="3" aria-describedby="criticalHitInstruction" />
+                <label class="btn result-crit-btn" for="resultCritR3" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageR3">??? - ???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR4" aria-describedby="resultDamageR4" />
                 <label class="btn btn-xxxwide btn-bottom" for="resultMoveR4">Loading...</label>
+                <input class="result-crit visually-hidden" type="checkbox" id="resultCritR4" data-side="R" data-move="4" aria-describedby="criticalHitInstruction" />
+                <label class="btn result-crit-btn" for="resultCritR4" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageR4">??? - ???%</span>
             </div>
         </div>
@@ -1690,7 +1706,7 @@
     <script type="text/javascript" src="./calc/util.js?8fa0c7ff"></script>
     <script type="text/javascript" src="./calc/stats.js?9220179f"></script>
     <script type="text/javascript" src="./calc/data/species.js?5f0fa55c"></script>
-	<script type="text/javascript" src="./js/data/sets/gen9.js?3ea0aa3c"></script>
+	<script type="text/javascript" src="./js/data/sets/gen9.js?2a6b81f3"></script>
     <script type="text/javascript" src="./js/data/sets/gen8.js?ecf43658"></script>
     <script type="text/javascript" src="./js/data/sets/gen7.js?78168bde"></script>
     <script type="text/javascript" src="./js/data/sets/gen6.js?2219279f"></script>
@@ -1720,8 +1736,8 @@
     <script type="text/javascript" src="./calc/result.js?d5c7552b"></script>
     <script type="text/javascript" src="./calc/adaptable.js?afeb3759"></script>
     <script type="text/javascript" src="./calc/index.js?2377cbc8"></script>
-    <script type="text/javascript" src="./js/shared_controls.js?f00e2ac0"></script>
-    <script type="text/javascript" src="./js/index_randoms_controls.js?4076ceed"></script>
+    <script type="text/javascript" src="./js/shared_controls.js?7bf76516"></script>
+    <script type="text/javascript" src="./js/index_randoms_controls.js?9c3bf71f"></script>
     <script type="text/javascript" src="./js/moveset_import.js?b938e81d"></script>
 </div>
 

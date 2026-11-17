@@ -6,7 +6,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 70,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "seaspray_cave_b1f-static-8"
+            "zoneid": "seaspray_cave_b1f-static-8",
+            "kind": "Static",
+            "location": "Seaspray Cave",
+            "area": "Seaspray - Cave - B1F"
         }
     ],
     "anorith": [
@@ -15,7 +18,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "rustborocity_devoncorp_2f-gift-407"
+            "zoneid": "rustborocity_devoncorp_2f-gift-407",
+            "kind": "Gift",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F"
         }
     ],
     "azurill": [
@@ -24,7 +30,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-702"
+            "zoneid": "mauvillecity_gamecorner-egg-702",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "barboach": [
@@ -33,7 +43,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-676"
+            "zoneid": "mauvillecity_gamecorner-egg-676",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "beldum": [
@@ -42,16 +56,23 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "mossdeepcity_stevenshouse-gift-86"
+            "zoneid": "mossdeepcity_stevenshouse-gift-86",
+            "kind": "Gift",
+            "location": "Mossdeep City",
+            "area": "Mossdeep City - Stevens House"
         }
     ],
     "bonsly": [
         {
-            "name": "Game Pkmn Daycare (Egg)",
+            "name": "Route 117 (Egg)",
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "day_care-egg-285"
+            "zoneid": "day_care-egg-285",
+            "kind": "Egg",
+            "location": "Route 117",
+            "area": "Route 117 - Pokemon Day Care",
+            "note": "Random: 1 of 8"
         }
     ],
     "cacturne": [
@@ -60,7 +81,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "route111-overworld-77"
+            "zoneid": "route111-overworld-77",
+            "kind": "Overworld",
+            "location": "Route 111",
+            "area": "Route 111"
         }
     ],
     "castform": [
@@ -69,7 +93,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 30,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "route119_weatherinstitute_2f-gift-92"
+            "zoneid": "route119_weatherinstitute_2f-gift-92",
+            "kind": "Gift",
+            "location": "Route 119",
+            "area": "Route 119 - Weather Institute - 2F"
         }
     ],
     "charcadet": [
@@ -78,7 +105,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "lavaridgetown-egg-328"
+            "zoneid": "lavaridgetown-egg-328",
+            "kind": "Egg",
+            "location": "Lavaridge Town",
+            "area": "Lavaridge Town"
         }
     ],
     "chesnaughtmega": [
@@ -87,7 +117,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "evergrandecity-overworld-3"
+            "zoneid": "evergrandecity-overworld-3",
+            "kind": "Overworld",
+            "location": "Ever Grande City",
+            "area": "Ever Grande City"
         }
     ],
     "chikorita": [
@@ -96,14 +129,21 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "littleroottown_professorbirchslab-gift-418"
+            "zoneid": "littleroottown_professorbirchslab-gift-418",
+            "kind": "Gift",
+            "location": "Littleroot Town",
+            "area": "Littleroot Town - Professor Birchs Lab"
         },
         {
             "name": "Route 110 (Egg)",
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "route110-egg-646"
+            "zoneid": "route110-egg-646",
+            "kind": "Egg",
+            "location": "Route 110",
+            "area": "Route 110",
+            "note": "Random: 1 of 3"
         }
     ],
     "clobbopus": [
@@ -112,7 +152,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-702"
+            "zoneid": "mauvillecity_gamecorner-egg-702",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "crabominablemega": [
@@ -121,7 +165,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "evergrandecity-overworld-10"
+            "zoneid": "evergrandecity-overworld-10",
+            "kind": "Overworld",
+            "location": "Ever Grande City",
+            "area": "Ever Grande City"
         }
     ],
     "crabrawler": [
@@ -130,7 +177,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "abandonedship_room_b1f-overworld-1"
+            "zoneid": "abandonedship_room_b1f-overworld-1",
+            "kind": "Overworld",
+            "location": "Abandoned Ship",
+            "area": "Abandoned Ship - Room - B1F"
         }
     ],
     "cyndaquil": [
@@ -139,14 +189,21 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "littleroottown_professorbirchslab-gift-336"
+            "zoneid": "littleroottown_professorbirchslab-gift-336",
+            "kind": "Gift",
+            "location": "Littleroot Town",
+            "area": "Littleroot Town - Professor Birchs Lab"
         },
         {
             "name": "Route 110 (Egg)",
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "route110-egg-646"
+            "zoneid": "route110-egg-646",
+            "kind": "Egg",
+            "location": "Route 110",
+            "area": "Route 110",
+            "note": "Random: 1 of 3"
         }
     ],
     "delphoxmega": [
@@ -155,7 +212,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "evergrandecity-overworld-4"
+            "zoneid": "evergrandecity-overworld-4",
+            "kind": "Overworld",
+            "location": "Ever Grande City",
+            "area": "Ever Grande City"
         }
     ],
     "deoxys": [
@@ -164,7 +224,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 30,
             "rate": "Event",
             "mode": "static",
-            "zoneid": "birthisland_exterior-event-84"
+            "zoneid": "birthisland_exterior-event-84",
+            "kind": "Event",
+            "location": "Birth Island",
+            "area": "Birth Island - Exterior"
         }
     ],
     "diglett": [
@@ -173,7 +236,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-676"
+            "zoneid": "mauvillecity_gamecorner-egg-676",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "drilbur": [
@@ -182,16 +249,24 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-676"
+            "zoneid": "mauvillecity_gamecorner-egg-676",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "eevee": [
         {
-            "name": "Game Pkmn Daycare (Egg)",
+            "name": "Route 117 (Egg)",
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "day_care-egg-285"
+            "zoneid": "day_care-egg-285",
+            "kind": "Egg",
+            "location": "Route 117",
+            "area": "Route 117 - Pokemon Day Care",
+            "note": "Random: 1 of 8"
         }
     ],
     "electrode": [
@@ -200,23 +275,34 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 30,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "aquahideout_b1f-static-32"
+            "zoneid": "aquahideout_b1f-static-32",
+            "kind": "Static",
+            "location": "Aqua Hideout",
+            "area": "Aqua Hideout - B1F"
         }
     ],
     "elekid": [
-        {
-            "name": "Game Pkmn Daycare (Egg)",
-            "level": 5,
-            "rate": "Egg",
-            "mode": "static",
-            "zoneid": "day_care-egg-285"
-        },
         {
             "name": "Mauville City (Egg)",
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-724"
+            "zoneid": "mauvillecity_gamecorner-egg-724",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
+        },
+        {
+            "name": "Route 117 (Egg)",
+            "level": 5,
+            "rate": "Egg",
+            "mode": "static",
+            "zoneid": "day_care-egg-285",
+            "kind": "Egg",
+            "location": "Route 117",
+            "area": "Route 117 - Pokemon Day Care",
+            "note": "Random: 1 of 8"
         }
     ],
     "falinks": [
@@ -225,14 +311,21 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "evergrandecity-overworld-0"
+            "zoneid": "evergrandecity-overworld-0",
+            "kind": "Overworld",
+            "location": "Ever Grande City",
+            "area": "Ever Grande City"
         },
         {
             "name": "Mauville City (Egg)",
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-724"
+            "zoneid": "mauvillecity_gamecorner-egg-724",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "farfetchdgalar": [
@@ -241,7 +334,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-724"
+            "zoneid": "mauvillecity_gamecorner-egg-724",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "feraligatrmega": [
@@ -250,7 +347,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "evergrandecity-overworld-2"
+            "zoneid": "evergrandecity-overworld-2",
+            "kind": "Overworld",
+            "location": "Ever Grande City",
+            "area": "Ever Grande City"
         }
     ],
     "golisopodmega": [
@@ -259,7 +359,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "evergrandecity-overworld-9"
+            "zoneid": "evergrandecity-overworld-9",
+            "kind": "Overworld",
+            "location": "Ever Grande City",
+            "area": "Ever Grande City"
         }
     ],
     "groudon": [
@@ -268,7 +371,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 70,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "terracave_end-static-36"
+            "zoneid": "terracave_end-static-36",
+            "kind": "Static",
+            "location": "Terra Cave",
+            "area": "Terra Cave - End"
         }
     ],
     "growlithe": [
@@ -277,7 +383,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-702"
+            "zoneid": "mauvillecity_gamecorner-egg-702",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "gulpin": [
@@ -286,7 +396,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "slateport_sewer-overworld-0"
+            "zoneid": "slateport_sewer-overworld-0",
+            "kind": "Overworld",
+            "location": "Slateport Sewers",
+            "area": "Slateport - Sewer"
         }
     ],
     "hippopotas": [
@@ -295,7 +408,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-676"
+            "zoneid": "mauvillecity_gamecorner-egg-676",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "hooh": [
@@ -304,23 +421,32 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 70,
             "rate": "Event",
             "mode": "static",
-            "zoneid": "navelrock_top-event-58"
+            "zoneid": "navelrock_top-event-58",
+            "kind": "Event",
+            "location": "Navel Rock",
+            "area": "Navel Rock - Top"
         }
     ],
     "kecleon": [
+        {
+            "name": "Route 119 (Static)",
+            "level": 30,
+            "rate": "Static",
+            "mode": "static",
+            "zoneid": "kecleon-static-74",
+            "kind": "Static",
+            "location": "Route 119",
+            "area": "Route 119"
+        },
         {
             "name": "Route 120 (Static)",
             "level": 30,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "route120-static-193"
-        },
-        {
-            "name": "kecleon (Static)",
-            "level": 30,
-            "rate": "Static",
-            "mode": "static",
-            "zoneid": "kecleon-static-74"
+            "zoneid": "kecleon-static-74",
+            "kind": "Static",
+            "location": "Route 120",
+            "area": "Route 120"
         }
     ],
     "kyogre": [
@@ -329,7 +455,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 70,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "marinecave_end-static-36"
+            "zoneid": "marinecave_end-static-36",
+            "kind": "Static",
+            "location": "Marine Cave",
+            "area": "Marine Cave - End"
         }
     ],
     "latias": [
@@ -338,7 +467,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 50,
             "rate": "Event",
             "mode": "static",
-            "zoneid": "southernisland_interior-event-110"
+            "zoneid": "southernisland_interior-event-110",
+            "kind": "Event",
+            "location": "Southern Island",
+            "area": "Southern Island - Interior"
         }
     ],
     "latios": [
@@ -347,7 +479,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 50,
             "rate": "Event",
             "mode": "static",
-            "zoneid": "southernisland_interior-event-106"
+            "zoneid": "southernisland_interior-event-106",
+            "kind": "Event",
+            "location": "Southern Island",
+            "area": "Southern Island - Interior"
         }
     ],
     "ledyba": [
@@ -356,7 +491,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-724"
+            "zoneid": "mauvillecity_gamecorner-egg-724",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "lileep": [
@@ -365,7 +504,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "rustborocity_devoncorp_2f-gift-362"
+            "zoneid": "rustborocity_devoncorp_2f-gift-362",
+            "kind": "Gift",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F"
         }
     ],
     "lugia": [
@@ -374,23 +516,34 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 70,
             "rate": "Event",
             "mode": "static",
-            "zoneid": "navelrock_bottom-event-54"
+            "zoneid": "navelrock_bottom-event-54",
+            "kind": "Event",
+            "location": "Navel Rock",
+            "area": "Navel Rock - Bottom"
         }
     ],
     "magby": [
-        {
-            "name": "Game Pkmn Daycare (Egg)",
-            "level": 5,
-            "rate": "Egg",
-            "mode": "static",
-            "zoneid": "day_care-egg-285"
-        },
         {
             "name": "Mauville City (Egg)",
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-702"
+            "zoneid": "mauvillecity_gamecorner-egg-702",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
+        },
+        {
+            "name": "Route 117 (Egg)",
+            "level": 5,
+            "rate": "Egg",
+            "mode": "static",
+            "zoneid": "day_care-egg-285",
+            "kind": "Egg",
+            "location": "Route 117",
+            "area": "Route 117 - Pokemon Day Care",
+            "note": "Random: 1 of 8"
         }
     ],
     "mankey": [
@@ -399,7 +552,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-724"
+            "zoneid": "mauvillecity_gamecorner-egg-724",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "maractus": [
@@ -408,7 +565,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "route111-overworld-78"
+            "zoneid": "route111-overworld-78",
+            "kind": "Overworld",
+            "location": "Route 111",
+            "area": "Route 111"
         }
     ],
     "meganiummega": [
@@ -417,7 +577,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "evergrandecity-overworld-1"
+            "zoneid": "evergrandecity-overworld-1",
+            "kind": "Overworld",
+            "location": "Ever Grande City",
+            "area": "Ever Grande City"
         }
     ],
     "mew": [
@@ -426,7 +589,23 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 30,
             "rate": "Event",
             "mode": "static",
-            "zoneid": "farawayisland_interior-event-130"
+            "zoneid": "farawayisland_interior-event-130",
+            "kind": "Event",
+            "location": "Faraway Island",
+            "area": "Faraway Island - Interior"
+        }
+    ],
+    "miltank": [
+        {
+            "name": "Route 123 (Egg)",
+            "level": 5,
+            "rate": "Egg",
+            "mode": "static",
+            "zoneid": "route123_berrymastershouse-egg-20",
+            "kind": "Egg",
+            "location": "Route 123",
+            "area": "Route 123 - Berry Masters House",
+            "note": "Random: 1 of 5"
         }
     ],
     "mimikyu": [
@@ -435,7 +614,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 50,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "dewfordmeadowhouse1f-static-6"
+            "zoneid": "dewfordmeadowhouse1f-static-6",
+            "kind": "Static",
+            "location": "Dewford Manor",
+            "area": "Dewford Meadow House 1F"
         }
     ],
     "mudbray": [
@@ -444,7 +626,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-676"
+            "zoneid": "mauvillecity_gamecorner-egg-676",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "mudkip": [
@@ -453,7 +639,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Starter",
             "mode": "static",
-            "zoneid": "route101-starter-231"
+            "zoneid": "route101-starter-231",
+            "kind": "Starter",
+            "location": "Route 101",
+            "area": "Route 101",
+            "note": "Choose 1"
         }
     ],
     "panpour": [
@@ -462,7 +652,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "rustborocity_pokemonschool-gift-143"
+            "zoneid": "rustborocity_pokemonschool-gift-143",
+            "kind": "Gift",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Pokemon School"
         }
     ],
     "pansage": [
@@ -471,7 +664,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "rustborocity_pokemonschool-gift-116"
+            "zoneid": "rustborocity_pokemonschool-gift-116",
+            "kind": "Gift",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Pokemon School"
         }
     ],
     "pansear": [
@@ -480,23 +676,31 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "rustborocity_pokemonschool-gift-132"
+            "zoneid": "rustborocity_pokemonschool-gift-132",
+            "kind": "Gift",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Pokemon School"
         }
     ],
     "pichu": [
         {
-            "name": "Game Pkmn Daycare (Egg)",
+            "name": "Route 117 (Egg)",
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "day_care-egg-285"
+            "zoneid": "day_care-egg-285",
+            "kind": "Egg",
+            "location": "Route 117",
+            "area": "Route 117 - Pokemon Day Care",
+            "note": "Random: 1 of 8"
         },
         {
             "name": "gift pichu (Egg)",
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "gift_pichu-egg-31"
+            "zoneid": "gift_pichu-egg-31",
+            "kind": "Egg"
         }
     ],
     "pyukumuku": [
@@ -505,7 +709,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "route109-overworld-30"
+            "zoneid": "route109-overworld-30",
+            "kind": "Overworld",
+            "location": "Route 109",
+            "area": "Route 109"
         }
     ],
     "raichumegax": [
@@ -514,7 +721,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "evergrandecity-overworld-5"
+            "zoneid": "evergrandecity-overworld-5",
+            "kind": "Overworld",
+            "location": "Ever Grande City",
+            "area": "Ever Grande City"
         }
     ],
     "raichumegay": [
@@ -523,7 +733,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "evergrandecity-overworld-6"
+            "zoneid": "evergrandecity-overworld-6",
+            "kind": "Overworld",
+            "location": "Ever Grande City",
+            "area": "Ever Grande City"
         }
     ],
     "rayquaza": [
@@ -532,7 +745,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 70,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "skypillar_top-static-49"
+            "zoneid": "skypillar_top-static-49",
+            "kind": "Static",
+            "location": "Sky Pillar",
+            "area": "Sky Pillar - Top"
         }
     ],
     "regice": [
@@ -541,7 +757,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 40,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "islandcave-static-102"
+            "zoneid": "islandcave-static-102",
+            "kind": "Static",
+            "location": "Island Cave",
+            "area": "Island Cave"
         }
     ],
     "regirock": [
@@ -550,7 +769,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 70,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "desertruins-static-72"
+            "zoneid": "desertruins-static-72",
+            "kind": "Static",
+            "location": "Desert Ruins",
+            "area": "Desert Ruins"
         }
     ],
     "registeel": [
@@ -559,7 +781,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 40,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "ancienttomb-static-64"
+            "zoneid": "ancienttomb-static-64",
+            "kind": "Static",
+            "location": "Ancient Tomb",
+            "area": "Ancient Tomb"
         }
     ],
     "rotom": [
@@ -568,7 +793,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 50,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "newmauville_inside-static-183"
+            "zoneid": "newmauville_inside-static-183",
+            "kind": "Static",
+            "location": "New Mauville",
+            "area": "New Mauville - Inside"
         }
     ],
     "sandshrew": [
@@ -577,7 +805,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-676"
+            "zoneid": "mauvillecity_gamecorner-egg-676",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "sandygast": [
@@ -586,14 +818,20 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "dewfordtown-overworld-5"
+            "zoneid": "dewfordtown-overworld-5",
+            "kind": "Overworld",
+            "location": "Dewford Town",
+            "area": "Dewford Town"
         },
         {
             "name": "Route 109 (Overworld)",
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "route109-overworld-26"
+            "zoneid": "route109-overworld-26",
+            "kind": "Overworld",
+            "location": "Route 109",
+            "area": "Route 109"
         }
     ],
     "skrelp": [
@@ -602,16 +840,24 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-702"
+            "zoneid": "mauvillecity_gamecorner-egg-702",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "smoochum": [
         {
-            "name": "Game Pkmn Daycare (Egg)",
+            "name": "Route 117 (Egg)",
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "day_care-egg-285"
+            "zoneid": "day_care-egg-285",
+            "kind": "Egg",
+            "location": "Route 117",
+            "area": "Route 117 - Pokemon Day Care",
+            "note": "Random: 1 of 8"
         }
     ],
     "sneaselhisui": [
@@ -620,7 +866,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-724"
+            "zoneid": "mauvillecity_gamecorner-egg-724",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "snubbull": [
@@ -629,7 +879,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-724"
+            "zoneid": "mauvillecity_gamecorner-egg-724",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "stunfisk": [
@@ -638,7 +892,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-676"
+            "zoneid": "mauvillecity_gamecorner-egg-676",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "sudowoodo": [
@@ -647,7 +905,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 40,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "battlefrontier_outsideeast-static-130"
+            "zoneid": "battlefrontier_outsideeast-static-130",
+            "kind": "Static",
+            "location": "Battle Frontier",
+            "area": "Battle Frontier - Outside East"
         }
     ],
     "surskit": [
@@ -656,7 +917,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-702"
+            "zoneid": "mauvillecity_gamecorner-egg-702",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "tauros": [
@@ -665,7 +930,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "route123_berrymastershouse-egg-20"
+            "zoneid": "route123_berrymastershouse-egg-20",
+            "kind": "Egg",
+            "location": "Route 123",
+            "area": "Route 123 - Berry Masters House",
+            "note": "Random: 1 of 5"
         }
     ],
     "taurospaldeanaquabreed": [
@@ -674,7 +943,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "route123_berrymastershouse-egg-20"
+            "zoneid": "route123_berrymastershouse-egg-20",
+            "kind": "Egg",
+            "location": "Route 123",
+            "area": "Route 123 - Berry Masters House",
+            "note": "Random: 1 of 5"
         }
     ],
     "taurospaldeanblazebreed": [
@@ -683,7 +956,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "route123_berrymastershouse-egg-20"
+            "zoneid": "route123_berrymastershouse-egg-20",
+            "kind": "Egg",
+            "location": "Route 123",
+            "area": "Route 123 - Berry Masters House",
+            "note": "Random: 1 of 5"
         }
     ],
     "taurospaldeancombatbreed": [
@@ -692,16 +969,24 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "route123_berrymastershouse-egg-20"
+            "zoneid": "route123_berrymastershouse-egg-20",
+            "kind": "Egg",
+            "location": "Route 123",
+            "area": "Route 123 - Berry Masters House",
+            "note": "Random: 1 of 5"
         }
     ],
     "togepi": [
         {
-            "name": "Game Pkmn Daycare (Egg)",
+            "name": "Route 117 (Egg)",
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "day_care-egg-285"
+            "zoneid": "day_care-egg-285",
+            "kind": "Egg",
+            "location": "Route 117",
+            "area": "Route 117 - Pokemon Day Care",
+            "note": "Random: 1 of 8"
         }
     ],
     "torchic": [
@@ -710,7 +995,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Starter",
             "mode": "static",
-            "zoneid": "route101-starter-231"
+            "zoneid": "route101-starter-231",
+            "kind": "Starter",
+            "location": "Route 101",
+            "area": "Route 101",
+            "note": "Choose 1"
         }
     ],
     "totodile": [
@@ -719,14 +1008,21 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "littleroottown_professorbirchslab-gift-377"
+            "zoneid": "littleroottown_professorbirchslab-gift-377",
+            "kind": "Gift",
+            "location": "Littleroot Town",
+            "area": "Littleroot Town - Professor Birchs Lab"
         },
         {
             "name": "Route 110 (Egg)",
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "route110-egg-646"
+            "zoneid": "route110-egg-646",
+            "kind": "Egg",
+            "location": "Route 110",
+            "area": "Route 110",
+            "note": "Random: 1 of 3"
         }
     ],
     "treecko": [
@@ -735,7 +1031,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Starter",
             "mode": "static",
-            "zoneid": "route101-starter-231"
+            "zoneid": "route101-starter-231",
+            "kind": "Starter",
+            "location": "Route 101",
+            "area": "Route 101",
+            "note": "Choose 1"
         }
     ],
     "trubbish": [
@@ -744,7 +1044,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "slateport_sewer-overworld-1"
+            "zoneid": "slateport_sewer-overworld-1",
+            "kind": "Overworld",
+            "location": "Slateport Sewers",
+            "area": "Slateport - Sewer"
         }
     ],
     "typhlosionmega": [
@@ -753,7 +1056,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 20,
             "rate": "Overworld",
             "mode": "static",
-            "zoneid": "evergrandecity-overworld-7"
+            "zoneid": "evergrandecity-overworld-7",
+            "kind": "Overworld",
+            "location": "Ever Grande City",
+            "area": "Ever Grande City"
         }
     ],
     "tyrogue": [
@@ -762,7 +1068,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-724"
+            "zoneid": "mauvillecity_gamecorner-egg-724",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "voltorb": [
@@ -771,7 +1081,10 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 25,
             "rate": "Static",
             "mode": "static",
-            "zoneid": "newmauville_inside-static-213"
+            "zoneid": "newmauville_inside-static-213",
+            "kind": "Static",
+            "location": "New Mauville",
+            "area": "New Mauville - Inside"
         }
     ],
     "vulpix": [
@@ -780,7 +1093,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-702"
+            "zoneid": "mauvillecity_gamecorner-egg-702",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "wooper": [
@@ -789,7 +1106,11 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-702"
+            "zoneid": "mauvillecity_gamecorner-egg-702",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "wooperpaldea": [
@@ -798,16 +1119,24 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 1,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-676"
+            "zoneid": "mauvillecity_gamecorner-egg-676",
+            "kind": "Egg",
+            "location": "Mauville City",
+            "area": "Mauville City - Game Corner",
+            "note": "Random: 1 of 8"
         }
     ],
     "wynaut": [
         {
-            "name": "Game Pkmn Daycare (Egg)",
+            "name": "Route 117 (Egg)",
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "day_care-egg-285"
+            "zoneid": "day_care-egg-285",
+            "kind": "Egg",
+            "location": "Route 117",
+            "area": "Route 117 - Pokemon Day Care",
+            "note": "Random: 1 of 8"
         }
     ]
 });

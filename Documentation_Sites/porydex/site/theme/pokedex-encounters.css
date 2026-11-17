@@ -67,6 +67,22 @@
   margin-right: 8px;
 }
 
+/* Gift / egg / starter / static sections */
+.pfx-encounters .enc-static-table .enc-lvl-col{
+  width: 70px;
+}
+.pfx-encounters .enc-where-col{
+  width: 40%;
+  text-align: left;
+}
+.enc-static-note{
+  color: #777;
+  white-space: nowrap;
+}
+html[data-theme="dark"] .enc-static-note{
+  color: #9aa8c2;
+}
+
 .pfx-encounters .enc-section-title{
   margin: 12px 0 6px;
 }
