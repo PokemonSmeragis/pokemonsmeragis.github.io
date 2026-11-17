@@ -2465,11 +2465,11 @@ exports.BattlePokedex = {
         "num": 26,
         "baseStats": {
             "hp": 60,
-            "atk": 110,
-            "def": 55,
+            "atk": 155,
+            "def": 95,
             "spe": 110,
             "spa": 90,
-            "spd": 80
+            "spd": 95
         },
         "types": [
             "Electric"
@@ -2489,13 +2489,12 @@ exports.BattlePokedex = {
             "F": 0.5
         },
         "abilities": {
-            "0": "Static",
-            "H": "Lightning Rod"
+            "0": "Electric Surge"
         },
         "color": "Yellow",
         "name": "Raichu-Mega-X",
-        "heightm": 0.8,
-        "weightkg": 30.0,
+        "heightm": 1.2,
+        "weightkg": 38.0,
         "_formTableId": "sRaichuFormSpeciesIdTable",
         "baseSpecies": "Raichu",
         "forme": "Mega-X"
@@ -2504,10 +2503,10 @@ exports.BattlePokedex = {
         "num": 26,
         "baseStats": {
             "hp": 60,
-            "atk": 110,
+            "atk": 120,
             "def": 55,
-            "spe": 110,
-            "spa": 90,
+            "spe": 130,
+            "spa": 160,
             "spd": 80
         },
         "types": [
@@ -2528,13 +2527,12 @@ exports.BattlePokedex = {
             "F": 0.5
         },
         "abilities": {
-            "0": "Static",
-            "H": "Lightning Rod"
+            "0": "No Guard"
         },
         "color": "Yellow",
         "name": "Raichu-Mega-Y",
-        "heightm": 0.8,
-        "weightkg": 30.0,
+        "heightm": 1.0,
+        "weightkg": 26.0,
         "_formTableId": "sRaichuFormSpeciesIdTable",
         "baseSpecies": "Raichu",
         "forme": "Mega-Y"
@@ -6469,7 +6467,7 @@ exports.BattlePokedex = {
         "abilities": {
             "0": "Magnet Pull",
             "1": "Sturdy",
-            "H": "Analytic"
+            "H": "Levitate"
         },
         "color": "Gray",
         "name": "Magnezone",
@@ -11666,6 +11664,14 @@ exports.BattlePokedex = {
         "name": "Dragonite",
         "heightm": 2.2,
         "weightkg": 210.0,
+        "_formTableId": "sDragoniteFormSpeciesIdTable",
+        "formeOrder": [
+            "Dragonite",
+            "Dragonite-Mega"
+        ],
+        "otherFormes": [
+            "Dragonite-Mega"
+        ],
         "prevo": "Dragonair",
         "evoLevel": 55,
         "evoType": "level",
@@ -11675,11 +11681,11 @@ exports.BattlePokedex = {
         "num": 149,
         "baseStats": {
             "hp": 91,
-            "atk": 134,
-            "def": 95,
-            "spe": 80,
-            "spa": 100,
-            "spd": 100
+            "atk": 124,
+            "def": 115,
+            "spe": 100,
+            "spa": 145,
+            "spd": 125
         },
         "types": [
             "Dragon",
@@ -11702,13 +11708,13 @@ exports.BattlePokedex = {
             "F": 0.5
         },
         "abilities": {
-            "0": "Inner Focus",
-            "H": "Multiscale"
+            "0": "Multiscale"
         },
         "color": "Brown",
         "name": "Dragonite-Mega",
         "heightm": 2.2,
-        "weightkg": 210.0,
+        "weightkg": 290.0,
+        "_formTableId": "sDragoniteFormSpeciesIdTable",
         "baseSpecies": "Dragonite",
         "forme": "Mega"
     },
@@ -12020,7 +12026,7 @@ exports.BattlePokedex = {
             "F": 0.125
         },
         "abilities": {
-            "0": "Triage"
+            "0": "Mega Sol"
         },
         "color": "Green",
         "name": "Meganium-Mega",
@@ -15941,7 +15947,55 @@ exports.BattlePokedex = {
         "color": "Gray",
         "name": "Skarmory",
         "heightm": 1.7,
-        "weightkg": 50.5
+        "weightkg": 50.5,
+        "_formTableId": "sSkarmoryFormSpeciesIdTable",
+        "formeOrder": [
+            "Skarmory",
+            "Skarmory-Mega"
+        ],
+        "otherFormes": [
+            "Skarmory-Mega"
+        ]
+    },
+    "skarmorymega": {
+        "num": 227,
+        "baseStats": {
+            "hp": 65,
+            "atk": 150,
+            "def": 110,
+            "spe": 110,
+            "spa": 40,
+            "spd": 100
+        },
+        "types": [
+            "Steel",
+            "Flying"
+        ],
+        "evYields": {
+            "def": 2
+        },
+        "items": {
+            "R": "Metal Coat"
+        },
+        "eggGroups": [
+            "Flying"
+        ],
+        "catchRate": 25,
+        "expYield": 163,
+        "genderRatio": {
+            "M": 0.5,
+            "F": 0.5
+        },
+        "abilities": {
+            "0": "Tough Claws"
+        },
+        "color": "Yellow",
+        "name": "Skarmory-Mega",
+        "heightm": 1.7,
+        "weightkg": 40.4,
+        "_formTableId": "sSkarmoryFormSpeciesIdTable",
+        "baseSpecies": "Skarmory",
+        "forme": "Mega"
     },
     "houndour": {
         "num": 228,
@@ -36294,11 +36348,11 @@ exports.BattlePokedex = {
         "num": 652,
         "baseStats": {
             "hp": 88,
-            "atk": 107,
-            "def": 122,
-            "spe": 64,
+            "atk": 137,
+            "def": 172,
+            "spe": 44,
             "spa": 74,
-            "spd": 75
+            "spd": 115
         },
         "types": [
             "Grass",
@@ -36318,9 +36372,7 @@ exports.BattlePokedex = {
             "F": 0.125
         },
         "abilities": {
-            "0": "Overgrow",
-            "1": "Bulletproof",
-            "H": "Rough Skin"
+            "0": "Bulletproof"
         },
         "color": "Green",
         "name": "Chesnaught-Mega",
@@ -36467,9 +36519,9 @@ exports.BattlePokedex = {
             "hp": 75,
             "atk": 69,
             "def": 72,
-            "spe": 104,
-            "spa": 114,
-            "spd": 100
+            "spe": 134,
+            "spa": 159,
+            "spd": 125
         },
         "types": [
             "Fire",
@@ -36489,9 +36541,7 @@ exports.BattlePokedex = {
             "F": 0.125
         },
         "abilities": {
-            "0": "Blaze",
-            "1": "Magician",
-            "H": "Magic Guard"
+            "0": "Levitate"
         },
         "color": "Red",
         "name": "Delphox-Mega",
@@ -37392,8 +37442,8 @@ exports.BattlePokedex = {
             "hp": 123,
             "atk": 100,
             "def": 82,
-            "spe": 68,
-            "spa": 97,
+            "spe": 97,
+            "spa": 68,
             "spd": 81
         },
         "types": [
@@ -41001,11 +41051,11 @@ exports.BattlePokedex = {
         "num": 740,
         "baseStats": {
             "hp": 97,
-            "atk": 132,
-            "def": 77,
-            "spe": 43,
+            "atk": 157,
+            "def": 122,
+            "spe": 33,
             "spa": 62,
-            "spd": 67
+            "spd": 107
         },
         "types": [
             "Fighting",
@@ -41027,14 +41077,12 @@ exports.BattlePokedex = {
             "F": 0.5
         },
         "abilities": {
-            "0": "Hyper Cutter",
-            "1": "Iron Fist",
-            "H": "Anger Point"
+            "0": "Iron Fist"
         },
         "color": "White",
         "name": "Crabominable-Mega",
-        "heightm": 1.7,
-        "weightkg": 180.0,
+        "heightm": 2.6,
+        "weightkg": 252.8,
         "_formTableId": "sCrabominableFormSpeciesIdTable",
         "baseSpecies": "Crabominable",
         "forme": "Mega"
@@ -42728,11 +42776,11 @@ exports.BattlePokedex = {
         "num": 768,
         "baseStats": {
             "hp": 85,
-            "atk": 125,
-            "def": 140,
+            "atk": 150,
+            "def": 175,
             "spe": 40,
-            "spa": 60,
-            "spd": 90
+            "spa": 70,
+            "spd": 120
         },
         "types": [
             "Bug",
@@ -42757,8 +42805,8 @@ exports.BattlePokedex = {
         },
         "color": "Gray",
         "name": "Golisopod-Mega",
-        "heightm": 2.0,
-        "weightkg": 108.0,
+        "heightm": 2.3,
+        "weightkg": 148.0,
         "_formTableId": "sGolisopodFormSpeciesIdTable",
         "baseSpecies": "Golisopod",
         "forme": "Mega"
@@ -51214,7 +51262,7 @@ exports.BattlePokedex = {
         "heightm": 0.9,
         "weightkg": 41.0,
         "prevo": "Pawmo",
-        "evoLevel": 0,
+        "evoLevel": 20,
         "evoType": "level",
         "evoCondition": "min overworld steps"
     },

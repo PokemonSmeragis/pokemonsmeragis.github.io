@@ -119,8 +119,206 @@ function performCalculations() {
 	$("#resultHeaderL").text(slotLabel(pair.attackerId) + " (" + p1.name + ") Moves (select one to show detailed results)");
 	$("#resultHeaderR").text(slotLabel(pair.defenderId) + " (" + p2.name + ") Moves (select one to show detailed results)");
 	syncResultCritButtons();
+	updateAiPrediction(pair, p1, p2, p1field, p2field);
 }
 window.performCalculations = performCalculations;
+
+// Previsione della mossa scelta dall'AI della ROM (logica in js/ai_move_predictor.js).
+// I Pokemon di destra (P2/P4) sono dell'allenatore (AI), quelli di sinistra (P1/P3) del giocatore.
+var aiPredictionLastSet = null;
+var AI_KNOWN_ABILITIES = ["shadowtag", "magnetpull", "arenatrap"]; // sempre note all'AI
+
+function aiId(text) {
+	return String(text || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+function aiTypeChart() {
+	var generation = (typeof GENERATION === "object" && GENERATION && GENERATION.types) ? GENERATION : calc.Generations.get(gen);
+	return function (type) {
+		return generation.types.get(aiId(type));
+	};
+}
+
+function getSlotSetData(slotId) {
+	var value = $("#" + slotId + " input.set-selector").val() || "";
+	var open = value.indexOf(" (");
+	if (open < 0 || typeof setdex === "undefined") {
+		return null;
+	}
+	var species = value.substring(0, open);
+	var setName = value.substring(open + 2, value.lastIndexOf(")"));
+	return (setdex[species] && setdex[species][setName]) || null;
+}
+
+// Quando cambia il Pokemon dell'allenatore, "Omniscient" e "AI ha altri Pokemon" seguono il set.
+function syncAiDefaults(aiSlot) {
+	var setName = $("#" + aiSlot + " input.set-selector").val() || "";
+	if (setName === aiPredictionLastSet) {
+		return;
+	}
+	aiPredictionLastSet = setName;
+	var set = getSlotSetData(aiSlot);
+	$("#aiOmniscient").prop("checked", !!(set && set.aiOmniscient));
+	if (typeof getTrainerPoksForSlot === "function") {
+		var team = getTrainerPoksForSlot(aiSlot) || [];
+		if (team.length) {
+			$("#aiHasParty").prop("checked", team.length > (isDoublesFormat() ? 2 : 1));
+		}
+	}
+}
+
+function isDoublesFormat() {
+	return $("input:radio[name='format']:checked").val() === "Doubles";
+}
+
+// Abilita che un'AI non Omniscient puo attribuire al Pokemon del giocatore (scelta a caso).
+function aiAbilityGuesses(pokemon) {
+	if (AI_KNOWN_ABILITIES.indexOf(aiId(pokemon.ability)) >= 0) {
+		return [pokemon.ability];
+	}
+	var table = window.AI_SPECIES_ABILITIES || {};
+	var name = String(pokemon.name || "");
+	while (name) {
+		if (table[aiId(name)]) {
+			return table[aiId(name)];
+		}
+		var dash = name.lastIndexOf("-");
+		name = dash > 0 ? name.substring(0, dash) : "";
+	}
+	return [pokemon.ability];
+}
+
+// Il giocatore "come lo vede l'AI": con Omniscient e quello vero, altrimenti senza effetto
+// dello strumento e con una delle abilita possibili (una variante per abilita).
+function buildAiTarget(label, playerSlot, aiSlot, playerField, aiField, omniscient) {
+	var $slot = $("#" + playerSlot);
+	if (!$slot.length) {
+		return null;
+	}
+	var player = createPokemon($slot);
+	if (!player || !player.name || player.curHP() <= 0) {
+		return null;
+	}
+	var abilities = omniscient ? [player.ability] : aiAbilityGuesses(player);
+	var variants = abilities.map(function (ability) {
+		var seen = player.clone();
+		var ai = createPokemon($("#" + aiSlot));
+		if (!omniscient) {
+			seen.ability = ability;
+			seen.item = undefined;
+		}
+		checkStatBoost(seen, ai);
+		var playerResults = [], aiResults = [];
+		for (var i = 0; i < 4; i++) {
+			playerResults.push(calc.calculate(gen, seen, ai, seen.moves[i], playerField));
+			aiResults.push(calc.calculate(gen, ai, seen, ai.moves[i], aiField));
+		}
+		return {player: seen, playerResults: playerResults, aiResults: aiResults};
+	});
+	return {label: label, actualItem: player.item || "", variants: variants};
+}
+
+function clearAiPrediction() {
+	$(".ai-chance").text("").removeAttr("title").removeClass("ai-chance-top ai-chance-some ai-chance-none");
+}
+
+function updateAiPrediction(pair, p1, p2, p1field, p2field) {
+	if (!$(".ai-chance").length || !window.AiMovePredictor) {
+		return;
+	}
+	var doubles = isDoublesFormat();
+	var aiSlot = pair.defenderId;
+	syncAiDefaults(aiSlot);
+	var omniscient = $("#aiOmniscient").prop("checked");
+	$("#aiPlayerKnown").prop("disabled", omniscient).closest("label").toggleClass("ai-option-disabled", omniscient);
+
+	var prediction = null;
+	try {
+		var playerSlots = doubles ? ["p1", "p3"] : ["p1"];
+		var targets = [];
+		for (var t = 0; t < playerSlots.length; t++) {
+			var target = buildAiTarget(playerSlots[t].toUpperCase(), playerSlots[t], aiSlot, p1field, p2field, omniscient);
+			if (target) {
+				targets.push(target);
+			}
+		}
+		var allySlot = aiSlot === "p2" ? "p4" : "p2";
+		var ally = doubles && $("#" + allySlot).length ? createPokemon($("#" + allySlot)) : null;
+		prediction = window.AiMovePredictor.predict({
+			targets: targets,
+			field: p1field,
+			aiField: p2field,
+			typeChart: aiTypeChart(),
+			omniscient: omniscient,
+			playerMovesKnown: $("#aiPlayerKnown").prop("checked"),
+			firstTurn: $("#aiFirstTurn").prop("checked"),
+			aiPartyLeft: $("#aiHasParty").prop("checked"),
+			playerPartyLeft: $("#aiPlayerHasParty").prop("checked"),
+			protectUses: $("#aiProtectUsed").prop("checked") ? 1 : 0,
+			doubles: doubles,
+			allyAlive: !!(ally && ally.name && ally.curHP() > 0)
+		});
+	} catch (e) {
+		console.error("Previsione AI non riuscita", e);
+	}
+	if (!prediction) {
+		clearAiPrediction();
+		return;
+	}
+
+	for (var i = 0; i < 4; i++) {
+		var $span = $("#aiChanceR" + (i + 1));
+		var entry = prediction[i];
+		$span.removeClass("ai-chance-top ai-chance-some ai-chance-none");
+		if (!entry) {
+			$span.text("").removeAttr("title");
+			continue;
+		}
+		$span.text("AI " + formatAiPercent(entry.chance) + (entry.estimated ? "*" : "") + (doubles && entry.chance > 0 ? " → " + aiTargetLabel(entry) : ""));
+		$span.addClass(entry.chance >= 0.5 ? "ai-chance-top" : entry.chance > 0 ? "ai-chance-some" : "ai-chance-none");
+		$span.attr("title", aiPredictionTooltip(entry, doubles, omniscient));
+	}
+}
+
+// In doppio: i bersagli su cui la mossa viene usata in modo significativo (es. "P1/P3" se quasi alla pari).
+function aiTargetLabel(entry) {
+	var labels = entry.byTarget.filter(function (target) {
+		return target.chance > 0 && target.chance >= entry.chance * 0.25;
+	}).map(function (target) {
+		return target.label;
+	});
+	return labels.length ? labels.join("/") : entry.target;
+}
+
+function formatAiPercent(chance) {
+	var pct = Math.round(chance * 100);
+	return (chance > 0 && pct === 0 ? "<1" : String(pct)) + "%";
+}
+
+function aiPredictionTooltip(entry, doubles, omniscient) {
+	var lines = [];
+	entry.byTarget.forEach(function (target) {
+		var score = target.scoreMin === target.scoreMax ? String(target.scoreMin) : target.scoreMin + "-" + target.scoreMax;
+		lines.push((doubles ? "Contro " + target.label + ": " + formatAiPercent(target.chance) + ", punteggio " : "Punteggio AI: ") + score + " (base 100)");
+		(target.reasons.length ? target.reasons : ["nessun modificatore"]).forEach(function (reason) {
+			lines.push((doubles ? "   " : "") + reason);
+		});
+	});
+	if (entry.estimated) {
+		lines.push("* mossa non trovata nei dati della ROM: punteggio stimato");
+	}
+	lines.push(omniscient ? "AI Omniscient: conosce mosse, strumento e abilita del giocatore."
+		: "AI non Omniscient: non conosce lo strumento del giocatore e ne ipotizza l'abilita a caso.");
+	if (doubles) {
+		lines.push("Doppio: vince il bersaglio con il punteggio migliore (logica AI_DoubleBattle non inclusa).");
+	}
+	lines.push("Probabilita su 2000 simulazioni delle scelte casuali dell'AI.");
+	return lines.join("\n");
+}
+
+$(document).on("change", ".ai-option", function () {
+	performCalculations();
+});
 
 // Pulsanti Crit accanto alle mosse dei risultati: specchiano il Crit della mossa
 // corrispondente del Pokemon attivo (attaccante a sinistra, difensore a destra).

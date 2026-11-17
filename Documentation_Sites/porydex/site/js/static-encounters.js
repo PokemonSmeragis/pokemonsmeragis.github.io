@@ -105,7 +105,7 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Egg",
             "mode": "static",
-            "zoneid": "lavaridgetown-egg-328",
+            "zoneid": "lavaridgetown-egg-330",
             "kind": "Egg",
             "location": "Lavaridge Town",
             "area": "Lavaridge Town"

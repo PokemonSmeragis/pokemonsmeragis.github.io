@@ -25634,6 +25634,9 @@ exports.BattleLearnsets = {
             "peck": [
                 "L1"
             ],
+            "rocksmash": [
+                "L1"
+            ],
             "sandattack": [
                 "L1"
             ],
@@ -25643,7 +25646,7 @@ exports.BattleLearnsets = {
             "furycutter": [
                 "L10"
             ],
-            "cut": [
+            "karatechop": [
                 "L15"
             ],
             "aerialace": [
@@ -25655,6 +25658,9 @@ exports.BattleLearnsets = {
             "knockoff": [
                 "L30"
             ],
+            "brickbreak": [
+                "L32"
+            ],
             "falseswipe": [
                 "L35",
                 "T"
@@ -25662,25 +25668,44 @@ exports.BattleLearnsets = {
             "slash": [
                 "L40"
             ],
+            "sacredsword": [
+                "L43"
+            ],
             "swordsdance": [
                 "L45",
                 "T"
             ],
-            "airslash": [
+            "closecombat": [
                 "L50",
-                "T"
+                "M"
             ],
             "leafblade": [
                 "L55",
                 "T"
             ],
-            "agility": [
-                "L60",
-                "M"
+            "flyingpress": [
+                "L58"
+            ],
+            "triplearrows": [
+                "L60"
             ],
             "bravebird": [
                 "L65",
                 "T"
+            ],
+            "thunderouskick": [
+                "L68"
+            ],
+            "cut": [
+                "L15"
+            ],
+            "airslash": [
+                "L50",
+                "T"
+            ],
+            "agility": [
+                "L60",
+                "M"
             ],
             "poisonjab": [
                 "L1",
@@ -25698,9 +25723,6 @@ exports.BattleLearnsets = {
             ],
             "feint": [
                 "L43"
-            ],
-            "closecombat": [
-                "M"
             ],
             "facade": [
                 "M"
@@ -25760,6 +25782,9 @@ exports.BattleLearnsets = {
                 "T"
             ],
             "sunnyday": [
+                "T"
+            ],
+            "superpower": [
                 "T"
             ],
             "uproar": [
@@ -64144,6 +64169,187 @@ exports.BattleLearnsets = {
         }
     },
     "skarmory": {
+        "learnset": {
+            "leer": [
+                "L1"
+            ],
+            "peck": [
+                "L1"
+            ],
+            "sandattack": [
+                "L4"
+            ],
+            "furyattack": [
+                "L8"
+            ],
+            "metalclaw": [
+                "L12",
+                "T"
+            ],
+            "gust": [
+                "L14"
+            ],
+            "agility": [
+                "L16",
+                "M"
+            ],
+            "wingattack": [
+                "L20"
+            ],
+            "slash": [
+                "L24"
+            ],
+            "steelwing": [
+                "L28"
+            ],
+            "roost": [
+                "L32"
+            ],
+            "drillpeck": [
+                "L36"
+            ],
+            "metalsound": [
+                "L40",
+                "T"
+            ],
+            "acrobatics": [
+                "L42"
+            ],
+            "ironhead": [
+                "L44",
+                "M"
+            ],
+            "irondefense": [
+                "L48",
+                "T"
+            ],
+            "bravebird": [
+                "L52",
+                "T"
+            ],
+            "hardpress": [
+                "L58"
+            ],
+            "darkpulse": [
+                "M"
+            ],
+            "drillrun": [
+                "M"
+            ],
+            "dualwingbeat": [
+                "M"
+            ],
+            "facade": [
+                "M"
+            ],
+            "flashcannon": [
+                "M"
+            ],
+            "fly": [
+                "M"
+            ],
+            "hyperbeam": [
+                "M"
+            ],
+            "rest": [
+                "M"
+            ],
+            "roar": [
+                "M"
+            ],
+            "rocktomb": [
+                "M"
+            ],
+            "steelbeam": [
+                "M"
+            ],
+            "tailwind": [
+                "M"
+            ],
+            "taunt": [
+                "M"
+            ],
+            "thief": [
+                "M"
+            ],
+            "aerialace": [
+                "T"
+            ],
+            "aircutter": [
+                "T"
+            ],
+            "airslash": [
+                "T"
+            ],
+            "bodypress": [
+                "T"
+            ],
+            "curse": [
+                "T"
+            ],
+            "defog": [
+                "T"
+            ],
+            "gigaimpact": [
+                "T"
+            ],
+            "hurricane": [
+                "T"
+            ],
+            "pluck": [
+                "T"
+            ],
+            "protect": [
+                "T"
+            ],
+            "reversal": [
+                "T"
+            ],
+            "sandstorm": [
+                "T"
+            ],
+            "sandtomb": [
+                "T"
+            ],
+            "spikes": [
+                "T"
+            ],
+            "stealthrock": [
+                "T"
+            ],
+            "sunnyday": [
+                "T"
+            ],
+            "takedown": [
+                "T"
+            ],
+            "xscissor": [
+                "T"
+            ],
+            "endure": [
+                "T"
+            ],
+            "icywind": [
+                "T"
+            ],
+            "rockslide": [
+                "T"
+            ],
+            "sleeptalk": [
+                "T"
+            ],
+            "substitute": [
+                "T"
+            ],
+            "swift": [
+                "T"
+            ],
+            "swordsdance": [
+                "T"
+            ]
+        }
+    },
+    "skarmorymega": {
         "learnset": {
             "leer": [
                 "L1"

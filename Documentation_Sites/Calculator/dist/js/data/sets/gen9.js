@@ -226,7 +226,8 @@ var SETDEX_SV = {
         "Attract",
         "Sweet Kiss",
         "Flail"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Toedscruel": {
@@ -1162,7 +1163,8 @@ var SETDEX_SV = {
         "Crunch",
         "Ice Fang",
         "Water Fangs"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Greninja": {
@@ -1535,7 +1537,8 @@ var SETDEX_SV = {
         "Earthquake",
         "Hyper Beam",
         "Surf"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Team Aqua GRUNT (Weather Inst 3)": {
       "index": 571,
@@ -1606,7 +1609,8 @@ var SETDEX_SV = {
         "Iron Head",
         "Fire Fang",
         "Sucker Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Cooltrainer F WENDY": {
       "index": 208,
@@ -1725,7 +1729,8 @@ var SETDEX_SV = {
         "Double Team",
         "Ice Beam",
         "Rest"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Elite Four DRAKE": {
       "index": 540,
@@ -1978,7 +1983,8 @@ var SETDEX_SV = {
         "Liquidation",
         "Aqua Jet",
         "Play Rough"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Parasol Lady MADELINE": {
       "index": 422,
@@ -2279,7 +2285,8 @@ var SETDEX_SV = {
         "Poltergeist",
         "Swords Dance",
         "Will-O-Wisp"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Aggron": {
@@ -2625,7 +2632,8 @@ var SETDEX_SV = {
         "Volt Switch",
         "Flamethrower",
         "Hidden Power Ice"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Cooltrainer F MARLEY": {
       "index": 357,
@@ -2925,7 +2933,8 @@ var SETDEX_SV = {
         "Sweet Kiss",
         "Play Rough",
         "Knock Off"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Rival WALLY (Desert)": {
       "index": 589,
@@ -3990,7 +3999,8 @@ var SETDEX_SV = {
         "Solar Beam",
         "Psychic",
         "Flamethrower"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Cooltrainer M MITCHELL": {
       "index": 469,
@@ -4109,7 +4119,8 @@ var SETDEX_SV = {
         "Psychic Noise",
         "Body Press",
         "Charge Beam"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Team Aqua GRUNT (Weather Inst 4)": {
       "index": 563,
@@ -4251,7 +4262,8 @@ var SETDEX_SV = {
         "Leaf Blade",
         "Slash",
         "Sacred Sword"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival WALLY (Route 119)": {
       "index": 585,
@@ -4274,7 +4286,8 @@ var SETDEX_SV = {
         "Drain Punch",
         "Leaf Blade",
         "Psycho Cut"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Rival WALLY (Desert)": {
       "index": 589,
@@ -4368,7 +4381,8 @@ var SETDEX_SV = {
         "Psychic",
         "Draining Kiss",
         "Shadow Ball"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Picnicker NANCY": {
       "index": 423,
@@ -4552,7 +4566,8 @@ var SETDEX_SV = {
         "Protect",
         "Psyshock",
         "Energy Ball"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Rival WALLY (Desert)": {
       "index": 589,
@@ -4738,7 +4753,8 @@ var SETDEX_SV = {
         "Sunny Day",
         "Confuse Ray",
         "Calm Mind"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Farigiraf": {
@@ -4786,7 +4802,8 @@ var SETDEX_SV = {
         "Hyper Voice",
         "Dazzling Gleam",
         "Psyshock"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Mr-Rime": {
@@ -4978,7 +4995,8 @@ var SETDEX_SV = {
         "Cut",
         "Shadow Sneak",
         "Cross Poison"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Leader Johto BUGSY [2]": {
       "index": 12,
@@ -5001,7 +5019,8 @@ var SETDEX_SV = {
         "Leech Life",
         "Trailblaze",
         "Swords Dance"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Bug Catcher DOUG": {
       "index": 42,
@@ -5071,7 +5090,8 @@ var SETDEX_SV = {
         "Mach Punch",
         "Thunder Punch",
         "Ice Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Leader Johto BUGSY [2]": {
       "index": 12,
@@ -5094,7 +5114,8 @@ var SETDEX_SV = {
         "U-turn",
         "Combo Punch",
         "Thunder Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Leader BRAWLY": {
       "index": 168,
@@ -5117,7 +5138,8 @@ var SETDEX_SV = {
         "Leech Life",
         "Thunder Punch",
         "Combo Punch"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Scyther": {
@@ -5141,7 +5163,8 @@ var SETDEX_SV = {
         "Wing Attack",
         "U-turn",
         "Cut"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Leader Johto BUGSY [2]": {
       "index": 12,
@@ -5164,7 +5187,8 @@ var SETDEX_SV = {
         "Dual Wingbeat",
         "U-turn",
         "Roost"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Beautifly": {
@@ -5189,7 +5213,8 @@ var SETDEX_SV = {
         "Draining Kiss",
         "Air Cutter",
         "U-turn"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Leader Johto BUGSY [2]": {
       "index": 12,
@@ -5212,7 +5237,8 @@ var SETDEX_SV = {
         "Draining Kiss",
         "Air Slash",
         "Bug Buzz"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "School Kid F GEORGIA": {
       "index": 16,
@@ -5352,7 +5378,8 @@ var SETDEX_SV = {
         "Protect",
         "U-turn",
         "Moonlight"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Leader Johto BUGSY [2]": {
       "index": 12,
@@ -5375,7 +5402,8 @@ var SETDEX_SV = {
         "Protect",
         "Bug Bite",
         "Venoshock"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "School Kid F GEORGIA": {
       "index": 16,
@@ -5515,7 +5543,8 @@ var SETDEX_SV = {
         "Liquidation",
         "Leech Life",
         "Mirror Coat"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Swimmer F IMANI": {
       "index": 525,
@@ -6076,7 +6105,8 @@ var SETDEX_SV = {
         "Incinerate",
         "Will-O-Wisp",
         "Extrasensory"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Cooltrainer F JULIE": {
       "index": 454,
@@ -6406,7 +6436,8 @@ var SETDEX_SV = {
         "Heat Wave",
         "Hidden Power Dragon",
         "Eruption"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Gloom": {
@@ -7289,7 +7320,8 @@ var SETDEX_SV = {
         "Facade",
         "Knock Off",
         "Sucker Punch"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Pinsir": {
@@ -7776,7 +7808,8 @@ var SETDEX_SV = {
         "Air Slash",
         "Ancient Power",
         "Aura Sphere"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Pkmn Trainer 1 ANDRY": {
       "index": 591,
@@ -8060,7 +8093,8 @@ var SETDEX_SV = {
         "Dual Chop",
         "Detect",
         "Rock Tomb"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 119 Mudkip)": {
       "index": 581,
@@ -8083,7 +8117,8 @@ var SETDEX_SV = {
         "Dual Chop",
         "Detect",
         "Rock Tomb"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Rival MAY (Area Zero Mudkip)": {
       "index": 596,
@@ -9327,7 +9362,8 @@ var SETDEX_SV = {
         "Close Combat",
         "Double-Edge",
         "U-turn"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Triathlete M ANTHONY": {
       "index": 502,
@@ -9561,7 +9597,8 @@ var SETDEX_SV = {
         "Volt Switch",
         "Hurricane",
         "Roost"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Talonflame": {
@@ -10436,7 +10473,8 @@ var SETDEX_SV = {
         "Surf",
         "Leech Seed",
         "Double Team"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Comfey": {
@@ -11189,7 +11227,8 @@ var SETDEX_SV = {
         "Discharge",
         "Icy Wind",
         "Shadow Ball"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Cooltrainer F JODY": {
       "index": 530,
@@ -11874,7 +11913,8 @@ var SETDEX_SV = {
         "Crabhammer",
         "Taunt",
         "Leer"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Elite Four SIDNEY": {
       "index": 497,
@@ -12227,7 +12267,8 @@ var SETDEX_SV = {
         "Brave Bird",
         "Seed Bomb",
         "Strength Sap"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Vileplume": {
@@ -12982,7 +13023,8 @@ var SETDEX_SV = {
         "Return",
         "Facade",
         "Triple Axel"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Breloom": {
@@ -14898,7 +14940,8 @@ var SETDEX_SV = {
         "Giga Drain",
         "Thunderbolt",
         "Volt Switch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Torchic)": {
       "index": 244,
@@ -14920,7 +14963,8 @@ var SETDEX_SV = {
         "Giga Drain",
         "Thunderbolt",
         "Volt Switch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Treecko)": {
       "index": 246,
@@ -14942,7 +14986,8 @@ var SETDEX_SV = {
         "Giga Drain",
         "Thunderbolt",
         "Volt Switch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Torchic)": {
       "index": 247,
@@ -14964,7 +15009,8 @@ var SETDEX_SV = {
         "Giga Drain",
         "Thunderbolt",
         "Volt Switch"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Meltan": {
@@ -15346,7 +15392,8 @@ var SETDEX_SV = {
         "Soak",
         "Liquidation",
         "Toxic Spikes"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Heliolisk": {
@@ -15705,7 +15752,8 @@ var SETDEX_SV = {
         "Heat Wave",
         "U-turn",
         "Razor Wind"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Flamigo": {
@@ -16116,7 +16164,8 @@ var SETDEX_SV = {
         "Aura Sphere",
         "Dark Pulse",
         "Energy Ball"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Sigilyph": {
@@ -16634,7 +16683,8 @@ var SETDEX_SV = {
         "Iron Head",
         "Pursuit",
         "Swords Dance"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Bird Keeper AIDAN": {
       "index": 290,
@@ -16866,7 +16916,8 @@ var SETDEX_SV = {
         "Surf",
         "Ice Beam",
         "Toxic"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Ninetales-Alola": {
@@ -16891,7 +16942,8 @@ var SETDEX_SV = {
         "Blizzard",
         "Moonblast",
         "Helping Hand"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Mimikyu": {
@@ -16916,7 +16968,8 @@ var SETDEX_SV = {
         "Play Rough",
         "Shadow Claw",
         "Drain Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Pkmn Trainer 1 ANDRY": {
       "index": 591,
@@ -16964,7 +17017,8 @@ var SETDEX_SV = {
         "Hydro Pump",
         "Blizzard",
         "Flip Turn"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Area Zero IRON BUNDLE & IRON VALIANT": {
       "index": 602,
@@ -17041,7 +17095,8 @@ var SETDEX_SV = {
         "Giga Drain",
         "Earth Power",
         "Fickle Beam"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Abomasnow": {
@@ -17066,7 +17121,8 @@ var SETDEX_SV = {
         "Blizzard",
         "Earth Power",
         "Hidden Power Water"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Developer SPLITFACE": {
       "index": 592,
@@ -17114,7 +17170,8 @@ var SETDEX_SV = {
         "Roost",
         "Oblivion Wing",
         "Nasty Plot"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Team Aqua GRUNT (Rusturf Tunnel)": {
       "index": 142,
@@ -17137,6 +17194,7 @@ var SETDEX_SV = {
         "Confusion",
         "Air Cutter"
       ],
+      "aiOmniscient": true,
       "partners": [
         "Partner Rival WALLY"
       ]
@@ -17164,7 +17222,8 @@ var SETDEX_SV = {
         "Hurricane",
         "Scorching Sands",
         "Roost"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Triathlete M JULIO": {
       "index": 448,
@@ -17233,7 +17292,8 @@ var SETDEX_SV = {
         "Solar Beam",
         "Heat Wave",
         "Air Slash"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Tornadus": {
@@ -17258,7 +17318,8 @@ var SETDEX_SV = {
         "Bleakwind Storm",
         "U-turn",
         "Roost"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Salamence": {
@@ -17283,7 +17344,8 @@ var SETDEX_SV = {
         "Ominous Wind",
         "Roost",
         "Heat Wave"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Elite Four DRAKE": {
       "index": 540,
@@ -17350,7 +17412,8 @@ var SETDEX_SV = {
       "moves": [
         "Pound",
         "Leer"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Torchic": {
@@ -17373,7 +17436,8 @@ var SETDEX_SV = {
       "moves": [
         "Scratch",
         "Growl"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 103 Treecko)": {
       "index": 71,
@@ -17394,7 +17458,8 @@ var SETDEX_SV = {
       "moves": [
         "Scratch",
         "Leer"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Mudkip": {
@@ -17417,7 +17482,8 @@ var SETDEX_SV = {
       "moves": [
         "Tackle",
         "Growl"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 103 Torchic)": {
       "index": 72,
@@ -17438,7 +17504,8 @@ var SETDEX_SV = {
       "moves": [
         "Tackle",
         "Growl"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Beldum": {
@@ -20859,7 +20926,8 @@ var SETDEX_SV = {
         "Water Gun",
         "Acid",
         "Acid Armor"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Carvanha": {
@@ -20883,7 +20951,8 @@ var SETDEX_SV = {
         "Aqua Jet",
         "Assurance",
         "Leer"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Swimmer M MATTHEW": {
       "index": 176,
@@ -21276,7 +21345,8 @@ var SETDEX_SV = {
         "Water Pulse",
         "Headbutt",
         "Rock Throw"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Magnemite": {
@@ -22931,7 +23001,8 @@ var SETDEX_SV = {
         "Hidden Power Grass",
         "Venoshock",
         "Ancient Power"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Archen": {
@@ -22956,7 +23027,8 @@ var SETDEX_SV = {
         "Rock Tomb",
         "Roost",
         "Quick Attack"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Lileep": {
@@ -22981,7 +23053,8 @@ var SETDEX_SV = {
         "Acid",
         "Rock Tomb",
         "Recover"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Nosepass": {
@@ -23006,7 +23079,8 @@ var SETDEX_SV = {
         "Rock Tomb",
         "Sandstorm",
         "Spark"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Cooltrainer M RUBEN": {
       "index": 371,
@@ -23054,7 +23128,8 @@ var SETDEX_SV = {
         "Heavy Slam",
         "Temper Flare",
         "Will-O-Wisp"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Meditite": {
@@ -23525,6 +23600,7 @@ var SETDEX_SV = {
         "Crunch",
         "Howl"
       ],
+      "aiOmniscient": true,
       "partners": [
         "Partner Rival WALLY"
       ]
@@ -23552,6 +23628,7 @@ var SETDEX_SV = {
         "Pluck",
         "Air Slash"
       ],
+      "aiOmniscient": true,
       "partners": [
         "Partner Rival WALLY"
       ]
@@ -23649,6 +23726,7 @@ var SETDEX_SV = {
         "Poison Fang",
         "Thunder Fang"
       ],
+      "aiOmniscient": true,
       "partners": [
         "Partner Rival WALLY"
       ]
@@ -25260,7 +25338,8 @@ var SETDEX_SV = {
         "Brutal Swing",
         "Peck",
         "Fury Cutter"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Rustboro Mudkip)": {
       "index": 160,
@@ -25283,7 +25362,8 @@ var SETDEX_SV = {
         "Brutal Swing",
         "Peck",
         "Fury Cutter"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Rustboro Torchic)": {
       "index": 161,
@@ -25306,7 +25386,8 @@ var SETDEX_SV = {
         "Brutal Swing",
         "Peck",
         "Fury Cutter"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Mudkip)": {
       "index": 162,
@@ -25329,7 +25410,8 @@ var SETDEX_SV = {
         "Brutal Swing",
         "Peck",
         "Fury Cutter"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Treecko)": {
       "index": 163,
@@ -25352,7 +25434,8 @@ var SETDEX_SV = {
         "Brutal Swing",
         "Peck",
         "Fury Cutter"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Torchic)": {
       "index": 164,
@@ -25375,7 +25458,8 @@ var SETDEX_SV = {
         "Brutal Swing",
         "Peck",
         "Fury Cutter"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Mudkip)": {
       "index": 242,
@@ -25398,7 +25482,8 @@ var SETDEX_SV = {
         "Night Slash",
         "Facade",
         "Brick Break"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Torchic)": {
       "index": 244,
@@ -25421,7 +25506,8 @@ var SETDEX_SV = {
         "Night Slash",
         "Facade",
         "Brick Break"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Mudkip)": {
       "index": 245,
@@ -25444,7 +25530,8 @@ var SETDEX_SV = {
         "Night Slash",
         "Facade",
         "Brick Break"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Torchic)": {
       "index": 247,
@@ -25467,7 +25554,8 @@ var SETDEX_SV = {
         "Night Slash",
         "Facade",
         "Brick Break"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Seadra": {
@@ -25492,7 +25580,8 @@ var SETDEX_SV = {
         "Dragon Breath",
         "Bubble Beam",
         "Icy Wind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Rustboro Mudkip)": {
       "index": 160,
@@ -25515,7 +25604,8 @@ var SETDEX_SV = {
         "Dragon Breath",
         "Bubble Beam",
         "Icy Wind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Mudkip)": {
       "index": 162,
@@ -25538,7 +25628,8 @@ var SETDEX_SV = {
         "Dragon Breath",
         "Bubble Beam",
         "Icy Wind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Treecko)": {
       "index": 163,
@@ -25561,7 +25652,8 @@ var SETDEX_SV = {
         "Dragon Breath",
         "Bubble Beam",
         "Icy Wind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Mudkip)": {
       "index": 242,
@@ -25584,7 +25676,8 @@ var SETDEX_SV = {
         "Snipe Shot",
         "Dragon Pulse",
         "Icy Wind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Treecko)": {
       "index": 243,
@@ -25607,7 +25700,8 @@ var SETDEX_SV = {
         "Snipe Shot",
         "Dragon Pulse",
         "Icy Wind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Mudkip)": {
       "index": 245,
@@ -25630,7 +25724,8 @@ var SETDEX_SV = {
         "Snipe Shot",
         "Dragon Pulse",
         "Icy Wind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Treecko)": {
       "index": 246,
@@ -25653,7 +25748,8 @@ var SETDEX_SV = {
         "Snipe Shot",
         "Dragon Pulse",
         "Icy Wind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Swimmer F LINDA": {
       "index": 313,
@@ -25701,7 +25797,8 @@ var SETDEX_SV = {
         "Power-Up Punch",
         "Ice Fang",
         "Covet"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Rustboro Mudkip)": {
       "index": 160,
@@ -25724,7 +25821,8 @@ var SETDEX_SV = {
         "Power-Up Punch",
         "Ice Fang",
         "Covet"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Rustboro Torchic)": {
       "index": 161,
@@ -25747,7 +25845,8 @@ var SETDEX_SV = {
         "Power-Up Punch",
         "Thunder Fang",
         "Covet"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Combusken": {
@@ -25772,7 +25871,8 @@ var SETDEX_SV = {
         "Double Kick",
         "Aerial Ace",
         "Fire Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Treecko)": {
       "index": 163,
@@ -25795,7 +25895,8 @@ var SETDEX_SV = {
         "Double Kick",
         "Aerial Ace",
         "Fire Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Treecko)": {
       "index": 243,
@@ -25818,7 +25919,8 @@ var SETDEX_SV = {
         "Brick Break",
         "Aerial Ace",
         "Fire Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Treecko)": {
       "index": 246,
@@ -25841,7 +25943,8 @@ var SETDEX_SV = {
         "Brick Break",
         "Aerial Ace",
         "Fire Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Lilycove Treecko)": {
       "index": 364,
@@ -25912,7 +26015,8 @@ var SETDEX_SV = {
         "Charge Beam",
         "Thunder Wave",
         "Leech Seed"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Rustboro Torchic)": {
       "index": 161,
@@ -25935,7 +26039,8 @@ var SETDEX_SV = {
         "Charge Beam",
         "Thunder Wave",
         "Leech Seed"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Treecko)": {
       "index": 163,
@@ -25958,7 +26063,8 @@ var SETDEX_SV = {
         "Charge Beam",
         "Thunder Wave",
         "Leech Seed"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Torchic)": {
       "index": 164,
@@ -25981,7 +26087,8 @@ var SETDEX_SV = {
         "Charge Beam",
         "Thunder Wave",
         "Leech Seed"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Grovyle": {
@@ -26006,7 +26113,8 @@ var SETDEX_SV = {
         "Giga Drain",
         "Assurance",
         "Quick Attack"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Mudkip)": {
       "index": 162,
@@ -26029,7 +26137,8 @@ var SETDEX_SV = {
         "Giga Drain",
         "Assurance",
         "Quick Attack"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Mudkip)": {
       "index": 242,
@@ -26052,7 +26161,8 @@ var SETDEX_SV = {
         "Bullet Seed",
         "Rock Slide",
         "Quick Attack"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Mudkip)": {
       "index": 245,
@@ -26075,7 +26185,8 @@ var SETDEX_SV = {
         "Bullet Seed",
         "Rock Slide",
         "Quick Attack"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Lilycove Mudkip)": {
       "index": 363,
@@ -26146,7 +26257,8 @@ var SETDEX_SV = {
         "Bite",
         "Rock Tomb",
         "Retaliate"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Rustboro Torchic)": {
       "index": 161,
@@ -26169,7 +26281,8 @@ var SETDEX_SV = {
         "Bite",
         "Rock Tomb",
         "Retaliate"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Mudkip)": {
       "index": 162,
@@ -26192,7 +26305,8 @@ var SETDEX_SV = {
         "Bite",
         "Rock Tomb",
         "Retaliate"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Torchic)": {
       "index": 164,
@@ -26215,7 +26329,8 @@ var SETDEX_SV = {
         "Bite",
         "Rock Tomb",
         "Retaliate"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Marshtomp": {
@@ -26240,7 +26355,8 @@ var SETDEX_SV = {
         "Water Pulse",
         "Rock Smash",
         "Mud Shot"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Torchic)": {
       "index": 164,
@@ -26263,7 +26379,8 @@ var SETDEX_SV = {
         "Water Pulse",
         "Rock Smash",
         "Mud Shot"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Torchic)": {
       "index": 244,
@@ -26286,7 +26403,8 @@ var SETDEX_SV = {
         "Liquidation",
         "Rock Smash",
         "Bulldoze"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Torchic)": {
       "index": 247,
@@ -26309,7 +26427,8 @@ var SETDEX_SV = {
         "Liquidation",
         "Rock Smash",
         "Bulldoze"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Lilycove Torchic)": {
       "index": 365,
@@ -26380,7 +26499,8 @@ var SETDEX_SV = {
         "Draining Kiss",
         "Hidden Power Dragon",
         "Calm Mind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Treecko)": {
       "index": 163,
@@ -26403,7 +26523,8 @@ var SETDEX_SV = {
         "Draining Kiss",
         "Mystical Fire",
         "Calm Mind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Rustboro Torchic)": {
       "index": 164,
@@ -26426,7 +26547,8 @@ var SETDEX_SV = {
         "Draining Kiss",
         "Earth Power",
         "Calm Mind"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Wurmple": {
@@ -26567,7 +26689,8 @@ var SETDEX_SV = {
         "Ice Shard",
         "Frost Breath",
         "Hoarfrost"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Snorunt": {
@@ -26591,7 +26714,8 @@ var SETDEX_SV = {
         "Hoarfrost",
         "Substitute",
         "Freeze-Dry"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Delibird": {
@@ -26616,7 +26740,8 @@ var SETDEX_SV = {
         "Ice Spinner",
         "Aerial Ace",
         "Present"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Developer SPLITFACE": {
       "index": 592,
@@ -26663,7 +26788,8 @@ var SETDEX_SV = {
         "Rock Slide",
         "Body Press",
         "Protect"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Spheal": {
@@ -26688,7 +26814,8 @@ var SETDEX_SV = {
         "Scald",
         "Toxic",
         "Hoarfrost"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Swimmer F NIKKI": {
       "index": 310,
@@ -26828,7 +26955,8 @@ var SETDEX_SV = {
         "Mud-Slap",
         "Powder Snow",
         "Hoarfrost"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Sneasel-Hisui": {
@@ -26853,7 +26981,8 @@ var SETDEX_SV = {
         "Poison Jab",
         "Taunt",
         "Bulk Up"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Clobbopus": {
@@ -26878,7 +27007,8 @@ var SETDEX_SV = {
         "Combo Punch",
         "Aqua Jet",
         "Bulk Up"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Farfetchd": {
@@ -26902,7 +27032,8 @@ var SETDEX_SV = {
         "Cut",
         "Power-Up Punch",
         "First Impression"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Falinks": {
@@ -26927,7 +27058,8 @@ var SETDEX_SV = {
         "Bullet Punch",
         "Counter",
         "Reversal"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Horsea": {
@@ -28690,7 +28822,8 @@ var SETDEX_SV = {
         "Psychic",
         "Hypnosis",
         "Calm Mind"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Cooltrainer M MITCHELL": {
       "index": 469,
@@ -28855,7 +28988,8 @@ var SETDEX_SV = {
         "Protect",
         "Will-O-Wisp",
         "Weather Ball"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Arcanine-Hisui": {
@@ -28880,7 +29014,8 @@ var SETDEX_SV = {
         "Heat Crash",
         "Rock Tomb",
         "Extreme Speed"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Torchic)": {
       "index": 244,
@@ -28903,7 +29038,8 @@ var SETDEX_SV = {
         "Heat Crash",
         "Rock Tomb",
         "Extreme Speed"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Mudkip)": {
       "index": 245,
@@ -28926,7 +29062,8 @@ var SETDEX_SV = {
         "Heat Crash",
         "Rock Tomb",
         "Extreme Speed"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Torchic)": {
       "index": 247,
@@ -28949,7 +29086,8 @@ var SETDEX_SV = {
         "Heat Crash",
         "Rock Tomb",
         "Extreme Speed"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Battle Girl DANIELLE": {
       "index": 474,
@@ -28995,7 +29133,8 @@ var SETDEX_SV = {
         "Drain Punch",
         "Ice Fang",
         "Pixie Fangs"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Treecko)": {
       "index": 243,
@@ -29018,7 +29157,8 @@ var SETDEX_SV = {
         "Drain Punch",
         "Ice Fang",
         "Pixie Fangs"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 110 Torchic)": {
       "index": 244,
@@ -29041,7 +29181,8 @@ var SETDEX_SV = {
         "Drain Punch",
         "Ice Fang",
         "Pixie Fangs"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 119 Mudkip)": {
       "index": 578,
@@ -29064,7 +29205,8 @@ var SETDEX_SV = {
         "Psychic Fangs",
         "Ice Fang",
         "Drain Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 119 Treecko)": {
       "index": 579,
@@ -29087,7 +29229,8 @@ var SETDEX_SV = {
         "Psychic Fangs",
         "Ice Fang",
         "Drain Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 119 Torchic)": {
       "index": 580,
@@ -29110,7 +29253,8 @@ var SETDEX_SV = {
         "Psychic Fangs",
         "Ice Fang",
         "Drain Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Rival BRENDAN (Area Zero Treecko)": {
       "index": 597,
@@ -29204,7 +29348,8 @@ var SETDEX_SV = {
         "Sucker Punch",
         "Knock Off",
         "Psycho Cut"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Treecko)": {
       "index": 246,
@@ -29227,7 +29372,8 @@ var SETDEX_SV = {
         "Sucker Punch",
         "Knock Off",
         "Psycho Cut"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Youngster JAYLEN": {
       "index": 415,
@@ -29297,7 +29443,8 @@ var SETDEX_SV = {
         "Psybeam",
         "Draining Kiss",
         "Hidden Power Fire"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Treecko)": {
       "index": 246,
@@ -29319,7 +29466,8 @@ var SETDEX_SV = {
         "Psybeam",
         "Draining Kiss",
         "Hidden Power Fire"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 110 Torchic)": {
       "index": 247,
@@ -29341,7 +29489,8 @@ var SETDEX_SV = {
         "Psybeam",
         "Draining Kiss",
         "Hidden Power Fire"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 119 Mudkip)": {
       "index": 581,
@@ -29364,7 +29513,8 @@ var SETDEX_SV = {
         "Psyshock",
         "Mystical Fire",
         "Dazzling Gleam"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 119 Treecko)": {
       "index": 582,
@@ -29387,7 +29537,8 @@ var SETDEX_SV = {
         "Psyshock",
         "Mystical Fire",
         "Dazzling Gleam"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 119 Torchic)": {
       "index": 583,
@@ -29410,7 +29561,8 @@ var SETDEX_SV = {
         "Psyshock",
         "Mystical Fire",
         "Dazzling Gleam"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Rival MAY (Area Zero Treecko)": {
       "index": 594,
@@ -29738,7 +29890,8 @@ var SETDEX_SV = {
         "High Horsepower",
         "Drain Punch",
         "Slack Off"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Squawkabilly-Blue": {
@@ -29884,7 +30037,8 @@ var SETDEX_SV = {
       "moves": [
         "Giga Drain",
         "Overheat"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Dipplin": {
@@ -29909,7 +30063,8 @@ var SETDEX_SV = {
         "Giga Drain",
         "Dragon Pulse",
         "Sucker Punch"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Klinklang": {
@@ -29933,7 +30088,8 @@ var SETDEX_SV = {
         "Volt Switch",
         "Wild Charge",
         "Gear Grind"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Emolga": {
@@ -30194,7 +30350,8 @@ var SETDEX_SV = {
         "Water Pulse",
         "Amnesia",
         "Earthquake"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Swimmer F BETH": {
       "index": 527,
@@ -30240,7 +30397,8 @@ var SETDEX_SV = {
         "Surf",
         "Amnesia",
         "Hyper Beam"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Tentacruel": {
@@ -30472,7 +30630,8 @@ var SETDEX_SV = {
         "Hydro Pump",
         "Sludge Bomb",
         "Ice Beam"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Lanturn": {
@@ -31225,7 +31384,8 @@ var SETDEX_SV = {
         "Body Slam",
         "Aurora Beam",
         "Water Pulse"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Elite Four GLACIA": {
       "index": 523,
@@ -31273,7 +31433,8 @@ var SETDEX_SV = {
         "Volt Switch",
         "Dark Pulse",
         "Will-O-Wisp"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Boltund": {
@@ -31298,7 +31459,8 @@ var SETDEX_SV = {
         "Play Rough",
         "Facade",
         "Crunch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Kindler HAYDEN": {
       "index": 375,
@@ -31346,7 +31508,8 @@ var SETDEX_SV = {
         "Surf",
         "Nasty Plot",
         "Volt Switch"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Electivire": {
@@ -31371,7 +31534,8 @@ var SETDEX_SV = {
         "Drain Punch",
         "Mach Punch",
         "Ice Punch"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Pokemaniac STEVE": {
       "index": 418,
@@ -32202,7 +32366,8 @@ var SETDEX_SV = {
         "Moonblast",
         "Giga Drain",
         "Weather Ball"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Kindler JACE": {
       "index": 443,
@@ -33266,7 +33431,8 @@ var SETDEX_SV = {
         "Fiery Dance",
         "Bug Buzz",
         "Giga Drain"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Claydol": {
@@ -33314,7 +33480,8 @@ var SETDEX_SV = {
         "Ancient Power",
         "Psychic",
         "Light Screen"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Cooltrainer M FELIX": {
       "index": 460,
@@ -33546,7 +33713,8 @@ var SETDEX_SV = {
         "Roar",
         "Stone Edge",
         "Earthquake"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Krookodile": {
@@ -34004,7 +34172,8 @@ var SETDEX_SV = {
         "Water Spout",
         "Double-Edge",
         "Blizzard"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Aqua Admin SHELLY (Weather Institute)": {
       "index": 574,
@@ -34027,7 +34196,8 @@ var SETDEX_SV = {
         "Hyper Voice",
         "Ice Beam",
         "Scald"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Torkoal": {
@@ -34244,7 +34414,8 @@ var SETDEX_SV = {
         "Close Combat",
         "Knock Off",
         "Protect"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 119 Treecko)": {
       "index": 582,
@@ -34267,7 +34438,8 @@ var SETDEX_SV = {
         "Close Combat",
         "Knock Off",
         "Protect"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Rival MAY (Area Zero Treecko)": {
       "index": 594,
@@ -34643,7 +34815,8 @@ var SETDEX_SV = {
         "Temper Flare",
         "Morning Sun",
         "Protect"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Palossand": {
@@ -34789,7 +34962,8 @@ var SETDEX_SV = {
         "Earth Power",
         "Giga Drain",
         "Weather Ball"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Diggersby": {
@@ -34887,7 +35061,8 @@ var SETDEX_SV = {
         "Thunder Wave",
         "Body Press",
         "Gyro Ball"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Bastiodon": {
@@ -35300,7 +35475,8 @@ var SETDEX_SV = {
         "Draco Meteor",
         "Hyper Voice",
         "Knock Off"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Garbodor": {
@@ -35540,7 +35716,8 @@ var SETDEX_SV = {
         "Stone Edge",
         "Earthquake",
         "Brick Break"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Regirock": {
@@ -35565,7 +35742,8 @@ var SETDEX_SV = {
         "Body Press",
         "Earthquake",
         "Iron Defense"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Lycanroc": {
@@ -36173,7 +36351,8 @@ var SETDEX_SV = {
         "Flip Turn",
         "Close Combat",
         "Ice Fang"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Overqwil": {
@@ -37318,7 +37497,8 @@ var SETDEX_SV = {
         "Bitter Malice",
         "U-turn",
         "Extrasensory"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Basculegion": {
@@ -38427,7 +38607,8 @@ var SETDEX_SV = {
         "Hurricane",
         "Roost",
         "Weather Ball"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Goodra": {
@@ -38452,7 +38633,8 @@ var SETDEX_SV = {
         "Weather Ball",
         "Sludge Wave",
         "Dragon Pulse"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Dragonite": {
@@ -38527,7 +38709,8 @@ var SETDEX_SV = {
         "Royal Guard",
         "Poison Jab",
         "Meteor Assault"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 119 Treecko)": {
       "index": 579,
@@ -38550,7 +38733,8 @@ var SETDEX_SV = {
         "Royal Guard",
         "Poison Jab",
         "Meteor Assault"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival BRENDAN (Route 119 Torchic)": {
       "index": 580,
@@ -38573,7 +38757,8 @@ var SETDEX_SV = {
         "Royal Guard",
         "Poison Jab",
         "Meteor Assault"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 119 Mudkip)": {
       "index": 581,
@@ -38596,7 +38781,8 @@ var SETDEX_SV = {
         "Royal Guard",
         "Poison Jab",
         "Meteor Assault"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 119 Treecko)": {
       "index": 582,
@@ -38619,7 +38805,8 @@ var SETDEX_SV = {
         "Royal Guard",
         "Poison Jab",
         "Meteor Assault"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 119 Torchic)": {
       "index": 583,
@@ -38642,7 +38829,8 @@ var SETDEX_SV = {
         "Royal Guard",
         "Poison Jab",
         "Meteor Assault"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Swampert": {
@@ -38667,7 +38855,8 @@ var SETDEX_SV = {
         "High Horsepower",
         "Ice Punch",
         "Flip Turn"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Rival MAY (Route 119 Torchic)": {
       "index": 583,
@@ -38690,7 +38879,8 @@ var SETDEX_SV = {
         "High Horsepower",
         "Ice Punch",
         "Flip Turn"
-      ]
+      ],
+      "aiOmniscient": true
     },
     "Partner Rival MAY (Area Zero Torchic)": {
       "index": 595,
@@ -38786,7 +38976,8 @@ var SETDEX_SV = {
         "Moonblast",
         "Ice Beam",
         "Hydro Pump"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Thundurus-Therian": {
@@ -38811,7 +39002,8 @@ var SETDEX_SV = {
         "Grass Knot",
         "Focus Blast",
         "Volt Switch"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Articuno": {
@@ -38836,7 +39028,8 @@ var SETDEX_SV = {
         "Hurricane",
         "Roost",
         "U-turn"
-      ]
+      ],
+      "aiOmniscient": true
     }
   },
   "Metagross": {

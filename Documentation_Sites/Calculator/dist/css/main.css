@@ -475,6 +475,47 @@ th {
 .move-result-group .btn-xxxwide {
     margin-right: 0.4em;
 }
+.ai-chance {
+    display: inline-block;
+    margin-left: 0.6em;
+    padding: 0 0.4em;
+    border-radius: 3px;
+    font-size: 0.85em;
+    font-weight: bold;
+    cursor: help;
+    white-space: nowrap;
+}
+.ai-chance:empty {
+    display: none;
+}
+.ai-chance-top {
+    background: #c62828;
+    color: #fff;
+}
+.ai-chance-some {
+    background: #f9a825;
+    color: #222;
+}
+.ai-chance-none {
+    color: #888;
+    font-weight: normal;
+}
+.ai-options {
+    margin-top: 0.5em;
+    font-size: 0.8em;
+    line-height: 1.6;
+}
+.ai-options-title {
+    font-weight: bold;
+    margin-right: 0.4em;
+}
+.ai-options label {
+    margin-right: 0.8em;
+    white-space: nowrap;
+}
+.ai-options label.ai-option-disabled {
+    opacity: 0.5;
+}
 .move-result-group .result-crit-btn {
     font-size: 0.8em;
     width: 3em;

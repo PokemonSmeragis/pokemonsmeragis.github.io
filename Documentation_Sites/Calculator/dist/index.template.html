@@ -109,6 +109,7 @@
                 <input class="result-crit visually-hidden" type="checkbox" id="resultCritR1" data-side="R" data-move="1" aria-describedby="criticalHitInstruction" />
                 <label class="btn result-crit-btn" for="resultCritR1" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageR1">??? - ???%</span>
+                <span class="ai-chance" id="aiChanceR1" aria-live="polite"></span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR2" aria-describedby="resultDamageR2" />
@@ -116,6 +117,7 @@
                 <input class="result-crit visually-hidden" type="checkbox" id="resultCritR2" data-side="R" data-move="2" aria-describedby="criticalHitInstruction" />
                 <label class="btn result-crit-btn" for="resultCritR2" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageR2">??? - ???%</span>
+                <span class="ai-chance" id="aiChanceR2" aria-live="polite"></span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR3" aria-describedby="resultDamageR3" />
@@ -123,6 +125,7 @@
                 <input class="result-crit visually-hidden" type="checkbox" id="resultCritR3" data-side="R" data-move="3" aria-describedby="criticalHitInstruction" />
                 <label class="btn result-crit-btn" for="resultCritR3" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageR3">??? - ???%</span>
+                <span class="ai-chance" id="aiChanceR3" aria-live="polite"></span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR4" aria-describedby="resultDamageR4" />
@@ -130,6 +133,16 @@
                 <input class="result-crit visually-hidden" type="checkbox" id="resultCritR4" data-side="R" data-move="4" aria-describedby="criticalHitInstruction" />
                 <label class="btn result-crit-btn" for="resultCritR4" title="Force this attack to be a critical hit?">Crit</label>
                 <span id="resultDamageR4">??? - ???%</span>
+                <span class="ai-chance" id="aiChanceR4" aria-live="polite"></span>
+            </div>
+            <div class="ai-options" id="aiOptions" title="Previsione della mossa scelta dall'AI della ROM (flag: Check Bad Move, Try To Faint, Prefer Highest Damage, Check Viability, HP Aware). In doppio considera entrambi i Pok&eacute;mon del giocatore e indica il bersaglio.">
+                <span class="ai-options-title">Previsione AI:</span>
+                <label><input type="checkbox" class="ai-option" id="aiFirstTurn" checked="checked" /> Primo turno in campo</label>
+                <label title="Impostata in automatico dal set dell'allenatore (flag Omniscient nel .party, capipalestra, campione e lotte forzate dalla ROM). L'AI Omniscient conosce mosse, strumento e abilita del giocatore."><input type="checkbox" class="ai-option" id="aiOmniscient" /> AI Omniscient</label>
+                <label title="Solo senza Omniscient: l'AI conosce solo le mosse del giocatore che ha gia visto usare."><input type="checkbox" class="ai-option" id="aiPlayerKnown" /> Ha gi&agrave; visto le mosse del giocatore</label>
+                <label><input type="checkbox" class="ai-option" id="aiHasParty" checked="checked" /> AI ha altri Pok&eacute;mon</label>
+                <label><input type="checkbox" class="ai-option" id="aiPlayerHasParty" checked="checked" /> Giocatore ha altri Pok&eacute;mon</label>
+                <label><input type="checkbox" class="ai-option" id="aiProtectUsed" /> Ha usato Protect il turno prima</label>
             </div>
         </div>
     </div>
@@ -1733,6 +1746,8 @@
     <script type="text/javascript" src="./calc/result.js?"></script>
     <script type="text/javascript" src="./calc/adaptable.js?"></script>
     <script type="text/javascript" src="./calc/index.js?"></script>
+    <script type="text/javascript" src="./js/data/ai_moves.js?"></script>
+    <script type="text/javascript" src="./js/ai_move_predictor.js?"></script>
     <script type="text/javascript" src="./js/shared_controls.js?"></script>
     <script type="text/javascript" src="./js/index_randoms_controls.js?"></script>
     <script type="text/javascript" src="./js/moveset_import.js?"></script>

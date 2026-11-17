@@ -152,8 +152,8 @@ exports.BattleAbilities = {
         "name": "Bad Dreams",
         "rating": 1.5,
         "num": 123,
-        "desc": "Damages sleeping Pokémon.",
-        "shortDesc": "Damages sleeping Pokémon."
+        "desc": "Hurts sleepers. Sleep moves +20% acc.",
+        "shortDesc": "Hurts sleepers. Sleep moves +20% acc."
     },
     "ballfetch": {
         "flags": {},
@@ -671,8 +671,8 @@ exports.BattleAbilities = {
         "name": "Emergency Exit",
         "rating": 1,
         "num": 194,
-        "desc": "Flees at half HP.",
-        "shortDesc": "Flees at half HP."
+        "desc": "Half HP: flees after moving.",
+        "shortDesc": "Half HP: flees after moving."
     },
     "fairyaura": {
         "onAnyBasePowerPriority": 20,
@@ -1313,8 +1313,8 @@ exports.BattleAbilities = {
         "name": "Liquid Voice",
         "rating": 1.5,
         "num": 204,
-        "desc": "Makes sound moves Water.",
-        "shortDesc": "Makes sound moves Water."
+        "desc": "Sound moves: Water-type, 20% stronger.",
+        "shortDesc": "Sound moves: Water-type, 20% stronger."
     },
     "longreach": {
         "flags": {},
@@ -2973,8 +2973,8 @@ exports.BattleAbilities = {
         "name": "Wimp Out",
         "rating": 1,
         "num": 193,
-        "desc": "Flees at half HP.",
-        "shortDesc": "Flees at half HP."
+        "desc": "Half HP: flees after moving.",
+        "shortDesc": "Half HP: flees after moving."
     },
     "windpower": {
         "onDamagingHitOrder": 1,
@@ -3149,8 +3149,8 @@ exports.BattleAbilities = {
         "name": "Spirit Body",
         "rating": 1,
         "num": 311,
-        "desc": "Immune to contact moves.",
-        "shortDesc": "Immune to contact moves."
+        "desc": "Immune to contact, but not Ghost or Dark.",
+        "shortDesc": "Immune to contact, but not Ghost or Dark."
     },
     "mindpower": {
         "flags": {},
@@ -3191,5 +3191,13 @@ exports.BattleAbilities = {
         "num": 311,
         "desc": "Sets Trick Room on entry.",
         "shortDesc": "Sets Trick Room on entry."
+    },
+    "megasol": {
+        "flags": {},
+        "name": "Mega Sol",
+        "rating": 1,
+        "num": 311,
+        "desc": "Acts like under sun.",
+        "shortDesc": "Acts like under sun."
     }
 }

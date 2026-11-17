@@ -8806,5 +8806,19 @@ exports.BattleItems = {
         "desc": "A device that plays music from the old Pokémon games.",
         "shortDesc": "A device that plays music from the old Pokémon games.",
         "isNonstandard": null
+    },
+    "dragoninite": {
+        "name": "Dragoninite",
+        "num": 2797,
+        "desc": "This stone enables Dragonite to Mega Evolve in battle.",
+        "shortDesc": "This stone enables Dragonite to Mega Evolve in battle.",
+        "isNonstandard": null
+    },
+    "skarmorite": {
+        "name": "Skarmorite",
+        "num": 2798,
+        "desc": "This stone enables Skarmory to Mega Evolve in battle.",
+        "shortDesc": "This stone enables Skarmory to Mega Evolve in battle.",
+        "isNonstandard": null
     }
 }
