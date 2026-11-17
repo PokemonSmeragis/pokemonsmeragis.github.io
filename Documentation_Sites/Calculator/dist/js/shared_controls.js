@@ -607,9 +607,16 @@ $("input[name='weather']").change(function () {
 	});
 });
 
+// Meteo/campo automatici solo dopo il caricamento: i set segnaposto selezionati all'avvio
+// (es. Abomasnow con Snow Warning) non devono lasciare Snow attivo. Vedi document.ready.
+var autoFieldReady = false;
+
 var lastManualWeather = "";
 var lastAutoWeather = ["", ""];
 function autosetWeather(ability, i) {
+	if (!autoFieldReady) {
+		return;
+	}
 	var currentWeather = $("input:radio[name='weather']:checked").val();
 	if (lastAutoWeather.indexOf(currentWeather) === -1) {
 		lastManualWeather = currentWeather;
@@ -665,6 +672,9 @@ $("input[name='terrain']").change(function () {
 var lastManualTerrain = "";
 var lastAutoTerrain = ["", ""];
 function autosetTerrain(ability, i) {
+	if (!autoFieldReady) {
+		return;
+	}
 	var currentTerrain = $("input:checkbox[name='terrain']:checked").val() || "No terrain";
 	if (lastAutoTerrain.indexOf(currentTerrain) === -1) {
 		lastManualTerrain = currentTerrain;
@@ -1216,6 +1226,7 @@ function applyCalculatorDeepLinkParams(params) {
 	if (p1Set) {
 		setPlayerSet(p1Set, "p1");
 	}
+	return {p1: !!p1Set, p2: !!p2Set};
 }
 
 function resolveSetSelectionValue(value) {
@@ -3110,7 +3121,20 @@ $(document).ready(function () {
 	// loadDefaultLists()/selectFirstMon() nel suo ready, che reinizializza i
 	// selettori e cancellerebbe l'allenatore scelto dal link dello sheet.
 	setTimeout(function () {
-		applyCalculatorDeepLinkParams(params);
+		autoFieldReady = true;
+		var linked = applyCalculatorDeepLinkParams(params);
+		// Aperto da "Open Calculator": meteo/campo solo dei Pokemon caricati dal link.
+		if (linked.p2) {
+			autosetWeather($("#p2 .ability").val(), 1);
+			autosetTerrain($("#p2 .ability").val(), 1);
+		}
+		if (linked.p1) {
+			autosetWeather($("#p1 .ability").val(), 0);
+			autosetTerrain($("#p1 .ability").val(), 0);
+		}
+		if ((linked.p1 || linked.p2) && typeof performCalculations === "function") {
+			performCalculations();
+		}
 	}, 0);
 });
 

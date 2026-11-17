@@ -135,14 +135,13 @@
                 <span id="resultDamageR4">??? - ???%</span>
                 <span class="ai-chance" id="aiChanceR4" aria-live="polite"></span>
             </div>
-            <div class="ai-options" id="aiOptions" title="Previsione della mossa scelta dall'AI della ROM (flag: Check Bad Move, Try To Faint, Prefer Highest Damage, Check Viability, HP Aware). In doppio considera entrambi i Pok&eacute;mon del giocatore e indica il bersaglio.">
-                <span class="ai-options-title">Previsione AI:</span>
-                <label><input type="checkbox" class="ai-option" id="aiFirstTurn" checked="checked" /> Primo turno in campo</label>
-                <label title="Impostata in automatico dal set dell'allenatore (flag Omniscient nel .party, capipalestra, campione e lotte forzate dalla ROM). L'AI Omniscient conosce mosse, strumento e abilita del giocatore."><input type="checkbox" class="ai-option" id="aiOmniscient" /> AI Omniscient</label>
-                <label title="Solo senza Omniscient: l'AI conosce solo le mosse del giocatore che ha gia visto usare."><input type="checkbox" class="ai-option" id="aiPlayerKnown" /> Ha gi&agrave; visto le mosse del giocatore</label>
-                <label><input type="checkbox" class="ai-option" id="aiHasParty" checked="checked" /> AI ha altri Pok&eacute;mon</label>
-                <label><input type="checkbox" class="ai-option" id="aiPlayerHasParty" checked="checked" /> Giocatore ha altri Pok&eacute;mon</label>
-                <label><input type="checkbox" class="ai-option" id="aiProtectUsed" /> Ha usato Protect il turno prima</label>
+            <div class="ai-options" id="aiOptions">
+                <span class="ai-options-title">AI prediction:</span>
+                <label><input type="checkbox" class="ai-option" id="aiFirstTurn" checked="checked" /> First turn on field</label>
+                <label><input type="checkbox" class="ai-option" id="aiPlayerKnown" /> AI has seen the player's moves</label>
+                <label><input type="checkbox" class="ai-option" id="aiHasParty" checked="checked" /> AI has other Pok&eacute;mon</label>
+                <label><input type="checkbox" class="ai-option" id="aiPlayerHasParty" checked="checked" /> Player has other Pok&eacute;mon</label>
+                <label><input type="checkbox" class="ai-option" id="aiProtectUsed" /> Used Protect last turn</label>
             </div>
         </div>
     </div>

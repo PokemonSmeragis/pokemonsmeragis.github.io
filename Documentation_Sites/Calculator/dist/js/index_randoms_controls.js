@@ -150,15 +150,19 @@ function getSlotSetData(slotId) {
 	return (setdex[species] && setdex[species][setName]) || null;
 }
 
-// Quando cambia il Pokemon dell'allenatore, "Omniscient" e "AI ha altri Pokemon" seguono il set.
+// Flag interno: Omniscient arriva dal set dell'allenatore (aiOmniscient in gen9.js), non dalla UI.
+function isAiSetOmniscient(aiSlot) {
+	var set = getSlotSetData(aiSlot);
+	return !!(set && set.aiOmniscient);
+}
+
+// Quando cambia il Pokemon dell'allenatore, "AI has other Pokemon" segue la squadra.
 function syncAiDefaults(aiSlot) {
 	var setName = $("#" + aiSlot + " input.set-selector").val() || "";
 	if (setName === aiPredictionLastSet) {
 		return;
 	}
 	aiPredictionLastSet = setName;
-	var set = getSlotSetData(aiSlot);
-	$("#aiOmniscient").prop("checked", !!(set && set.aiOmniscient));
 	if (typeof getTrainerPoksForSlot === "function") {
 		var team = getTrainerPoksForSlot(aiSlot) || [];
 		if (team.length) {
@@ -229,8 +233,9 @@ function updateAiPrediction(pair, p1, p2, p1field, p2field) {
 	var doubles = isDoublesFormat();
 	var aiSlot = pair.defenderId;
 	syncAiDefaults(aiSlot);
-	var omniscient = $("#aiOmniscient").prop("checked");
-	$("#aiPlayerKnown").prop("disabled", omniscient).closest("label").toggleClass("ai-option-disabled", omniscient);
+	var omniscient = isAiSetOmniscient(aiSlot);
+	// Con Omniscient l'AI conosce gia tutto: l'opzione sulle mosse viste non serve.
+	$("#aiPlayerKnown").closest("label").toggle(!omniscient);
 
 	var prediction = null;
 	try {
@@ -259,7 +264,7 @@ function updateAiPrediction(pair, p1, p2, p1field, p2field) {
 			allyAlive: !!(ally && ally.name && ally.curHP() > 0)
 		});
 	} catch (e) {
-		console.error("Previsione AI non riuscita", e);
+		console.error("AI prediction failed", e);
 	}
 	if (!prediction) {
 		clearAiPrediction();
@@ -274,9 +279,9 @@ function updateAiPrediction(pair, p1, p2, p1field, p2field) {
 			$span.text("").removeAttr("title");
 			continue;
 		}
-		$span.text("AI " + formatAiPercent(entry.chance) + (entry.estimated ? "*" : "") + (doubles && entry.chance > 0 ? " → " + aiTargetLabel(entry) : ""));
+		$span.text("AI " + formatAiPercent(entry.chance) + (doubles && entry.chance > 0 ? " → " + aiTargetLabel(entry) : ""));
 		$span.addClass(entry.chance >= 0.5 ? "ai-chance-top" : entry.chance > 0 ? "ai-chance-some" : "ai-chance-none");
-		$span.attr("title", aiPredictionTooltip(entry, doubles, omniscient));
+		$span.attr("title", aiPredictionTooltip(entry, doubles));
 	}
 }
 
@@ -295,24 +300,16 @@ function formatAiPercent(chance) {
 	return (chance > 0 && pct === 0 ? "<1" : String(pct)) + "%";
 }
 
-function aiPredictionTooltip(entry, doubles, omniscient) {
+// Tooltip: solo il punteggio e i modificatori applicati.
+function aiPredictionTooltip(entry, doubles) {
 	var lines = [];
 	entry.byTarget.forEach(function (target) {
 		var score = target.scoreMin === target.scoreMax ? String(target.scoreMin) : target.scoreMin + "-" + target.scoreMax;
-		lines.push((doubles ? "Contro " + target.label + ": " + formatAiPercent(target.chance) + ", punteggio " : "Punteggio AI: ") + score + " (base 100)");
-		(target.reasons.length ? target.reasons : ["nessun modificatore"]).forEach(function (reason) {
-			lines.push((doubles ? "   " : "") + reason);
+		lines.push((doubles ? "vs " + target.label + ": " : "Score: ") + score);
+		target.reasons.forEach(function (reason) {
+			lines.push((doubles ? "  " : "") + reason);
 		});
 	});
-	if (entry.estimated) {
-		lines.push("* mossa non trovata nei dati della ROM: punteggio stimato");
-	}
-	lines.push(omniscient ? "AI Omniscient: conosce mosse, strumento e abilita del giocatore."
-		: "AI non Omniscient: non conosce lo strumento del giocatore e ne ipotizza l'abilita a caso.");
-	if (doubles) {
-		lines.push("Doppio: vince il bersaglio con il punteggio migliore (logica AI_DoubleBattle non inclusa).");
-	}
-	lines.push("Probabilita su 2000 simulazioni delle scelte casuali dell'AI.");
 	return lines.join("\n");
 }
 

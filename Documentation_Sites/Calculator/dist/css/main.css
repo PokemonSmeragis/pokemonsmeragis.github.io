@@ -513,9 +513,6 @@ th {
     margin-right: 0.8em;
     white-space: nowrap;
 }
-.ai-options label.ai-option-disabled {
-    opacity: 0.5;
-}
 .move-result-group .result-crit-btn {
     font-size: 0.8em;
     width: 3em;
