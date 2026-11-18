@@ -50,7 +50,21 @@ Dex.escapeHTML = function (str, jsEscapeToo) {
 };
 
 var Topbar = Panels.Topbar.extend({
-	height: 51
+	height: 51,
+	// The topbar wraps on narrow screens: place the panels below its real height
+	initialize: function () {
+		var self = this;
+		this.height = Math.max(51, this.$el.outerHeight());
+		$(window).on('resize', function () {
+			var h = Math.max(51, self.$el.outerHeight());
+			if (h === self.height) return;
+			self.height = h;
+			if (self.app) {
+				self.app.topbarHeight = h;
+				$('.pfx-panel').css('top', h);
+			}
+		});
+	}
 });
 
 var PokedexResultPanel = Panels.Panel.extend({

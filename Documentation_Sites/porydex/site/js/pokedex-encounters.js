@@ -167,10 +167,11 @@ function stripTrailingZeroIfSingle(cleanName, baseCounts) {
 // Entries carry { location, area, kind, level, note }. They are attached to the location list
 // entry with the same display name (sub-area first, then region section). Places that have no
 // wild-encounter table (e.g. Mauville City) get a synthetic BattleLocationdex entry.
-var PORYDEX_STATIC_KIND_ORDER = ['Starter', 'Gift', 'Egg', 'Overworld', 'Static', 'Event'];
+var PORYDEX_STATIC_KIND_ORDER = ['Starter', 'Gift', 'Fossil', 'Egg', 'Overworld', 'Static', 'Event'];
 var PORYDEX_STATIC_KIND_LABEL = {
     Starter: 'Starter Pokémon',
     Gift: 'Gift Pokémon',
+    Fossil: 'Fossil Pokémon',
     Egg: 'Gift Eggs',
     Overworld: 'Overworld Pokémon',
     Static: 'Static Encounters',
@@ -400,8 +401,10 @@ function buildEncounterRows(locationKey) {
 
     var rows = [];
     function pushSection(label) { rows.push({ kind: 'section', label: label }); }
-    function pushMon(rate, minLvl, maxLvl, species) {
-        rows.push({ kind: 'mon', rate: rate, min: minLvl, max: maxLvl, species: species });
+    function pushMon(rate, minLvl, maxLvl, species, extra) {
+        var row = { kind: 'mon', rate: rate, min: minLvl, max: maxLvl, species: species };
+        if (extra) { row.dupe = extra.dupe; row.baseRate = extra.baseRate; }
+        rows.push(row);
     }
 
     // --- helper: normalize containers that can be arrays or {encs:[...]} ---
@@ -560,11 +563,26 @@ function buildEncounterRows(locationKey) {
         }
         sortEncounterEntries(entries);
 
+        // Uploaded save: dupes are skipped, the remaining rates are rescaled to 100%
+        var save = window.PorydexSave && PorydexSave.active() ? PorydexSave : null;
+        var freshTotal = 0;
+        if (save) {
+            for (var fi = 0; fi < entries.length; fi++) {
+                entries[fi].dupe = save.isDupe(entries[fi].species);
+                if (!entries[fi].dupe && entries[fi].hasRate) freshTotal += entries[fi].rate;
+            }
+        }
+
         pushSection(label);
         for (var ei = 0; ei < entries.length; ei++) {
             var entry = entries[ei];
             var displayRate = entry.hasRate ? formatRate(entry.rate) : '';
-            pushMon(displayRate, entry.min, entry.max, entry.species);
+            if (!save) {
+                pushMon(displayRate, entry.min, entry.max, entry.species);
+                continue;
+            }
+            var updated = entry.dupe || !entry.hasRate || freshTotal <= 0 ? '' : formatRate(entry.rate * 100 / freshTotal);
+            pushMon(updated, entry.min, entry.max, entry.species, { dupe: entry.dupe, baseRate: displayRate });
         }
     }
 
@@ -711,7 +729,10 @@ function renderEncounterTable(rows) {
             ? (String(row.rate).indexOf('%') >= 0 ? String(row.rate) : String(row.rate) + '%')
             : '';
 
-        buf += '<tr>';
+        if (row.dupe) rateTxt = '—';
+        var rateTitle = row.baseRate ? 'Base rate: ' + row.baseRate + (row.dupe ? ' (dupe)' : '') : '';
+
+        buf += '<tr' + (row.dupe ? ' class="enc-dupe"' : '') + '>';
         buf += '<td class="enc-mon">';
 
         // IMPORTANT: push + hash link (file:// friendly)
@@ -721,7 +742,7 @@ function renderEncounterTable(rows) {
         buf += '</a>';
 
         buf += '</td>';
-        buf += '<td class="enc-rate-col">' + escape(rateTxt) + '</td>';
+        buf += '<td class="enc-rate-col"' + (rateTitle ? ' title="' + escape(rateTitle) + '"' : '') + '>' + escape(rateTxt) + '</td>';
         buf += '</tr>';
     }
 
@@ -740,6 +761,7 @@ var PokedexEncountersMainPanel = Panels.Panel.extend({
         buf += '<div class="pfx-body pfx-encounters"><form class="pokedex">';
         buf += '<h1><a href="/" data-target="replace">Pok\u00e9dex</a></h1>';
         buf += '<h4>Modified from <a href="https://dex.pokemonshowdown.com/">Pok\u00e9mon Showdown Dex</a> for Porydex</h4>';
+        if (window.PorydexSave) buf += PorydexSave.hintHTML();
         buf += '<ul class="tabbar centered" style="margin-bottom: 18px">';
         buf += '<li><button class="button nav-first" value="">Search</button></li>';
         buf += '<li><button class="button" value="pokemon/">Pok\u00e9mon</button></li>';
@@ -751,6 +773,9 @@ var PokedexEncountersMainPanel = Panels.Panel.extend({
 
         buf += '<div class="enc-layout">';
         buf += '  <div class="enc-left">';
+        if (window.PorydexSave && PorydexSave.available) {
+            buf += '    <div class="enc-save"></div>';
+        }
         buf += '    <div class="enc-list-title">Location</div>';
         buf += '    <div class="enc-list"><ul class="enc-list-ul"></ul></div>';
         buf += '  </div>';
@@ -774,6 +799,11 @@ var PokedexEncountersMainPanel = Panels.Panel.extend({
         var self = this;
         this.$searchbox.on('input', function () { self.filterLocationList(); });
 
+        if (window.PorydexSave && PorydexSave.available) {
+            PorydexSave.onChange(function () { self.refreshSave(); });
+            this.updateSaveInfo();
+        }
+
         // If we are already at /encounters/:location, show it (hash routing can do this on load)
         var frag = fragment || '';
         if (frag.indexOf('encounters/') === 0) {
@@ -786,6 +816,29 @@ var PokedexEncountersMainPanel = Panels.Panel.extend({
         'submit form.pokedex': 'submitSearch',
         'click .tabbar button': 'clickTab',
         'click .enc-list a': 'clickLocation',
+    },
+
+    // Distinct capture areas (MAPSEC) among the listed locations
+    updateSaveInfo: function () {
+        var $info = this.$('.enc-save');
+        var active = PorydexSave.active();
+        $info.toggle(active);
+        if (!active) return;
+        var all = Object.create(null), done = Object.create(null);
+        var items = this._allLocations || [];
+        for (var i = 0; i < items.length; i++) {
+            var ms = PorydexSave.locationMapsec(items[i].key, items[i].name);
+            if (ms == null) continue;
+            all[ms] = true;
+            if (PorydexSave.isMapsecCovered(ms)) done[ms] = true;
+        }
+        $info.text(Object.keys(done).length + '/' + Object.keys(all).length + ' locations covered').attr('title', PorydexSave.fileName());
+    },
+
+    refreshSave: function () {
+        this.updateSaveInfo();
+        this.filterLocationList();
+        if (this._currentKey) this.showLocation(this._currentKey);
     },
 
     submitSearch: function (e) {
@@ -967,6 +1020,15 @@ items.sort(function (a, b) {
 
  __porydexDumpOrdering("AFTER items.sort (before renderLocationList)", items, null);
 
+    // Split of each location: same position as in the flat order list
+    var splitOfOrder = [];
+    (window.PorydexLocationSplits || []).forEach(function (split) {
+        split.locations.forEach(function () { splitOfOrder.push(split.name); });
+    });
+    for (var si = 0; si < items.length; si++) {
+        items[si].split = splitOfOrder[porydexRank(items[si].name)] || 'Other';
+    }
+
     this._allLocations = items;
     this.renderLocationList(items);
     },
@@ -1028,52 +1090,113 @@ items.sort(function (a, b) {
         return n;
     }
 
+    var save = window.PorydexSave && PorydexSave.active() ? PorydexSave : null;
+    function covered(it) { return !!save && save.isCovered(it.key, it.name); }
+    var CHECK = '<span class="enc-covered-mark" title="Covered">✓</span>';
+
     function link(it) {
-        return '<a href="' + escape(dexLink('encounters/' + it.key)) + '" class="enc-loc-link">' +
-            escape(it.name) + '</a>';
+        var done = covered(it);
+        return '<a href="' + escape(dexLink('encounters/' + it.key)) + '" class="enc-loc-link' + (done ? ' enc-covered' : '') + '">' +
+            escape(it.name) + (done ? CHECK : '') + '</a>';
     }
 
-    // Build base -> children (order-preserving)
-    var byBase = Object.create(null);
-    for (var i = 0; i < items.length; i++) {
-        var it = items[i];
-        var base = baseKey(it.name);
-        var k = base ? base : ('__single__' + it.key);
-        if (!byBase[k]) byBase[k] = [];
-        byBase[k].push(it);
+    // Rows of a list of locations; sub-areas of the same place share a collapsible group
+    function renderRows(list) {
+        // Build base -> children (order-preserving)
+        var byBase = Object.create(null);
+        for (var i = 0; i < list.length; i++) {
+            var it = list[i];
+            var base = baseKey(it.name);
+            var k = base ? base : ('__single__' + it.key);
+            if (!byBase[k]) byBase[k] = [];
+            byBase[k].push(it);
+        }
+
+        // Emit list: group is emitted at the FIRST occurrence in the already-sorted list
+        var emitted = Object.create(null);
+        var html = '';
+        var count = 0;
+
+        for (var j = 0; j < list.length; j++) {
+            var it2 = list[j];
+            var base2 = baseKey(it2.name);
+            var k2 = base2 ? base2 : ('__single__' + it2.key);
+
+            if (emitted[k2]) continue;
+            emitted[k2] = true;
+            count++;
+
+            var children = byBase[k2] || [it2];
+
+            if (!base2 || children.length === 1) {
+                html += '<li class="enc-loc-item">' + link(children[0]) + '</li>';
+                continue;
+            }
+
+            html += '<li class="enc-loc-group">';
+            html += '<details class="enc-loc-details">';
+            var groupDone = children.some(covered);
+            html += '<summary class="enc-loc-summary' + (groupDone ? ' enc-covered' : '') + '">' + escape(base2) + (groupDone ? CHECK : '') + '</summary>';
+            html += '<ul class="enc-loc-sublist">';
+            for (var c = 0; c < children.length; c++) {
+                html += '<li class="enc-loc-subitem">' + link(children[c]) + '</li>';
+            }
+            html += '</ul></details></li>';
+        }
+        return { html: html, count: count };
     }
 
-    // Emit list: group is emitted at the FIRST occurrence in the already-sorted `items`
-    var emitted = Object.create(null);
+    if (!window.PorydexLocationSplits) {
+        this.$list.html(renderRows(items).html);
+        return;
+    }
+
+    // Keep the sections the user opened; while searching, show every section with a match
+    var searching = !!toID((this.$searchbox && this.$searchbox.val()) || '');
+    var open = this._openSplits;
+    if (open && !this._splitsSearching) {
+        this.$list.find('details.enc-split-details').each(function () {
+            open[this.getAttribute('data-split')] = this.open;
+        });
+    }
+    this._splitsSearching = searching;
+
+    var names = [];
+    var bySplit = Object.create(null);
+    for (var s = 0; s < items.length; s++) {
+        var splitName = items[s].split || 'Other';
+        if (!bySplit[splitName]) {
+            bySplit[splitName] = [];
+            names.push(splitName);
+        }
+        bySplit[splitName].push(items[s]);
+    }
+    if (!open) {
+        open = this._openSplits = Object.create(null);
+        open[names[0]] = true;
+    }
+
     var buf = '';
-
-    for (var j = 0; j < items.length; j++) {
-        var it2 = items[j];
-        var base2 = baseKey(it2.name);
-        var k2 = base2 ? base2 : ('__single__' + it2.key);
-
-        if (emitted[k2]) continue;
-        emitted[k2] = true;
-
-        var children = byBase[k2] || [it2];
-
-        if (!base2 || children.length === 1) {
-            buf += '<li class="enc-loc-item">' + link(children[0]) + '</li>';
-            continue;
-        }
-
-        buf += '<li class="enc-loc-group">';
-        buf += '<details class="enc-loc-details">';
-        buf += '<summary class="enc-loc-summary">' + escape(base2) + '</summary>';
-        buf += '<ul class="enc-loc-sublist">';
-        for (var c = 0; c < children.length; c++) {
-            buf += '<li class="enc-loc-subitem">' + link(children[c]) + '</li>';
-        }
-        buf += '</ul></details></li>';
+    for (var n = 0; n < names.length; n++) {
+        var rows = renderRows(bySplit[names[n]]);
+        buf += '<li class="enc-split">';
+        buf += '<details class="enc-split-details" data-split="' + escape(names[n]) + '"' + (searching || open[names[n]] ? ' open' : '') + '>';
+        buf += '<summary class="enc-split-summary"><span class="enc-split-name">' + escape(names[n]) + '</span>';
+        buf += '<span class="enc-split-count">' + rows.count + '</span></summary>';
+        buf += '<ul class="enc-split-list">' + rows.html + '</ul>';
+        buf += '</details></li>';
     }
 
     this.$list.html(buf);
 },
+
+    // Make the selected location visible in the list (also when opened from a link)
+    revealLocation: function (key) {
+        var href = dexLink('encounters/' + key);
+        this.$list.find('a.enc-loc-link').filter(function () {
+            return this.getAttribute('href') === href;
+        }).parents('details').prop('open', true);
+    },
 
 
 
@@ -1096,6 +1219,8 @@ items.sort(function (a, b) {
     showLocation: function (locationIdOrKey) {
         var key = getLocationKeyFromIdOrName(locationIdOrKey);
         if (!key) return;
+        this._currentKey = key;
+        this.revealLocation(key);
         var loc = BattleLocationdex[key] || {};
         var title = cleanLocationName(loc.name || key);
         title = stripTrailingZeroIfSingle(title, this._locationBaseCounts);
@@ -1171,6 +1296,7 @@ var PokedexEncountersPanel = PokedexResultPanel.extend({
         var key = this.locationKey;
         var loc = (key && BattleLocationdex) ? BattleLocationdex[key] : null;
         var title = cleanLocationName((loc && (loc.name || key)) || this.id);
+        this.shortTitle = title;
 
         var rows = key ? buildEncounterRows(key) : [];
         var html = '';

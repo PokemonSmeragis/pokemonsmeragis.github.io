@@ -130,6 +130,32 @@ main#sheet { max-width: 1200px; margin: 22px auto 40px; padding: 0 18px; }
 .content-table tbody tr:nth-of-type(even) { background: #dddddd; }
 .content-table tbody tr:last-of-type { border-bottom: 3px solid #03396c; }
 
+/* Colori ed etichette per tipo di riga */
+.content-table tbody tr.row-level   { background: #e9edf3; --row-accent: #475569; }
+.content-table tbody tr.row-item    { background: #fff1c9; --row-accent: #8a5a00; }
+.content-table tbody tr.row-ability { background: #dfe8ff; --row-accent: #2f4fb5; }
+.content-table tbody tr.row-ivs     { background: #f0e5ff; --row-accent: #6d3bb0; }
+.content-table tbody tr.row-nature  { background: #dff3e4; --row-accent: #1f7a3a; }
+.content-table tbody tr.row-move    { background: #ffffff; }
+/* Etichetta sopra il valore; solo il livello resta sulla stessa riga */
+.row-label {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 3px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--row-accent);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.row-level .row-label {
+  display: inline-block;
+  margin: 0 6px 0 0;
+  vertical-align: 1px;
+}
+
 /* Sprite dei Pokémon compatti e centrati */
 .content-table img {
   height: 120px;

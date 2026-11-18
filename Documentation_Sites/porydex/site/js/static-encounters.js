@@ -12,16 +12,100 @@ Object.assign(window.BattleStaticEncounters, {
             "area": "Seaspray - Cave - B1F"
         }
     ],
+    "aerodactyl": [
+        {
+            "name": "Desert Underpass (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "desertunderpass_tunnel2-fossil-2",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass - Tunnel 2",
+            "note": "Old Amber"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-aerodactyl",
+            "kind": "Fossil",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Old Amber"
+        }
+    ],
+    "amaura": [
+        {
+            "name": "Desert Underpass (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "desertunderpass_tunnel-fossil-0",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass - Tunnel",
+            "note": "Sail Fossil"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-amaura",
+            "kind": "Fossil",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Sail Fossil"
+        }
+    ],
     "anorith": [
         {
-            "name": "Rustboro City (Gift)",
+            "name": "Desert Underpass (Fossil)",
             "level": 20,
-            "rate": "Gift",
+            "rate": "Fossil",
             "mode": "static",
-            "zoneid": "rustborocity_devoncorp_2f-gift-407",
-            "kind": "Gift",
+            "zoneid": "desertunderpass-fossil-5",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass",
+            "note": "Claw Fossil"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-anorith",
+            "kind": "Fossil",
             "location": "Rustboro City",
-            "area": "Rustboro City - Devon Corp - 2F"
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Claw Fossil"
+        }
+    ],
+    "archen": [
+        {
+            "name": "Desert Underpass (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "desertunderpass_tunnel2-fossil-3",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass - Tunnel 2",
+            "note": "Plume Fossil"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-archen",
+            "kind": "Fossil",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Plume Fossil"
         }
     ],
     "azurill": [
@@ -34,7 +118,7 @@ Object.assign(window.BattleStaticEncounters, {
             "kind": "Egg",
             "location": "Mauville City",
             "area": "Mauville City - Game Corner",
-            "note": "Random: 1 of 8"
+            "note": "Random: 1 of 7"
         }
     ],
     "barboach": [
@@ -156,7 +240,7 @@ Object.assign(window.BattleStaticEncounters, {
             "kind": "Egg",
             "location": "Mauville City",
             "area": "Mauville City - Game Corner",
-            "note": "Random: 1 of 8"
+            "note": "Random: 1 of 7"
         }
     ],
     "crabominablemega": [
@@ -181,6 +265,30 @@ Object.assign(window.BattleStaticEncounters, {
             "kind": "Overworld",
             "location": "Abandoned Ship",
             "area": "Abandoned Ship - Room - B1F"
+        }
+    ],
+    "cranidos": [
+        {
+            "name": "Desert Underpass (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "desertunderpass_tunnel-fossil-1",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass - Tunnel",
+            "note": "Skull Fossil"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-cranidos",
+            "kind": "Fossil",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Skull Fossil"
         }
     ],
     "cyndaquil": [
@@ -387,7 +495,7 @@ Object.assign(window.BattleStaticEncounters, {
             "kind": "Egg",
             "location": "Mauville City",
             "area": "Mauville City - Game Corner",
-            "note": "Random: 1 of 8"
+            "note": "Random: 1 of 7"
         }
     ],
     "gulpin": [
@@ -425,6 +533,30 @@ Object.assign(window.BattleStaticEncounters, {
             "kind": "Event",
             "location": "Navel Rock",
             "area": "Navel Rock - Top"
+        }
+    ],
+    "kabuto": [
+        {
+            "name": "Desert Underpass (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "desertunderpass-fossil-3",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass",
+            "note": "Dome Fossil"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-kabuto",
+            "kind": "Fossil",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Dome Fossil"
         }
     ],
     "kecleon": [
@@ -500,14 +632,26 @@ Object.assign(window.BattleStaticEncounters, {
     ],
     "lileep": [
         {
-            "name": "Rustboro City (Gift)",
+            "name": "Desert Underpass (Fossil)",
             "level": 20,
-            "rate": "Gift",
+            "rate": "Fossil",
             "mode": "static",
-            "zoneid": "rustborocity_devoncorp_2f-gift-362",
-            "kind": "Gift",
+            "zoneid": "desertunderpass-fossil-4",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass",
+            "note": "Root Fossil"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-lileep",
+            "kind": "Fossil",
             "location": "Rustboro City",
-            "area": "Rustboro City - Devon Corp - 2F"
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Root Fossil"
         }
     ],
     "lugia": [
@@ -532,7 +676,7 @@ Object.assign(window.BattleStaticEncounters, {
             "kind": "Egg",
             "location": "Mauville City",
             "area": "Mauville City - Game Corner",
-            "note": "Random: 1 of 8"
+            "note": "Random: 1 of 7"
         },
         {
             "name": "Route 117 (Egg)",
@@ -617,7 +761,7 @@ Object.assign(window.BattleStaticEncounters, {
             "zoneid": "dewfordmeadowhouse1f-static-6",
             "kind": "Static",
             "location": "Dewford Manor",
-            "area": "Dewford Meadow House 1F"
+            "area": "Dewford Manor - 1F"
         }
     ],
     "mudbray": [
@@ -646,13 +790,37 @@ Object.assign(window.BattleStaticEncounters, {
             "note": "Choose 1"
         }
     ],
+    "omanyte": [
+        {
+            "name": "Desert Underpass (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "desertunderpass-fossil-2",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass",
+            "note": "Helix Fossil"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-omanyte",
+            "kind": "Fossil",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Helix Fossil"
+        }
+    ],
     "panpour": [
         {
             "name": "Rustboro City (Gift)",
             "level": 5,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "rustborocity_pokemonschool-gift-143",
+            "zoneid": "rustborocity_pokemonschool-gift-146",
             "kind": "Gift",
             "location": "Rustboro City",
             "area": "Rustboro City - Pokemon School"
@@ -664,7 +832,7 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "rustborocity_pokemonschool-gift-116",
+            "zoneid": "rustborocity_pokemonschool-gift-117",
             "kind": "Gift",
             "location": "Rustboro City",
             "area": "Rustboro City - Pokemon School"
@@ -676,7 +844,7 @@ Object.assign(window.BattleStaticEncounters, {
             "level": 5,
             "rate": "Gift",
             "mode": "static",
-            "zoneid": "rustborocity_pokemonschool-gift-132",
+            "zoneid": "rustborocity_pokemonschool-gift-134",
             "kind": "Gift",
             "location": "Rustboro City",
             "area": "Rustboro City - Pokemon School"
@@ -701,6 +869,18 @@ Object.assign(window.BattleStaticEncounters, {
             "mode": "static",
             "zoneid": "gift_pichu-egg-31",
             "kind": "Egg"
+        }
+    ],
+    "poltchageist": [
+        {
+            "name": "Fortree City (Gift)",
+            "level": 30,
+            "rate": "Gift",
+            "mode": "static",
+            "zoneid": "fortreecity_house2-gift-101",
+            "kind": "Gift",
+            "location": "Fortree City",
+            "area": "Fortree City - House 2"
         }
     ],
     "pyukumuku": [
@@ -834,17 +1014,28 @@ Object.assign(window.BattleStaticEncounters, {
             "area": "Route 109"
         }
     ],
-    "skrelp": [
+    "shieldon": [
         {
-            "name": "Mauville City (Egg)",
-            "level": 1,
-            "rate": "Egg",
+            "name": "Desert Underpass (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
             "mode": "static",
-            "zoneid": "mauvillecity_gamecorner-egg-702",
-            "kind": "Egg",
-            "location": "Mauville City",
-            "area": "Mauville City - Game Corner",
-            "note": "Random: 1 of 8"
+            "zoneid": "desertunderpass_tunnel2-fossil-1",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass - Tunnel 2",
+            "note": "Armor Fossil"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-shieldon",
+            "kind": "Fossil",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Armor Fossil"
         }
     ],
     "smoochum": [
@@ -921,7 +1112,7 @@ Object.assign(window.BattleStaticEncounters, {
             "kind": "Egg",
             "location": "Mauville City",
             "area": "Mauville City - Game Corner",
-            "note": "Random: 1 of 8"
+            "note": "Random: 1 of 7"
         }
     ],
     "tauros": [
@@ -974,6 +1165,30 @@ Object.assign(window.BattleStaticEncounters, {
             "location": "Route 123",
             "area": "Route 123 - Berry Masters House",
             "note": "Random: 1 of 5"
+        }
+    ],
+    "tirtouga": [
+        {
+            "name": "Desert Underpass (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "desertunderpass_tunnel2-fossil-0",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass - Tunnel 2",
+            "note": "Cover Fossil"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-tirtouga",
+            "kind": "Fossil",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Cover Fossil"
         }
     ],
     "togepi": [
@@ -1075,6 +1290,30 @@ Object.assign(window.BattleStaticEncounters, {
             "note": "Random: 1 of 8"
         }
     ],
+    "tyrunt": [
+        {
+            "name": "Desert Underpass (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "desertunderpass_tunnel2-fossil-4",
+            "kind": "Fossil",
+            "location": "Desert Underpass",
+            "area": "Desert Underpass - Tunnel 2",
+            "note": "Jaw Fossil"
+        },
+        {
+            "name": "Rustboro City (Fossil)",
+            "level": 20,
+            "rate": "Fossil",
+            "mode": "static",
+            "zoneid": "rustborocity_devoncorp_2f-fossil-tyrunt",
+            "kind": "Fossil",
+            "location": "Rustboro City",
+            "area": "Rustboro City - Devon Corp - 2F",
+            "note": "Revive Jaw Fossil"
+        }
+    ],
     "voltorb": [
         {
             "name": "New Mauville (Static)",
@@ -1097,7 +1336,7 @@ Object.assign(window.BattleStaticEncounters, {
             "kind": "Egg",
             "location": "Mauville City",
             "area": "Mauville City - Game Corner",
-            "note": "Random: 1 of 8"
+            "note": "Random: 1 of 7"
         }
     ],
     "wooper": [
@@ -1110,7 +1349,7 @@ Object.assign(window.BattleStaticEncounters, {
             "kind": "Egg",
             "location": "Mauville City",
             "area": "Mauville City - Game Corner",
-            "note": "Random: 1 of 8"
+            "note": "Random: 1 of 7"
         }
     ],
     "wooperpaldea": [

@@ -49,6 +49,13 @@
 
     <div aria-label="Settings" role="region">
         <span class="title-text">Pok&eacute;mon Damage Calculator</span>
+        <span class="save-import">
+            <button type="button" id="save-import-btn" class="bs-btn bs-btn-default" title="Load the Team and Box from your Pokémon Smeragis save (you can also drop the .sav anywhere on the page)">Upload .sav</button>
+            <button type="button" id="save-import-resume" class="bs-btn bs-btn-default" title="The browser needs your permission again to keep reading the save file" style="display:none">Resume live</button>
+            <input type="file" id="save-import-file" accept=".sav,.srm,.sa1,.sa2,.sa3" hidden />
+            <span id="save-import-status"></span>
+            <button type="button" id="save-import-stop" class="save-import-stop" title="Stop live updates" style="display:none">&times;</button>
+        </span>
         <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
             <span class="visually-hidden" id="selectGenInstruction">Select the generation.</span>
             <input class="gen visually-hidden" type="radio" name="gen" value="9" id="gen9" checked="checked" />
@@ -525,7 +532,7 @@
                             <option value="Burned">Burned</option>
                             <option value="Paralyzed">Paralyzed</option>
                             <option value="Asleep">Asleep</option>
-                            <option value="Frozen">Frozen</option>
+                            <option value="Frostbite">Frostbite</option>
                         </select>
                         <select aria-label="Toxic counter" class="toxic-counter calc-trigger hide">
                             <option value="1">1/16</option>
@@ -1484,7 +1491,7 @@
                             <option value="Burned">Burned</option>
                             <option value="Paralyzed">Paralyzed</option>
                             <option value="Asleep">Asleep</option>
-                            <option value="Frozen">Frozen</option>
+                            <option value="Frostbite">Frostbite</option>
                         </select>
                         <select aria-label="Toxic counter" class="toxic-counter calc-trigger hide">
                             <option value="1">1/16</option>
@@ -1750,6 +1757,9 @@
     <script type="text/javascript" src="./js/shared_controls.js?"></script>
     <script type="text/javascript" src="./js/index_randoms_controls.js?"></script>
     <script type="text/javascript" src="./js/moveset_import.js?"></script>
+    <script type="text/javascript" src="./js/data/save_import_data.js?"></script>
+    <script type="text/javascript" src="./js/live_save_file.js?"></script>
+    <script type="text/javascript" src="./js/save_import.js?"></script>
 </div>
 
 <div class="credits">Modification by ForwardFeed Originaly Created by Honko, maintained by Austin and Kris, Special thanks to Hzla

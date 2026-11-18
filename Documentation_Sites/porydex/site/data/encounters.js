@@ -874,17 +874,17 @@ exports.BattleLocationdex = {
                     "maxLvl": 20
                 },
                 {
-                    "species": "marill",
+                    "species": "chinchou",
                     "minLvl": 30,
                     "maxLvl": 35
                 },
                 {
-                    "species": "marill",
+                    "species": "chinchou",
                     "minLvl": 5,
                     "maxLvl": 10
                 },
                 {
-                    "species": "goldeen",
+                    "species": "wimpod",
                     "minLvl": 20,
                     "maxLvl": 30
                 }
@@ -904,17 +904,17 @@ exports.BattleLocationdex = {
                     "maxLvl": 10
                 },
                 {
-                    "species": "geodude",
+                    "species": "shuckle",
                     "minLvl": 15,
                     "maxLvl": 20
                 },
                 {
-                    "species": "geodude",
+                    "species": "shuckle",
                     "minLvl": 15,
                     "maxLvl": 20
                 },
                 {
-                    "species": "geodude",
+                    "species": "nacli",
                     "minLvl": 15,
                     "maxLvl": 20
                 }
@@ -10488,77 +10488,6 @@ exports.BattleLocationdex = {
         "rock": {},
         "fish": {}
     },
-    "desertunderpassmorning": {
-        "name": "Desert Underpass - Morning",
-        "land": {
-            "baseRate": 10,
-            "encs": [
-                {
-                    "species": "ditto",
-                    "minLvl": 38,
-                    "maxLvl": 38
-                },
-                {
-                    "species": "whismur",
-                    "minLvl": 35,
-                    "maxLvl": 35
-                },
-                {
-                    "species": "ditto",
-                    "minLvl": 40,
-                    "maxLvl": 40
-                },
-                {
-                    "species": "loudred",
-                    "minLvl": 40,
-                    "maxLvl": 40
-                },
-                {
-                    "species": "ditto",
-                    "minLvl": 41,
-                    "maxLvl": 41
-                },
-                {
-                    "species": "whismur",
-                    "minLvl": 36,
-                    "maxLvl": 36
-                },
-                {
-                    "species": "loudred",
-                    "minLvl": 38,
-                    "maxLvl": 38
-                },
-                {
-                    "species": "ditto",
-                    "minLvl": 42,
-                    "maxLvl": 42
-                },
-                {
-                    "species": "whismur",
-                    "minLvl": 38,
-                    "maxLvl": 38
-                },
-                {
-                    "species": "ditto",
-                    "minLvl": 43,
-                    "maxLvl": 43
-                },
-                {
-                    "species": "loudred",
-                    "minLvl": 44,
-                    "maxLvl": 44
-                },
-                {
-                    "species": "ditto",
-                    "minLvl": 45,
-                    "maxLvl": 45
-                }
-            ]
-        },
-        "surf": {},
-        "rock": {},
-        "fish": {}
-    },
     "artisancaveb1fmorning": {
         "name": "Artisan Cave - B1F - Morning",
         "land": {
@@ -12443,63 +12372,63 @@ exports.BattleLocationdex = {
             "encs": [
                 {
                     "species": "zubat",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "noibat",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "rattata",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "rattataalola",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "wooperpaldea",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "wooperpaldea",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "ekans",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "ekans",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "venipede",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "venipede",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "venipede",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 },
                 {
                     "species": "venipede",
-                    "minLvl": 5,
-                    "maxLvl": 5
+                    "minLvl": 15,
+                    "maxLvl": 20
                 }
             ]
         },

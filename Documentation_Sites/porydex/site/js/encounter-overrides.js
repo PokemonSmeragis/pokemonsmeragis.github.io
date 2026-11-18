@@ -1,4 +1,10 @@
 window.BattleLocationdex = window.BattleLocationdex || {};
+// La parte interna di Area Zero non ha Pokemon catturabili
+delete window.BattleLocationdex.areazeroinside2morning;
+// Nome mostrato al posto di quello ricavato dalla mappa (DewfordMEadowHouse)
+if (window.BattleLocationdex.dewfordmeadowhouse0morning) {
+    window.BattleLocationdex.dewfordmeadowhouse0morning.name = "Dewford Manor - B1F";
+}
 Object.assign(window.BattleLocationdex, {
     "slateportsewermorning": {
         "name": "Slateport Sewer - Morning",

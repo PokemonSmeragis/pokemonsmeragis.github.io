@@ -40,7 +40,8 @@
 .pfx-topbar .header .nav > li { float: none; }
 .pfx-topbar .header .nav a.button { white-space: nowrap; }
 @media (max-width: 520px) {
-  .pfx-topbar .header .nav { flex-wrap: wrap; }
+  .pfx-topbar { height: auto; padding-bottom: 4px; }
+  .pfx-topbar .header .nav { flex-wrap: wrap; row-gap: 4px; }
 }
 </style>
 </head><body>
@@ -94,18 +95,26 @@
     <script src="data/encounters.js?v0.9xy31"></script>
     <script src="js/encounter-overrides.js?v0.9xy31"></script>
     <script src="js/static-encounters.js?v0.9xy31"></script>
+    <script src="js/obtainability.js"></script>
     <script src="data/moves.js?v0.9xy31"></script>
     <script src="data/abilities.js?v0.9xy31"></script>
     <script src="data/items.js?v0.9xy31"></script>
 	<script src="js/form-aliases.js?b359"></script>
+	<script src="data/rom-sprites.js"></script>
+	<script src="js/rom-sprites.js"></script>
 
 	<script src="js/pokedex.js?"></script>
 	<script src="js/pokedex-pokemon.js"></script>
 	<script src="js/pokedex-moves.js"></script>
 	<script src="js/location-order.js"></script>
+	<script src="data/save-data.js"></script>
+	<script src="js/save-reader.js"></script>
+	<script src="js/live-save-file.js"></script>
+	<script src="js/save-tracker.js"></script>
     <script src="js/pokedex-encounters.js"></script>
 	<script src="js/pokedex-search.js"></script>
 	<script src="js/theme-toggle.js?v=20260321a"></script>
 	<script src="js/router.js"></script>
+	<script src="js/panel-back.js"></script>
 
 </body></html>

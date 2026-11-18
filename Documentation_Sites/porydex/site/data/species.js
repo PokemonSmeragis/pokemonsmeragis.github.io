@@ -12221,10 +12221,10 @@ exports.BattlePokedex = {
         "baseStats": {
             "hp": 78,
             "atk": 64,
-            "def": 78,
+            "def": 108,
             "spe": 110,
-            "spa": 119,
-            "spd": 85
+            "spa": 169,
+            "spd": 105
         },
         "types": [
             "Fire",
@@ -16762,8 +16762,8 @@ exports.BattlePokedex = {
         },
         "abilities": {
             "0": "Overgrow",
-            "1": "Unburden",
-            "H": "Technician"
+            "1": "Technician",
+            "H": "Unburden"
         },
         "color": "Green",
         "name": "Treecko",
@@ -16802,8 +16802,8 @@ exports.BattlePokedex = {
         },
         "abilities": {
             "0": "Overgrow",
-            "1": "Unburden",
-            "H": "Technician"
+            "1": "Technician",
+            "H": "Unburden"
         },
         "color": "Green",
         "name": "Grovyle",
@@ -16847,8 +16847,8 @@ exports.BattlePokedex = {
         },
         "abilities": {
             "0": "Overgrow",
-            "1": "Unburden",
-            "H": "Technician"
+            "1": "Technician",
+            "H": "Unburden"
         },
         "color": "Green",
         "name": "Sceptile",
@@ -16863,7 +16863,7 @@ exports.BattlePokedex = {
             "Sceptile-Mega"
         ],
         "prevo": "Grovyle",
-        "evoLevel": 36,
+        "evoLevel": 34,
         "evoType": "level",
         "evoCondition": ""
     },
@@ -25131,7 +25131,7 @@ exports.BattlePokedex = {
             "F": 1.0
         },
         "abilities": {
-            "0": "Pressure",
+            "0": "Tinted Lens",
             "1": "Levitate",
             "H": "Queenly Majesty"
         },
@@ -38320,7 +38320,7 @@ exports.BattlePokedex = {
         "heightm": 1.8,
         "weightkg": 81.5,
         "prevo": "Skrelp",
-        "evoLevel": 48,
+        "evoLevel": 35,
         "evoType": "level",
         "evoCondition": ""
     },
@@ -39697,7 +39697,7 @@ exports.BattlePokedex = {
         "heightm": 1.5,
         "weightkg": 85.0,
         "prevo": "Noibat",
-        "evoLevel": 48,
+        "evoLevel": 34,
         "evoType": "level",
         "evoCondition": ""
     },

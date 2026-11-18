@@ -509,7 +509,11 @@ var PokedexPokemonPanel = PokedexResultPanel.extend({
             buf += '<div class="warning"><strong>Note:</strong> This Pok&eacute;mon cannot be obtained.</div>';
 		}
 
-		buf += '<img src="'+Dex.resourcePrefix+'sprites/gen5/' + pokemon.spriteid + '.png'+'" alt="" width="96" height="96" class="sprite" />';
+		if (window.PorydexSprites && PorydexSprites.has(pokemon.id, 'front')) {
+			buf += PorydexSprites.img(pokemon.id, 'front', 'sprite rom-sprite');
+		} else {
+			buf += '<img src="'+Dex.resourcePrefix+'sprites/gen5/' + pokemon.spriteid + '.png'+'" alt="" width="96" height="96" class="sprite" />';
+		}
 
 		buf += '<dl class="typeentry">';
 		buf += '<dt>Types:</dt> <dd>';
@@ -976,8 +980,12 @@ var PokedexPokemonPanel = PokedexResultPanel.extend({
 		buf += '<li class="resultheader"><h3>Flavor</h3></li>';
 		buf += '<li><dl><dt>Color:</dt><dd>'+pokemon.color+'</dd></dl></li>';
 
+		// sprites from the ROM replace the Showdown galleries below
+		var romSprites = !!window.PorydexSprites && PorydexSprites.has(pokemon.id, 'front');
+		if (romSprites) buf += PorydexSprites.detailsHTML(pokemon.id);
+
 		// animated gen 6
-		if (pokemon.num > 0 && pokemon.gen < 10 && this.id !== 'missingno' && this.id !== 'pichuspikyeared') {
+		if (!romSprites && pokemon.num > 0 && pokemon.gen < 10 && this.id !== 'missingno' && this.id !== 'pichuspikyeared') {
 			buf += '<li class="resultheader"><h3>Animated Gen 6-9 sprites</h3></li>';
 
 			buf += '<li class="content"><table class="sprites"><tr><td><img src="' + Dex.resourcePrefix + 'sprites/ani/' + pokemon.spriteid + '.gif" /></td>';
@@ -994,7 +1002,7 @@ var PokedexPokemonPanel = PokedexResultPanel.extend({
 		buf += '<li class="content"><audio src="' + Dex.resourcePrefix + 'audio/cries/' + pokemon.spriteid + '.mp3" controls="controls"><a href="' + Dex.resourcePrefix + 'audio/cries/' + pokemon.spriteid + '.mp3">Play</a></audio></li>';
 
 		// still gen 5
-		if (this.id !== 'pichuspikyeared') {
+		if (!romSprites && this.id !== 'pichuspikyeared') {
 			buf += '<li class="resultheader"><h3>Gen 5 Sprites</h3></li>';
 			buf += '<li class="content"><table class="sprites"><tr><td><img src="' + Dex.resourcePrefix + 'sprites/gen5/' + pokemon.spriteid + '.png" /></td>';
 			buf += '<td><img src="' + Dex.resourcePrefix + 'sprites/gen5-shiny/' + pokemon.spriteid + '.png" /></td></table>';
@@ -1016,7 +1024,7 @@ var PokedexPokemonPanel = PokedexResultPanel.extend({
 			}
 		}
 
-		if (pokemon.gen < 5) {
+		if (!romSprites && pokemon.gen < 5) {
 			buf += '<li class="resultheader"><h3>Gen 4 Sprites</h3></li>';
 			buf += '<li class="content"><table class="sprites"><tr><td><img src="' + Dex.resourcePrefix + 'sprites/gen4/' + pokemon.spriteid + '.png" /></td>';
 			buf += '<td><img src="' + Dex.resourcePrefix + 'sprites/gen4-shiny/' + pokemon.spriteid + '.png" /></td></table>';
@@ -1024,7 +1032,7 @@ var PokedexPokemonPanel = PokedexResultPanel.extend({
 			buf += '<td><img src="' + Dex.resourcePrefix + 'sprites/gen4-back-shiny/' + pokemon.spriteid + '.png" /></td></table>';
 		}
 
-		if (pokemon.gen < 4) {
+		if (!romSprites && pokemon.gen < 4) {
 			buf += '<li class="resultheader"><h3>Gen 3 Sprites</h3></li>';
 			buf += '<li class="content"><table class="sprites"><tr><td><img src="' + Dex.resourcePrefix + 'sprites/gen3/' + pokemon.spriteid + '.png" /></td>';
 			buf += '<td><img src="' + Dex.resourcePrefix + 'sprites/gen3-shiny/' + pokemon.spriteid + '.png" /></td></table>';
@@ -1032,7 +1040,7 @@ var PokedexPokemonPanel = PokedexResultPanel.extend({
 			buf += '<td><img src="' + Dex.resourcePrefix + 'sprites/gen3-back-shiny/' + pokemon.spriteid + '.png" /></td></table>';
 		}
 
-		if (pokemon.gen < 3) {
+		if (!romSprites && pokemon.gen < 3) {
 			buf += '<li class="resultheader"><h3>Gen 2 Sprites</h3></li>';
 			buf += '<li class="content"><table class="sprites"><tr><td><img src="' + Dex.resourcePrefix + 'sprites/gen2/' + pokemon.spriteid + '.png" /></td>';
 			buf += '<td><img src="' + Dex.resourcePrefix + 'sprites/gen2-shiny/' + pokemon.spriteid + '.png" /></td></table>';
@@ -1040,7 +1048,7 @@ var PokedexPokemonPanel = PokedexResultPanel.extend({
 			buf += '<td><img src="' + Dex.resourcePrefix + 'sprites/gen2-back-shiny/' + pokemon.spriteid + '.png" /></td></table>';
 		}
 
-		if (pokemon.gen < 2) {
+		if (!romSprites && pokemon.gen < 2) {
 			buf += '<li class="resultheader"><h3>Gen 1 Sprites</h3></li>';
 			buf += '<li class="content"><table class="sprites"><tr><td><img src="' + Dex.resourcePrefix + 'sprites/gen1/' + pokemon.spriteid + '.png" /></td>';
 			buf += '<table class="sprites"><tr><td><img src="' + Dex.resourcePrefix + 'sprites/gen1-back/' + pokemon.spriteid + '.png" /></td>';

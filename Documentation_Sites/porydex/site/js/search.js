@@ -90,6 +90,8 @@
 				var drow = this.resultSet[di];
 				var dtype = drow[0];
 				var did = drow[1];
+				// Locations removed in encounter-overrides.js are still in the search index
+				if (dtype === 'location' && !(window.BattleLocationdex && BattleLocationdex[did])) continue;
 				// Only dedupe real entries; keep headers/sort/html/etc.
 				if (dtype === 'pokemon' || dtype === 'move' || dtype === 'item' || dtype === 'ability' || dtype === 'location' || dtype === 'type' || dtype === 'egggroup' || dtype === 'tag') {
 					var dkey = dtype + '|' + did;
@@ -348,254 +350,6 @@
 		return buf;
 	};
 
-	// --- Obtainability cache (wild + evolutions) for RHH 1.12 ---
-
-	var __rhhObtainCache = null; // id -> {status, reason}
-	var __rhhWildSet = null;     // id -> true
-
-	function rhhNormalizeEncArray(encContainer) {
-	  if (!encContainer) return null;
-	  if (Array.isArray(encContainer)) return encContainer;
-	  if (typeof encContainer === 'object' && Array.isArray(encContainer.encs)) return encContainer.encs;
-	  return null;
-	}
-
-	function rhhBuildWildSet() {
-	  var wild = Object.create(null);
-
-	  for (var k in BattleLocationdex) {
-	    if (!Object.prototype.hasOwnProperty.call(BattleLocationdex, k)) continue;
-	    if (k === 'rates') continue;
-
-	    var loc = BattleLocationdex[k];
-	    if (!loc) continue;
-
-	    var buckets = [
-	      loc.land,
-	      loc.surf,
-	      loc.rockSmash || loc.rocksmash || loc.rock,
-	      loc.fish || loc.fishing
-	    ];
-
-	    for (var b = 0; b < buckets.length; b++) {
-	      var arr = rhhNormalizeEncArray(buckets[b]);
-	      if (!arr) continue;
-
-	      for (var i = 0; i < arr.length; i++) {
-	        var e = arr[i];
-	        if (!e || !e.species) continue;
-	        wild[toID(e.species)] = true;
-	      }
-	    }
-	  }
-
-	  // Also seed from static/gift/overworld overlays.
-	  // Supports both:
-	  // - { speciesId: [ { ... } ] }
-	  // - [ { species/speciesId/id: '...' } ]
-	  var staticRaw = window.BattleStaticEncounters || window.PorydexStaticEncounters;
-	  if (staticRaw) {
-	    function addStaticId(v, fallbackSpeciesKey) {
-	      if (!v) return;
-	      var sid = toID(
-	        (v && (v.species || v.speciesId || v.id)) ||
-	        fallbackSpeciesKey ||
-	        ''
-	      );
-	      if (!sid) return;
-	      wild[sid] = true;
-	    }
-
-	    if (Array.isArray(staticRaw)) {
-	      for (var si = 0; si < staticRaw.length; si++) {
-	        addStaticId(staticRaw[si], null);
-	      }
-	    } else {
-	      for (var speciesKey in staticRaw) {
-	        if (!Object.prototype.hasOwnProperty.call(staticRaw, speciesKey)) continue;
-	        var val = staticRaw[speciesKey];
-	        if (Array.isArray(val)) {
-	          for (var vi = 0; vi < val.length; vi++) {
-	            addStaticId(val[vi], speciesKey);
-	          }
-	        } else if (val && Array.isArray(val.encounters)) {
-	          for (var ei = 0; ei < val.encounters.length; ei++) {
-	            addStaticId(val.encounters[ei], speciesKey);
-	          }
-	        } else {
-	          addStaticId(val, speciesKey);
-	        }
-	      }
-	    }
-	  }
-
-	  return wild;
-	}
-
-	// Decide if a child species evolution method is feasible in your hack.
-	// NOTE: evo method is stored on the CHILD species (the one you evolve INTO).
-	function rhhIsEvolutionFeasible(childSpecies) {
-	  if (!childSpecies || !childSpecies.exists) return { ok: false, uncertain: false };
-
-	  var evoType = childSpecies.evoType || '';
-
-	  // If data is missing, be permissive (treat as feasible)
-	  if (!evoType) return { ok: true, uncertain: false };
-
-	  // Always-feasible methods
-	  var alwaysOk = {
-	    'level': 1,
-	    'levelExtra': 1,
-	    'happiness': 1,
-	    'happinessDay': 1,
-	    'happinessNight': 1,
-	    'levelDay': 1,
-	    'levelNight': 1,
-	    'levelMorning': 1,
-	    'levelEvening': 1,
-	    'levelAfternoon': 1,
-	    'other': 1
-	  };
-	  if (alwaysOk[evoType]) return { ok: true, uncertain: false };
-
-	  // Item-based methods: require the item to exist
-	  if (evoType === 'useItem' || evoType === 'levelHold' || evoType === 'tradeItem') {
-	    var itemId = toID(childSpecies.evoItem || '');
-	    if (!itemId) return { ok: false, uncertain: false };
-	    var it = Dex.items.get(itemId);
-	    return { ok: !!(it && it.exists), uncertain: false };
-	  }
-
-	  // Move-based: we only check that the move exists (learning check is more complex)
-	  if (evoType === 'move') {
-	    var moveId = toID(childSpecies.evoMove || '');
-	    if (!moveId) return { ok: false, uncertain: false };
-	    var mv = Dex.moves.get(moveId);
-	    return { ok: !!(mv && mv.exists), uncertain: true }; // uncertain because we don't verify learnset here
-	  }
-
-	  // Trade-based: check for link cable
-	  if (evoType === 'trade' || evoType === 'tradeSpecies' || evoType === 'tradeItem') {
-	    var linkCable = Dex.items.get('linkcable');
-	    if (linkCable && linkCable.exists) return { ok: true, uncertain: false };
-	    return { ok: true, uncertain: true };
-	  }
-
-
-	  // Anything unknown: don't assume
-	  return { ok: false, uncertain: false };
-	}
-
-	function rhhBuildObtainabilityCache() {
-	  // status:
-	  // 2 = wild obtainable (✅)
-	  // 1 = obtainable via feasible evolution (🧬) (not used, substituted with classic green flag for readability)
-	  // 0 = not obtainable (❌)
-	  // -1 = obtainable only via uncertain evolution (⚠️)  (we use this only if needed)
-	  var cache = Object.create(null);
-
-	  __rhhWildSet = __rhhWildSet || rhhBuildWildSet();
-
-	  // Initialize cache with wild obtainable
-	  // Also create a queue of ids we know are obtainable so we can propagate evolutions.
-	  var queue = [];
-	  for (var id in Dex.species.dex) {
-	    // Dex.species.dex may exist depending on build; fallback below
-	    break;
-	  }
-
-	  // Safer: iterate through Dex.species.all() if available, else iterate known ids from Dex.species
-	  var all = (Dex.species.all ? Dex.species.all() : null);
-	  if (all && all.length) {
-	    for (var i = 0; i < all.length; i++) {
-	      var sp = all[i];
-	      if (!sp || !sp.exists) continue;
-	      var sid = toID(sp.id || sp.name);
-	      if (__rhhWildSet[sid]) {
-	        cache[sid] = { status: 2 };
-	        queue.push(sid);
-	      } else {
-	        cache[sid] = { status: 0 };
-	      }
-	    }
-	  } else {
-	    // Fallback: try a small subset via Dex.species.get on demand later
-	    // We'll just seed from wild set keys
-	    for (var wid in __rhhWildSet) {
-	      cache[wid] = { status: 2 };
-	      queue.push(wid);
-	    }
-	  }
-
-	  function rank(s) {
-	    if (s === 2) return 3;
-	    if (s === 1) return 2;
-	    if (s === -1) return 1;
-	    return 0;
-	  }
-
-	  // BFS propagate to evolutions
-	  while (queue.length) {
-	    var curId = queue.shift();
-	    var curSp = Dex.species.get(curId);
-	    if (!curSp || !curSp.exists) continue;
-
-	    var evos = curSp.evos || [];
-	    for (var e = 0; e < evos.length; e++) {
-	      var childId = toID(evos[e]);
-	      if (!childId) continue;
-
-	      var childSp = Dex.species.get(childId);
-	      if (!childSp || !childSp.exists) continue;
-
-	      // Ensure the relationship really is parent->child
-	      if (toID(childSp.prevo || '') && toID(childSp.prevo) !== toID(curSp.name)) {
-	        // Not a direct evolution from this parent; skip
-	        continue;
-	      }
-
-	      var feas = rhhIsEvolutionFeasible(childSp);
-	      if (!feas.ok) continue;
-
-	      var newStatus = feas.uncertain ? -1 : 1;
-
-	      // If child is already wild (2), keep it.
-	      // Otherwise upgrade if we are improving its status.
-	      var prev = cache[childId] ? cache[childId].status : 0;
-
-	      if (rank(newStatus) > rank(prev)) {
-	        cache[childId] = { status: newStatus };
-	        queue.push(childId);
-	      }
-	    }
-
-	    // Breeding back-propagation: if a species is obtainable and breedable,
-	    // consider its pre-evolution obtainable as well.
-	    var prevoId = toID(curSp.prevo || '');
-	    if (prevoId) {
-	      var eggGroups = curSp.eggGroups || [];
-	      var canBreed = eggGroups.length && eggGroups.indexOf('Undiscovered') < 0;
-	      if (canBreed) {
-	        var prevoPrev = cache[prevoId] ? cache[prevoId].status : 0;
-	        var prevoStatus = 1;
-	        if (rank(prevoStatus) > rank(prevoPrev)) {
-	          cache[prevoId] = { status: prevoStatus };
-	          queue.push(prevoId);
-	        }
-	      }
-	    }
-	  }
-
-	  return cache;
-	}
-
-	function rhhGetObtainStatus(speciesId) {
-	  if (!__rhhObtainCache) __rhhObtainCache = rhhBuildObtainabilityCache();
-	  var sid = toID(speciesId);
-	  var entry = __rhhObtainCache[sid];
-	  return entry ? entry.status : 0;
-	}
-
 	function getEvolutionMethods(childSp) {
     	// childSp = Dex.species.get('ivysaur') ecc.
     	var methods = [];
@@ -692,20 +446,14 @@
 		if (Search.urlRoot) attrs += ' href="' + Search.urlRoot + 'pokemon/' + id + '" data-target="push"';
 		var buf = '<li class="result"><a' + attrs + ' data-entry="pokemon|' + BattleLog.escapeHTML(pokemon.name) + '">';
 
-		var obtainId = (pokemon.baseSpecies ? toID(pokemon.baseSpecies) : '') ||
-		(window.BattleAliases && window.BattleAliases[id] ? toID(window.BattleAliases[id]) : '') || id;
-
-		var status = rhhGetObtainStatus(obtainId); // id = toID(pokemon.name)
-
-		if (status === 2 || status == 1) {
-		  buf += '<span class="col numcol">✅</span> ';
-		} else if (status === -1) {
-		  buf += '<span class="col numcol">✅</span> '; // ex ⚠️
-		} else {
-		  buf += '<span class="col numcol">❌</span> ';
+		// Generated from the ROM sources by build_obtainability.py
+		var obtainability = window.PorydexObtainability;
+		var obtainMark = '';
+		if (obtainability) {
+			// pokemon.id keeps the dex key for names with accents (Flabébé)
+			obtainMark = Object.prototype.hasOwnProperty.call(obtainability, pokemon.id || id) ? '✅' : '❌';
 		}
-
-
+		buf += '<span class="col numcol">' + obtainMark + '</span> ';
 
 		// icon
 		buf += '<span class="col iconcol">';

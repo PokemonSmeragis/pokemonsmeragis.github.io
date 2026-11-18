@@ -828,3 +828,57 @@ table.field {
     background: var(--fieldset-color);
     color: unset;
 }
+
+/* Upload .sav (js/save_import.js) */
+.save-import {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    top: -5px;
+    margin-right: 1em;
+}
+#save-import-status {
+    font-size: 0.85em;
+    color: #2f7a4b;
+}
+#save-import-status.is-error {
+    color: #b3362b;
+}
+body.save-import-dragging::after {
+    content: "Drop your .sav to load your Team and Box";
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 60, 120, 0.18);
+    outline: 3px dashed #4a78c2;
+    outline-offset: -6px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1d3d73;
+    pointer-events: none;
+}
+.save-import.is-live #save-import-btn::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: #2f9a5b;
+    vertical-align: 1px;
+}
+.save-import-stop {
+    border: 0;
+    background: none;
+    color: #888;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 0 2px;
+}
+.save-import-stop:hover {
+    color: #b3362b;
+}

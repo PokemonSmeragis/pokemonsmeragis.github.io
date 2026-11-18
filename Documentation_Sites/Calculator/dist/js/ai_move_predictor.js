@@ -508,13 +508,14 @@
 		return !(canBeParalyzed(ctx, pl) && benefitsFromStatus(pl));
 	}
 	function shouldFrostbite(ctx) { return canBeFrozen(ctx, ctx.player); }
-	function isIncapacitated(b) { return b.status === 'slp' && !hasMoveWithEffect(b, 'SLEEP_TALK') || (b.status === 'frz'); }
+	// Smeragis uses Frostbite instead of Freeze ('frz' = frostbite), which doesn't prevent acting
+	function isIncapacitated(b) { return b.status === 'slp' && !hasMoveWithEffect(b, 'SLEEP_TALK'); }
 	function secondaryDamage(ctx, b) {
 		if (hasAbility(b, 'magicguard')) return 0;
 		var dmg = 0;
 		if (b.status === 'psn') dmg += Math.floor(b.maxHP / 8);
 		if (b.status === 'tox') dmg += Math.floor(b.maxHP / 16);
-		if (b.status === 'brn') dmg += Math.floor(b.maxHP / 16);
+		if (b.status === 'brn' || b.status === 'frz') dmg += Math.floor(b.maxHP / 16);
 		var w = weatherActive(ctx);
 		if (w === 'SAND' && !isType(b, 'Rock') && !isType(b, 'Ground') && !isType(b, 'Steel')
 			&& ['sandveil', 'sandrush', 'sandforce', 'overcoat'].indexOf(b.ability) < 0 && b.hold !== 'SAFETY_GOGGLES') {
@@ -1645,7 +1646,7 @@
 		} else {
 			adj(-(ctx.doubles ? 2 : 1) * Math.min(uses, 3), 'recent Protect');
 		}
-		if (ai.status === 'psn' || ai.status === 'tox' || ai.status === 'brn' || ctx.aiSide.isSeeded) adj(-1, 'takes residual damage');
+		if (ai.status === 'psn' || ai.status === 'tox' || ai.status === 'brn' || ai.status === 'frz' || ctx.aiSide.isSeeded) adj(-1, 'takes residual damage');
 		if (pl.status === 'tox' || ctx.playerSide.isSeeded) adj(DECENT_EFFECT, 'target takes residual damage');
 	};
 	Scorer.prototype.shouldSetScreen = function (effect) {
@@ -1701,7 +1702,7 @@
 		var ctx = this.ctx, ai = ctx.ai, pl = ctx.player, inc = 0;
 		if (movesOf(pl).length && bestDmgFromBattler(pl) < Math.floor(ai.maxHP / 4)) inc += GOOD_EFFECT;
 		if (pl.status === 'slp') inc += GOOD_EFFECT;
-		else if (['brn', 'psn', 'tox'].indexOf(pl.status) >= 0) inc += DECENT_EFFECT;
+		else if (['brn', 'psn', 'tox', 'frz'].indexOf(pl.status) >= 0) inc += DECENT_EFFECT;
 		if (hasNvsMove(pl, 'SLEEP') || hasNvsMove(pl, 'TOXIC') || hasNvsMove(pl, 'PARALYSIS') || hasNvsMove(pl, 'BURN')
 			|| hasMoveWithEffect(pl, 'CONFUSE') || hasMoveWithEffect(pl, 'LEECH_SEED')) inc += GOOD_EFFECT;
 		if (ai.hpPct > 70) inc += WEAK_EFFECT;
